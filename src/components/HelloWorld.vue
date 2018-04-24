@@ -83,12 +83,13 @@
   </div>
 </template>
 
-<script>
+<script lang='ts'>
 export default {
   name: 'HelloWorld',
   data () {
+      let m : String = "This is a string"
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: m
     }
   }
 }
