@@ -1,7 +1,7 @@
 <template>
     <div>
         <transition name="hide">
-            <div v-if='show' @click='show = !show' id='main'></div>
+            <div v-if='show' id='main'></div>
         </transition>
     </div>
 
@@ -22,21 +22,17 @@ export default Vue.extend({
         handleScroll() {
             let current = window.scrollY;
 
-            if (this.show && this.scrollingDown(current)) {
+            let scrollingDown = current > this.previous;
+            let scrollingUp = current < this.previous;
+
+            if (this.show && scrollingDown) {
                 this.show = false;
-            } else if (!this.show && this.scrollingUp(current)) {
+            } else if (!this.show && scrollingUp) {
                 this.show = true;
-            }
+            } // else... already in the right state!
             
             this.previous = current
-        },
-        scrollingDown(current: number): boolean {
-            return current > this.previous;
-        },
-        scrollingUp(current: number): boolean {
-            return current < this.previous;
         }
-
     },
     created() {
         window.addEventListener("scroll", this.handleScroll);
@@ -49,9 +45,10 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 @import "../style/master.scss";
+$animation-length: 0.35s;
 
 #main {
-  background: #dddddd;
+  background: #26292C;
   height: $header-height;
   width: 100%;
   position: fixed;
@@ -60,11 +57,11 @@ export default Vue.extend({
 }
 
 .hide-enter-active {
-  transition: all 0.4s ease;
+  transition: all $animation-length ease;
 }
 
 .hide-leave-active {
-  transition: all 0.4s ease;
+  transition: all $animation-length ease;
 }
 
 .hide-enter,
