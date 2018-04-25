@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <header>
+        <div id=spacer></div>
         <transition name="hide">
-            <div v-if='show' id='main'></div>
+            <div id='hideable' v-if='show'></div>
         </transition>
-    </div>
-
+    </header>
 </template>
 
 <script lang='ts'>
@@ -31,7 +31,7 @@ export default Vue.extend({
                 this.show = true;
             } // else... already in the right state!
             
-            this.previous = current
+            this.previous = current;
         }
     },
     created() {
@@ -45,25 +45,30 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 @import "../style/master.scss";
+
 $animation-length: 0.35s;
 
-#main {
+#spacer {
+  height: $header-height;
+}
+
+#hideable {
   background: #26292C;
   height: $header-height;
   width: 100%;
   position: fixed;
   left: 0;
   top: 0;
+  z-index: $header-z; 
 }
 
+// all of these required by vue for transitions with name="hide"
 .hide-enter-active {
   transition: all $animation-length ease;
 }
-
 .hide-leave-active {
   transition: all $animation-length ease;
 }
-
 .hide-enter,
 .hide-leave-to {
   transform: translateY(-$header-height);
