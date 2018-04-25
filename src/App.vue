@@ -1,23 +1,31 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="root">
+    <hideable-header/>
+    <div id="nav">
+
+    </div>
+
+    <div id="main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
-<script>
+<script lang='ts'>
+import HideableHeader from "./components/HideableHeader.vue"
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    "hideable-header" : HideableHeader
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang='scss'>
+@import './style/master.scss';
+
+  #main {
+    height: 20000px;
+  }
 </style>
