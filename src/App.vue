@@ -1,9 +1,9 @@
 <template>
   <div id="root">
-    <hideable-header/>
-    <nav-bar/>
-    <main v-touch:swipe.left="swipeHandler">
-      <router-view v-bind:show='showNav'/>
+    <hideable-header :showNav='showNav' @toggle='toggleNav'/>
+    <nav-bar :show='showNav' @disable='disableNav'/>
+    <main v-touch:swipe.right="enableNav">
+      <router-view/>
     </main>
   </div>
 </template>
@@ -25,8 +25,14 @@ export default Vue.extend({
     "hideable-header" : HideableHeader
   },
   methods: {
-    swipeHandler() {
-      console.log("wow, so touch, much event!");
+    toggleNav() {
+      this.showNav = !this.showNav;
+    },
+    enableNav() {
+      this.showNav = true;
+    },
+    disableNav() {
+      this.showNav = false;
     }
   }
 });

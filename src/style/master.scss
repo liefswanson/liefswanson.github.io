@@ -1,8 +1,7 @@
 $header-height: 5rem;
 $nav-width: 10rem;
 $hamburger-size: 3rem;
-$hamburger-padding: ($header-height - $hamburger-size) / 2 / 2; // two padding and 50/50 padding margin
-$hamburger-margin: $hamburger-padding;
+$hamburger-padding: ($header-height - $hamburger-size) / 2;
 
 // z index ordering
 $z: 1;

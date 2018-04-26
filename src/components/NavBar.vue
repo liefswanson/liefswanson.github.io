@@ -1,20 +1,5 @@
 <template>
     <div>
-        <transition name='rotate-in'>
-            <button class='hamburger-wrapper sideways' 
-                    @click='toggle'
-                    v-if='show'>
-                    <i class='fa fa-bars' ></i>
-            </button>
-        </transition>
-        <transition name='rotate-out'>
-            <button class='hamburger-wrapper upright'
-                    @click='toggle'
-                    v-if='!show'>
-                    <i class='fa fa-bars' ></i>
-            </button>
-        </transition>
-
         <transition name='fade'>
             <div class='blinder' 
                  v-if='show'  
@@ -37,20 +22,16 @@ import Vue from 'vue';
 
 export default Vue.extend({
     name: "NavBar",
-    data() {
-        return {
-            show: false 
-        }
-    }, 
+
     methods: {
-        toggle() {
-            this.show = !this.show;
-        },
-        enable() {
-            this.show = true;
-        },
         disable() {
-            this.show = false;
+            this.$emit('disable');
+        }
+    },
+    props: {
+        show: {
+            type: Boolean,
+            required: true
         }
     }
 });
@@ -73,35 +54,7 @@ $blinder-opacity: 0.3;
         width: 100%;
     }
 
-    .fa-bars {
-        height: $hamburger-size;
-        font-size: $hamburger-size;
-        line-height: $hamburger-size;
-    }
 
-    .sideways {
-        transform: rotate(90deg);
-        z-index: $hamburger-sideways-z;
-    }
-
-    .upright {
-        z-index: $hamburger-upright-z;        
-    }
-
-    .hamburger-wrapper {
-        color: $light;
-        text-align: middle;
-        background: $dark;
-        border-style: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: $hamburger-size + 2*$hamburger-padding;
-        height: $hamburger-size + 2*$hamburger-padding;
-        padding: $hamburger-padding;
-        margin: $hamburger-margin;
-        border-radius: 1rem;
-    }
 
     .nav-bar {
         position: fixed;
@@ -114,28 +67,11 @@ $blinder-opacity: 0.3;
     }
 
 
-    .rotate-in-enter-active,
-    .rotate-out-enter-active,
     .slide-enter-active,
     .slide-leave-active,
     .fade-enter-active,
     .fade-leave-active {
         transition: all $animation-length ease;
-    }
-
-    .rotate-in-leave-active,
-    .rotate-out-leave-active {
-        transition: all 0;
-    }
-
-    .rotate-in-enter,
-    .rotate-in-leave-to {
-        transform: rotate(0deg);
-    }
-
-    .rotate-out-enter,
-    .rotate-out-leave-to  {
-        transform: rotate(90deg);
     }
 
     .slide-enter,
