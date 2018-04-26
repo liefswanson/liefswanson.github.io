@@ -1,2 +1,35 @@
 $header-height: 5rem;
-$header-z: 1;
+$nav-width: 10rem;
+$hamburger-size: 3rem;
+$hamburger-padding: ($header-height - $hamburger-size) / 2 / 2; // two padding and 50/50 padding margin
+$hamburger-margin: $hamburger-padding;
+
+// z index ordering
+$z: 1;
+
+$blinder-z: $z; 
+$z : $z +1;
+
+$nav-z: $z;
+$z : $z +1;
+
+$header-z: $z;
+$z : $z +1;
+
+$hamburger-z: $z;
+$z : $z +1;
+
+$medium: #37474f;
+$light: #62727b;
+$dark: #102027;
+
+$white: #f5f5f5;
+$teal: #64ffda;
+$orange: #ff6e40;
+$green: #69f0ae;
+$blue: #448aff;
+$purple: #e040fb;
+$yellow: #ffd740;
+
+$primary: $dark;
+$secondary: $white;
