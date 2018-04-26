@@ -1,19 +1,34 @@
 <template>
-<div>
-    <button class='hamburger-wrapper' @click='toggle'>
-        <i class='fa fa-bars'></i>
-    </button>
-    <transition name='fade'>
-        <div class='blinder' v-if='show'  @click='disable'>
+    <div>
+        <transition name='rotate-in'>
+            <button class='hamburger-wrapper sideways' 
+                    @click='toggle'
+                    v-if='show'>
+                    <i class='fa fa-bars' ></i>
+            </button>
+        </transition>
+        <transition name='rotate-out'>
+            <button class='hamburger-wrapper upright'
+                    @click='toggle'
+                    v-if='!show'>
+                    <i class='fa fa-bars' ></i>
+            </button>
+        </transition>
 
-        </div>
-    </transition>
-    <transition name="slide">
-        <nav class='nav-bar' v-if='show'>
-            
-        </nav>
-    </transition>
-    
+        <transition name='fade'>
+            <div class='blinder' 
+                 v-if='show'  
+                 @click='disable' 
+                 v-touch:swipe.left='disable'>
+            </div>
+        </transition>
+
+        <transition name="slide">
+            <nav class='nav-bar' 
+                 v-if='show'
+                 v-touch:swipe.left='disable'>
+            </nav>
+        </transition>    
     </div>
 </template>
 
@@ -64,15 +79,23 @@ $blinder-opacity: 0.3;
         line-height: $hamburger-size;
     }
 
+    .sideways {
+        transform: rotate(90deg);
+        z-index: $hamburger-sideways-z;
+    }
+
+    .upright {
+        z-index: $hamburger-upright-z;        
+    }
+
     .hamburger-wrapper {
         color: $light;
         text-align: middle;
         background: $dark;
         border-style: none;
-        z-index: $hamburger-z;
         position: fixed;
-        top: 0;
         left: 0;
+        top: 0;
         width: $hamburger-size + 2*$hamburger-padding;
         height: $hamburger-size + 2*$hamburger-padding;
         padding: $hamburger-padding;
@@ -89,12 +112,30 @@ $blinder-opacity: 0.3;
         background: $medium;
         z-index: $nav-z;
     }
-    
+
+
+    .rotate-in-enter-active,
+    .rotate-out-enter-active,
     .slide-enter-active,
     .slide-leave-active,
     .fade-enter-active,
     .fade-leave-active {
         transition: all $animation-length ease;
+    }
+
+    .rotate-in-leave-active,
+    .rotate-out-leave-active {
+        transition: all 0;
+    }
+
+    .rotate-in-enter,
+    .rotate-in-leave-to {
+        transform: rotate(0deg);
+    }
+
+    .rotate-out-enter,
+    .rotate-out-leave-to  {
+        transform: rotate(90deg);
     }
 
     .slide-enter,
