@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Route from '../../Route';
+import Section from '../../Section';
 import { NavEventBus } from '../../NavEventBus';
 
 
@@ -19,7 +19,7 @@ export default Vue.extend({
     name: "NavItem",
     props: {
         properties: {
-            type: Object as () => Route,
+            type: Object as () => Section,
             required: true
         }
     },

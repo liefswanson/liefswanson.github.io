@@ -1,13 +1,6 @@
-import Route from './Route';
+import Section from './Section';
 
-
-import Featured from '@/components/main/Featured.vue';
-import Projects from '@/components/main/Projects.vue';
-import Contact from '@/components/main/Contact.vue';
-import About from '@/components/main/About.vue';
-import Resume from '@/components/main/Resume.vue';
-
-export const routeList: Route[] = [
+const sections: Section[] = [
     {
         path: "/featured",
         name: "Featured",
@@ -35,4 +28,4 @@ export const routeList: Route[] = [
     },
 ]
 
-export default routeList;
+export default sections;
