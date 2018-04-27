@@ -5,19 +5,20 @@
             <div class='hideable' v-if='show'>
                 <transition name='rotate-in'>
                     <button class='hamburger-wrapper sideways' 
-                            @click='$emit("toggle")'
+                            @click='hamburgerToggle'
                             v-if='showNav'>
                             <i class='fa fa-bars' ></i>
                     </button>
                 </transition>
                 <transition name='rotate-out'>
                     <button class='hamburger-wrapper upright'
-                            @click='$emit("toggle")'
+                            @click='hamburgerToggle'
                             v-if='!showNav'>
                             <i class='fa fa-bars' ></i>
                     </button>
                 </transition>
-                <h1 class='content'>Lief Swanson</h1>
+
+                <h1 class='logo'>Lief Swanson</h1>
             </div>
         </transition>
     </header>
@@ -25,6 +26,9 @@
 
 <script lang='ts'>
 import Vue from "vue";
+// @ts-ignore NOTE: relative path bug in vetur
+import { NavEventBus } from './NavEventBus';
+
 
 export default Vue.extend({
     name: "HideableHeader",
@@ -32,13 +36,8 @@ export default Vue.extend({
         return {
             previous: 0,
             show: true,
+            showNav: false // FIXME: code duplication, may require vuex!
         };
-    },
-    props : {
-        showNav: {
-            type: Boolean,
-            required: true
-        }
     },
     methods: {
         handleScroll() {
@@ -54,29 +53,40 @@ export default Vue.extend({
             } // else... already in the right state!
             
             this.previous = current;
-        }
+        },
+        hamburgerToggle() {
+            NavEventBus.$emit("toggle-nav-bar");
+        },
+        disable() { this.showNav = false;         },
+        enable()  { this.showNav = true;          },
+        toggle()  { this.showNav = !this.showNav; }
+
     },
     created() {
         window.addEventListener("scroll", this.handleScroll);
+        NavEventBus.$on('close-nav-bar', this.disable);
+        NavEventBus.$on('open-nav-bar', this.enable);
+        NavEventBus.$on('toggle-nav-bar', this.toggle);
     },
     destroyed() {
         window.removeEventListener("scroll", this.handleScroll);
+        NavEventBus.$off('close-nav-bar', this.disable);
+        NavEventBus.$off('open-nav-bar', this.enable);
+        NavEventBus.$off('toggle-nav-bar', this.toggle);
     }
 });
 </script>
 
 <style scoped lang="scss">
-@import "../style/master.scss";
-
-$animation-length: 0.35s;
+@import "src/style/master.scss";
 
     .spacer {
         height: $header-height;
-        background: $secondary;
+        background: $background;
     }
 
     .hideable {
-        background: $primary;
+        background: $dark;
         height: $header-height;
         line-height: $header-height;
         width: 100%;
@@ -87,7 +97,7 @@ $animation-length: 0.35s;
         z-index: $header-z; 
     }
 
-    .content {
+    .logo {
         margin: 1rem;
         display: inline-block;
         vertical-align: middle;
@@ -126,7 +136,7 @@ $animation-length: 0.35s;
     // all of these required by vue for transitions with name="hide"
     .hide-enter-active,
     .hide-leave-active {
-        transition: all $animation-length ease;
+        transition: all $header-animation-time ease;
     }
     .hide-enter,
     .hide-leave-to {
@@ -136,7 +146,7 @@ $animation-length: 0.35s;
     // hamburger
     .rotate-in-enter-active,
     .rotate-out-enter-active {
-        transition: all $animation-length ease;
+        transition: all $nav-animation-time ease;
     }
 
     .rotate-in-leave-active,

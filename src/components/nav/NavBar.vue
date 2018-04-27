@@ -19,20 +19,30 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// @ts-ignore NOTE: relative path bug in vetur
+import { NavEventBus } from './NavEventBus';
 
 export default Vue.extend({
     name: "NavBar",
-
-    methods: {
-        disable() {
-            this.$emit('disable');
+    data() {
+        return {
+            show: false // FIXME: code duplication, may require vuex
         }
     },
-    props: {
-        show: {
-            type: Boolean,
-            required: true
-        }
+    methods: {
+        disable() { this.show = false;      },
+        enable()  { this.show = true;       },
+        toggle()  { this.show = !this.show; }
+    },
+    created() {
+        NavEventBus.$on('close-nav-bar', this.disable);
+        NavEventBus.$on('open-nav-bar', this.enable);
+        NavEventBus.$on('toggle-nav-bar', this.toggle);
+    }, 
+    destroyed() {
+        NavEventBus.$off('close-nav-bar', this.disable);
+        NavEventBus.$off('open-nav-bar', this.enable);
+        NavEventBus.$off('toggle-nav-bar', this.toggle);
     }
 });
 
@@ -40,8 +50,7 @@ export default Vue.extend({
 
 
 <style scoped lang='scss'>
-@import '../style/master.scss';
-$animation-length: 0.5s;
+@import '@/style/master.scss';
 $blinder-opacity: 0.3;
 
     .blinder {
@@ -71,7 +80,7 @@ $blinder-opacity: 0.3;
     .slide-leave-active,
     .fade-enter-active,
     .fade-leave-active {
-        transition: all $animation-length ease;
+        transition: all $nav-animation-time ease;
     }
 
     .slide-enter,

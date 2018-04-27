@@ -1,49 +1,43 @@
 <template>
-  <div id="root">
-    <hideable-header :showNav='showNav' @toggle='toggleNav'/>
-    <nav-bar :show='showNav' @disable='disableNav'/>
-    <main v-touch:swipe.right="enableNav">
+  <div id="root" 
+       v-touch:swipe.right='openNavBar'
+       v-touch:swipe.left='closeNavBar'>
+    <hideable-header/>
+    <nav-bar/>
+    <main>
       <router-view/>
     </main>
   </div>
 </template>
 
 <script lang='ts'>
-import Vue from 'vue'
-import HideableHeader from "./components/HideableHeader.vue"
-import NavBar from "./components/NavBar.vue"
+import Vue from 'vue';
+import HideableHeader from "./components/nav/HideableHeader.vue";
+import NavBar from "./components/nav/NavBar.vue";
+import { NavEventBus } from './components/nav/NavEventBus';
+
 
 export default Vue.extend({
   name: 'App',
-  data() {
-    return {
-      showNav: false
-    }
-  },
   components: {
     "nav-bar": NavBar,
     "hideable-header" : HideableHeader
   },
   methods: {
-    toggleNav() {
-      this.showNav = !this.showNav;
+    openNavBar() {
+      NavEventBus.$emit('open-nav-bar');
     },
-    enableNav() {
-      this.showNav = true;
-    },
-    disableNav() {
-      this.showNav = false;
+    closeNavBar() {
+      NavEventBus.$emit('close-nav-bar');
     }
   }
 });
 </script>
 
 <style scoped lang='scss'>
-@import './style/master.scss'; 
-// testing purposes only
+@import '@/style/master.scss'; 
   main {
-    height: 20000px;
-    background: $secondary;
+    background: $background;
   }
 </style>
 
@@ -57,8 +51,9 @@ export default Vue.extend({
   button:focus {
     outline: none;
   }
+  
   button::-moz-focus-inner {
-      border: none;
+    border: none;
   }
 
   body {
