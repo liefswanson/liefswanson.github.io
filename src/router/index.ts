@@ -2,17 +2,18 @@ import Vue from 'vue';
 import Router from 'vue-router';
 //@ts-ignore
 import Vue2TouchEvents from 'vue2-touch-events';
-import Landing from '@/components/main/Landing.vue';
+import Home from '@/components/main/Home.vue';
 
 Vue.use(Router);
 Vue.use(Vue2TouchEvents);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: Landing
+      name: 'Home',
+      component: Home
     }
   ]
 })

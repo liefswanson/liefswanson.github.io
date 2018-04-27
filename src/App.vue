@@ -14,7 +14,7 @@
 import Vue from 'vue';
 import HideableHeader from "./components/nav/HideableHeader.vue";
 import NavBar from "./components/nav/NavBar.vue";
-import { NavEventBus } from './components/nav/NavEventBus';
+import { NavEventBus } from './NavEventBus';
 
 
 export default Vue.extend({
@@ -34,7 +34,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang='scss'>
+<style lang='scss' scoped>
 @import '@/style/master.scss'; 
   main {
     background: $background;

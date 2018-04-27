@@ -1,5 +1,5 @@
 <template>
-  <div id="landing">
+  <div>
     <h1>
       Est quis commodo labore exercitation duis. Excepteur pariatur esse nostrud irure aliqua nisi nulla pariatur elit est adipisicing sit quis ut. Ut commodo dolor sit eu sit duis labore duis nulla amet. Non amet ea deserunt nostrud amet. Laboris incididunt pariatur ut ut mollit tempor voluptate ad reprehenderit.
 
@@ -23,7 +23,7 @@ Sit ex veniam fugiat exercitation ea dolore consectetur veniam voluptate officia
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Landing',
+  name: 'Home',
   data () {
     let m : String = "Lief's new website, in progress!"
     return {

@@ -1,33 +1,39 @@
 <template>
     <header>
+        <!-- keep content from being innaccessable behind header-->
         <div class=spacer></div>
+
+        <!-- actually header -->
         <transition name="hide">
             <div class='hideable' v-if='show'>
+
+                <!-- rotating button TODO isolate transition to only icon -->
                 <transition name='rotate-in'>
                     <button class='hamburger-wrapper sideways' 
                             @click='hamburgerToggle'
-                            v-if='showNav'>
-                            <i class='fa fa-bars' ></i>
+                            v-show='showNav'>
+                            <i class='fa fa-bars'></i>
                     </button>
                 </transition>
                 <transition name='rotate-out'>
                     <button class='hamburger-wrapper upright'
                             @click='hamburgerToggle'
-                            v-if='!showNav'>
-                            <i class='fa fa-bars' ></i>
+                            v-show='!showNav'>
+                            <i class='fa fa-bars'></i>
                     </button>
                 </transition>
 
+                <!-- logo -->
                 <h1 class='logo'>Lief Swanson</h1>
             </div>
         </transition>
+    
     </header>
 </template>
 
 <script lang='ts'>
 import Vue from "vue";
-// @ts-ignore NOTE: relative path bug in vetur
-import { NavEventBus } from './NavEventBus';
+import { NavEventBus } from '../../NavEventBus';
 
 
 export default Vue.extend({
@@ -64,20 +70,22 @@ export default Vue.extend({
     },
     created() {
         window.addEventListener("scroll", this.handleScroll);
-        NavEventBus.$on('close-nav-bar', this.disable);
-        NavEventBus.$on('open-nav-bar', this.enable);
+        
+        NavEventBus.$on('close-nav-bar',  this.disable);
+        NavEventBus.$on('open-nav-bar',   this.enable);
         NavEventBus.$on('toggle-nav-bar', this.toggle);
     },
     destroyed() {
         window.removeEventListener("scroll", this.handleScroll);
-        NavEventBus.$off('close-nav-bar', this.disable);
-        NavEventBus.$off('open-nav-bar', this.enable);
+        
+        NavEventBus.$off('close-nav-bar',  this.disable);
+        NavEventBus.$off('open-nav-bar',   this.enable);
         NavEventBus.$off('toggle-nav-bar', this.toggle);
     }
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "src/style/master.scss";
 
     .spacer {
@@ -105,6 +113,20 @@ export default Vue.extend({
         color: $secondary;
     }
 
+    // hamburger
+    .hamburger-wrapper {
+        color: $light;
+        text-align: middle;
+        background: none;
+        border-style: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: $hamburger-size;
+        height: $hamburger-size;
+        margin: $hamburger-padding;
+    }
+
     .fa-bars {
         height: $hamburger-size;
         font-size: $hamburger-size;
@@ -120,30 +142,7 @@ export default Vue.extend({
         z-index: $hamburger-upright-z;        
     }
 
-    .hamburger-wrapper {
-        color: $light;
-        text-align: middle;
-        background: none;
-        border-style: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: $hamburger-size;
-        height: $hamburger-size;
-        margin: $hamburger-padding;
-    }
-
-    // all of these required by vue for transitions with name="hide"
-    .hide-enter-active,
-    .hide-leave-active {
-        transition: all $header-animation-time ease;
-    }
-    .hide-enter,
-    .hide-leave-to {
-        transform: translateY(-$header-height);
-    }
-
-    // hamburger
+    // rotate hamburger
     .rotate-in-enter-active,
     .rotate-out-enter-active {
         transition: all $nav-animation-time ease;
@@ -164,5 +163,14 @@ export default Vue.extend({
         transform: rotate(90deg);
     }
 
+    // hide/show header
+    .hide-enter-active,
+    .hide-leave-active {
+        transition: all $header-animation-time ease;
+    }
+    .hide-enter,
+    .hide-leave-to {
+        transform: translateY(-$header-height);
+    }
 
 </style>
