@@ -2,9 +2,9 @@
     <div id="root" 
          v-touch:swipe.right='emitOpen'
          v-touch:swipe.left='emitClose'>
+        <hideable-header/>
         <nav-bar/>            
         <main>
-            <hideable-header/>
             <router-view/>
         </main>
     </div>
@@ -36,7 +36,7 @@ export default Vue.extend({
 
 <style lang='scss' scoped>
 @import '@/style/master.scss';
-    main {
+    #root {
         height: 100vh;
     }
 </style>
