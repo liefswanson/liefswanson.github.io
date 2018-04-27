@@ -1,5 +1,5 @@
 <template>
-  
+  <h1>404: NOT FOUND... speaking of which, the content of this 404 page has yet to be found</h1>
 </template>
 
 <script lang="ts">

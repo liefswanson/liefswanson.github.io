@@ -3,7 +3,7 @@
         <transition name='fade'>
             <div class='blinder' 
                  v-if='show'  
-                 @click='disableEvent'>
+                 @click='emitClose'>
             </div>
         </transition>
 
@@ -12,10 +12,8 @@
                  v-show='show'>
                 <div class='menu-container'>
                     <div class='spacer'></div>
-                    <ul>
-                        <li v-for='n in 150' :key='n'>
-                            {{n}}
-                        </li>
+                    <ul class='nav-links'>
+                        <nav-item :properties="item" v-for='(item, key) in items' :key='key'/>
                     </ul>
                     <div class='over-scroll'></div>
                 </div>
@@ -26,13 +24,17 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { NavEventBus } from '../../NavEventBus';
+import NavItem from './NavItem.vue';
+
+import { NavEventBus } from '../../NavEventBus'; // FIXME give a better path, if possible
+import routeList from '../../NavItems'
 
 export default Vue.extend({
     name: "NavBar",
     data() {
         return {
-            show: false // FIXME: code duplication, may require vuex
+            show: false, // FIXME: code duplication, may require vuex
+            items: routeList
         }
     },
     methods: {
@@ -40,7 +42,7 @@ export default Vue.extend({
         enable()  { this.show = true;       },
         toggle()  { this.show = !this.show; },
 
-        disableEvent() {
+        emitClose() {
             NavEventBus.$emit("close-nav-bar");            
         }
     },
@@ -53,6 +55,9 @@ export default Vue.extend({
         NavEventBus.$off('close-nav-bar',  this.disable);
         NavEventBus.$off('open-nav-bar',   this.enable);
         NavEventBus.$off('toggle-nav-bar', this.toggle);
+    },
+    components: {
+        "nav-item": NavItem
     }
 });
 
@@ -69,6 +74,10 @@ $blinder-opacity: 0.3;
 
     .over-scroll {
         height: 0; // amount to over-scroll
+    }
+
+    .nav-links {
+        list-style-type: none;
     }
 
     .blinder {
@@ -94,7 +103,7 @@ $blinder-opacity: 0.3;
 
     .scrollable {
         height: 2000px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .slide-enter-active,

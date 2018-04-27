@@ -1,13 +1,13 @@
 <template>
-  <div id="root" 
-       v-touch:swipe.right='openNavBar'
-       v-touch:swipe.left='closeNavBar'>
-    <hideable-header/>
-    <nav-bar/>
-    <main>
-      <router-view/>
-    </main>
-  </div>
+    <div id="root" 
+         v-touch:swipe.right='emitOpen'
+         v-touch:swipe.left='emitClose'>
+        <nav-bar/>            
+        <main>
+            <hideable-header/>
+            <router-view/>
+        </main>
+    </div>
 </template>
 
 <script lang='ts'>
@@ -18,45 +18,48 @@ import { NavEventBus } from './NavEventBus';
 
 
 export default Vue.extend({
-  name: 'App',
-  components: {
-    "nav-bar": NavBar,
-    "hideable-header" : HideableHeader
-  },
-  methods: {
-    openNavBar() {
-      NavEventBus.$emit('open-nav-bar');
+    name: 'App',
+    components: {
+        "nav-bar": NavBar,
+        "hideable-header" : HideableHeader
     },
-    closeNavBar() {
-      NavEventBus.$emit('close-nav-bar');
+    methods: {
+        emitOpen() {
+            NavEventBus.$emit('open-nav-bar');
+        },
+        emitClose() {
+            NavEventBus.$emit('close-nav-bar');
+        }
     }
-  }
-});
+    });
 </script>
 
 <style lang='scss' scoped>
-@import '@/style/master.scss'; 
-  main {
-    background: $background;
-  }
+@import '@/style/master.scss';
+    main {
+        height: 100vh;
+    }
 </style>
 
 <style lang='scss'>
-  // normalize everything, notice not scoped!
-  * {
-    margin: 0;
-    padding: 0
-  }
+@import '@/style/master.scss'; 
 
-  button:focus {
-    outline: none;
-  }
-  
-  button::-moz-focus-inner {
-    border: none;
-  }
+    // normalize everything, notice not scoped!
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+    button:focus {
+        outline: none;
+    }
+    
+    button::-moz-focus-inner {
+        border: none;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: $background;
+    }
 </style>

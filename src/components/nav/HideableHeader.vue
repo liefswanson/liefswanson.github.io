@@ -5,7 +5,8 @@
 
         <!-- actually header -->
         <transition name="hide">
-            <div class='hideable' v-if='show'>
+            <div class='hideable' 
+                 v-if='show'>
 
                 <!-- rotating button TODO isolate transition to only icon -->
                 <transition name='rotate-in'>
@@ -33,7 +34,7 @@
 
 <script lang='ts'>
 import Vue from "vue";
-import { NavEventBus } from '../../NavEventBus';
+import { NavEventBus } from '../../NavEventBus'; // FIXME give a better path, if possible
 
 
 export default Vue.extend({
@@ -90,7 +91,6 @@ export default Vue.extend({
 
     .spacer {
         height: $header-height;
-        background: $background;
     }
 
     .hideable {
@@ -99,9 +99,9 @@ export default Vue.extend({
         line-height: $header-height;
         width: 100%;
         position: fixed;
+        top: 0;
         left: 0;
         text-align: right;
-        top: 0;
         z-index: $header-z; 
     }
 

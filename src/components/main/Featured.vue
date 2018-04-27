@@ -23,7 +23,7 @@ Sit ex veniam fugiat exercitation ea dolore consectetur veniam voluptate officia
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Home',
+  name: 'Featured',
   data () {
     let m : String = "Lief's new website, in progress!"
     return {
