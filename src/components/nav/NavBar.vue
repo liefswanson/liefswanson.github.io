@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id='nav-root'>
         <transition name='fade'>
             <div class='blinder' 
                  v-if='show'  
@@ -11,10 +11,16 @@
             <nav class='nav-bar scrollable'
                  v-show='show'>
                 <div class='menu-container'>
+                    <!-- hack necessary due to hideable header -->
                     <div class='spacer'></div>
+
                     <ul class='nav-links'>
-                        <nav-item :properties="item" v-for='(item, key) in items' :key='key'/>
+                        <nav-item v-for='(item, key) in items' 
+                                  :key='key'
+                                  :properties="item"/>
                     </ul>
+                    
+                    <!-- allows for scrolling past the last element-->
                     <div class='over-scroll'></div>
                 </div>
             </nav>
@@ -78,6 +84,8 @@ $blinder-opacity: 0.3;
 
     .nav-links {
         list-style-type: none;
+        text-align: right;
+        //background: $purple; // debug only
     }
 
     .blinder {

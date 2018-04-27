@@ -1,10 +1,10 @@
 <template>
-    <div id="root" 
+    <div id='root' 
          v-touch:swipe.right='emitOpen'
          v-touch:swipe.left='emitClose'>
         <hideable-header/>
         <nav-bar/>            
-        <main>
+        <main id='main-root'>
             <router-view/>
         </main>
     </div>
@@ -38,6 +38,8 @@ export default Vue.extend({
 @import '@/style/master.scss';
     #root {
         height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: $background;
     }
 </style>
 
@@ -56,10 +58,5 @@ export default Vue.extend({
     
     button::-moz-focus-inner {
         border: none;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: $background;
     }
 </style>

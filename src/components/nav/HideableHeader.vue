@@ -1,12 +1,12 @@
 <template>
-    <header>
+    <header id='header-root'>
         <!-- keep content from being innaccessable behind header-->
         <div class=spacer></div>
 
-        <!-- actually header -->
+        <!-- actual header -->
         <transition name="hide">
             <div class='hideable' 
-                 v-if='show'>
+                 v-show='show'>
 
                 <!-- rotating button TODO isolate transition to only icon -->
                 <transition name='rotate-in'>
@@ -125,6 +125,7 @@ export default Vue.extend({
         width: $hamburger-size;
         height: $hamburger-size;
         margin: $hamburger-padding;
+        cursor: pointer;
     }
 
     .fa-bars {
