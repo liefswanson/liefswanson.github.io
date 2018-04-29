@@ -1,10 +1,6 @@
 <template>
     <div>
-        <div>Projects</div>
-        
-        <router-view>
-                
-        </router-view>
+        <div>Sample</div>
     </div>
 </template>
 

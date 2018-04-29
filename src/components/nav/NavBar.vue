@@ -111,7 +111,7 @@ $blinder-opacity: 0.3;
     }
 
     .scrollable {
-        height: 2000px;
+        height: 100vh;
         overflow-y: auto;
     }
 

@@ -17,7 +17,6 @@ import NavBar from "./components/nav/NavBar.vue";
 import NavEventBus from './scripts/nav/NavEventBus';
 import NavEvents from './scripts/nav/NavEvents'
 
-
 export default Vue.extend({
     name: 'App',
     components: {
@@ -30,24 +29,23 @@ export default Vue.extend({
         },
         emitClose() {
             NavEventBus.$emit(NavEvents.closeNav);
-        }
+        },
     }
-    });
+});
 </script>
 
 <style lang='scss' scoped>
 @import '@/style/master.scss';
+
     #root {
         height: 100vh;
         font-family: Arial, Helvetica, sans-serif;
-        background: $background;
+        background: $white;
     }
 </style>
 
-<style lang='scss'>
-@import '@/style/master.scss'; 
+<style lang='scss'> // normalize everything, notice not scoped!
 
-    // normalize everything, notice not scoped!
     * {
         margin: 0;
         padding: 0;

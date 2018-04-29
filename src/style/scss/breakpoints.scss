@@ -1,0 +1,8 @@
+$small-size:  48rem;
+$medium-size: 62rem;
+$large-size:  75rem;
+
+$on-phone:   'only screen and (max-width: #{$small-size} )';
+$on-tablet:  'only screen and (min-wdith: #{$small-size} ) and (max-width: #{$medium-size})';
+$on-laptop:  'only screen and (min-wdith: #{$medium-size}) and (max-width: #{$large-size} )';
+$on-desktop: 'only screen and (min-width: #{$large-size} )';

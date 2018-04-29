@@ -1,28 +1,6 @@
-@import 'swatches.scss';
-
-$header-height: 5rem;
-$nav-width: 13rem;
-$nav-item-size: 1.75rem; 
-$hamburger-size: 3rem;
-$hamburger-padding: ($header-height - $hamburger-size) / 2;
-
-$nav-animation-time: 0.5s;
-$header-animation-time: 0.35s;
-
-// z index ordering
-$z: 1;
-
-$blinder-z: $z; 
-$z : $z +1;
-
-$nav-z: $z;
-$z : $z +1;
-
-$header-z: $z;
-$z : $z +1;
-
-$hamburger-sideways-z: $z;
-$z : $z +1;
-
-$hamburger-upright-z: $z;
-$z : $z +1;
+@import './scss/swatches.scss';
+@import './scss/breakpoints.scss';
+@import './scss/measurements.scss';
+@import './scss/animations.scss';
+@import './scss/z_indexes.scss';
+@import './scss/mixins.scss';

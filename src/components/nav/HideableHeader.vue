@@ -8,23 +8,26 @@
             <div class='hideable' 
                  v-show='show'>
 
-                <!-- rotating button TODO isolate transition to only icon -->
+                <!-- rotating hamburger button
+                     TODO find a way to fix hack,  
+                     currently use two transitions instead of one 
+                     mode='out-in' doesn't work here -->
                 <transition name='rotate-in'>
                     <button class='hamburger-wrapper sideways' 
                             @click='hamburgerToggle'
                             v-show='showNav'>
-                            <i class='fa fa-bars'></i>
+                        <i class='fa fa-bars'></i>
                     </button>
                 </transition>
                 <transition name='rotate-out'>
                     <button class='hamburger-wrapper upright'
                             @click='hamburgerToggle'
                             v-show='!showNav'>
-                            <i class='fa fa-bars'></i>
+                        <i class='fa fa-bars'></i>
                     </button>
                 </transition>
 
-                <!-- logo -->
+                <!-- logo TODO inlined svg so I can manipulate color and font-->
                 <h1 class='logo' 
                     :style='{ color: color }'>
                     Lief Swanson
@@ -39,7 +42,9 @@
 import Vue from "vue";
 import NavEventBus from '../../scripts/nav/NavEventBus'; // FIXME give a better path, if possible
 import NavEvents from '../../scripts/nav/NavEvents';
-import Swatches from '../../style/Swatches';
+import Swatches from '../../style/ts/Swatches';
+
+let scroll = 'scroll';
 
 export default Vue.extend({
     name: "HideableHeader",
@@ -77,7 +82,7 @@ export default Vue.extend({
 
     },
     created() {
-        window.addEventListener(NavEvents.scroll, this.handleScroll);
+        window.addEventListener(scroll, this.handleScroll);
         
         NavEventBus.$on(NavEvents.closeNav,  this.disable);
         NavEventBus.$on(NavEvents.openNav,   this.enable);
@@ -86,7 +91,7 @@ export default Vue.extend({
         NavEventBus.$on(NavEvents.changeColor, this.changeColor);
     },
     destroyed() {
-        window.removeEventListener(NavEvents.scroll, this.handleScroll);
+        window.removeEventListener(scroll, this.handleScroll);
         
         NavEventBus.$off(NavEvents.closeNav,  this.disable);
         NavEventBus.$off(NavEvents.openNav,   this.enable);
@@ -121,7 +126,8 @@ export default Vue.extend({
         display: inline-block;
         vertical-align: middle;
         line-height: normal;
-        color: $secondary;
+
+        @include not-selectable;
     }
 
     // hamburger

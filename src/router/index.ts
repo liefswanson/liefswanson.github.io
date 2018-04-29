@@ -5,11 +5,9 @@ import Vue2TouchEvents from 'vue2-touch-events';
 
 import { SectionsMap } from '../scripts/nav/NavItems'
 
-import Featured from '@/components/main/Featured.vue';
-import Projects from '@/components/main/Projects.vue';
-import Contact from '@/components/main/Contact.vue';
-import About from '@/components/main/About.vue';
-import Resume from '@/components/main/Resume.vue';
+import Another from '../components/projects/Another.vue'
+import Sample from '../components/projects/Sample.vue'
+
 
 import NotFound from '@/components/main/NotFound.vue'
 
@@ -23,8 +21,24 @@ export default new Router({
             path: "/",
             redirect: { path: SectionsMap.featured.path }
         },
+        {
+            path: SectionsMap.projects.path,
+            name: SectionsMap.projects.name,
+            component: SectionsMap.projects.component,
+            children: [
+                {
+                    path: 'another',
+                    name: 'Another',
+                    component: Another
+                },
+                {
+                    path: "sample",
+                    name: 'Sample',
+                    component: Sample
+                }
+            ]
+        },
         SectionsMap.featured,
-        SectionsMap.projects,
         SectionsMap.resume,
         SectionsMap.contact,
         SectionsMap.about,

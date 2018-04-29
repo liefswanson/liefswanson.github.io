@@ -1,5 +1,4 @@
 const NavEvents = {
-    scroll: "scroll",
     changeColor: "change-color",
     closeNav: "close-nav-bar",
     openNav: "open-nav-bar",

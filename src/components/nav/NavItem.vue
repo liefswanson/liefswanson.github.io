@@ -1,5 +1,5 @@
 <template>
-    <router-link @click.native="emitAll" 
+    <router-link @click.native="followLink" 
                  :to='path' exact 
                  class='item'
                  :style='palette'
@@ -14,7 +14,7 @@
 import Vue from 'vue';
 import Section from '../../scripts/nav/Section';
 import NavEventBus from '../../scripts/nav/NavEventBus';
-import Swatches from '../../style/Swatches';
+import Swatches from '../../style/ts/Swatches';
 import NavEvents from '../../scripts/nav/NavEvents';
 
 
@@ -44,13 +44,13 @@ export default Vue.extend({
             var back = Swatches.medium;
             
             if (this.active) {
-                fore = this.color; //option 1
-                //fore = Swatches.dark; // option 2
-                //back = this.color; // option 2
+                //fore = this.color; //option 1
+                fore = Swatches.dark; // option 2
+                back = this.color; // option 2
             }
 
             if (this.hover) {
-                //fore = this.color; // option 2
+                fore = this.color; // option 2
                 back = Swatches.dark; // option 1 & 2 
             }
 
@@ -61,9 +61,10 @@ export default Vue.extend({
         }
     },
     methods: {
-        emitAll() {
+        followLink() {
             this.emitClose();
             this.emitColorChange();
+            this.mouseLeave(); // option 2
         },
         emitClose() {
             NavEventBus.$emit(NavEvents.closeNav);
@@ -75,7 +76,10 @@ export default Vue.extend({
         mouseLeave() { this.hover = false },
     },
     mounted() {
-        if(this.active) {
+        // set the initial colour correctly
+        // all NavItems will run this code, 
+        // but only the current one will change the colour
+        if(this.active) { 
             this.emitColorChange();
         }
     }
@@ -94,6 +98,8 @@ export default Vue.extend({
         font-size: $nav-item-size;
         font-weight: bolder;
         cursor: pointer;
+
+        @include not-selectable;
     }
 
 </style>
