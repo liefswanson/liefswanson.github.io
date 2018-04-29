@@ -1,3 +1,5 @@
+@import 'swatches.scss';
+
 $header-height: 5rem;
 $nav-width: 13rem;
 $nav-item-size: 1.75rem; 
@@ -24,20 +26,3 @@ $z : $z +1;
 
 $hamburger-upright-z: $z;
 $z : $z +1;
-
-// colour palette
-$dark: #102027;
-$medium: #37474f;
-$light: #62727b;
-$white: #f5f5f5;
-
-$teal: #64ffda;
-$orange: #ff6e40;
-$green: #69f0ae;
-$blue: #448aff;
-$purple: #e040fb;
-$yellow: #ffd740;
-
-$primary: $dark;
-$secondary: $white;
-$background: $white;

@@ -25,7 +25,10 @@
                 </transition>
 
                 <!-- logo -->
-                <h1 class='logo'>Lief Swanson</h1>
+                <h1 class='logo' 
+                    :style='{ color: color }'>
+                    Lief Swanson
+                </h1>
             </div>
         </transition>
     
@@ -34,8 +37,9 @@
 
 <script lang='ts'>
 import Vue from "vue";
-import { NavEventBus } from '../../NavEventBus'; // FIXME give a better path, if possible
-
+import NavEventBus from '../../scripts/nav/NavEventBus'; // FIXME give a better path, if possible
+import NavEvents from '../../scripts/nav/NavEvents';
+import Swatches from '../../style/Swatches';
 
 export default Vue.extend({
     name: "HideableHeader",
@@ -43,7 +47,8 @@ export default Vue.extend({
         return {
             previous: 0,
             show: true,
-            showNav: false // FIXME: code duplication, may require vuex!
+            showNav: false, // FIXME: code duplication, may require vuex!
+            color: Swatches.white
         };
     },
     methods: {
@@ -62,26 +67,32 @@ export default Vue.extend({
             this.previous = current;
         },
         hamburgerToggle() {
-            NavEventBus.$emit("toggle-nav-bar");
+            NavEventBus.$emit(NavEvents.toggleNav);
         },
-        disable() { this.showNav = false;         },
-        enable()  { this.showNav = true;          },
-        toggle()  { this.showNav = !this.showNav; }
+        disable() { this.showNav = false; },
+        enable()  { this.showNav = true;  },
+        toggle()  { this.showNav = !this.showNav; },
+        
+        changeColor(color: string) { this.color = color; },
 
     },
     created() {
-        window.addEventListener("scroll", this.handleScroll);
+        window.addEventListener(NavEvents.scroll, this.handleScroll);
         
-        NavEventBus.$on('close-nav-bar',  this.disable);
-        NavEventBus.$on('open-nav-bar',   this.enable);
-        NavEventBus.$on('toggle-nav-bar', this.toggle);
+        NavEventBus.$on(NavEvents.closeNav,  this.disable);
+        NavEventBus.$on(NavEvents.openNav,   this.enable);
+        NavEventBus.$on(NavEvents.toggleNav, this.toggle);
+
+        NavEventBus.$on(NavEvents.changeColor, this.changeColor);
     },
     destroyed() {
-        window.removeEventListener("scroll", this.handleScroll);
+        window.removeEventListener(NavEvents.scroll, this.handleScroll);
         
-        NavEventBus.$off('close-nav-bar',  this.disable);
-        NavEventBus.$off('open-nav-bar',   this.enable);
-        NavEventBus.$off('toggle-nav-bar', this.toggle);
+        NavEventBus.$off(NavEvents.closeNav,  this.disable);
+        NavEventBus.$off(NavEvents.openNav,   this.enable);
+        NavEventBus.$off(NavEvents.toggleNav, this.toggle);
+
+        NavEventBus.$off(NavEvents.changeColor, this.changeColor);        
     }
 });
 </script>

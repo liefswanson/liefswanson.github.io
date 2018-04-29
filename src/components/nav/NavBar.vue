@@ -15,7 +15,7 @@
                     <div class='spacer'></div>
 
                     <ul class='nav-links'>
-                        <nav-item v-for='(item, key) in items' 
+                        <nav-item v-for='(item, key) in sections' 
                                   :key='key'
                                   :properties="item"/>
                     </ul>
@@ -32,15 +32,16 @@
 import Vue from 'vue';
 import NavItem from './NavItem.vue';
 
-import { NavEventBus } from '../../NavEventBus'; // FIXME give a better path, if possible
-import routeList from '../../NavItems'
+import NavEventBus from '../../scripts/nav/NavEventBus'; // FIXME give a better path, if possible
+import Sections from '../../scripts/nav/NavItems'
+import NavEvents from '../../scripts/nav/NavEvents';
 
 export default Vue.extend({
     name: "NavBar",
     data() {
         return {
             show: false, // FIXME: code duplication, may require vuex
-            items: routeList
+            sections: Sections
         }
     },
     methods: {
@@ -49,18 +50,18 @@ export default Vue.extend({
         toggle()  { this.show = !this.show; },
 
         emitClose() {
-            NavEventBus.$emit("close-nav-bar");            
+            NavEventBus.$emit(NavEvents.closeNav);            
         }
     },
     created() {
-        NavEventBus.$on('close-nav-bar',  this.disable);
-        NavEventBus.$on('open-nav-bar',   this.enable);
-        NavEventBus.$on('toggle-nav-bar', this.toggle);
+        NavEventBus.$on(NavEvents.closeNav,  this.disable);
+        NavEventBus.$on(NavEvents.openNav,   this.enable);
+        NavEventBus.$on(NavEvents.toggleNav, this.toggle);
     }, 
     destroyed() {
-        NavEventBus.$off('close-nav-bar',  this.disable);
-        NavEventBus.$off('open-nav-bar',   this.enable);
-        NavEventBus.$off('toggle-nav-bar', this.toggle);
+        NavEventBus.$off(NavEvents.closeNav,  this.disable);
+        NavEventBus.$off(NavEvents.openNav,   this.enable);
+        NavEventBus.$off(NavEvents.toggleNav, this.toggle);
     },
     components: {
         "nav-item": NavItem

@@ -14,7 +14,8 @@
 import Vue from 'vue';
 import HideableHeader from "./components/nav/HideableHeader.vue";
 import NavBar from "./components/nav/NavBar.vue";
-import { NavEventBus } from './NavEventBus';
+import NavEventBus from './scripts/nav/NavEventBus';
+import NavEvents from './scripts/nav/NavEvents'
 
 
 export default Vue.extend({
@@ -25,10 +26,10 @@ export default Vue.extend({
     },
     methods: {
         emitOpen() {
-            NavEventBus.$emit('open-nav-bar');
+            NavEventBus.$emit(NavEvents.openNav);
         },
         emitClose() {
-            NavEventBus.$emit('close-nav-bar');
+            NavEventBus.$emit(NavEvents.closeNav);
         }
     }
     });
