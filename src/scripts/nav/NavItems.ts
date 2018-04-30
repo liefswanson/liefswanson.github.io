@@ -45,17 +45,22 @@ const Sections = [
 
 ]
 
-const SectionsMap = {
-    featured: Sections.filter( (elem) => elem.component == Featured )[0],
-    projects: Sections.filter( (elem) => elem.component == Projects )[0],
-    resume:   Sections.filter( (elem) => elem.component == Resume   )[0],
-    contact:  Sections.filter( (elem) => elem.component == Contact  )[0],
-    about:    Sections.filter( (elem) => elem.component == About    )[0],
+const SectionMap = {
+    featured: Sections.filter(
+        (elem) => elem.component == Featured )[0],
+    projects: Sections.filter(
+        (elem) => elem.component == Projects )[0],
+    resume:   Sections.filter(
+        (elem) => elem.component == Resume   )[0],
+    contact:  Sections.filter(
+        (elem) => elem.component == Contact  )[0],
+    about:    Sections.filter(
+        (elem) => elem.component == About    )[0],
 }
 
 export default Sections;
 
 export { 
-    Sections, 
-    SectionsMap 
+    Sections,
+    SectionMap
 };

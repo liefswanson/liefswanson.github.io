@@ -1,6 +1,7 @@
 <template>
     <router-link @click.native="followLink" 
-                 :to='path' exact 
+                 :to='path' 
+                 exact 
                  class='item'
                  :style='palette'
                  @mouseenter.native='mouseEnter'
@@ -12,10 +13,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Section from '../../scripts/nav/Section';
-import NavEventBus from '../../scripts/nav/NavEventBus';
-import Swatches from '../../style/ts/Swatches';
-import NavEvents from '../../scripts/nav/NavEvents';
+import Section from '@/scripts/nav/Section';
+import NavEventBus from '@/scripts/nav/NavEventBus';
+import Swatches from '@/style/ts/Swatches';
+import NavEvents from '@/scripts/nav/NavEvents';
 
 
 
@@ -33,11 +34,17 @@ export default Vue.extend({
         }
     },
     computed: {
-        path():   string  { return this.properties.path  },
-        name():   string  { return this.properties.name  },
-        icon():   string  { return this.properties.icon  },
-        color():  string  { return this.properties.color },
-        active(): boolean { return this.$route.name == this.name },
+        path():  string  { return this.properties.path  },
+        name():  string  { return this.properties.name  },
+        icon():  string  { return this.properties.icon  },
+        color(): string  { return this.properties.color },
+        
+        active(): boolean {
+            let fullPath = this.$route.fullPath;
+            let location = fullPath.indexOf(this.path);
+            
+            return location != -1;
+        },
 
         palette(): object {
             var fore = Swatches.white; 

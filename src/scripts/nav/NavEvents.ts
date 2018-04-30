@@ -1,7 +1,8 @@
 const NavEvents = {
     changeColor: "change-color",
-    closeNav: "close-nav-bar",
-    openNav: "open-nav-bar",
+    
+    closeNav:  "close-nav-bar",
+    openNav:   "open-nav-bar",
     toggleNav: "toggle-nav-bar"
 }
 
