@@ -1,7 +1,8 @@
 enum Swatch {
-    dark   = '#102027',
+    dark   = '#242424',
     medium = '#37474f',
     light  = '#62727b',
+    xlight = '#bdbdbd',
     bright = '#f5f5f5',
 
     feature  = '#4bb4ff',

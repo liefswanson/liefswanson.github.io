@@ -1,30 +1,30 @@
 <template>
     <div id='nav-root'>
         <transition name='fade'>
-            <div class='blinder' 
-                 v-if='show'  
+            <div class='blinder'
+                 v-if='show'
                  @click='emitClose'>
             </div>
         </transition>
 
         <transition name='slide'>
-            <nav class='nav-bar scrollable'
+            <nav class='nav-bar'
                  v-show='show'>
                 <div class='menu-container'>
                     <!-- hack necessary due to hideable header -->
                     <div class='spacer'></div>
 
                     <ul class='nav-links'>
-                        <nav-item v-for='(item, key) in sections' 
+                        <nav-item v-for='(item, key) in sections'
                                   :key='key'
                                   :properties="item"/>
                     </ul>
-                    
+
                     <!-- allows for scrolling past the last element-->
                     <div class='over-scroll'></div>
                 </div>
             </nav>
-        </transition>    
+        </transition>
     </div>
 </template>
 
@@ -57,7 +57,7 @@ export default Vue.extend({
         NavEventBus.$on(NavEvent.closeNav,  this.disable);
         NavEventBus.$on(NavEvent.openNav,   this.enable);
         NavEventBus.$on(NavEvent.toggleNav, this.toggle);
-    }, 
+    },
     destroyed() {
         NavEventBus.$off(NavEvent.closeNav,  this.disable);
         NavEventBus.$off(NavEvent.openNav,   this.enable);
@@ -108,9 +108,6 @@ $blinder-opacity: 0.3;
         width: $nav-width;
         background: $medium;
         z-index: $nav-z;
-    }
-
-    .scrollable {
         height: 100vh;
         overflow-y: auto;
     }

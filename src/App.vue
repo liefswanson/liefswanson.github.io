@@ -1,9 +1,9 @@
 <template>
-    <div id='root' 
+    <div id='root'
          v-touch:swipe.right='emitOpen'
          v-touch:swipe.left='emitClose'>
         <hideable-header/>
-        <nav-bar/>            
+        <nav-bar/>
         <main id='main-root'>
             <router-view/>
         </main>
@@ -43,20 +43,22 @@ export default Vue.extend({
         font-family: Arial, Helvetica, sans-serif;
         background: $bright;
     }
+
+    #main-root {
+        height: calc(100% - #{$header-height});
+    }
 </style>
 
 <style lang='scss'> // normalize everything, notice not scoped!
+@import '@/style/normalize.scss';
 
     * {
-        margin: 0;
         padding: 0;
+        margin: 0;
     }
 
     button:focus {
         outline: none;
     }
-    
-    button::-moz-focus-inner {
-        border: none;
-    }
+
 </style>

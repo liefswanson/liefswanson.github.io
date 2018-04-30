@@ -5,15 +5,15 @@
 
         <!-- actual header -->
         <transition name="hide">
-            <div class='hideable' 
+            <div class='hideable'
                  v-show='show'>
 
                 <!-- rotating hamburger button
-                     TODO find a way to fix hack,  
-                     currently use two transitions instead of one 
+                     TODO find a way to fix hack,
+                     currently use two transitions instead of one
                      mode='out-in' doesn't work here -->
                 <transition name='rotate-in'>
-                    <button class='hamburger-wrapper sideways' 
+                    <button class='hamburger-wrapper sideways'
                             @click='hamburgerToggle'
                             v-show='showNav'>
                         <i class='fa fa-bars'></i>
@@ -28,13 +28,13 @@
                 </transition>
 
                 <!-- logo TODO inlined svg so I can manipulate color and font-->
-                <h1 class='logo' 
+                <h1 class='logo'
                     :style='{ color: color }'>
                     Lief Swanson
                 </h1>
             </div>
         </transition>
-    
+
     </header>
 </template>
 
@@ -69,7 +69,7 @@ export default Vue.extend({
             } else if (!this.show && scrollingUp) {
                 this.show = true;
             } // else... already in the right state!
-            
+
             this.previous = current;
         },
         hamburgerToggle() {
@@ -78,13 +78,13 @@ export default Vue.extend({
         disable() { this.showNav = false; },
         enable()  { this.showNav = true;  },
         toggle()  { this.showNav = !this.showNav; },
-        
+
         changeColor(color: Swatch) { this.color = color; },
 
     },
     created() {
         window.addEventListener(scroll, this.handleScroll);
-        
+
         NavEventBus.$on(NavEvent.closeNav,  this.disable);
         NavEventBus.$on(NavEvent.openNav,   this.enable);
         NavEventBus.$on(NavEvent.toggleNav, this.toggle);
@@ -93,7 +93,7 @@ export default Vue.extend({
     },
     destroyed() {
         window.removeEventListener(scroll, this.handleScroll);
-        
+
         NavEventBus.$off(NavEvent.closeNav,  this.disable);
         NavEventBus.$off(NavEvent.openNav,   this.enable);
         NavEventBus.$off(NavEvent.toggleNav, this.toggle);
@@ -119,11 +119,11 @@ export default Vue.extend({
         top: 0;
         left: 0;
         text-align: right;
-        z-index: $header-z; 
+        z-index: $header-z;
     }
 
     .logo {
-        margin: 1rem;
+        margin-right: 1em;
         display: inline-block;
         vertical-align: middle;
         line-height: normal;
@@ -147,9 +147,7 @@ export default Vue.extend({
     }
 
     .fa-bars {
-        height: $hamburger-size;
         font-size: $hamburger-size;
-        line-height: $hamburger-size;
     }
 
     .sideways {
@@ -158,7 +156,7 @@ export default Vue.extend({
     }
 
     .upright {
-        z-index: $hamburger-upright-z;        
+        z-index: $hamburger-upright-z;
     }
 
     // rotate hamburger

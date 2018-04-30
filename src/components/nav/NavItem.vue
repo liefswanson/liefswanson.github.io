@@ -1,7 +1,7 @@
 <template>
-    <router-link @click.native="followLink" 
-                 :to='path' 
-                 exact 
+    <router-link @click.native="followLink"
+                 :to='path'
+                 exact
                  class='item'
                  :style='palette'
                  @mouseenter.native='mouseEnter'
@@ -40,18 +40,18 @@ export default Vue.extend({
         name():  string  { return this.properties.name  },
         icon():  string  { return this.properties.icon  },
         color(): Swatch  { return this.properties.color },
-        
+
         active(): boolean {
             let fullPath = this.$route.fullPath;
             let location = fullPath.indexOf(this.path);
-            
+
             return location != -1;
         },
 
         palette(): object {
             var fore = Swatch.bright;
             var back = Swatch.medium;
-            
+
             if (this.active) {
                 //fore = this.color; //option 1
                 fore = Swatch.dark; // option 2
@@ -63,7 +63,7 @@ export default Vue.extend({
                 back = Swatch.dark; // option 1 & 2
             }
 
-            return { 
+            return {
                 color: fore,
                 background: back
             }
@@ -86,9 +86,9 @@ export default Vue.extend({
     },
     mounted() {
         // set the initial colour correctly
-        // all NavItems will run this code, 
+        // all NavItems will run this code,
         // but only the current one will change the colour
-        if(this.active) { 
+        if(this.active) {
             this.emitColorChange();
         }
     }

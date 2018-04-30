@@ -1,4 +1,4 @@
-// TODO: vue2-touch-events doesn't provide types 
+// TODO: vue2-touch-events doesn't provide types
 // send pull request with some once I figure it out
 // @ts-ignore
 import Vue2TouchEvents from 'vue2-touch-events';
@@ -33,7 +33,7 @@ const projects = {
 
 export default new Router({
     mode: 'history',
-    routes:     [ 
+    routes:     [
         landing,
         projects,
         SectionMap.featured,

@@ -5,16 +5,20 @@ const Projects = [
     {
         path: "sample",
         name: "Sample",
-        description: "this is a sample project",
+        component: Sample,
+
+        title: "A Sample!",
+        blurb: "this is a sample project",
         thumb: "",
-        component: Sample
     },
     {
         path: "another",
         name: "Another",
-        description: "YAP: yet another project",
+        component: Another,
+
+        title: "Y.A.P.",
+        blurb: "YAP: yet another project",
         thumb: "",
-        component: Another
     }
 ];
 

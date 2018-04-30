@@ -1,6 +1,6 @@
-const small  = '48rem';
-const medium = '62rem';
-const large  = '75rem';
+const small  = '48em';
+const medium = '62em';
+const large  = '75em';
 
 const onPhone   = window.matchMedia('(max-width: ' + small  + ')');
 const onTablet  = window.matchMedia('(min-width: ' + small  + ') and (max-width: ' + medium + ')');

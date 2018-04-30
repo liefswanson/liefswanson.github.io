@@ -21,11 +21,11 @@ const Sections = [
         name: "Projects",
         icon: "./assets/projects.min.svg",
         color: Swatch.projects,
-        component: Projects      
+        component: Projects
     },
     {
         path: "/resume",
-        name: "Résume",        
+        name: "Résume",
         icon: "./assets/resume.min.svg",
         color: Swatch.resume,
         component: Resume
@@ -47,6 +47,7 @@ const Sections = [
 
 ]
 
+// NOTE: the method signature is true evil, this is better for everyone
 const SectionMap = {
     featured: Sections.filter(
         (elem) => elem.component == Featured )[0],
@@ -62,7 +63,7 @@ const SectionMap = {
 
 export default Sections;
 
-export { 
+export {
     Sections,
     SectionMap
 };
