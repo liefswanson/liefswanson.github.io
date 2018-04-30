@@ -16,7 +16,7 @@ import HideableHeader from "@/components/nav/HideableHeader.vue";
 import NavBar         from "@/components/nav/NavBar.vue";
 
 import NavEventBus from '@/scripts/nav/NavEventBus';
-import NavEvents   from '@/scripts/nav/NavEvents'
+import NavEvent    from '@/scripts/nav/NavEvent'
 
 export default Vue.extend({
     name: 'App',
@@ -26,10 +26,10 @@ export default Vue.extend({
     },
     methods: {
         emitOpen() {
-            NavEventBus.$emit(NavEvents.openNav);
+            NavEventBus.$emit(NavEvent.openNav);
         },
         emitClose() {
-            NavEventBus.$emit(NavEvents.closeNav);
+            NavEventBus.$emit(NavEvent.closeNav);
         },
     }
 });
@@ -41,7 +41,7 @@ export default Vue.extend({
     #root {
         height: 100vh;
         font-family: Arial, Helvetica, sans-serif;
-        background: $white;
+        background: $bright;
     }
 </style>
 

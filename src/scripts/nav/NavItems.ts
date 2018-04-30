@@ -6,40 +6,42 @@ import Resume   from '@/components/main/Resume.vue';
 import Contact  from '@/components/main/Contact.vue';
 import About    from '@/components/main/About.vue';
 
+import Swatch from '@/style/ts/Swatch';
+
 const Sections = [
     {
         path: "/featured",
         name: "Featured",
         icon: "./assets/featured.min.svg",
-        color: "#4bb4ff",
+        color: Swatch.feature,
         component: Featured
     },
     {
         path: "/projects",
         name: "Projects",
         icon: "./assets/projects.min.svg",
-        color: "#39e859",
+        color: Swatch.projects,
         component: Projects      
     },
     {
         path: "/resume",
         name: "Résume",        
         icon: "./assets/resume.min.svg",
-        color: "#ffec31",
+        color: Swatch.resume,
         component: Resume
     },
     {
         path: "/contact",
         name: "Contact",
         icon: "./assets/contact.min.svg",
-        color: "#f27827",
+        color: Swatch.contact,
         component: Contact
     },
     {
         path: "/about",
         name: "About",
         icon: "./assets/about.min.svg",
-        color: "#f84ce6",
+        color: Swatch.about,
         component: About
     },
 

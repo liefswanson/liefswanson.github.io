@@ -16,9 +16,9 @@ import Vue from 'vue';
 
 import Section     from '@/scripts/nav/Section';
 import NavEventBus from '@/scripts/nav/NavEventBus';
-import NavEvents   from '@/scripts/nav/NavEvents';
+import NavEvent    from '@/scripts/nav/NavEvent';
 
-import Swatches    from '@/style/ts/Swatches';
+import Swatch from '@/style/ts/Swatch';
 
 
 
@@ -39,7 +39,7 @@ export default Vue.extend({
         path():  string  { return this.properties.path  },
         name():  string  { return this.properties.name  },
         icon():  string  { return this.properties.icon  },
-        color(): string  { return this.properties.color },
+        color(): Swatch  { return this.properties.color },
         
         active(): boolean {
             let fullPath = this.$route.fullPath;
@@ -49,23 +49,23 @@ export default Vue.extend({
         },
 
         palette(): object {
-            var fore = Swatches.white; 
-            var back = Swatches.medium;
+            var fore = Swatch.bright;
+            var back = Swatch.medium;
             
             if (this.active) {
                 //fore = this.color; //option 1
-                fore = Swatches.dark; // option 2
+                fore = Swatch.dark; // option 2
                 back = this.color; // option 2
             }
 
             if (this.hover) {
                 fore = this.color; // option 2
-                back = Swatches.dark; // option 1 & 2 
+                back = Swatch.dark; // option 1 & 2
             }
 
             return { 
                 color: fore,
-                background: back     
+                background: back
             }
         }
     },
@@ -76,10 +76,10 @@ export default Vue.extend({
             this.mouseLeave(); // option 2
         },
         emitClose() {
-            NavEventBus.$emit(NavEvents.closeNav);
+            NavEventBus.$emit(NavEvent.closeNav);
         },
         emitColorChange() {
-            NavEventBus.$emit(NavEvents.changeColor, this.color);
+            NavEventBus.$emit(NavEvent.changeColor, this.color);
         },
         mouseEnter() { this.hover = true  },
         mouseLeave() { this.hover = false },
@@ -103,7 +103,7 @@ export default Vue.extend({
     .item {
         padding: $nav-item-size;
         padding-left: 0;
-        color: $white;
+        color: $bright;
         font-size: $nav-item-size;
         font-weight: bolder;
         cursor: pointer;

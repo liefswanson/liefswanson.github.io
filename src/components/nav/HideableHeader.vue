@@ -42,8 +42,8 @@
 import Vue from "vue";
 
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import NavEvents   from '@/scripts/nav/NavEvents';
-import Swatches    from '@/style/ts/Swatches';
+import NavEvent    from '@/scripts/nav/NavEvent';
+import Swatch      from '@/style/ts/Swatch';
 
 let scroll = 'scroll';
 
@@ -54,7 +54,7 @@ export default Vue.extend({
             previous: 0,
             show: true,
             showNav: false, // FIXME: code duplication, may require vuex!
-            color: Swatches.white
+            color: Swatch.bright
         };
     },
     methods: {
@@ -73,32 +73,32 @@ export default Vue.extend({
             this.previous = current;
         },
         hamburgerToggle() {
-            NavEventBus.$emit(NavEvents.toggleNav);
+            NavEventBus.$emit(NavEvent.toggleNav);
         },
         disable() { this.showNav = false; },
         enable()  { this.showNav = true;  },
         toggle()  { this.showNav = !this.showNav; },
         
-        changeColor(color: string) { this.color = color; },
+        changeColor(color: Swatch) { this.color = color; },
 
     },
     created() {
         window.addEventListener(scroll, this.handleScroll);
         
-        NavEventBus.$on(NavEvents.closeNav,  this.disable);
-        NavEventBus.$on(NavEvents.openNav,   this.enable);
-        NavEventBus.$on(NavEvents.toggleNav, this.toggle);
+        NavEventBus.$on(NavEvent.closeNav,  this.disable);
+        NavEventBus.$on(NavEvent.openNav,   this.enable);
+        NavEventBus.$on(NavEvent.toggleNav, this.toggle);
 
-        NavEventBus.$on(NavEvents.changeColor, this.changeColor);
+        NavEventBus.$on(NavEvent.changeColor, this.changeColor);
     },
     destroyed() {
         window.removeEventListener(scroll, this.handleScroll);
         
-        NavEventBus.$off(NavEvents.closeNav,  this.disable);
-        NavEventBus.$off(NavEvents.openNav,   this.enable);
-        NavEventBus.$off(NavEvents.toggleNav, this.toggle);
+        NavEventBus.$off(NavEvent.closeNav,  this.disable);
+        NavEventBus.$off(NavEvent.openNav,   this.enable);
+        NavEventBus.$off(NavEvent.toggleNav, this.toggle);
 
-        NavEventBus.$off(NavEvents.changeColor, this.changeColor);        
+        NavEventBus.$off(NavEvent.changeColor, this.changeColor);
     }
 });
 </script>

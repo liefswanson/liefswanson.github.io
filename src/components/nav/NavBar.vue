@@ -34,7 +34,7 @@ import NavItem from './NavItem.vue';
 
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
 import Sections    from '@/scripts/nav/NavItems'
-import NavEvents   from '@/scripts/nav/NavEvents';
+import NavEvent    from '@/scripts/nav/NavEvent';
 
 export default Vue.extend({
     name: "NavBar",
@@ -50,18 +50,18 @@ export default Vue.extend({
         toggle()  { this.show = !this.show; },
 
         emitClose() {
-            NavEventBus.$emit(NavEvents.closeNav);            
+            NavEventBus.$emit(NavEvent.closeNav);
         }
     },
     created() {
-        NavEventBus.$on(NavEvents.closeNav,  this.disable);
-        NavEventBus.$on(NavEvents.openNav,   this.enable);
-        NavEventBus.$on(NavEvents.toggleNav, this.toggle);
+        NavEventBus.$on(NavEvent.closeNav,  this.disable);
+        NavEventBus.$on(NavEvent.openNav,   this.enable);
+        NavEventBus.$on(NavEvent.toggleNav, this.toggle);
     }, 
     destroyed() {
-        NavEventBus.$off(NavEvents.closeNav,  this.disable);
-        NavEventBus.$off(NavEvents.openNav,   this.enable);
-        NavEventBus.$off(NavEvents.toggleNav, this.toggle);
+        NavEventBus.$off(NavEvent.closeNav,  this.disable);
+        NavEventBus.$off(NavEvent.openNav,   this.enable);
+        NavEventBus.$off(NavEvent.toggleNav, this.toggle);
     },
     components: {
         "nav-item": NavItem
