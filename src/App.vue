@@ -11,11 +11,12 @@
 </template>
 
 <script lang='ts'>
-import Vue from 'vue';
-import HideableHeader from "./components/nav/HideableHeader.vue";
-import NavBar from "./components/nav/NavBar.vue";
-import NavEventBus from './scripts/nav/NavEventBus';
-import NavEvents from './scripts/nav/NavEvents'
+import Vue            from 'vue';
+import HideableHeader from "@/components/nav/HideableHeader.vue";
+import NavBar         from "@/components/nav/NavBar.vue";
+
+import NavEventBus from '@/scripts/nav/NavEventBus';
+import NavEvents   from '@/scripts/nav/NavEvents'
 
 export default Vue.extend({
     name: 'App',

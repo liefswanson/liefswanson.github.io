@@ -1,4 +1,4 @@
-import Sample from '@/components/projects/Sample.vue'
+import Sample  from '@/components/projects/Sample.vue'
 import Another from '@/components/projects/Another.vue'
 
 const Projects = [

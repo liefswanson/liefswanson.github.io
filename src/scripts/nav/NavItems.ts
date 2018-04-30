@@ -2,9 +2,9 @@ import Section from './Section'
 
 import Featured from '@/components/main/Featured.vue';
 import Projects from '@/components/main/Projects.vue';
-import Resume from '@/components/main/Resume.vue';
-import Contact from '@/components/main/Contact.vue';
-import About from '@/components/main/About.vue';
+import Resume   from '@/components/main/Resume.vue';
+import Contact  from '@/components/main/Contact.vue';
+import About    from '@/components/main/About.vue';
 
 const Sections = [
     {

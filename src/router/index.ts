@@ -1,12 +1,14 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-//@ts-ignore
+// TODO: vue2-touch-events doesn't provide types 
+// send pull request with some once I figure it out
+// @ts-ignore
 import Vue2TouchEvents from 'vue2-touch-events';
+import Router          from 'vue-router';
+import Vue             from 'vue';
 
-import { SectionMap } from '@/scripts/nav/NavItems';
-import ProjectList from '@/scripts/main/ProjectItems';
+import { SectionMap }  from '@/scripts/nav/NavItems';
+import ProjectList     from '@/scripts/main/ProjectItems';
 
-import NotFound from '@/components/main/NotFound.vue';
+import NotFound        from '@/components/main/NotFound.vue';
 
 Vue.use(Router);
 Vue.use(Vue2TouchEvents);

@@ -40,9 +40,10 @@
 
 <script lang='ts'>
 import Vue from "vue";
+
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import NavEvents from '@/scripts/nav/NavEvents';
-import Swatches from '@/style/ts/Swatches';
+import NavEvents   from '@/scripts/nav/NavEvents';
+import Swatches    from '@/style/ts/Swatches';
 
 let scroll = 'scroll';
 

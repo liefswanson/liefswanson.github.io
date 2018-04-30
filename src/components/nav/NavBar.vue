@@ -29,12 +29,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue     from 'vue';
 import NavItem from './NavItem.vue';
 
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import Sections from '@/scripts/nav/NavItems'
-import NavEvents from '@/scripts/nav/NavEvents';
+import Sections    from '@/scripts/nav/NavItems'
+import NavEvents   from '@/scripts/nav/NavEvents';
 
 export default Vue.extend({
     name: "NavBar",

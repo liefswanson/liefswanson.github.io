@@ -13,10 +13,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Section from '@/scripts/nav/Section';
+
+import Section     from '@/scripts/nav/Section';
 import NavEventBus from '@/scripts/nav/NavEventBus';
-import Swatches from '@/style/ts/Swatches';
-import NavEvents from '@/scripts/nav/NavEvents';
+import NavEvents   from '@/scripts/nav/NavEvents';
+
+import Swatches    from '@/style/ts/Swatches';
 
 
 

@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue         from 'vue';
 import ProjectList from '@/scripts/main/ProjectItems';
 
 export default Vue.extend({

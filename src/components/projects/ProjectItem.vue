@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 import Project from '@/scripts/main/Project';
 
 export default Vue.extend({
