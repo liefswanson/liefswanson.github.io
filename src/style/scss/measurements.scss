@@ -1,7 +1,8 @@
-$header-height: 5em;
+$header-height: 3.5rem;
 
-$hamburger-size: 3em;
+$hamburger-size: 2.5rem;
 $hamburger-padding: ($header-height - $hamburger-size) / 2;
 
-$nav-width: 13em;
-$nav-item-size: 1.4em;
+$nav-width: 11rem;
+$nav-item-size: 1.6rem;
+$nav-item-padding: $nav-item-size * 0.65;

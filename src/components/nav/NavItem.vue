@@ -2,7 +2,7 @@
     <router-link @click.native="followLink"
                  :to='path'
                  exact
-                 class='item'
+                 class='item clickable'
                  :style='palette'
                  @mouseenter.native='mouseEnter'
                  @mouseleave.native='mouseLeave'
@@ -16,9 +16,10 @@ import Vue from 'vue';
 
 import Section     from '@/scripts/nav/Section';
 import NavEventBus from '@/scripts/nav/NavEventBus';
-import NavEvent    from '@/scripts/nav/NavEvent';
+import Events      from '@/scripts/nav/Events';
 
-import Swatch from '@/style/ts/Swatch';
+import Breakpoints from '@/style/ts/Breakpoints';
+import Swatch      from '@/style/ts/Swatch';
 
 
 
@@ -71,15 +72,18 @@ export default Vue.extend({
     },
     methods: {
         followLink() {
-            this.emitClose();
+            if (Breakpoints.onTabletOrDown()) {
+                this.emitClose();
+            }
+
             this.emitColorChange();
             this.mouseLeave(); // option 2
         },
         emitClose() {
-            NavEventBus.$emit(NavEvent.closeNav);
+            NavEventBus.$emit(Events.closeNav);
         },
         emitColorChange() {
-            NavEventBus.$emit(NavEvent.changeColor, this.color);
+            NavEventBus.$emit(Events.changeColor, this.color);
         },
         mouseEnter() { this.hover = true  },
         mouseLeave() { this.hover = false },
@@ -101,12 +105,11 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
     .item {
-        padding: $nav-item-size;
+        padding: $nav-item-padding;
         padding-left: 0;
         color: $bright;
         font-size: $nav-item-size;
         font-weight: bolder;
-        cursor: pointer;
 
         @include not-selectable;
     }

@@ -17,7 +17,8 @@ import Vue from 'vue';
 
 import Project        from '@/scripts/main/Project';
 import { SectionMap } from '@/scripts/nav/NavItems';
-import { SSL_OP_CRYPTOPRO_TLSEXT_BUG } from 'constants';
+import { pxInStd } from '@/style/ts/StandardUnits';
+
 
 export default Vue.extend({
     name: 'ProjectItem',
@@ -31,7 +32,7 @@ export default Vue.extend({
             type: Object as () => Project,
             required: true
         },
-        height: {
+        autoRows: {
             type: Number,
             required: true
         },
@@ -63,19 +64,18 @@ export default Vue.extend({
 
         },
         updateSpan() {
-            const pxInEm = 16;
-
             var content = this.$refs.content as Element;
-            var span = content.getBoundingClientRect().height / pxInEm;
-            span = span / (this.height + this.gap);
+            var span = content.getBoundingClientRect().height / pxInStd;
+            span = span / (this.autoRows + this.gap);
             span = Math.ceil(span);
 
             this.rowSpan = span;
         },
     },
     mounted() {
-        this.updateSpan();
         window.addEventListener("resize", this.updateSpan);
+
+        this.updateSpan();
     },
     beforeDestroy() {
         window.removeEventListener("resize", this.updateSpan);
@@ -87,13 +87,14 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
     .item {
-        cursor: pointer;
         //border: 1px solid $xlight;
         background: $bright;
+
+        @include clickable;
     }
 
     .title {
-        padding: 0.5em;
+        padding: 0.5rem;
         background: $medium; //projects-swatch;
         font-weight: bold;
         //border-bottom: 0.25em solid $projects-swatch;
@@ -101,7 +102,7 @@ export default Vue.extend({
     }
 
     .blurb {
-        padding: 1em;
+        padding: 1rem;
         color: $dark;
     }
 </style>

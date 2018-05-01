@@ -1,8 +1,5 @@
 <template>
     <header id='header-root'>
-        <!-- keep content from being innaccessable behind header-->
-        <div class=spacer></div>
-
         <!-- actual header -->
         <transition name="hide">
             <div class='hideable'
@@ -42,10 +39,8 @@
 import Vue from "vue";
 
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import NavEvent    from '@/scripts/nav/NavEvent';
+import Events      from '@/scripts/nav/Events';
 import Swatch      from '@/style/ts/Swatch';
-
-let scroll = 'scroll';
 
 export default Vue.extend({
     name: "HideableHeader",
@@ -53,9 +48,14 @@ export default Vue.extend({
         return {
             previous: 0,
             show: true,
-            showNav: false, // FIXME: code duplication, may require vuex!
             color: Swatch.bright
         };
+    },
+    props: {
+        showNav: {
+            type: Boolean,
+            require: true
+        }
     },
     methods: {
         handleScroll() {
@@ -73,42 +73,26 @@ export default Vue.extend({
             this.previous = current;
         },
         hamburgerToggle() {
-            NavEventBus.$emit(NavEvent.toggleNav);
+            NavEventBus.$emit(Events.toggleNav);
         },
-        disable() { this.showNav = false; },
-        enable()  { this.showNav = true;  },
-        toggle()  { this.showNav = !this.showNav; },
 
         changeColor(color: Swatch) { this.color = color; },
 
     },
     created() {
-        window.addEventListener(scroll, this.handleScroll);
-
-        NavEventBus.$on(NavEvent.closeNav,  this.disable);
-        NavEventBus.$on(NavEvent.openNav,   this.enable);
-        NavEventBus.$on(NavEvent.toggleNav, this.toggle);
-
-        NavEventBus.$on(NavEvent.changeColor, this.changeColor);
+        window.addEventListener(Events.scroll, this.handleScroll);
+        NavEventBus.$on(Events.changeColor, this.changeColor);
     },
     destroyed() {
-        window.removeEventListener(scroll, this.handleScroll);
+        window.removeEventListener(Events.scroll, this.handleScroll);
 
-        NavEventBus.$off(NavEvent.closeNav,  this.disable);
-        NavEventBus.$off(NavEvent.openNav,   this.enable);
-        NavEventBus.$off(NavEvent.toggleNav, this.toggle);
-
-        NavEventBus.$off(NavEvent.changeColor, this.changeColor);
+        NavEventBus.$off(Events.changeColor, this.changeColor);
     }
 });
 </script>
 
 <style lang="scss" scoped>
 @import "src/style/master.scss";
-
-    .spacer {
-        height: $header-height;
-    }
 
     .hideable {
         background: $dark;
@@ -123,27 +107,31 @@ export default Vue.extend({
     }
 
     .logo {
-        margin-right: 1em;
-        display: inline-block;
+        padding: $hamburger-padding;
+        padding-right: 1rem;
+        text-align: right;
         vertical-align: middle;
         line-height: normal;
+        margin: 0;
 
         @include not-selectable;
     }
 
     // hamburger
     .hamburger-wrapper {
-        color: $light;
-        text-align: middle;
-        background: none;
-        border-style: none;
         position: fixed;
         left: 0;
         top: 0;
+
+        color: $light;
+        background: none;
+        border-style: none;
+
         width: $hamburger-size;
         height: $hamburger-size;
         margin: $hamburger-padding;
-        cursor: pointer;
+
+        @include clickable;
     }
 
     .fa-bars {

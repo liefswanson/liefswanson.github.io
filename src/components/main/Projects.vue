@@ -1,20 +1,22 @@
 <template>
     <div>
-        <ul class='left'
-            v-show='leftActive'
-            :style='style'>
-            <project-item v-for='(project, key) in projects'
-                          :key='key'
-                          :properties="project"
-                          :height='height'
-                          :gap='gap'
-                          class='project-card'>
-            </project-item>
-        </ul>
-        <router-view class='right'
-                     v-show-else>
+        <transition name='focus'>
+            <ul class='left main-content'
+                v-if='leftActive'
+                :style='style'>
+                <project-item v-for='(project, key) in projects'
+                            :key='key'
+                            :properties="project"
+                            :autoRows='autoRows'
+                            :gap='gap'
+                            class='project-card'>
+                </project-item>
+            </ul>
 
-        </router-view>
+            <router-view class='right main-content'
+                         v-else>
+            </router-view>
+        </transition>
     </div>
 </template>
 
@@ -25,14 +27,16 @@ import ProjectItem from '@/components/projects/ProjectItem.vue'
 import ProjectList    from '@/scripts/main/ProjectItems';
 import { SectionMap } from '@/scripts/nav/NavItems';
 
-const resize = 'resize';
+import { std } from '@/style/ts/StandardUnits';
+
+
 
 export default Vue.extend({
     name: "Projects",
     data() {
         return {
             projects: ProjectList,
-            height: 1,
+            autoRows: 1, //measurements assume use of std
             gap: 1
         }
     },
@@ -43,8 +47,8 @@ export default Vue.extend({
         },
         style(): object {
             return {
-                "grid-auto-rows": this.height + 'em',
-                "grid-gap": this.gap + 'em',
+                "grid-auto-rows": this.autoRows + std,
+                "grid-gap": this.gap + std,
             }
         }
     },
@@ -53,9 +57,9 @@ export default Vue.extend({
     },
     components: {
         'project-item': ProjectItem
-    }
+    },
 
-})
+});
 </script>
 
 
@@ -64,16 +68,25 @@ export default Vue.extend({
 
     .left,
     .right {
-        height: calc(100%-$header-height);
+        height: calc(100% - $header-height);
         overflow-y: auto;
-        padding: 2em;
+        position: absolute;
     }
 
     .left {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(15em,1fr));
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         list-style-type: none;
     }
 
 
+    .focus-enter-active,
+    .focus-leave-active {
+        transition: all $header-animation-time ease;
+    }
+    .focus-enter,
+    .focus-leave-to {
+        transform: translateX(-50vh);
+        opacity: 0;
+    }
 </style>

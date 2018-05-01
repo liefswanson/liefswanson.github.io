@@ -4,3 +4,11 @@
     -ms-user-select:     none; // IE10+ & Edge
     user-select:         none; // Standard
 }
+
+@mixin scrollable {
+    overflow-y: auto;
+}
+
+@mixin clickable {
+    cursor: pointer;
+}

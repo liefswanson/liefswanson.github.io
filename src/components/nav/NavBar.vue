@@ -13,7 +13,6 @@
                 <div class='menu-container'>
                     <!-- hack necessary due to hideable header -->
                     <div class='spacer'></div>
-
                     <ul class='nav-links'>
                         <nav-item v-for='(item, key) in sections'
                                   :key='key'
@@ -32,36 +31,28 @@
 import Vue     from 'vue';
 import NavItem from './NavItem.vue';
 
-import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import Sections    from '@/scripts/nav/NavItems'
-import NavEvent    from '@/scripts/nav/NavEvent';
+import NavEventBus from '@/scripts/nav/NavEventBus';
+import Sections    from '@/scripts/nav/NavItems';
+import Events      from '@/scripts/nav/Events';
+
+import Breakpoints from '@/style/ts/Breakpoints';
 
 export default Vue.extend({
     name: "NavBar",
     data() {
         return {
-            show: false, // FIXME: code duplication, may require vuex
             sections: Sections
         }
     },
-    methods: {
-        disable() { this.show = false;      },
-        enable()  { this.show = true;       },
-        toggle()  { this.show = !this.show; },
-
-        emitClose() {
-            NavEventBus.$emit(NavEvent.closeNav);
+    props: {
+        show: {
+            type: Boolean,
+            required: false
         }
     },
-    created() {
-        NavEventBus.$on(NavEvent.closeNav,  this.disable);
-        NavEventBus.$on(NavEvent.openNav,   this.enable);
-        NavEventBus.$on(NavEvent.toggleNav, this.toggle);
-    },
-    destroyed() {
-        NavEventBus.$off(NavEvent.closeNav,  this.disable);
-        NavEventBus.$off(NavEvent.openNav,   this.enable);
-        NavEventBus.$off(NavEvent.toggleNav, this.toggle);
+    methods: {
+        emitClose() { NavEventBus.$emit(Events.closeNav); },
+        emitOpen()  { NavEventBus.$emit(Events.openNav); },
     },
     components: {
         "nav-item": NavItem
@@ -97,11 +88,13 @@ $blinder-opacity: 0.3;
         left: 0;
         height: 100%;
         width: 100%;
+        @include on-laptop-or-up {
+            display: none;
+        }
     }
 
     .nav-bar {
         position: fixed;
-        max-height: 100vh;
         max-height: 100vh;
         top: 0;
         left: 0;
@@ -109,8 +102,10 @@ $blinder-opacity: 0.3;
         background: $medium;
         z-index: $nav-z;
         height: 100vh;
-        overflow-y: auto;
-        box-shadow: 0.5em 0 3em $dark;
+        @include on-tablet-or-down {
+            box-shadow: 0.5rem 0 3rem $dark;
+        }
+        @include scrollable;
         // border-right: 0.25em solid $dark;
     }
 
@@ -124,6 +119,9 @@ $blinder-opacity: 0.3;
     .slide-enter,
     .slide-leave-to {
         transform: translateX(-$nav-width);
+        @include on-tablet-or-down {
+            box-shadow: 0 0 0 $dark;
+        }
     }
 
     .fade-enter,
