@@ -25,7 +25,7 @@ const Sections = [
     },
     {
         path: "/resume",
-        name: "Résume",
+        name: "Résumé",
         icon: "./assets/resume.min.svg",
         color: Swatch.resume,
         component: Resume

@@ -1,12 +1,18 @@
 <template>
-    <div class='projects-container'>
-        <ul class='left'>
+    <div>
+        <ul class='left'
+            v-show='leftActive'
+            :style='style'>
             <project-item v-for='(project, key) in projects'
                           :key='key'
-                          :properties="project">
+                          :properties="project"
+                          :height='height'
+                          :gap='gap'
+                          class='project-card'>
             </project-item>
         </ul>
-        <router-view class='right'>
+        <router-view class='right'
+                     v-show-else>
 
         </router-view>
     </div>
@@ -16,14 +22,34 @@
 import Vue         from 'vue';
 import ProjectItem from '@/components/projects/ProjectItem.vue'
 
-import ProjectList from '@/scripts/main/ProjectItems';
+import ProjectList    from '@/scripts/main/ProjectItems';
+import { SectionMap } from '@/scripts/nav/NavItems';
+
+const resize = 'resize';
 
 export default Vue.extend({
     name: "Projects",
     data() {
         return {
-            projects: ProjectList
+            projects: ProjectList,
+            height: 1,
+            gap: 1
         }
+    },
+    computed: {
+        leftActive(): boolean {
+            this.$refs.ProjectList
+            return this.$route.path == SectionMap.projects.path;
+        },
+        style(): object {
+            return {
+                "grid-auto-rows": this.height + 'em',
+                "grid-gap": this.gap + 'em',
+            }
+        }
+    },
+    methods: {
+
     },
     components: {
         'project-item': ProjectItem
@@ -36,11 +62,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-    .projects-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
     .left,
     .right {
         height: calc(100%-$header-height);
@@ -50,13 +71,9 @@ export default Vue.extend({
 
     .left {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-row-gap: 1em;
-        grid-auto-rows: minmax(5em, auto);
+        grid-template-columns: repeat(auto-fill, minmax(15em,1fr));
         list-style-type: none;
     }
 
-    .right {
-    }
 
 </style>

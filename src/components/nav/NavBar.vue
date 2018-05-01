@@ -110,6 +110,8 @@ $blinder-opacity: 0.3;
         z-index: $nav-z;
         height: 100vh;
         overflow-y: auto;
+        box-shadow: 0.5em 0 3em $dark;
+        // border-right: 0.25em solid $dark;
     }
 
     .slide-enter-active,

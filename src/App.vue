@@ -39,18 +39,14 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
     #root {
-        height: 100vh;
         font-family: Arial, Helvetica, sans-serif;
-        background: $bright;
     }
 
-    #main-root {
-        height: calc(100% - #{$header-height});
-    }
 </style>
 
 <style lang='scss'> // normalize everything, notice not scoped!
 @import '@/style/normalize.scss';
+@import '@/style/master.scss';
 
     * {
         padding: 0;
@@ -59,6 +55,12 @@ export default Vue.extend({
 
     button:focus {
         outline: none;
+    }
+
+    body {
+        background: $light;
+       	text-rendering: optimizeLegibility;
+	    -webkit-font-smoothing: antialiased;
     }
 
 </style>

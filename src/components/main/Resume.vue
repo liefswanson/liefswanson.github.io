@@ -1,5 +1,5 @@
 <template>
-  <div>R&#xe9;sume</div>
+  <div>R&#xe9;sum&#xe9;</div>
 </template>
 
 <script lang="ts">
