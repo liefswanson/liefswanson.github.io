@@ -47,7 +47,7 @@ export default Vue.extend({
     props: {
         show: {
             type: Boolean,
-            required: false
+            required: true
         }
     },
     methods: {
