@@ -17,7 +17,12 @@ import Vue from 'vue';
 
 import Project        from '@/scripts/main/Project';
 import { SectionMap } from '@/scripts/nav/NavItems';
-import { pxInStd } from '@/style/ts/StandardUnits';
+import NavEventBus    from '@/scripts/nav/NavEventBus';
+import Events         from '@/scripts/nav/Events';
+import { setTimeout } from 'timers';
+
+import { pxInStd }         from '@/style/ts/StandardUnits';
+import { AnimationTimers } from '@/style/ts/Timers';
 
 
 export default Vue.extend({
@@ -54,7 +59,6 @@ export default Vue.extend({
                 "grid-row-end": "span " + this.rowSpan
             }
         },
-
         target(): string {
             return SectionMap.projects.path + '/' + this.path;
         }
@@ -71,14 +75,28 @@ export default Vue.extend({
 
             this.rowSpan = span;
         },
+        // just incase navbar came out during resize
+        delayedUpdate() {
+            setTimeout(this.updateSpan, AnimationTimers.nav + 1);
+        }
     },
+
     mounted() {
-        window.addEventListener("resize", this.updateSpan);
+        window.addEventListener(Events.resize, this.updateSpan);
+        window.addEventListener(Events.resize, this.delayedUpdate);
+        NavEventBus.$on(Events.openNav, this.delayedUpdate);
+        NavEventBus.$on(Events.closeNav, this.delayedUpdate);
+        NavEventBus.$on(Events.toggleNav, this.delayedUpdate);
 
         this.updateSpan();
     },
     beforeDestroy() {
-        window.removeEventListener("resize", this.updateSpan);
+        window.removeEventListener(Events.resize, this.updateSpan);
+        window.removeEventListener(Events.resize, this.delayedUpdate);
+        NavEventBus.$off(Events.openNav, this.delayedUpdate);
+        NavEventBus.$off(Events.closeNav, this.delayedUpdate);
+        NavEventBus.$off(Events.toggleNav, this.delayedUpdate);
+
     }
 });
 </script>
@@ -91,6 +109,8 @@ export default Vue.extend({
         background: $bright;
 
         @include clickable;
+        overflow: hidden;
+
     }
 
     .title {

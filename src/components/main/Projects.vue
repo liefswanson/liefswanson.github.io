@@ -3,7 +3,8 @@
         <transition name='focus'>
             <ul class='left main-content'
                 v-if='leftActive'
-                :style='style'>
+                :style='style'
+                ref='container'>
                 <project-item v-for='(project, key) in projects'
                             :key='key'
                             :properties="project"
@@ -37,7 +38,7 @@ export default Vue.extend({
         return {
             projects: ProjectList,
             autoRows: 1, //measurements assume use of std
-            gap: 1
+            gap: 1,
         }
     },
     computed: {
@@ -54,6 +55,8 @@ export default Vue.extend({
     },
     methods: {
 
+    },
+    mounted() {
     },
     components: {
         'project-item': ProjectItem

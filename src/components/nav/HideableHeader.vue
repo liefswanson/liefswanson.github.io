@@ -119,13 +119,13 @@ export default Vue.extend({
 
     // hamburger
     .hamburger-wrapper {
-        position: fixed;
-        left: 0;
         top: 0;
-
+        left: 0;
         color: $light;
         background: none;
         border-style: none;
+
+        position: fixed;
 
         width: $hamburger-size;
         height: $hamburger-size;

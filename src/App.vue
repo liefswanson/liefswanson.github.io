@@ -4,7 +4,7 @@
          v-touch:swipe.left='disableNav'>
         <hideable-header :showNav='showNav'/>
         <nav-bar :show='showNav'/>
-        <main id='main-root' class='push'>
+        <main id='main-root' class='anim' :class='{ "push": showNav }'>
             <router-view class='main-router'/>
         </main>
     </div>
@@ -25,6 +25,7 @@ export default Vue.extend({
     data() {
         return {
             showNav: false,
+            previouslyOnTablet: false
         }
     },
     computed: {
@@ -42,11 +43,17 @@ export default Vue.extend({
             } else {
                 NavEventBus.$emit(Events.closeNav);
             }
+
+            this.previouslyOnTablet = Breakpoints.onTabletOrDown();
         },
         enableNavIfBigger() {
-            if (Breakpoints.onLaptopOrUp()) {
+            if (Breakpoints.onLaptopOrUp() &&
+                this.previouslyOnTablet) {
+
                 NavEventBus.$emit(Events.openNav);
             }
+
+            this.previouslyOnTablet = Breakpoints.onTabletOrDown();
         }
 
     },
@@ -87,9 +94,13 @@ export default Vue.extend({
 
     }
 
+    .anim {
+        transition: margin-left $nav-animation-time ease;
+    }
+
     .push {
         @include on-laptop-or-up {
-            padding-left: $nav-width;
+            margin-left: $nav-width;
         }
     }
 
@@ -120,6 +131,7 @@ export default Vue.extend({
 
     .main-content {
         padding: 2rem;
+        color: $bright;
     }
 
 </style>

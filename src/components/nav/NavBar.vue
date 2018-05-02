@@ -82,6 +82,7 @@ $blinder-opacity: 0.3;
 
     .blinder {
         opacity: $blinder-opacity;
+        z-index: $blinder-z;
         background: $dark;
         position: fixed;
         top: 0;

@@ -13,6 +13,7 @@
     "normalize.css": "^8.0.0",
     "sloc": "^0.2.0",
     "vue": "^2.5.2",
+    "vue-images-loaded": "^1.1.2",
     "vue-router": "^3.0.1",
     "vue2-touch-events": "^1.0.0",
     "vuex": "^3.0.1"
