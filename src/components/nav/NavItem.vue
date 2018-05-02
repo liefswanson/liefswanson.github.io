@@ -93,6 +93,7 @@ export default Vue.extend({
         // all NavItems will run this code,
         // but only the current one will change the colour
         if(this.active) {
+            console.log("active" + this.color);
             this.emitColorChange();
         }
     }

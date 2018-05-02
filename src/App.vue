@@ -19,6 +19,7 @@ import NavEventBus from '@/scripts/nav/NavEventBus';
 import Events      from '@/scripts/nav/Events'
 
 import Breakpoints from '@/style/ts/Breakpoints';
+import Swatch      from '@/style/ts/Swatch';
 
 export default Vue.extend({
     name: 'App',
@@ -54,13 +55,40 @@ export default Vue.extend({
             }
 
             this.previouslyOnTablet = Breakpoints.onTabletOrDown();
+        },
+        swapFavicon(color: Swatch) {
+            const tag = 'link';
+            const id  = 'dynamic-favicon';
+            const rel = 'icon';
+
+            let pathId = color.slice(1);
+            let path   = 'static/logo-' + pathId + '.png';
+
+            console.log(path);
+
+            let link  = document.createElement(tag);
+            link.id   = id;
+            link.rel  = rel;
+            link.href = path;
+
+            let old  = document.getElementById(id) as HTMLElement;
+            if (old) {
+                document.head.removeChild(old);
+            }
+
+            document.head.appendChild(link);
         }
 
+    },
+    created() {
+        // needs to be set before navItems are created and mounted
+        NavEventBus.$on(Events.changeColor, this.swapFavicon);
     },
     mounted() {
         NavEventBus.$on(Events.closeNav,  this.disableNav);
         NavEventBus.$on(Events.openNav,   this.enableNav);
         NavEventBus.$on(Events.toggleNav, this.toggleNav);
+
 
         window.addEventListener(Events.resize, this.enableNavIfBigger);
 
@@ -70,6 +98,8 @@ export default Vue.extend({
         NavEventBus.$off(Events.closeNav,  this.disableNav);
         NavEventBus.$off(Events.openNav,   this.enableNav);
         NavEventBus.$off(Events.toggleNav, this.toggleNav);
+
+        NavEventBus.$off(Events.changeColor, this.swapFavicon);
 
         window.removeEventListener(Events.resize, this.enableNavIfBigger);
     },

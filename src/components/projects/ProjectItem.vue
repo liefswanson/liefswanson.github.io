@@ -69,6 +69,10 @@ export default Vue.extend({
         },
         updateSpan() {
             var content = this.$refs.content as Element;
+            // avoid trying to resize if the compenent isn't loaded
+            if (content == undefined) { return; }
+
+            // otherwise all is well and continue!
             var span = content.getBoundingClientRect().height / pxInStd;
             span = span / (this.autoRows + this.gap);
             span = Math.ceil(span);

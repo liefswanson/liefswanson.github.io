@@ -6,10 +6,10 @@ enum Swatch {
     bright = '#f5f5f5',
 
     feature  = '#6DAFFF', //'#4bb4ff',
-    projects = '#58E887', //'#39e859',
-    resume   = '#FFF86D', //'#ffec31',
-    contact  = '#E89B58', //'#f27827',
-    about    = '#FF67C7', //'#f84ce6'
+    projects = '#E6944C', //'#39e859',
+    resume   = '#FF74CC', //'#ffec31',
+    contact  = '#76E1B8', //'#f27827',
+    about    = '#FF6D75', //'#f84ce6'
 }
 
 export default Swatch;
