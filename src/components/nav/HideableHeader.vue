@@ -83,7 +83,7 @@ export default Vue.extend({
         window.addEventListener(Events.scroll, this.handleScroll);
         NavEventBus.$on(Events.changeColor, this.changeColor);
     },
-    destroyed() {
+    beforeDestroy() {
         window.removeEventListener(Events.scroll, this.handleScroll);
 
         NavEventBus.$off(Events.changeColor, this.changeColor);
@@ -112,7 +112,8 @@ export default Vue.extend({
         text-align: right;
         vertical-align: middle;
         line-height: normal;
-        margin: 0;
+        margin: 0.3rem;
+        font-family: "Comfortaa", sans-serif;
 
         @include not-selectable;
     }

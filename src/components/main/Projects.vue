@@ -53,11 +53,6 @@ export default Vue.extend({
             }
         }
     },
-    methods: {
-
-    },
-    mounted() {
-    },
     components: {
         'project-item': ProjectItem
     },

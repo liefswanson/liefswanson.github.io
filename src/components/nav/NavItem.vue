@@ -93,7 +93,6 @@ export default Vue.extend({
         // all NavItems will run this code,
         // but only the current one will change the colour
         if(this.active) {
-            console.log("active" + this.color);
             this.emitColorChange();
         }
     }
@@ -111,6 +110,7 @@ export default Vue.extend({
         color: $bright;
         font-size: $nav-item-size;
         font-weight: bolder;
+        font-family: 'Comfortaa', sans-serif;
 
         @include not-selectable;
     }

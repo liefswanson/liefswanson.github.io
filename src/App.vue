@@ -4,7 +4,10 @@
          v-touch:swipe.left='disableNav'>
         <hideable-header :showNav='showNav'/>
         <nav-bar :show='showNav'/>
-        <main id='main-root' class='anim' :class='{ "push": showNav }'>
+        <main id='main-root'
+              class='anim'
+              :class='{ "push":  showNav }'
+              :style='{ "color": color }'>
             <router-view class='main-router'/>
         </main>
     </div>
@@ -26,7 +29,8 @@ export default Vue.extend({
     data() {
         return {
             showNav: false,
-            previouslyOnTablet: false
+            previouslyOnTablet: false,
+            color: Swatch.bright
         }
     },
     computed: {
@@ -56,6 +60,10 @@ export default Vue.extend({
 
             this.previouslyOnTablet = Breakpoints.onTabletOrDown();
         },
+        changeColor(color: Swatch) {
+            this.color = color;
+            this.swapFavicon(color);
+        },
         swapFavicon(color: Swatch) {
             const tag = 'link';
             const id  = 'dynamic-favicon';
@@ -63,8 +71,6 @@ export default Vue.extend({
 
             let pathId = color.slice(1);
             let path   = 'static/logo-' + pathId + '.png';
-
-            console.log(path);
 
             let link  = document.createElement(tag);
             link.id   = id;
@@ -82,7 +88,7 @@ export default Vue.extend({
     },
     created() {
         // needs to be set before navItems are created and mounted
-        NavEventBus.$on(Events.changeColor, this.swapFavicon);
+        NavEventBus.$on(Events.changeColor, this.changeColor);
     },
     mounted() {
         NavEventBus.$on(Events.closeNav,  this.disableNav);
@@ -94,12 +100,12 @@ export default Vue.extend({
 
         this.defaultNavState();
     },
-    destroyed() {
+    beforeDestroy() {
+        NavEventBus.$off(Events.changeColor, this.changeColor);
+
         NavEventBus.$off(Events.closeNav,  this.disableNav);
         NavEventBus.$off(Events.openNav,   this.enableNav);
         NavEventBus.$off(Events.toggleNav, this.toggleNav);
-
-        NavEventBus.$off(Events.changeColor, this.swapFavicon);
 
         window.removeEventListener(Events.resize, this.enableNavIfBigger);
     },
@@ -114,7 +120,7 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
     #root {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         min-height: 100vh;
     }
 
@@ -153,7 +159,7 @@ export default Vue.extend({
     }
 
     body {
-        background: $light;
+        background: $bright;
        	text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
@@ -161,7 +167,6 @@ export default Vue.extend({
 
     .main-content {
         padding: 2rem;
-        color: $bright;
     }
 
 </style>
