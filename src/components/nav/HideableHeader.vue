@@ -13,7 +13,7 @@
                     <button class='hamburger-wrapper sideways'
                             @click='hamburgerToggle'
                             v-show='showNav'>
-                        <i class='fa fa-bars'></i>
+                        <i class='fa fa-bars'/>
                     </button>
                 </transition>
                 <transition name='rotate-out'>
@@ -66,8 +66,10 @@ export default Vue.extend({
 
             if (this.show && scrollingDown) {
                 this.show = false;
+                NavEventBus.$emit(Events.toggleHeader);
             } else if (!this.show && scrollingUp) {
                 this.show = true;
+                NavEventBus.$emit(Events.toggleHeader);
             } // else... already in the right state!
 
             this.previous = current;
@@ -79,7 +81,7 @@ export default Vue.extend({
         changeColor(color: Swatch) { this.color = color; },
 
     },
-    created() {
+    mounted() {
         window.addEventListener(Events.scroll, this.handleScroll);
         NavEventBus.$on(Events.changeColor, this.changeColor);
     },
@@ -98,7 +100,7 @@ export default Vue.extend({
         background: $dark;
         height: $header-height;
         line-height: $header-height;
-        width: 100%;
+        width: 100vw;
         position: fixed;
         top: 0;
         left: 0;
@@ -108,12 +110,11 @@ export default Vue.extend({
 
     .logo {
         padding: $hamburger-padding;
-        padding-right: 1rem;
-        text-align: right;
-        vertical-align: middle;
+        padding-right: 2rem;
         line-height: normal;
-        margin: 0.3rem;
+        text-align: right;
         font-family: "Comfortaa", sans-serif;
+        margin: 0;
 
         @include not-selectable;
     }
@@ -131,12 +132,9 @@ export default Vue.extend({
         width: $hamburger-size;
         height: $hamburger-size;
         margin: $hamburger-padding;
-
-        @include clickable;
-    }
-
-    .fa-bars {
         font-size: $hamburger-size;
+
+        cursor: pointer;
     }
 
     .sideways {

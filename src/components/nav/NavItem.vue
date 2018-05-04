@@ -112,6 +112,7 @@ export default Vue.extend({
         font-weight: bolder;
         font-family: 'Comfortaa', sans-serif;
 
+        cursor: pointer;
         @include not-selectable;
     }
 

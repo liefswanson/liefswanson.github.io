@@ -4,6 +4,9 @@ enum AnimationTimers {
     project = 500
 }
 
+const toSeconds = 1/1000;
+
 export {
-    AnimationTimers
+    AnimationTimers,
+    toSeconds
 };

@@ -123,7 +123,7 @@ export default Vue.extend({
     .item {
         //border: 1px solid $xlight;
 
-        @include clickable;
+        cursor: pointer;
         overflow: hidden;
     }
 

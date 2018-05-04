@@ -5,8 +5,10 @@ enum Events {
     openNav   = "nav-bar-open",
     toggleNav = "nav-bar-toggle",
 
+    toggleHeader = 'header-toggle',
+
     scroll = "scroll",
-    resize = "resize"
+    resize = "resize",
 }
 
 export default Events;

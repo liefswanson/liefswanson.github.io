@@ -1,24 +1,26 @@
 <template>
-    <div>
-        <transition name='focus'>
-            <ul class='left main-content'
-                v-if='leftActive'
-                :style='style'
-                ref='container'>
-                <project-item v-for='(project, key) in projects'
-                            :key='key'
-                            :properties="project"
-                            :autoRows='autoRows'
-                            :gap='gap'
-                            class='project-card'>
-                </project-item>
-            </ul>
+<div class='projects-root'>
+    <transition name='focus'>
 
-            <router-view class='right main-content'
-                         v-else>
-            </router-view>
-        </transition>
-    </div>
+        <ul class='left main-content'
+            v-if='leftActive'
+            :style='style'
+            ref='container'>
+            <project-item v-for='(project, key) in projects'
+                          :key='key'
+                          :properties="project"
+                          :autoRows='autoRows'
+                          :gap='gap'
+                          class='project-card'>
+            </project-item>
+        </ul>
+
+        <div class='right main-content' v-else>
+            <router-view/>
+        </div>
+
+    </transition>
+</div>
 </template>
 
 <script lang="ts">
@@ -68,7 +70,6 @@ export default Vue.extend({
     .right {
         height: calc(100% - $header-height);
         overflow-y: auto;
-        position: absolute;
     }
 
     .left {
@@ -82,9 +83,11 @@ export default Vue.extend({
     .focus-leave-active {
         transition: all $header-animation-time ease;
     }
+
     .focus-enter,
     .focus-leave-to {
-        transform: translateX(-50vh);
+        position: absolute;
+        transform: translateX(50vw);
         opacity: 0;
     }
 </style>

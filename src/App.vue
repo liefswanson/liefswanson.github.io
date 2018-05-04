@@ -24,6 +24,34 @@ import Events      from '@/scripts/nav/Events'
 import Breakpoints from '@/style/ts/Breakpoints';
 import Swatch      from '@/style/ts/Swatch';
 
+const faviconId  = 'dynamic-favicon';
+
+function makeNewFavicon(color: Swatch) {
+    const tag = 'link';
+    const rel = 'icon';
+
+    let pathId = color.slice(1);
+    let path   = 'static/logo-' + pathId + '.png';
+
+    let link  = document.createElement(tag);
+    link.id   = faviconId;
+    link.rel  = rel;
+    link.href = path;
+
+    return link;
+}
+
+function swapFavicon(color: Swatch) {
+    let link = makeNewFavicon(color);
+    let old  = document.getElementById(faviconId) as HTMLElement;
+
+    if (old) {
+        document.head.removeChild(old);
+    }
+
+    document.head.appendChild(link);
+}
+
 export default Vue.extend({
     name: 'App',
     data() {
@@ -40,8 +68,9 @@ export default Vue.extend({
     },
     methods: {
         disableNav() { this.showNav = false; },
-        enableNav()  { this.showNav = true;},
+        enableNav()  { this.showNav = true; },
         toggleNav()  { this.showNav = !this.showNav; },
+
         defaultNavState() {
             if (Breakpoints.onLaptopOrUp()) {
                 NavEventBus.$emit(Events.openNav);
@@ -51,6 +80,7 @@ export default Vue.extend({
 
             this.previouslyOnTablet = Breakpoints.onTabletOrDown();
         },
+
         enableNavIfBigger() {
             if (Breakpoints.onLaptopOrUp() &&
                 this.previouslyOnTablet) {
@@ -60,30 +90,11 @@ export default Vue.extend({
 
             this.previouslyOnTablet = Breakpoints.onTabletOrDown();
         },
+
         changeColor(color: Swatch) {
             this.color = color;
-            this.swapFavicon(color);
+            swapFavicon(color);
         },
-        swapFavicon(color: Swatch) {
-            const tag = 'link';
-            const id  = 'dynamic-favicon';
-            const rel = 'icon';
-
-            let pathId = color.slice(1);
-            let path   = 'static/logo-' + pathId + '.png';
-
-            let link  = document.createElement(tag);
-            link.id   = id;
-            link.rel  = rel;
-            link.href = path;
-
-            let old  = document.getElementById(id) as HTMLElement;
-            if (old) {
-                document.head.removeChild(old);
-            }
-
-            document.head.appendChild(link);
-        }
 
     },
     created() {
@@ -126,17 +137,17 @@ export default Vue.extend({
 
     #main-root {
         padding-top: $header-height;
-
-
+        //min-height: 100vh;
+        max-width: 100vw;
     }
 
     .anim {
-        transition: margin-left $nav-animation-time ease;
+        transition: all $nav-animation-time ease;
     }
 
     .push {
         @include on-laptop-or-up {
-            margin-left: $nav-width;
+            padding-left: $nav-width;
         }
     }
 
