@@ -1,38 +1,23 @@
 <template>
-    <header id='header-root'>
-        <!-- actual header -->
-        <transition name="hide">
-            <div class='hideable'
-                 v-show='show'>
+    <transition name="hide">
+        <header id='header-root'
+                class='hideable'
+                v-show='show'>
 
-                <!-- rotating hamburger button
-                     TODO find a way to fix hack,
-                     currently use two transitions instead of one
-                     mode='out-in' doesn't work here -->
-                <transition name='rotate-in'>
-                    <button class='hamburger-wrapper sideways'
-                            @click='hamburgerToggle'
-                            v-show='showNav'>
-                        <i class='fa fa-bars'/>
-                    </button>
-                </transition>
-                <transition name='rotate-out'>
-                    <button class='hamburger-wrapper upright'
-                            @click='hamburgerToggle'
-                            v-show='!showNav'>
-                        <i class='fa fa-bars'></i>
-                    </button>
-                </transition>
+            <!-- rotating hamburger button -->
+            <button class='hamburger-wrapper'
+                    :class='{ rotated: showNav}'
+                    @click='hamburgerToggle'>
+                <i class='fa fa-bars'/>
+            </button>
 
-                <!-- logo TODO inlined svg so I can manipulate color and font-->
-                <h1 class='logo'
-                    :style='{ color: color }'>
-                    Lief Swanson
-                </h1>
-            </div>
-        </transition>
-
-    </header>
+            <!-- logo TODO inlined svg so I can manipulate color and font-->
+            <h1 class='logo'
+                :style='{ color: color }'>
+                Lief Swanson
+            </h1>
+        </header>
+    </transition>
 </template>
 
 <script lang='ts'>
@@ -121,51 +106,31 @@ export default Vue.extend({
 
     // hamburger
     .hamburger-wrapper {
+        position: fixed;
         top: 0;
         left: 0;
+
         color: $light;
         background: none;
         border-style: none;
+        cursor: pointer;
 
-        position: fixed;
 
         width: $hamburger-size;
         height: $hamburger-size;
         margin: $hamburger-padding;
         font-size: $hamburger-size;
+        line-height: 0;
 
-        cursor: pointer;
-    }
-
-    .sideways {
-        transform: rotate(90deg);
         z-index: $hamburger-sideways-z;
-    }
 
-    .upright {
-        z-index: $hamburger-upright-z;
-    }
-
-    // rotate hamburger
-    .rotate-in-enter-active,
-    .rotate-out-enter-active {
         transition: all $nav-animation-time ease;
     }
 
-    .rotate-in-leave-active,
-    .rotate-out-leave-active {
-        transition: all 0;
-    }
-
-    .rotate-in-enter,
-    .rotate-in-leave-to {
-        transform: rotate(0deg);
-    }
-
-    .rotate-out-enter,
-    .rotate-out-leave-to  {
+    .rotated {
         transform: rotate(90deg);
     }
+
 
     // hide/show header
     .hide-enter-active,

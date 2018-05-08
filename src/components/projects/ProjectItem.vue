@@ -17,6 +17,7 @@
                 <p  class='blurb'>{{blurb}}</p>
             </div>
         </div>
+        <div class='mask'></div>
     </router-link>
 </template>
 
@@ -33,13 +34,15 @@ import imagesLoaded from 'vue-images-loaded';
 
 import { pxInStd }         from '@/style/ts/StandardUnits';
 import { AnimationTimers } from '@/style/ts/Timers';
+import Swatch              from '@/style/ts/Swatch';
 
 
 export default Vue.extend({
     name: 'ProjectItem',
     data() {
         return {
-            rowSpan: 0
+            rowSpan: 0,
+            inFocus: false
         };
     },
     props: {
@@ -64,9 +67,15 @@ export default Vue.extend({
         thumb(): string { return this.properties.thumb; },
         blurb(): string { return this.properties.blurb; },
 
+
         style(): object {
+            var back = 'none';
+
+            if (this.inFocus) {
+                back = Swatch.projects;
+            }
             return {
-                "grid-row-end": "span " + this.rowSpan
+                "grid-row-end": "span " + this.rowSpan,
             }
         },
         target(): string {
@@ -74,6 +83,12 @@ export default Vue.extend({
         }
     },
     methods: {
+        focus() {
+            this.inFocus = true;
+        },
+        unfocus() {
+            this.inFocus = false;
+        },
         followLink() {
 
         },
@@ -125,6 +140,21 @@ export default Vue.extend({
 
         cursor: pointer;
         overflow: hidden;
+        position: relative;
+    }
+
+    .mask {
+        background: transparentize($projects-swatch, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: $default-z+1;
+    }
+
+    .mask:hover {
+        background: transparentize($projects-swatch, 0.75);
     }
 
     .thumb {

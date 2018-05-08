@@ -120,7 +120,7 @@ export default Vue.extend({
     }
 
     .pdf {
-        z-index: -1;
+        z-index: $pdf-z;
     }
 
     .filler {
@@ -131,12 +131,20 @@ export default Vue.extend({
         position: sticky;
         top: 0;
         height: 0;
+
+        @include on-phone {
+            height: 100%;
+        }
     }
 
     .action-bar {
         font-size: 2.5rem;
         display: flex;
         background: none;
+
+        @include on-phone {
+            background: transparentize($light, 0.5);
+        }
 
         transition: background 1s ease;
         transition: padding-top $header-animation-time ease;

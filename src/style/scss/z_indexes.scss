@@ -1,4 +1,9 @@
-$z: 1;
+$z: -1;
+$pdf-z: $z;
+$z : $z +1;
+
+$default-z: $z;
+$z : $z +1;
 
 $blinder-z: $z;
 $z : $z +1;
