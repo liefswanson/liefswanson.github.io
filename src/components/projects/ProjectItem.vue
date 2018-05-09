@@ -1,24 +1,24 @@
 <template>
-    <router-link @click.native='followLink'
-                 :to='target'
-                 exact
-                 class='item'
-                 tag='li'
-                 :style='style'>
-        <div ref='content'>
-            <div class='card-header'>
-                <img v-images-loaded="updateSpan"
-                     :src="thumb"
-                     class="thumb"
-                     alt="there was supposed to be a picture here">
-                <h2 class='title'>{{title}}</h2>
-            </div>
-            <div class='desc'>
-                <p  class='blurb'>{{blurb}}</p>
-            </div>
+<router-link @click.native='followLink'
+                :to='target'
+                exact
+                class='item'
+                tag='li'
+                :style='style'>
+    <div ref='content'>
+        <div class='card-header'>
+            <img v-images-loaded="updateSpan"
+                    :src="thumb"
+                    class="thumb"
+                    alt="there was supposed to be a picture here">
+            <h2 class='title'>{{title}}</h2>
         </div>
-        <div class='mask'></div>
-    </router-link>
+        <div class='desc'>
+            <p  class='blurb'>{{blurb}}</p>
+        </div>
+    </div>
+    <div class='mask'></div>
+</router-link>
 </template>
 
 <script lang="ts">
@@ -135,57 +135,57 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-    .item {
-        //border: 1px solid $xlight;
+.item {
+    //border: 1px solid $xlight;
 
-        cursor: pointer;
-        overflow: hidden;
-        position: relative;
-    }
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
 
-    .mask {
-        background: transparentize($projects-swatch, 1);
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: $default-z+1;
-    }
+.mask {
+    background: transparentize($projects-swatch, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: $default-z+1;
+}
 
-    .mask:hover {
-        background: transparentize($projects-swatch, 0.75);
-    }
+.mask:hover {
+    background: transparentize($projects-swatch, 0.75);
+}
 
-    .thumb {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+.thumb {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-    .card-header {
-        position: relative;
-    }
+.card-header {
+    position: relative;
+}
 
-    .title {
-        padding: 0.5rem;
-        padding-left: 1rem;
-        background: transparentize( $medium, 0.1); //projects-swatch;
-        font-weight: bold;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        font-family: 'Comfortaa', sans-serif;
-        //border-bottom: 0.25em solid $projects-swatch;
-        //color: $projects-swatch; //medium;
-    }
+.title {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    background: transparentize( $medium, 0.1); //projects-swatch;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Comfortaa', sans-serif;
+    //border-bottom: 0.25em solid $projects-swatch;
+    //color: $projects-swatch; //medium;
+}
 
-    .blurb {
-        color: $dark;
-    }
+.blurb {
+    color: $dark;
+}
 
-    .desc {
-        padding: 1.5rem 0 1.5rem 0;
-    }
+.desc {
+    padding: 1.5rem 0 1.5rem 0;
+}
 </style>

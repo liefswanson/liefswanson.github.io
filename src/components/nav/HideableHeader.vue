@@ -1,23 +1,23 @@
 <template>
-    <transition name="hide">
-        <header id='header-root'
-                class='hideable'
-                v-show='show'>
+<transition name="hide">
+    <header id='header-root'
+            class='hideable'
+            v-show='show'>
 
-            <!-- rotating hamburger button -->
-            <button class='hamburger-wrapper'
-                    :class='{ rotated: showNav}'
-                    @click='hamburgerToggle'>
-                <i class='fa fa-bars'/>
-            </button>
+        <!-- rotating hamburger button -->
+        <button class='hamburger-wrapper'
+                :class='{ rotated: showNav}'
+                @click='hamburgerToggle'>
+            <i class='fa fa-bars'/>
+        </button>
 
-            <!-- logo TODO inlined svg so I can manipulate color and font-->
-            <h1 class='logo'
-                :style='{ color: color }'>
-                Lief Swanson
-            </h1>
-        </header>
-    </transition>
+        <!-- logo TODO inlined svg so I can manipulate color and font-->
+        <h1 class='logo'
+            :style='{ color: color }'>
+            Lief Swanson
+        </h1>
+    </header>
+</transition>
 </template>
 
 <script lang='ts'>
@@ -81,65 +81,65 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import "src/style/master.scss";
 
-    .hideable {
-        background: $dark;
-        height: $header-height;
-        line-height: $header-height;
-        width: 100vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        text-align: right;
-        z-index: $header-z;
-    }
+.hideable {
+    background: $dark;
+    height: $header-height;
+    line-height: $header-height;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: right;
+    z-index: $header-z;
+}
 
-    .logo {
-        padding: $hamburger-padding;
-        padding-right: 2rem;
-        line-height: normal;
-        text-align: right;
-        font-family: "Comfortaa", sans-serif;
-        margin: 0;
+.logo {
+    padding: $hamburger-padding;
+    padding-right: 2rem;
+    line-height: normal;
+    text-align: right;
+    font-family: "Comfortaa", sans-serif;
+    margin: 0;
 
-        @include not-selectable;
-    }
+    @include not-selectable;
+}
 
-    // hamburger
-    .hamburger-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
+// hamburger
+.hamburger-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
 
-        color: $light;
-        background: none;
-        border-style: none;
-        cursor: pointer;
-
-
-        width: $hamburger-size;
-        height: $hamburger-size;
-        margin: $hamburger-padding;
-        font-size: $hamburger-size;
-        line-height: 0;
-
-        z-index: $hamburger-sideways-z;
-
-        transition: all $nav-animation-time ease;
-    }
-
-    .rotated {
-        transform: rotate(90deg);
-    }
+    color: $light;
+    background: none;
+    border-style: none;
+    cursor: pointer;
 
 
-    // hide/show header
-    .hide-enter-active,
-    .hide-leave-active {
-        transition: all $header-animation-time ease;
-    }
-    .hide-enter,
-    .hide-leave-to {
-        transform: translateY(-$header-height);
-    }
+    width: $hamburger-size;
+    height: $hamburger-size;
+    margin: $hamburger-padding;
+    font-size: $hamburger-size;
+    line-height: 0;
+
+    z-index: $hamburger-sideways-z;
+
+    transition: all $nav-animation-time ease;
+}
+
+.rotated {
+    transform: rotate(90deg);
+}
+
+
+// hide/show header
+.hide-enter-active,
+.hide-leave-active {
+    transition: all $header-animation-time ease;
+}
+.hide-enter,
+.hide-leave-to {
+    transform: translateY(-$header-height);
+}
 
 </style>

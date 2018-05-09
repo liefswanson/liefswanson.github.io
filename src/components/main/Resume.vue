@@ -1,28 +1,28 @@
 <template>
 <div class='resume-container'>
-        <div class='height-hack'>
-            <div class='action-bar'
-                 :style='{ "padding-top": adjustmentInUnits,
-                           "transition": animSettings}'>
-                <div class='filler'></div>
-                <button title='Download'
-                        class='btn'>
-                    <a class='override-color'
-                       href="static/resume.pdf"
-                       download>
-                        <i class='fa fa-download'/>
-                    </a>
-                </button>
-                <button title='Print'
-                        class='btn'
-                        @click='$refs.pdf.print()'>
-                    <i class='fa fa-print'/>
-                </button>
-            </div>
+    <div class='height-hack'>
+        <div class='action-bar'
+                :style='{ "padding-top": adjustmentInUnits,
+                        "transition": animSettings}'>
+            <div class='filler'></div>
+            <button title='Download'
+                    class='btn'>
+                <a class='override-color'
+                    href="static/resume.pdf"
+                    download>
+                    <i class='fa fa-download'/>
+                </a>
+            </button>
+            <button title='Print'
+                    class='btn'
+                    @click='$refs.pdf.print()'>
+                <i class='fa fa-print'/>
+            </button>
         </div>
-        <pdf class='pdf'
-             ref='pdf'
-             src='static/resume.pdf'/>
+    </div>
+    <pdf class='pdf'
+            ref='pdf'
+            src='static/resume.pdf'/>
 </div>
 </template>
 
@@ -114,76 +114,76 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
-    .resume-container {
-        max-width: $large-size;
-        margin: auto;
+.resume-container {
+    max-width: $large-size;
+    margin: auto;
+}
+
+.pdf {
+    z-index: $pdf-z;
+}
+
+.filler {
+    flex: 1;
+}
+
+.height-hack {
+    position: sticky;
+    top: 0;
+    height: 0;
+
+    @include on-phone {
+        height: 100%;
+    }
+}
+
+.action-bar {
+    font-size: 2.5rem;
+    display: flex;
+    background: none;
+
+    @include on-phone {
+        background: transparentize($light, 0.5);
     }
 
-    .pdf {
-        z-index: $pdf-z;
-    }
+    transition: background 1s ease;
+    transition: padding-top $header-animation-time ease;
+}
 
-    .filler {
-        flex: 1;
-    }
-
-    .height-hack {
-        position: sticky;
-        top: 0;
-        height: 0;
-
-        @include on-phone {
-            height: 100%;
-        }
-    }
-
-    .action-bar {
-        font-size: 2.5rem;
-        display: flex;
-        background: none;
-
-        @include on-phone {
-            background: transparentize($light, 0.5);
-        }
-
-        transition: background 1s ease;
-        transition: padding-top $header-animation-time ease;
-    }
-
-    .action-bar:hover {
-        background: transparentize($medium, 0.5);
-        .btn {
-            transition: opacity $pdf-animation-time ease;
-            opacity: 1;
-        }
-    }
-
-    .override-color {
-        color: inherit;
-    }
-
+.action-bar:hover {
+    background: transparentize($medium, 0.5);
     .btn {
-        color: $dark;
-        opacity: 0.5;
-        background: none;
-        border-style: none;
-        padding: 0.5rem;
-        padding-right: 1rem;
-
-        :hover {
-            color: $resume-swatch;
-            border-style: none;
-            cursor: pointer;
-        }
-
-        transition: all $pdf-animation-time ease;
+        transition: opacity $pdf-animation-time ease;
+        opacity: 1;
     }
+}
+
+.override-color {
+    color: inherit;
+}
+
+.btn {
+    color: $dark;
+    opacity: 0.5;
+    background: none;
+    border-style: none;
+    padding: 0.5rem;
+    padding-right: 1rem;
+
+    :hover {
+        color: $resume-swatch;
+        border-style: none;
+        cursor: pointer;
+    }
+
+    transition: all $pdf-animation-time ease;
+}
 </style>
 
 <style lang="scss">
 //override annotationLayer in pdf.js to keep it from extending page past the end of pdf
-    .annotationLayer {
-        display: none;
-    }
+.annotationLayer {
+    display: none;
+}
 </style>
 

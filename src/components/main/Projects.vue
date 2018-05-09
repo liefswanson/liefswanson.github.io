@@ -66,28 +66,28 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-    .left,
-    .right {
-        height: calc(100% - $header-height);
-        overflow-y: auto;
-    }
+.left,
+.right {
+    height: calc(100% - $header-height);
+    overflow-y: auto;
+}
 
-    .left {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-        list-style-type: none;
-    }
+.left {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    list-style-type: none;
+}
 
 
-    .focus-enter-active,
-    .focus-leave-active {
-        transition: all $header-animation-time ease;
-    }
+.focus-enter-active,
+.focus-leave-active {
+    transition: all $header-animation-time ease;
+}
 
-    .focus-enter,
-    .focus-leave-to {
-        position: absolute;
-        transform: translateX(50vw);
-        opacity: 0;
-    }
+.focus-enter,
+.focus-leave-to {
+    position: absolute;
+    transform: translateX(50vw);
+    opacity: 0;
+}
 </style>

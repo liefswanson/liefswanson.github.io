@@ -1,7 +1,7 @@
 <template>
-  <div class='main-content'>
+<div class='main-content'>
     <h1>
-      Est quis commodo labore exercitation duis. Excepteur pariatur esse nostrud irure aliqua nisi nulla pariatur elit est adipisicing sit quis ut. Ut commodo dolor sit eu sit duis labore duis nulla amet. Non amet ea deserunt nostrud amet. Laboris incididunt pariatur ut ut mollit tempor voluptate ad reprehenderit.
+    Est quis commodo labore exercitation duis. Excepteur pariatur esse nostrud irure aliqua nisi nulla pariatur elit est adipisicing sit quis ut. Ut commodo dolor sit eu sit duis labore duis nulla amet. Non amet ea deserunt nostrud amet. Laboris incididunt pariatur ut ut mollit tempor voluptate ad reprehenderit.
 
 Esse est in dolore consequat laboris adipisicing exercitation laboris excepteur laborum qui consequat. Quis do enim laborum ut qui nulla consectetur fugiat et. Exercitation id commodo sint eiusmod ex irure ea eiusmod aliqua occaecat irure irure enim.
 
@@ -15,8 +15,7 @@ Anim ut sit adipisicing adipisicing veniam elit labore ad ullamco non. Non do no
 
 Sit ex veniam fugiat exercitation ea dolore consectetur veniam voluptate officia. Pariatur nostrud amet magna incididunt aliquip eiusmod incididunt sint ipsum pariatur deserunt. Veniam eiusmod id aliquip laborum ex aliqua commodo proident non amet Lorem mollit non aliqua. Aliqua tempor deserunt pariatur laboris minim fugiat culpa id est ex velit nisi irure. Dolor est ex culpa esse irure dolore mollit ea irure nostrud aliqua ex enim.
     </h1>
-
-  </div>
+</div>
 </template>
 
 <script lang='ts'>

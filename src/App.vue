@@ -1,16 +1,16 @@
 <template>
-    <div id='root'
-         v-touch:swipe.right='enableNav'
-         v-touch:swipe.left='disableNav'>
-        <hideable-header :showNav='showNav'/>
-        <nav-bar :show='showNav'/>
-        <main id='main-root'
-              class='anim'
-              :class='{ "push":  showNav }'
-              :style='{ "color": color }'>
-            <router-view class='main-router'/>
-        </main>
-    </div>
+<div id='root'
+        v-touch:swipe.right='enableNav'
+        v-touch:swipe.left='disableNav'>
+    <hideable-header :showNav='showNav'/>
+    <nav-bar :show='showNav'/>
+    <main id='main-root'
+            class='anim'
+            :class='{ "push":  showNav }'
+            :style='{ "color": color }'>
+        <router-view class='main-router'/>
+    </main>
+</div>
 </template>
 
 <script lang='ts'>
@@ -130,26 +130,26 @@ export default Vue.extend({
 <style lang='scss' scoped>
 @import '@/style/master.scss';
 
-    #root {
-        font-family: 'Open Sans', sans-serif;
-        min-height: 100vh;
-    }
+#root {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
 
-    #main-root {
-        padding-top: $header-height;
-        //min-height: 100vh;
-        max-width: 100vw;
-    }
+#main-root {
+    padding-top: $header-height;
+    //min-height: 100vh;
+    max-width: 100vw;
+}
 
-    .anim {
-        transition: all $nav-animation-time ease;
-    }
+.anim {
+    transition: all $nav-animation-time ease;
+}
 
-    .push {
-        @include on-laptop-or-up {
-            padding-left: $nav-width;
-        }
+.push {
+    @include on-laptop-or-up {
+        padding-left: $nav-width;
     }
+}
 
 </style>
 
@@ -160,24 +160,24 @@ export default Vue.extend({
 @import '@/style/normalize.scss';
 @import '@/style/master.scss';
 
-    * {
-        padding: 0;
-        margin: 0;
-    }
+* {
+    padding: 0;
+    margin: 0;
+}
 
-    button:focus {
-        outline: none;
-    }
+button:focus {
+    outline: none;
+}
 
-    body {
-        background: $bright;
-       	text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
-    }
+body {
+    background: $bright;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
 
-    .main-content {
-        padding: 2rem;
-    }
+.main-content {
+    padding: 2rem;
+}
 
 </style>

@@ -1,14 +1,14 @@
 <template>
-    <router-link @click.native="followLink"
-                 :to='path'
-                 exact
-                 class='item clickable'
-                 :style='palette'
-                 @mouseenter.native='mouseEnter'
-                 @mouseleave.native='mouseLeave'
-                 tag='li'>
-        {{ name }}
-    </router-link>
+<router-link @click.native="followLink"
+                :to='path'
+                exact
+                class='item clickable'
+                :style='palette'
+                @mouseenter.native='mouseEnter'
+                @mouseleave.native='mouseLeave'
+                tag='li'>
+    {{ name }}
+</router-link>
 </template>
 
 <script lang="ts">
@@ -104,16 +104,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-    .item {
-        padding: $nav-item-padding;
-        padding-left: 0;
-        color: $bright;
-        font-size: $nav-item-size;
-        font-weight: bolder;
-        font-family: 'Comfortaa', sans-serif;
+.item {
+    padding: $nav-item-padding;
+    padding-left: 0;
+    color: $bright;
+    font-size: $nav-item-size;
+    font-weight: bolder;
+    font-family: 'Comfortaa', sans-serif;
 
-        cursor: pointer;
-        @include not-selectable;
-    }
+    cursor: pointer;
+    @include not-selectable;
+}
 
 </style>
