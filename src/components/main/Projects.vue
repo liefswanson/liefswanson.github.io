@@ -3,7 +3,7 @@
     <transition name='focus' mode='out-in'>
         <div v-if='leftActive'
              key='left'
-             class='left'>
+             class='panel'>
             <sticky-bar :overlay="false">
                 <div class='filter-bar'>
                     <div class='spacer'></div>
@@ -60,7 +60,7 @@
 
         <div v-else
              key='right'
-             class='right'>
+             class='panel'>
             <sticky-bar>
                 <div class='action-bar'>
                     <div class='spacer'></div>
@@ -215,8 +215,7 @@ export default Vue.extend({
     background: none;
 }
 
-.left,
-.right {
+.panel {
     height: calc(100% - $header-height);
     //overflow-y: auto;
 }
