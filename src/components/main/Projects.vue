@@ -1,8 +1,9 @@
 <template>
 <div class='projects-root'>
     <transition name='focus' mode='out-in'>
-        <div class='left'
-             v-if='leftActive'>
+        <div v-if='leftActive'
+             key='left'
+             class='left'>
             <sticky-bar :overlay="false">
                 <div class='filter-bar'>
                     <div class='spacer'></div>
@@ -57,7 +58,9 @@
             </ul>
         </div>
 
-        <div class='right' v-else>
+        <div v-else
+             key='right'
+             class='right'>
             <sticky-bar>
                 <div class='action-bar'>
                     <div class='spacer'></div>
@@ -228,7 +231,7 @@ export default Vue.extend({
 
 .focus-enter-active,
 .focus-leave-active {
-    transition: all $header-animation-time ease;
+    transition: all $content-swap-animation-time ease;
 }
 
 .focus-enter,
