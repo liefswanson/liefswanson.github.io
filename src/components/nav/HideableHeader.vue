@@ -6,7 +6,7 @@
 
         <!-- rotating hamburger button -->
         <button class='hamburger-wrapper'
-                :class='{ rotated: showNav}'
+                :class='{ rotated: showNav }'
                 @click='hamburgerToggle'>
             <i class='fa fa-bars'/>
         </button>
@@ -51,10 +51,10 @@ export default Vue.extend({
 
             if (this.show && scrollingDown) {
                 this.show = false;
-                NavEventBus.$emit(Events.toggleHeader);
+                NavEventBus.$emit(Events.closeHeader);
             } else if (!this.show && scrollingUp) {
                 this.show = true;
-                NavEventBus.$emit(Events.toggleHeader);
+                NavEventBus.$emit(Events.openHeader);
             } // else... already in the right state!
 
             this.previous = current;
@@ -72,7 +72,6 @@ export default Vue.extend({
     },
     beforeDestroy() {
         window.removeEventListener(Events.scroll, this.handleScroll);
-
         NavEventBus.$off(Events.changeColor, this.changeColor);
     }
 });

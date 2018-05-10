@@ -5,7 +5,8 @@ enum Events {
     openNav   = "nav-bar-open",
     toggleNav = "nav-bar-toggle",
 
-    toggleHeader = 'header-toggle',
+    openHeader  = 'header-open',
+    closeHeader = 'header-close',
 
     scroll = "scroll",
     resize = "resize",

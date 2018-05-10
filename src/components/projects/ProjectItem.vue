@@ -4,7 +4,8 @@
                 exact
                 class='item'
                 tag='li'
-                :style='style'>
+                :style='style'
+                v-if='visible'>
     <div ref='content'>
         <div class='card-header'>
             <img v-images-loaded="updateSpan"
@@ -22,15 +23,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue          from 'vue';
+//@ts-ignore
+import imagesLoaded from 'vue-images-loaded';
 
+import Tag            from '@/scripts/main/Tag';
 import Project        from '@/scripts/main/Project';
 import { SectionMap } from '@/scripts/nav/NavItems';
 import NavEventBus    from '@/scripts/nav/NavEventBus';
 import Events         from '@/scripts/nav/Events';
 import { setTimeout } from 'timers';
-//@ts-ignore
-import imagesLoaded from 'vue-images-loaded';
+
 
 import { pxInStd }         from '@/style/ts/StandardUnits';
 import { AnimationTimers } from '@/style/ts/Timers';
@@ -57,6 +60,10 @@ export default Vue.extend({
         gap: {
             type: Number,
             required: true
+        },
+        filters: {
+            type: Array as () => Tag[],
+            required: true
         }
     },
     computed: {
@@ -80,6 +87,15 @@ export default Vue.extend({
         },
         target(): string {
             return SectionMap.projects.path + '/' + this.path;
+        },
+        visible(): boolean {
+            let filters = this.filters;
+            function intersection(filter: Tag): boolean {
+                return filters.indexOf(filter) !== -1;
+            }
+
+            setTimeout(this.updateSpan, 0); // update the span of this object on the next tick
+            return this.properties.tags.filter(intersection).length !== 0;
         }
     },
     methods: {
@@ -124,7 +140,6 @@ export default Vue.extend({
         NavEventBus.$off(Events.openNav, this.delayedUpdate);
         NavEventBus.$off(Events.closeNav, this.delayedUpdate);
         NavEventBus.$off(Events.toggleNav, this.delayedUpdate);
-
     },
     directives: {
         imagesLoaded

@@ -8,7 +8,9 @@
             class='anim'
             :class='{ "push":  showNav }'
             :style='{ "color": color }'>
-        <router-view class='main-router'/>
+        <transition name='fade' mode='out-in'>
+            <router-view class='main-router'/>
+        </transition>
     </main>
 </div>
 </template>
@@ -178,6 +180,17 @@ body {
 
 .main-content {
     padding: 2rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all $content-swap-animation-time ease;
+}
+
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 
 </style>
