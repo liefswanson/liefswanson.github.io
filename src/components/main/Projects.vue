@@ -60,7 +60,7 @@
         <div class='right' v-else>
             <sticky-bar>
                 <div class='action-bar'>
-                    <div class='filler'></div>
+                    <div class='spacer'></div>
                     <button title='Back to Projects'
                             class='btn'>
                         <router-link to='/projects'
@@ -187,7 +187,7 @@ export default Vue.extend({
 }
 
 .btn {
-    color: $dark;
+    color: $medium;
     background: none;
     border-style: none;
     padding: 0.5rem;
