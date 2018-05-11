@@ -1,6 +1,7 @@
 <template>
 <div class='projects-root'>
     <transition name='focus' mode='out-in'>
+
         <div v-if='leftActive'
              key='left'
              class='panel'>
@@ -39,7 +40,7 @@
                            v-model='filters'>
                     <label for='misc'
                            title='miscellaneous'>
-                        <i class='fa fa-asterisk'/>
+                        <i class='far fa-dot-circle'/>
                     </label>
 
                 </div>
@@ -168,8 +169,10 @@ export default Vue.extend({
         text-align: center;
         cursor: pointer;
 
-        &:hover {
-            color: $bright !important;
+        @include on-laptop-or-up {
+            &:hover {
+                color: $bright !important;
+            }
         }
     }
 
@@ -178,9 +181,11 @@ export default Vue.extend({
         @include on-phone {
             color: $projects-swatch;
         }
-        &:hover {
-            color: lighten($projects-swatch, 10%) !important;
 
+        @include on-laptop-or-up {
+            &:hover {
+                color: lighten($projects-swatch, 10%) !important;
+            }
         }
     }
 }
@@ -223,7 +228,7 @@ export default Vue.extend({
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     list-style-type: none;
 
 }

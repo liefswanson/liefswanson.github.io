@@ -12,16 +12,15 @@
         </button>
 
         <!-- logo TODO inlined svg so I can manipulate color and font-->
-        <h1 class='logo'
-            :style='{ color: color }'>
-            Lief Swanson
-        </h1>
+        <name :color='color'/>
     </header>
 </transition>
 </template>
 
 <script lang='ts'>
 import Vue from "vue";
+
+import Name from '@/components/nav/Name.vue';
 
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
 import Events      from '@/scripts/nav/Events';
@@ -73,6 +72,9 @@ export default Vue.extend({
     beforeDestroy() {
         window.removeEventListener(Events.scroll, this.handleScroll);
         NavEventBus.$off(Events.changeColor, this.changeColor);
+    },
+    components: {
+        'name': Name
     }
 });
 </script>

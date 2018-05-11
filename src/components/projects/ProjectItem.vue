@@ -12,7 +12,15 @@
                     :src="thumb"
                     class="thumb"
                     alt="there was supposed to be a picture here">
-            <h2 class='title'>{{title}}</h2>
+            <h2 class='title'>
+                <div class='category-bar'>
+                    <div class='spacer'></div>
+                    <i v-if='properties.tags.indexOf("code") !== -1' class='fa fa-code icon'/>
+                    <i v-if='properties.tags.indexOf("design") !== -1' class='fa fa-paint-brush icon'/>
+                    <i v-if='properties.tags.indexOf("misc") !== -1' class='far fa-dot-circle icon'/>
+                </div>
+                <span>{{title}}</span>
+            </h2>
         </div>
         <div class='desc'>
             <p  class='blurb'>{{blurb}}</p>
@@ -94,7 +102,7 @@ export default Vue.extend({
                 return filters.indexOf(filter) !== -1;
             }
 
-            setTimeout(this.updateSpan, 0); // update the span of this object on the next tick
+            this.updateNextTick();
             return this.properties.tags.filter(intersection).length !== 0;
         }
     },
@@ -124,6 +132,9 @@ export default Vue.extend({
         delayedUpdate() {
             setTimeout(this.updateSpan, AnimationTimers.nav + 1);
         },
+        updateNextTick() {
+            setTimeout(this.updateSpan, 0);
+        }
     },
     mounted() {
         window.addEventListener(Events.resize, this.updateSpan);
@@ -132,7 +143,7 @@ export default Vue.extend({
         NavEventBus.$on(Events.closeNav, this.delayedUpdate);
         NavEventBus.$on(Events.toggleNav, this.delayedUpdate);
 
-        this.updateSpan();
+        this.updateNextTick();
     },
     beforeDestroy() {
         window.removeEventListener(Events.resize, this.updateSpan);
@@ -149,6 +160,18 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
+
+.icon {
+    padding-left: 0.5rem;
+}
+
+.category-bar {
+    display: flex;
+}
+
+.spacer {
+    flex: 1;
+}
 
 .item {
     //border: 1px solid $xlight;
@@ -183,14 +206,15 @@ export default Vue.extend({
 }
 
 .title {
-    padding: 0.5rem;
-    padding-left: 1rem;
+    $padding: 0.5rem;
+    padding: $padding;
+    padding-left: $padding * 2;
     background: transparentize( $medium, 0.1); //projects-swatch;
     font-weight: bold;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: calc(100% - #{$padding * 3});
     font-family: 'Comfortaa', sans-serif;
     //border-bottom: 0.25em solid $projects-swatch;
     //color: $projects-swatch; //medium;
@@ -201,6 +225,6 @@ export default Vue.extend({
 }
 
 .desc {
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 1.5rem;
 }
 </style>
