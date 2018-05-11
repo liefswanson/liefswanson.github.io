@@ -26,9 +26,10 @@ import Events      from '@/scripts/nav/Events'
 import Breakpoints from '@/style/ts/Breakpoints';
 import Swatch      from '@/style/ts/Swatch';
 
-const faviconId  = 'dynamic-favicon';
+const faviconId   = 'dynamic-favicon';
+const selectionId = 'dynamic-selection';
 
-function makeNewFavicon(color: Swatch) {
+function makeNewFavicon(color: Swatch): Element {
     const tag = 'link';
     const rel = 'icon';
 
@@ -43,16 +44,39 @@ function makeNewFavicon(color: Swatch) {
     return link;
 }
 
-function swapFavicon(color: Swatch) {
-    let link = makeNewFavicon(color);
-    let old  = document.getElementById(faviconId) as HTMLElement;
+function makeNewSelectionColor(color: Swatch):Element {
+    const tag = 'style';
+    const type = 'text/css';
+
+    let style = document.createElement(tag);
+    style.id = selectionId;
+    style.type = type;
+    style.innerHTML =
+    '::selection {' +
+        'background:' + color + ';' +
+        'color:' + Swatch.bright + ';' +
+    '}' +
+
+    '::-moz-selection {' +
+        'background:' + color + ';' +
+        'color:' + Swatch.bright + ';' +
+    '}';
+
+    return style;
+}
+
+function swapHeadElementById(id: string, elem: Element) {
+
+    let old  = document.getElementById(id) as HTMLElement;
 
     if (old) {
         document.head.removeChild(old);
     }
 
-    document.head.appendChild(link);
+    document.head.appendChild(elem);
 }
+
+
 
 export default Vue.extend({
     name: 'App',
@@ -95,7 +119,10 @@ export default Vue.extend({
 
         changeColor(color: Swatch) {
             this.color = color;
-            swapFavicon(color);
+            let favicon   = makeNewFavicon(color);
+            let selection = makeNewSelectionColor(color);
+            swapHeadElementById(faviconId,   favicon);
+            swapHeadElementById(selectionId, selection);
         },
 
     },

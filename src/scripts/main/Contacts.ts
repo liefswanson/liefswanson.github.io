@@ -26,7 +26,7 @@ const Contacts: Contact[] = [
         name: 'google+',
         fa: 'fab',
         icon: 'fa-google-plus',
-        msg: 'start a hangout with me via',
+        msg: 'add me or chat with me via',
         link: 'https://plus.google.com/103101824275581846879/about'
     },
     {

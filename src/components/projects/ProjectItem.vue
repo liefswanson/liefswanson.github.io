@@ -1,17 +1,17 @@
 <template>
 <router-link @click.native='followLink'
-                :to='target'
-                exact
-                class='item'
-                tag='li'
-                :style='style'
-                v-if='visible'>
+             :to='target'
+             exact
+             class='item'
+             tag='li'
+             :style='style'
+             v-if='visible'>
     <div ref='content'>
         <div class='card-header'>
             <img v-images-loaded="updateSpan"
-                    :src="thumb"
-                    class="thumb"
-                    alt="there was supposed to be a picture here">
+                 :src="thumb"
+                 class="thumb"
+                 alt="there was supposed to be a picture here">
             <h2 class='title'>
                 <div class='category-bar'>
                     <div class='spacer'></div>
@@ -179,6 +179,7 @@ export default Vue.extend({
     cursor: pointer;
     overflow: hidden;
     position: relative;
+
 }
 
 .mask {
@@ -188,12 +189,15 @@ export default Vue.extend({
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: $default-z+1;
+    z-index: $item-highlight-z;
+
+    transition: background $highlight-animation-time ease;
+
+    &:hover{
+        background: transparentize($projects-swatch, 0.75);
+    }
 }
 
-.mask:hover {
-    background: transparentize($projects-swatch, 0.75);
-}
 
 .thumb {
     width: 100%;

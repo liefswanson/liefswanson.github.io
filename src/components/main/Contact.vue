@@ -77,7 +77,7 @@ export default Vue.extend({
     visibility: hidden;
 
     + label {
-        transition: color $contact-animation-time ease;
+        transition: color $highlight-animation-time ease;
         color: $light;
         cursor: pointer;
         transition: color 0.25s ease;
@@ -115,7 +115,7 @@ export default Vue.extend({
 .fade-enter-active,
 .fade-leave-active {
     text-align: center;
-    transition: all $contact-animation-time / 2 ease;
+    transition: all $highlight-animation-time / 2 ease;
 }
 
 .fade-enter,
