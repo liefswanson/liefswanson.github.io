@@ -153,6 +153,7 @@ export default Vue.extend({
 
 .icon {
     padding-left: 0.5rem;
+    font-size: 0.8em;
 }
 
 .category-bar {
@@ -160,12 +161,9 @@ export default Vue.extend({
 }
 
 .item {
-    //border: 1px solid $xlight;
-
-    cursor: pointer;
     overflow: hidden;
     position: relative;
-
+    cursor: pointer;
 }
 
 .mask {
@@ -195,15 +193,22 @@ export default Vue.extend({
     position: relative;
 }
 
+// currently unused
+.overlayed {
+    background: transparentize( $medium, 0.1); //projects-swatch;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .title {
     $padding: 0.5rem;
     padding: $padding;
     padding-left: $padding * 2;
-    background: transparentize( $medium, 0.1); //projects-swatch;
+
+    background: $medium;
+
     font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: calc(100% - #{$padding * 3});
     font-family: 'Comfortaa', sans-serif;
     //border-bottom: 0.25em solid $projects-swatch;

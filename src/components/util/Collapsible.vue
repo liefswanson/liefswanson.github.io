@@ -102,7 +102,7 @@ export default Vue.extend({
     max-width: $small-size;
     padding: 0.5rem;
     margin: 0;
-    border-bottom: 3px solid $bright;
+    border-bottom: 0.2rem solid $bright;
     cursor: pointer;
 
     transition: all $link-animation-time ease-out;

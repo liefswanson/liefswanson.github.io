@@ -53,24 +53,27 @@
             <div>
                 <h2 class='list-name'>languages</h2>
                 <ul class='list'>
-                    <li v-for="item in ['Kotlin',
-                                        'Java',
-                                        'Python',
-                                        'English',
-                                        'C#',
-                                        'C',
-                                        'C++',
-                                        'Golang',
-                                        'Haskell',
-                                        'TypeScript',
-                                        'JavaScript',
-                                        'HTML & CSS',
-                                        'Sass & SCSS',
-                                        'MATLAB & Octave',
-                                        'SQL',
-                                        'Fish',
-                                        'Bash',
-                                        'LaTeX']"
+                    <li v-for="item in
+                        [
+                            'Kotlin',
+                            'Java',
+                            'Python',
+                            'English',
+                            'C#',
+                            'C',
+                            'C++',
+                            'Golang',
+                            'Haskell',
+                            'TypeScript',
+                            'JavaScript',
+                            'HTML & CSS',
+                            'Sass & SCSS',
+                            'MATLAB & Octave',
+                            'SQL',
+                            'Fish',
+                            'Bash',
+                            'LaTeX'
+                        ]"
                         :key='item'>
                         <div class='item'>{{item}}</div>
                     </li>
@@ -79,28 +82,31 @@
             <div>
                 <h2 class='list-name'>tools</h2>
                 <ul class='list'>
-                    <li v-for="item in ['Linux',
-                                        'Windows',
-                                        'Git',
-                                        'GNU coreutils',
-                                        'Make',
-                                        'CMake',
-                                        'Gradle',
-                                        'Ant',
-                                        'Webpack',
-                                        'IntelliJ',
-                                        'Visual Studio',
-                                        'VSCode & Atom',
-                                        'Eclipse',
-                                        'Emacs',
-                                        'Photoshop & GIMP',
-                                        'Illustrator & Inkscape',
-                                        'InDesign & Scribus',
-                                        'Lightroom & Darktable',
-                                        'Unity',
-                                        'FontForge',
-                                        'Acrobat',
-                                        'Audacity']"
+                    <li v-for="item in
+                        [
+                            'Linux',
+                            'Windows',
+                            'Git',
+                            'GNU coreutils',
+                            'Make',
+                            'CMake',
+                            'Gradle',
+                            'Ant',
+                            'Webpack',
+                            'IntelliJ',
+                            'Visual Studio',
+                            'VSCode & Atom',
+                            'Eclipse',
+                            'Emacs',
+                            'Photoshop & GIMP',
+                            'Illustrator & Inkscape',
+                            'InDesign & Scribus',
+                            'Lightroom & Darktable',
+                            'Unity',
+                            'FontForge',
+                            'Acrobat',
+                            'Audacity'
+                        ]"
                         :key='item'>
                         <div class=item>{{item}}</div>
                     </li>
