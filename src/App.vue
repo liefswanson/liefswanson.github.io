@@ -224,6 +224,15 @@ body {
 .u-para {
     color: $dark;
     font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0rem;
+    }
+}
+
+* {
+    line-height: 1.5em;
 }
 
 .u-img {

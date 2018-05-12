@@ -7,7 +7,9 @@
         </div>
     </transition>
 
-    <transition name='slide'>
+    <transition name='slide'
+                @afterEnter='animFinished'
+                @afterLeave='animFinished'>
         <nav class='nav-bar'
                 v-show='show'>
             <div class='menu-container'>
@@ -51,8 +53,11 @@ export default Vue.extend({
         }
     },
     methods: {
-        emitClose() { NavEventBus.$emit(Events.closeNav); },
-        emitOpen()  { NavEventBus.$emit(Events.openNav); },
+        emitClose()    { NavEventBus.$emit(Events.closeNav); },
+        emitOpen()     { NavEventBus.$emit(Events.openNav); },
+        animFinished() {
+            console.log('done');
+            NavEventBus.$emit(Events.navAnimDone); },
     },
     components: {
         "nav-item": NavItem

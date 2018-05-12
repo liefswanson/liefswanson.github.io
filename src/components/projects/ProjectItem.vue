@@ -128,29 +128,19 @@ export default Vue.extend({
 
             this.rowSpan = span;
         },
-        // just incase navbar came out during resize
-        delayedUpdate() {
-            setTimeout(this.updateSpan, AnimationTimers.nav + 1);
-        },
         updateNextTick() {
             setTimeout(this.updateSpan, 0);
         }
     },
     mounted() {
         window.addEventListener(Events.resize, this.updateSpan);
-        window.addEventListener(Events.resize, this.delayedUpdate);
-        NavEventBus.$on(Events.openNav, this.delayedUpdate);
-        NavEventBus.$on(Events.closeNav, this.delayedUpdate);
-        NavEventBus.$on(Events.toggleNav, this.delayedUpdate);
+        NavEventBus.$on(Events.navAnimDone, this.updateSpan);
 
         this.updateNextTick();
     },
     beforeDestroy() {
         window.removeEventListener(Events.resize, this.updateSpan);
-        window.removeEventListener(Events.resize, this.delayedUpdate);
-        NavEventBus.$off(Events.openNav, this.delayedUpdate);
-        NavEventBus.$off(Events.closeNav, this.delayedUpdate);
-        NavEventBus.$off(Events.toggleNav, this.delayedUpdate);
+        NavEventBus.$off(Events.navAnimDone, this.updateSpan);
     },
     directives: {
         imagesLoaded

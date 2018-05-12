@@ -19,8 +19,9 @@
     </h1>
 
     <div class='collapsible'
-         :class='{ "collapsed": !show }'>
-         <div class='padded'>
+         :style='{ "max-height": maxHeight }'>
+         <div ref='wrapper'
+              class='padded'>
             <slot/>
          </div>
     </div>
@@ -30,11 +31,17 @@
 <script lang="ts">
 import Vue from 'vue';
 
+import Events      from '@/scripts/nav/Events';
+import NavEventBus from '@/scripts/nav/NavEventBus';
+
+import { std, pxInStd } from '@/style/ts/StandardUnits';
+
 export default Vue.extend({
     name: 'Collapsible',
     data() {
         return {
-            show: this.initShow
+            show: false,
+            maxHeight: '0'
         }
     },
     props: {
@@ -50,6 +57,7 @@ export default Vue.extend({
     methods: {
         toggle() {
             this.show = !this.show;
+            this.calcHeight();
         },
         icon():string {
             if (this.show){
@@ -57,7 +65,31 @@ export default Vue.extend({
             }
 
             return 'fa-plus';
+        },
+        calcHeight() {
+            if (!this.show) {
+                this.maxHeight = '0';
+                return;
+            }
+
+            let wrapper = this.$refs.wrapper as Element;
+            let px = wrapper.getBoundingClientRect().height;
+
+
+            this.maxHeight =  px / pxInStd + std;
+        },
+    },
+    mounted() {
+        NavEventBus.$on(Events.navAnimDone, this.calcHeight);
+        window.addEventListener(Events.resize, this.calcHeight);
+
+        if(this.initShow) {
+            this.toggle();
         }
+    },
+    beforeDestroy(){
+        NavEventBus.$off(Events.navAnimDone, this.calcHeight);
+        window.removeEventListener(Events.resize, this.calcHeight);
     }
 });
 </script>
@@ -99,12 +131,8 @@ export default Vue.extend({
 .collapsible {
     transition: max-height $collapse-animation-time ease-out;
     overflow: hidden;
-    max-height: 10rem;
 }
 
-.collapsed {
-    max-height: 0rem;
-}
 
 .padded {
     padding: 1.5rem;
