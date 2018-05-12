@@ -205,6 +205,35 @@ body {
     overflow-x: hidden;
 }
 
+// classes prefixed by u- mean universal, and are used in multiple SFCs
+.u-link {
+    color: inherit;
+
+    transition: font-size $link-animation-time ease;
+
+
+    &:hover {
+        font-size: 1.33em;
+    }
+
+    &:visited {
+        color: $dark;
+    }
+}
+
+.u-para {
+    color: $dark;
+    font-size: 1.1rem;
+}
+
+.u-img {
+
+}
+
+.spacer {
+    flex: 1;
+}
+
 .main-content {
     padding: 2rem;
 }

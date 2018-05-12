@@ -2,7 +2,7 @@
 <div class='resume-container'>
     <sticky-bar>
         <div class='action-bar'>
-            <div class='filler'></div>
+            <div class='spacer'></div>
             <button title='View with built-in PDF viewer'
                     class='btn'>
                 <a class='override-color'
@@ -57,10 +57,6 @@ export default Vue.extend({
     z-index: $pdf-z;
     max-width: $large-size;
     margin: auto;
-}
-
-.filler {
-    flex: 1;
 }
 
 .action-bar {

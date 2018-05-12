@@ -9,10 +9,10 @@
                 :key='contact.name'
                 class='icon'>
                 <input :id='contact.name'
-                    :value='contact'
-                    type="radio"
-                    class='radio'
-                    v-model='active'>
+                        :value='contact'
+                        type="radio"
+                        class='radio'
+                        v-model='active'>
                 <label :title='contact.name'
                        :for='contact.name'>
                     <i :class='[contact.fa, contact.icon]'/>
@@ -99,7 +99,7 @@ export default Vue.extend({
 .link {
     color: $dark;
 
-    transition: font-size 0.25s ease;
+    transition: font-size $link-animation-time ease;
 
 
     &:hover {

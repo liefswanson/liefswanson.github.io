@@ -40,7 +40,7 @@
                            v-model='filters'>
                     <label for='misc'
                            title='miscellaneous'>
-                        <i class='far fa-dot-circle'/>
+                        <i class='fa fa-asterisk'/>
                     </label>
 
                 </div>
@@ -132,6 +132,11 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
+
+.action-bar {
+    height: 0;
+}
+
 .filter-bar {
     display: flex;
     background: transparentize($medium, 1);
@@ -188,10 +193,6 @@ export default Vue.extend({
             }
         }
     }
-}
-
-.spacer {
-    flex: 1;
 }
 
 .btn {

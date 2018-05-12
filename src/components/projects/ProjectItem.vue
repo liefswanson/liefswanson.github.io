@@ -17,7 +17,7 @@
                     <div class='spacer'></div>
                     <i v-if='properties.tags.indexOf("code") !== -1' class='fa fa-code icon'/>
                     <i v-if='properties.tags.indexOf("design") !== -1' class='fa fa-paint-brush icon'/>
-                    <i v-if='properties.tags.indexOf("misc") !== -1' class='far fa-dot-circle icon'/>
+                    <i v-if='properties.tags.indexOf("misc") !== -1' class='fa fa-asterisk icon'/>
                 </div>
                 <span>{{title}}</span>
             </h2>
@@ -167,10 +167,6 @@ export default Vue.extend({
 
 .category-bar {
     display: flex;
-}
-
-.spacer {
-    flex: 1;
 }
 
 .item {
