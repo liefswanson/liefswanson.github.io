@@ -1,5 +1,17 @@
-import Sample  from '@/components/projects/Sample.vue'
-import Another from '@/components/projects/Another.vue'
+import Sample  from '@/components/projects/Sample.vue';
+import Another from '@/components/projects/Another.vue';
+
+import OptimizingKeyboards   from '@/components/projects/OptimizingKeyboards.vue';
+import WritingACompiler      from '@/components/projects/WritingACompiler.vue';
+import TeachersAssistant     from '@/components/projects/TeachersAssistant.vue';
+import Photography2014Summer from '@/components/projects/Photography2014Summer.vue';
+import RecursivePlug         from '@/components/projects/RecursivePlug.vue';
+import HDR                   from '@/components/projects/HDR.vue';
+import RayTracer             from '@/components/projects/RayTracer.vue';
+import Font                  from '@/components/projects/Font.vue';
+import Tetris                from '@/components/projects/Tetris.vue';
+
+
 import Tag from '@/scripts/main/Tag';
 
 import code   = Tag.code;
@@ -9,77 +21,95 @@ import misc   = Tag.misc
 
 const Projects = [
     {
-        path: "sample",
-        name: "Sample",
-        component: Sample,
+        path: "optimizing-keyboards",
+        name: "OptimizingKeyboards",
+        component: OptimizingKeyboards,
 
-        title: "A Sample!",
-        blurb: "this is a sample project",
-        thumb: "https://picsum.photos/200/350/?=random",
+        title: "Optimizing Gesture Keyboards for Clarity, Done Dirt Cheap",
+        blurb: "I received a grant to do some undergrad research; I came up with a heuristic for determining if any individual person would be likely to make errors given a keyboard layout. The heuristic is orders of magnitude faster than other existing methods.",
+        thumb: "static/optimizing-keyboards/thumb.png",
+        tags: [code, misc]
+    },
+    {
+        path: "writing-a-compiler",
+        name: "WritingACompiler",
+        component: WritingACompiler,
+
+        title: "Writing a Compiler, the Hard Way",
+        blurb: "I took a class at SFU in compilers. In it I wrote approximately 15,000 lines of Java without the aid of external libraries, building up a compiler and optimizer for Pika. Pika is a language designed specifically for that class.",
+        thumb: "https://picsum.photos/150/250/?=random",
         tags: [code]
     },
     {
-        path: "another",
-        name: "Another",
-        component: Another,
+        path: "teachers-assistant",
+        name: "TeachersAssistant",
+        component: TeachersAssistant,
 
-        title: "Y.A.P.",
-        blurb: "YAP: yet another project",
-        thumb: "https://picsum.photos/150/250/?=random",
+        title: "1 TA / 90 Students",
+        blurb: "I was the only TA for a second year course in OOP which had 90 students. It was hard work, but well worth it.",
+        thumb: "https://picsum.photos/500/250/?=random",
+        tags: [code, misc]
+    },
+    {
+        path: "photography-2014-summer",
+        name: "Photography2014Summer",
+        component: Photography2014Summer,
+
+        title: "Taking Photos in the Summer Time",
+        blurb: "I took a class in photography, as an excuse to use my DSLR. It turned into a lot of fun; a summer well spent.",
+        thumb: "https://picsum.photos/250/?=random",
         tags: [design]
     },
     {
-        path: "this",
-        name: "This",
-        component: Another,
+        path: "recursive-plug",
+        name: "RecursivePlug",
+        component: RecursivePlug,
 
-        title: "this",
-        blurb: "YAP: yet another project wow lots of text oooh wow such long wow text more text yep, more text derp derp derp... another project wow lots of text oooh wow such long wow text.",
-        thumb: "https://picsum.photos/500/250/?=random",
-        tags: [misc]
-    },
-    {
-        path: "that",
-        name: "That",
-        component: Another,
-
-        title: "that",
-        blurb: "YAP: yet another project",
-        thumb: "https://picsum.photos/250/?=random",
-        tags: [code, design]
-    },
-    {
-        path: "a",
-        name: "A",
-        component: Another,
-
-        title: "A",
-        blurb: "Fugiat aliquip elit esse laboris cillum ad laboris velit laborum ullamco veniam amet ullamco. Irure qui reprehenderit deserunt fugiat veniam exercitation fugiat sint exercitation proident eu. Non qui excepteur sint anim culpa. Esse sunt voluptate veniam dolor ea veniam pariatur pariatur in dolore ex. Non ea labore enim id incididunt. Fugiat fugiat cupidatat sint occaecat proident. Nisi id aliqua fugiat in deserunt cupidatat duis. Dolore quis est tempor esse ullamco culpa minim culpa minim cillum minim excepteur. Occaecat tempor voluptate voluptate ad labore veniam fugiat et cupidatat reprehenderit reprehenderit. Eiusmod nostrud ex incididunt elit id consequat consectetur mollit officia. Quis ipsum adipisicing ea ut pariatur qui quis sit excepteur. Cupidatat sunt occaecat proident esse. Et eiusmod exercitation laboris ullamco est.",
+        title: "This Portfolio You Are Currently Viewing",
+        blurb: "I am by no means above using recursion, especially when I worked hard on this website and want to show it off... inside this website.",
         thumb: "https://picsum.photos/200/450/?=random",
-        tags: [design, misc]
+        tags: [code, design, misc]
     },
     {
-        path: "b",
-        name: "B",
-        component: Another,
+        path: "hdr",
+        name: "HDR",
+        component: HDR,
 
-        title: "B",
-        blurb: "Ut laborum sit labore enim in sunt aute. Cillum mollit commodo in ea veniam non officia. Est ullamco officia irure occaecat officia veniam sit aute do nostrud. Lorem tempor quis Lorem magna sit veniam eu eu elit cupidatat. Pariatur est nostrud reprehenderit labore reprehenderit velit labore sit minim dolor id laboris. Et aliquip cillum sint eiusmod consequat minim.",
-        thumb: "https://picsum.photos/350/?=random",
-        tags: [code, design, misc]
+        title: "Implemented HDR Instead of Just Using It",
+        blurb: "In a class in computer media protocols and algorithms I implemented a simple custom algorithm for creating HDR images.",
+        thumb: "static/hdr/thumb.png",
+        tags: [code]
+    },
+    {
+        path: "ray-tracer",
+        name: "RayTracer",
+        component: RayTracer,
+
+        title: "Implementing a RayTracer",
+        blurb: "For a class in computer graphics, I implemented a ray tracer. It looks pretty good, but I think I would do it differently if I did it again.",
+        thumb: "static/ray-tracer/thumb.png",
+        tags: [code]
+    },
+    {
+        path: 'font',
+        name: 'font',
+        component: Font,
+
+        title: 'Making my own font from scratch (WIP)',
+        blurb: "Bauhaus style fonts are so cool, but really hard to read. That hasn't stopped me from trying to make my own. There is a lot of work left to go, but check out the logo in the top right, I used a modified version of it there.",
+        thumb: "static/font/thumb.png",
+        tags: [design]
+    },
+    {
+        path: 'tetris',
+        name: 'tetris',
+        component: Tetris,
+
+        title: 'Making a Crazy Version of Tetris in OpenGL',
+        blurb: "For a class in computer graphics, I made a weird version of tetris using only OpenGL, C++, and glfw3.",
+        thumb: "static/tetris/thumb.png",
+        tags: [code]
     }
 ];
 
-const ProjectMap = {
-    sample:  Projects.filter(
-        (elem) => elem.component == Sample  )[0],
-    another: Projects.filter(
-        (elem) => elem.component == Another )[0]
-}
-
 export default Projects;
-
-export {
-    Projects,
-    ProjectMap
-}

@@ -15,9 +15,9 @@
             <h2 class='title'>
                 <div class='category-bar'>
                     <div class='spacer'></div>
-                    <i v-if='properties.tags.indexOf("code") !== -1' class='fa fa-code icon'/>
-                    <i v-if='properties.tags.indexOf("design") !== -1' class='fa fa-paint-brush icon'/>
-                    <i v-if='properties.tags.indexOf("misc") !== -1' class='fa fa-asterisk icon'/>
+                    <i v-if='tagActive("code")' class='fa fa-code icon'/>
+                    <i v-if='tagActive("design")' class='fa fa-paint-brush icon'/>
+                    <i v-if='tagActive("misc")' class='fa fa-asterisk icon'/>
                 </div>
                 <span>{{title}}</span>
             </h2>
@@ -115,6 +115,9 @@ export default Vue.extend({
         },
         followLink() {
 
+        },
+        tagActive(tag: Tag): boolean {
+            return this.properties.tags.indexOf(tag) !== -1;
         },
         updateSpan() {
             var content = this.$refs.content as Element;

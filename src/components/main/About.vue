@@ -153,7 +153,7 @@
             I have dyslexia, so I can find reading for very long periods exhausting.
             However, that doesn't stop me from enjoying a good book!
             I have listened to a pretty good selection of audio books.
-            My top five are nearly impossible to pick... but here are five really good ones:
+            My top five are nearly impossible to pick... but here are five really good ones that I never heard of before I decided to read them:
 
 
             <ol class='list emphasized'>
@@ -170,12 +170,12 @@
                     <i class='low'>by Richard Thaler</i>
                 </li>
                 <li>
-                    The Selfish Gene
-                    <i class='low'>by Richard Dawkins</i>
+                    The Drunkard's Walk : How Randomness Rules Our Lives
+                    <i class='low'>by Leonard Mlodinow</i>
                 </li>
                 <li>
-                    Understanding Power : The Indispensible Chomsky
-                    <i class='low'>by Noam Chomsky, Peter R. Mitchell, and John Schoeffel</i>
+                    The Half Has Never Been Told : Slavery and the Making of American Capitalism
+                    <i class='low'>by Edward E. Baptist</i>
                 </li>
             </ol>
         </p>
