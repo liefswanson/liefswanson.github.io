@@ -51,10 +51,12 @@ export default Vue.extend({
             if (this.show && scrollingDown) {
                 this.show = false;
                 NavEventBus.$emit(Events.closeHeader);
-            } else if (!this.show && scrollingUp) {
+            }
+            else if (!this.show && scrollingUp) {
                 this.show = true;
                 NavEventBus.$emit(Events.openHeader);
-            } // else... already in the right state!
+            }
+            // else... already in the right state!
 
             this.previous = current;
         },
@@ -126,6 +128,10 @@ export default Vue.extend({
     z-index: $hamburger-sideways-z;
 
     transition: all $nav-animation-time ease;
+
+    &:hover {
+        color: $xlight;
+    }
 }
 
 .rotated {

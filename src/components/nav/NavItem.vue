@@ -96,8 +96,7 @@ export default Vue.extend({
             this.emitColorChange();
         }
     }
-})
-
+});
 </script>
 
 

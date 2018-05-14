@@ -11,7 +11,7 @@
             <img v-images-loaded="updateSpan"
                  :src="thumb"
                  class="thumb"
-                 alt="there was supposed to be a picture here">
+                 :alt="thumb">
             <h2 class='title'>
                 <div class='category-bar'>
                     <div class='spacer'></div>
