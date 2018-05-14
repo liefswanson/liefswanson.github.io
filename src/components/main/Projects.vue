@@ -245,3 +245,61 @@ export default Vue.extend({
     opacity: 0;
 }
 </style>
+
+<style lang="scss">
+@import "@/style/master.scss";
+
+.project-item-grid {
+    max-width: $large-size;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include on-tablet {
+        grid-template-columns: repeat(2,1fr);
+    }
+    @include on-phone {
+        grid-template-columns: 1fr;
+    }
+
+    grid-gap: 1rem;
+}
+
+.p-thin {
+
+}
+
+.p-wide {
+    grid-column: span 2;
+}
+
+.p-full {
+    grid-column: span 3;
+}
+
+.p-text {
+    font-size: 1.25rem;
+    color: $dark;
+}
+
+.p-note {
+    color: $light;
+    font-style: italic;
+}
+
+.p-link {
+    color: $projects-swatch;
+
+    transition: all 0.5s ease;
+
+
+    &:visited {
+        color: $light;
+    }
+
+    &:hover {
+        color: darken($projects-swatch, 10%);
+        //font-size: 1.05em;
+    }
+}
+
+</style>

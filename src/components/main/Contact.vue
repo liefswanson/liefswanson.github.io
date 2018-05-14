@@ -1,7 +1,7 @@
 <template>
 <div class='main-content'>
     <h1>
-        If you want to contact or follow me you can...
+        If you want to contact or follow me, you can...
     </h1>
     <div class='contacts'>
         <ul class='icon-list'>
