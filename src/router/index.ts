@@ -23,7 +23,7 @@ Vue.use(Vue2TouchEvents);
 
 const landing = {
     path: "/",
-    redirect: { path: SectionMap.featured.path }
+    redirect: { path: SectionMap.projects.path }
 };
 
 const notFound = {

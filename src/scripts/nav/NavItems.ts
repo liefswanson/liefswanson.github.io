@@ -10,18 +10,18 @@ import Swatch from '@/style/ts/Swatch';
 
 const Sections = [
     {
-        path: "/featured",
-        name: "Featured",
-        icon: "./assets/featured.min.svg",
-        color: Swatch.feature,
-        component: Featured
-    },
-    {
         path: "/projects",
         name: "Projects",
         icon: "./assets/projects.min.svg",
         color: Swatch.projects,
         component: Projects
+    },
+    {
+        path: "/featured",
+        name: "Featured",
+        icon: "./assets/featured.min.svg",
+        color: Swatch.feature,
+        component: Featured
     },
     {
         path: "/resume",

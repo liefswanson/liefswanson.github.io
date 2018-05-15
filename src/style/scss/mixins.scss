@@ -8,3 +8,19 @@
 @mixin scrollable {
     overflow-y: auto;
 }
+
+@mixin link($color) {
+    color: $color;
+
+    transition: all $link-animation-time ease;
+
+
+    &:visited {
+        color: $light;
+    }
+
+    &:hover {
+        color: darken($color, 10%);
+        //font-size: 1.05em;
+    }
+}

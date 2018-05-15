@@ -18,6 +18,7 @@
             It's even better when there is a reason I am solving the problem!
             Ultimately my goal is to make things that people enjoy using.
             I hope to do just that as long as I can through design and software engineering.
+            It would be even better if I was able to supply the software I build open-source, while still making a living.
         </p>
     </collapse>
     <collapse title='My Education'>
@@ -25,7 +26,6 @@
             I have been going to SFU (Simon Fraser University) for about eight years.
             The reason it has been so long is in addition to a couple of set backs in my personal life, and I am going for two degrees.
             I'm working away at a BSc from a program called SoSy (Software Systems) and a BA in a program called IAT (Interactive Arts and Technology).
-
         </p>
 
         <p class='u-para'>
@@ -35,6 +35,7 @@
 
         <p class='u-para'>
             I am also working on publishing some self-directed research and I have volunteered in a few labs helping complete other peoples' research.
+            Check out the <router-link class='a-link' exact to='/projects'>projects section</router-link> to see more on that!
         </p>
     </collapse>
     <collapse title='My Skills'>
@@ -45,7 +46,10 @@
 
         <p class='u-para'>
             I am always teaching myself new skills;
-            be it a new programming language, a new design tool, or some little application or trick for KDE & Arch Linux.
+            be it a new programming language, a new design tool, or some little application or trick for
+            <a class='a-link' href='https://www.kde.org/'>KDE</a>
+            &
+            <a class='a-link' href='https://www.archlinux.org/'>Arch Linux</a>.
             Here is an incomplete list of some of the tools I have used frequently enough in the recent past to be comfortable with:
         </p>
 
@@ -195,7 +199,6 @@
 import Vue from 'vue';
 import Collapsible from '@/components/util/Collapsible.vue';
 
-
 export default Vue.extend({
     name: "About",
     components: {
@@ -209,6 +212,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
+
+.a-link {
+    @include link($about-swatch);
+}
 
 .main-content {
     max-width: $small-size;

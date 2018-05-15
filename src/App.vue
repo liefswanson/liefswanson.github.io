@@ -183,83 +183,10 @@ export default Vue.extend({
 </style>
 
 <style lang='scss'>
-// NOTICE: ONLY UNSCOPED STYLES
+// purposely unscoped
 // used for normalizing,
-// and reusable classes
+// and reusable classes,
+// as vue requires this component always be loaded
 @import '@/style/normalize.scss';
-@import '@/style/master.scss';
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-button:focus {
-    outline: none;
-}
-
-body {
-    background: $bright;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-}
-
-// classes prefixed by u- mean universal, and are used in multiple SFCs
-.u-link {
-    color: inherit;
-
-    transition: font-size $link-animation-time ease;
-
-
-    &:hover {
-        font-size: 1.33em;
-    }
-
-    &:visited {
-        color: $dark;
-    }
-}
-
-.u-para {
-    color: $dark;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-
-    &:last-child {
-        margin-bottom: 0rem;
-    }
-}
-
-* {
-    line-height: 1.5em;
-}
-
-.u-img {
-
-}
-
-.u-grid {
-
-}
-
-.spacer {
-    flex: 1;
-}
-
-.main-content {
-    padding: 2rem;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: all $content-swap-animation-time ease;
-}
-
-
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
-}
-
+@import '@/style/unscoped.scss';
 </style>

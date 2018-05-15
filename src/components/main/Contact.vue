@@ -77,7 +77,7 @@ export default Vue.extend({
     visibility: hidden;
 
     + label {
-        transition: color $highlight-animation-time ease;
+        transition: color $highlight-animation-time ease !important;
         color: $light;
         cursor: pointer;
         transition: color 0.25s ease;
@@ -110,7 +110,6 @@ export default Vue.extend({
         color: $light;
     }
 }
-
 
 .fade-enter-active,
 .fade-leave-active {

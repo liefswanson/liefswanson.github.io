@@ -1,0 +1,165 @@
+@import '@/style/master.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5em;
+}
+
+button:focus {
+    outline: none;
+}
+
+body {
+    background: $bright;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.spacer {
+    flex: 1;
+}
+
+// classes prefixed by u- mean universal, and are used in multiple SFCs
+.u-link {
+    color: inherit;
+
+    transition: font-size $link-animation-time ease;
+
+
+    &:hover {
+        font-size: 1.33em;
+    }
+
+    &:visited {
+        color: $dark;
+    }
+}
+
+.u-para {
+    color: $dark;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0rem;
+    }
+}
+
+// classes prefixed by p- mean projects, and are used in all project SFCs
+.p-article-grid {
+    max-width: $large-size;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    grid-gap: 1.5rem;
+}
+
+.p-thin {
+    grid-column: span 4;
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-wide {
+    grid-column: span 8;
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-shrink {
+    grid-column: span 8;
+    @include on-tablet {
+        grid-column: span 4;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-grow {
+    grid-column: span 4;
+    @include on-tablet {
+        grid-column: span 8;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-wide-grow {
+    grid-column: span 8;
+    @include on-tablet {
+        grid-column: span 10;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-thin-grow {
+    grid-column: span 4;
+    @include on-tablet {
+        grid-column: span 10;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-full {
+    grid-column: span 12;
+}
+
+.p-list {
+    padding-left: 2rem;
+    font-size: 1.1rem;
+    color: $dark;
+}
+
+.p-text {
+    font-size: 1.25rem;
+    color: $dark;
+}
+
+.p-note {
+    color: $light;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.p-highlight {
+    font-size: 1.8rem;
+    color: $light;
+    font-style: italic;
+}
+
+.p-icon {
+    font-size: 2.5rem;
+    padding-left: 0.7rem;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.p-image {
+    width: 100%;
+    height: auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all $content-swap-animation-time ease;
+}
+
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
