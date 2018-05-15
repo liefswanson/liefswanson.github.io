@@ -89,7 +89,9 @@ export default Vue.extend({
 }
 
 .image {
-    object-fit: cover;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
 }
 
 .dots {

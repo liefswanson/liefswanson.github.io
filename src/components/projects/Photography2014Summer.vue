@@ -25,6 +25,7 @@
                  [
                     'thumb.jpg',
                     'a.jpg',
+                    'b.jpg',
                     'thumb.jpg',
                     'thumb.jpg',
                     'thumb.jpg',
