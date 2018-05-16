@@ -187,7 +187,7 @@ $arrow-space: 1rem;
 }
 
 .image {
-    height: auto;
+    height: 100%;
     width: 100%;
     object-fit: contain;
 }

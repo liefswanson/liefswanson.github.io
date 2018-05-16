@@ -30,11 +30,13 @@ const faviconId   = 'dynamic-favicon';
 const selectionId = 'dynamic-selection';
 
 function makeNewFavicon(color: Swatch): Element {
+    //console.log(color);
+
     const tag = 'link';
     const rel = 'icon';
 
     let pathId = color.slice(1);
-    let path   = 'static/logo-' + pathId + '.png';
+    let path   = 'static/logo-' + pathId + '.png?v=2';
 
     let link  = document.createElement(tag);
     link.id   = faviconId;
@@ -119,8 +121,8 @@ export default Vue.extend({
 
         changeColor(color: Swatch) {
             this.color = color;
-            let favicon   = makeNewFavicon(color);
-            let selection = makeNewSelectionColor(color);
+            let favicon   = makeNewFavicon(this.color);
+            let selection = makeNewSelectionColor(this.color);
             swapHeadElementById(faviconId,   favicon);
             swapHeadElementById(selectionId, selection);
         },

@@ -58,6 +58,12 @@ body {
     grid-gap: 1.5rem;
 }
 
+.p-fill-row {
+    @include on-tablet-or-up {
+        grid-column-end: span 12;
+    }
+}
+
 .p-thin {
     grid-column: span 4;
     @include on-phone {
