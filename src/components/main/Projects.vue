@@ -231,7 +231,6 @@ export default Vue.extend({
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     list-style-type: none;
-
 }
 
 .focus-enter-active,

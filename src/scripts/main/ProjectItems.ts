@@ -166,7 +166,7 @@ const Projects = [
         name: 'BigTeamProject',
         component: BigTeamProject,
 
-        title: 'A Large Team Project For School',
+        title: 'A Large Team Project for School',
         blurb: "I worked on a semester long team project where we took a client's specifications, and built a product for them.",
         thumb: 'static/big-team-project/thumb.jpg',
         tags: [code, design]

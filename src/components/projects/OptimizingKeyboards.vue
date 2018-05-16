@@ -28,7 +28,7 @@
         </p>
 
         <p class='p-wide p-text'>
-            If you followed the link in my note at the top there, you would know about the methods already used to gesture keyboard optimization.
+            If you followed the link in my note at the top there, you would know about the main method already used to gesture keyboard clarity optimization.
             The biggest problem with the existing method, is it takes a <b>very</b> long time.
             If you take into consideration the number of words in the dictionary, square that, you are now in the ballpark of how many comparisons need to be done to rate a single keyboard for gesture clarity.
         </p>
@@ -116,7 +116,7 @@ export default Vue.extend({
     components: {
         'v-link': Link
     }
-})
+});
 </script>
 
 
