@@ -40,7 +40,6 @@ const projects = {
 };
 
 export default new Router({
-    mode: 'history',
     routes:     [
         landing,
         projects,

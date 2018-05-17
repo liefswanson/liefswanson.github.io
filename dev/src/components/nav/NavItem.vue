@@ -36,6 +36,14 @@ export default Vue.extend({
             required: true
         }
     },
+    watch: {
+        $route(to, from) {
+            if(this.active) {
+                this.emitColorChange();
+                console.log(this.color);
+            }
+        }
+    },
     computed: {
         path():  string  { return this.properties.path  },
         name():  string  { return this.properties.name  },
@@ -76,7 +84,6 @@ export default Vue.extend({
                 this.emitClose();
             }
 
-            this.emitColorChange();
             this.mouseLeave(); // option 2
         },
         emitClose() {
