@@ -12,7 +12,8 @@
         </button>
 
         <!-- logo TODO inlined svg so I can manipulate color and font-->
-        <name :color='color'/>
+        <name :color='color'
+              class='extra-pad'/>
     </header>
 </transition>
 </template>
@@ -105,6 +106,10 @@ export default Vue.extend({
     margin: 0;
 
     @include not-selectable;
+}
+
+.extra-pad {
+    padding-right: 1.5rem;
 }
 
 // hamburger

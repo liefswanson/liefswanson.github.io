@@ -1,6 +1,6 @@
 <template>
     <article class='p-article-grid'>
-        <h1 class='p-wide'>
+        <h1 class='p-wide p-title'>
             1 TA / 90 Students
         </h1>
         <p class='p-text p-wide'>
@@ -60,7 +60,7 @@
             From what students told me, I think they appreciated the feedback.
             I found also that to be an enriching experience, especially when students told me they found it helpful to have someone earnestly read and comment on their work.
             I have taken classes during my
-            <v-link local to='/static/projects/sosy'>Software Systems degree</v-link>
+            <v-link local to='/projects/sosy'>Software Systems degree</v-link>
             at SFU where I have written absolutely terrible code, and the TA marking my work never even commented on it... probably because they never read it.
             The worst part about it was I didn't know how bad it was until looking back on it years later.
         </p>

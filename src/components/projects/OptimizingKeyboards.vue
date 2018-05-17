@@ -1,6 +1,6 @@
 <template>
     <article class='p-article-grid'>
-        <h1 class='p-wide'>
+        <h1 class='p-wide p-title'>
             Optimizing Gesture Keyboards for Clarity, Done Dirt Cheap
         </h1>
         <p class='p-wide p-text'>

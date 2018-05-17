@@ -1,6 +1,6 @@
 <template>
     <article class='p-article-grid'>
-        <h1 class='p-wide'>
+        <h1 class='p-wide p-title'>
             Taking Photos in the Summer Time
         </h1>
 

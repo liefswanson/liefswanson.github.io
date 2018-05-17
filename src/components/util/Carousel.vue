@@ -198,6 +198,11 @@ $arrow-space: 1rem;
 
 .left,
 .right {
+    height: $icon-size;
+    width: $icon-size;
+    text-align: center;
+    line-height: $icon-size;
+    border-radius: $icon-size;
     @include topcalc($dot-size, $dot-pad);
     @include on-tablet {
         @include topcalc($tablet-dot-size, $tablet-dot-pad);
@@ -207,16 +212,15 @@ $arrow-space: 1rem;
     }
 
     position: absolute;
-    color: $bright;
-    opacity: 0.5;
-
+    color: transparentize($bright, 0.25);
+    background: transparentize($dark, 0.5);
     font-size: $icon-size;
 
     transition: all $link-animation-time ease;
 
     &:hover {
-        opacity: 1;
         color: inherit;
+        background: transparentize($dark, 0.25);
     }
 }
 
@@ -227,6 +231,7 @@ $arrow-space: 1rem;
 .right {
     right: $arrow-space;
 }
+
 .dots {
     bottom: 0;
     width: 100%;
@@ -249,10 +254,14 @@ $arrow-space: 1rem;
         font-size : $phone-dot-size;
     }
     transition: all $carousel-animation-time ease-in-out;
+
+    &:hover {
+        color: $medium;
+    }
 }
 
 .active-dot {
-    color: inherit
+    color: inherit !important;
 }
 
 .inactive-dot {

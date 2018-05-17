@@ -24,13 +24,14 @@ import AudioBooks            from '@/components/projects/AudioBooks.vue';
 import VideoGames            from '@/components/projects/VideoGames.vue';
 
 import Tag     from '@/scripts/main/Tag';
+import Project from '@/scripts/main/Project';
 
 import code   = Tag.code;
 import design = Tag.design;
 import misc   = Tag.misc
 
 
-const Projects = [
+const Projects:Project[] = [
     {
         path: "optimizing-keyboards",
         name: "OptimizingKeyboards",
@@ -76,7 +77,7 @@ const Projects = [
         name: "RecursivePlug",
         component: RecursivePlug,
 
-        title: "This Portfolio You Are Currently Viewing",
+        title: "This Portfolio You are Currently Viewing",
         blurb: "I am by no means above using recursion, especially when I worked hard on this website and want to show it off... inside this website.",
         thumb: "static/recursive-plug/thumb.svg",
         tags: [code, design, misc]
@@ -224,7 +225,7 @@ const Projects = [
     {
         path: 'audio-books',
         name: 'AudioBooks',
-        compontent: AudioBooks,
+        component: AudioBooks,
 
         title: 'I listen to a lot of Audio Books',
         blurb: "I have dyslexia, which means I read a bit too slowly to easily make it through a some books. However, I still like a good book, so I listen to lots of audio books.",
@@ -234,11 +235,11 @@ const Projects = [
     {
         path: 'video-games',
         name: 'VideoGames',
-        compontent: VideoGames,
+        component: VideoGames,
 
         title: 'I Play Video Games',
         blurb: "I really like playing a video games, when they make you think... or if they have truly enthralling stories and mechanics.",
-        thumb: 'static/video-games/thumb.png',
+        thumb: 'static/video-games/thumb.jpg',
         tags: [misc]
 
     }

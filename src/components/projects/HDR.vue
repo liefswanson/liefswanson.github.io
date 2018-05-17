@@ -1,13 +1,13 @@
 <template>
     <article class='p-article-grid'>
-        <h1 class='p-wide'>
+        <h1 class='p-wide p-title'>
             Implementing HDR Instead of Just Using It
         </h1>
 
 
         <p class='p-wide p-text'>
             For a class in Media Arts, for my
-            <v-link local to='/static/projects/sosy'>Software Systems degree</v-link>
+            <v-link local to='/projects/sosy'>Software Systems degree</v-link>
             I had to do some photo manipulation.
             It wasn't anything terribly difficult, just implementing our own spin on HDR.
             We weren't given any equations for how to make it work, we were told just to play it by ear.

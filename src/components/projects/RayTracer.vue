@@ -1,6 +1,6 @@
 <template>
     <article class='p-article-grid'>
-        <h1 class='p-wide'>
+        <h1 class='p-wide p-title'>
             Implementing a Ray Tracer
         </h1>
 
@@ -11,7 +11,7 @@
 
         <p class='p-wide p-text'>
             In a class about computer graphics I took for my
-            <v-link local to='/static/projects/sosy'>Software Systems degree</v-link>
+            <v-link local to='/projects/sosy'>Software Systems degree</v-link>
             I built a ray tracer from scratch.
             While it isn't exactly what one would call fully featured, it is pretty cool!
             It can do a lot of things:
@@ -43,7 +43,7 @@
         </ul>
 
         <p class='p-wide p-text'>
-            But just look at how nice the renders look anyway!
+            But just look at how nice the renders look!
         </p>
 
         <img src="/static/ray-tracer/thumb.png"

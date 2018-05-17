@@ -58,6 +58,11 @@ body {
     grid-gap: 1.5rem;
 }
 
+.p-title {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+}
+
 .p-fill-row {
     @include on-tablet-or-up {
         grid-column-end: span 12;
@@ -115,6 +120,35 @@ body {
     }
     @include on-phone {
         grid-column: span 12;
+    }
+}
+
+.p-mid-grow {
+    grid-column: span 6;
+    @include on-tablet {
+        grid-column: span 10;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-mid-incremental {
+    grid-column: span 6;
+    @include on-laptop {
+        grid-column: span 8;
+    }
+    @include on-tablet {
+        grid-column: span 10;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-push-right {
+    @include on-laptop-or-up{
+        grid-column-end: 13;
     }
 }
 

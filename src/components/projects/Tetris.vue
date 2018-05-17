@@ -1,6 +1,6 @@
 <template>
     <article class='p-article-grid'>
-        <h1 class='p-wide'>
+        <h1 class='p-wide p-title'>
             A Crazy Version of Tetris in OpenGL
         </h1>
 
@@ -83,7 +83,7 @@
 
         <p class='p-thin p-note'>
             I also mode a
-            <v-link to='/static/projects/ray-tracer'>ray tracer</v-link>
+            <v-link to='/projects/ray-tracer'>ray tracer</v-link>
             for this same class, you should check that out, it made a very pretty picture.
         </p>
     </article>
@@ -92,13 +92,11 @@
 <script lang="ts">
 import Vue from 'vue';
 import Link from '@/components/util/Link.vue';
-import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'HDR',
     components: {
         'v-link': Link,
-        'v-carousel': Carousel
     }
 });
 </script>

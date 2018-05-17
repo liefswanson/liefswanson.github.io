@@ -70,7 +70,7 @@
                         <router-link to='/projects'
                                      exact
                                      class='override-color'>
-                            <i class='fa fa-window-close'/>
+                            <i class='fa fa-times-circle'/>
                         </router-link>
                     </button>
                 </div>
