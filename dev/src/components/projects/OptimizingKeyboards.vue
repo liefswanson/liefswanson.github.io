@@ -82,7 +82,7 @@
             By lots and lots of keyboards I mean 26 factorial... 400,000 times more than the number of
             <v-link to='https://helios.gsfc.nasa.gov/qa_star.html#howmany'>stars in the observable universe</v-link>.
             There are infinitely more than that if we don't stick to the three row design of
-            <v-link to=''>QWERTY</v-link>.
+            <v-link to='https://en.wikipedia.org/wiki/QWERTY'>QWERTY</v-link>.
         </p>
 
         <img src='/static/optimizing-keyboards/correlation.png'
