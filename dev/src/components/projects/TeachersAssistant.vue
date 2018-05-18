@@ -17,17 +17,17 @@
         </p>
 
         <p class='p-text p-wide'>
-            I came about solving this problem, by automating everything I could.
-            For instance, there was a battleship style game where students would randomize the positions of ships.
-            To mark this consistently, I requested an addition to the assignment the option of cheating at the game.
-            I had the enemy positions displayed, read into a python script.
+            I came about solving this problem by automating everything I could.
+            For instance, there was a Battleship-style game where students would randomize the positions of ships.
+            To mark this consistently, I requested an addition to the assignment: the option of cheating at the game.
+            I had the enemy positions displayed and output into a python script which parsed the board.
             Then I used a reverse implementation of the assignment I wrote to play the exact same game for every student.
             In other words, I undid the randomization of enemy positions, to play the same game for each student.
             I even played the game automatically by having xdotool do the input for me, to avoid making mistakes.
         </p>
 
         <p class='p-text p-wide'>
-            to automate marking effectively for each assignment, there was a lot of work involved.
+            To automate marking effectively for each assignment, there was a lot of work involved.
             I used quite a few tools to my advantage:
         </p>
 
@@ -51,12 +51,12 @@
         </p>
 
         <p class='p-text p-wide'>
-            I also learned a whole lot from reading student's code.
+            I also learned a whole lot from reading students' code.
             It is a really unusual experience to really read and understand the code of 90 people who were all trying to do the exact same thing.
         </p>
 
         <p class='p-text p-wide'>
-            Reading student code created a good opportunity teach students.
+            Reading student code created a good opportunity to teach students.
             From what students told me, I think they appreciated the feedback.
             I found also that to be an enriching experience, especially when students told me they found it helpful to have someone earnestly read and comment on their work.
             I have taken classes during my
@@ -66,7 +66,7 @@
         </p>
 
         <p class='p-note p-thin'>
-            All that time I saved on marking, allowed me to spend extra time reading students' code; giving feedback on code style and design choices.
+            All that time I saved on marking allowed me to spend extra time reading students' code and giving feedback on code style and design choices.
         </p>
 
     </article>

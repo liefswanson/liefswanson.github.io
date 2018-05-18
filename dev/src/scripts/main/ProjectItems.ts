@@ -77,7 +77,7 @@ const Projects:Project[] = [
         name: "RecursivePlug",
         component: RecursivePlug,
 
-        title: "This Portfolio You are Currently Viewing",
+        title: "The Portfolio You are Currently Viewing",
         blurb: "I am by no means above using recursion, especially when I worked hard on this website and want to show it off... inside this website.",
         thumb: "static/recursive-plug/thumb.svg",
         tags: [code, design, misc]
@@ -97,7 +97,7 @@ const Projects:Project[] = [
         name: "RayTracer",
         component: RayTracer,
 
-        title: "Implementing a RayTracer",
+        title: "Implementing a Ray Tracer",
         blurb: "For a class in computer graphics, I implemented a ray tracer. It looks pretty good, but I think I would do it differently if I did it again.",
         thumb: "static/ray-tracer/thumb.png",
         tags: [code]
@@ -107,7 +107,7 @@ const Projects:Project[] = [
         name: 'font',
         component: Font,
 
-        title: 'My own font (WIP)',
+        title: 'My Own Font (WIP)',
         blurb: "Bauhaus style fonts are so cool, but really hard to read. That hasn't stopped me from trying to make my own. There is a lot of work left to go, but check out the logo in the top right, I used a modified version of it there.",
         thumb: "static/font/thumb.png",
         tags: [design]
@@ -227,7 +227,7 @@ const Projects:Project[] = [
         name: 'AudioBooks',
         component: AudioBooks,
 
-        title: 'I listen to a lot of Audio Books',
+        title: 'I Listen to a Lot of Audio Books',
         blurb: "I have dyslexia, which means I read a bit too slowly to easily make it through a some books. However, I still like a good book, so I listen to lots of audio books.",
         thumb: 'static/audio-books/thumb.jpg',
         tags: [misc]
@@ -238,7 +238,7 @@ const Projects:Project[] = [
         component: VideoGames,
 
         title: 'I Play Video Games',
-        blurb: "I really like playing a video games, when they make you think... or if they have truly enthralling stories and mechanics.",
+        blurb: "I really like playing video games, when they make you think... or if they have truly enthralling stories and mechanics.",
         thumb: 'static/video-games/thumb.jpg',
         tags: [misc]
 

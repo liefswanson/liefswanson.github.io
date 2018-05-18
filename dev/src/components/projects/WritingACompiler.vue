@@ -12,7 +12,7 @@
 
         <p class='p-wide p-text'>
             All the projects in the course were connected.
-            They were one long project, brok en into several parts.
+            They were one long project, broken into several parts.
             In other words, each project relied on the previous project being completed, much like implementing real software, which is something I haven't often seen in classes.
         </p>
 
@@ -23,7 +23,7 @@
         </p>
 
         <p class='p-wide p-text'>
-            For this class, we were targetting a simple stack machine with a several dozen commands.
+            For this class, we were targeting a simple stack machine with a several dozen commands.
             The virtual stack machine we used was designed by Tom, and made specifically for teaching students compilers without having to simultaneously worry about the hardware.
         </p>
 
