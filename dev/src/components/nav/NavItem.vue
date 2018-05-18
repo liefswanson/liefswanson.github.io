@@ -1,12 +1,12 @@
 <template>
 <router-link @click.native="followLink"
-                :to='path'
-                exact
-                class='item clickable'
-                :style='palette'
-                @mouseenter.native='mouseEnter'
-                @mouseleave.native='mouseLeave'
-                tag='li'>
+             :to='path'
+             exact
+             class='item clickable'
+             :style='palette'
+             @mouseenter.native='mouseEnter'
+             @mouseleave.native='mouseLeave'
+             tag='li'>
     {{ name }}
 </router-link>
 </template>
@@ -40,7 +40,7 @@ export default Vue.extend({
         $route(to, from) {
             if(this.active) {
                 this.emitColorChange();
-                console.log(this.color);
+                //console.log(this.color);
             }
         }
     },

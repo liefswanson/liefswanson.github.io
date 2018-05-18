@@ -59,7 +59,7 @@ export default Vue.extend({
                 NavEventBus.$emit(Events.closeHeader);
             }
 
-            let belowMinScroll = current < Measurement.minScroll * pxInStd;
+            let belowMinScroll = current < Measurement.minScroll * pxInStd();
 
             if (!this.show && scrollingUp || belowMinScroll) {
                 this.show = true;
