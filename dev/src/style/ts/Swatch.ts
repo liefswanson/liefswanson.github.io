@@ -5,9 +5,9 @@ enum Swatch {
     xlight = '#bdbdbd',
     bright = '#f5f5f5',
 
-    feature  = '#6DAFFF', //'#4bb4ff',
     projects = '#E6944C', //'#39e859',
-    resume   = '#FF74CC', //'#ffec31',
+    feature  = '#FF74CC', //'#ffec31',
+    resume   = '#6DAFFF', //'#4bb4ff',
     contact  = '#76E1B8', //'#f27827',
     about    = '#FF6D75', //'#f84ce6'
 }

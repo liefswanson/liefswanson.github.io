@@ -13,13 +13,13 @@
                  class="thumb"
                  :alt="thumb">
             <h2 class='title'>
+                <span>{{title}}</span>
                 <div class='category-bar'>
                     <div class='spacer'></div>
                     <i v-if='tagActive("code")' class='fa fa-code icon'/>
                     <i v-if='tagActive("design")' class='fa fa-paint-brush icon'/>
                     <i v-if='tagActive("misc")' class='fa fa-asterisk icon'/>
                 </div>
-                <span>{{title}}</span>
             </h2>
         </div>
         <div class='desc'>

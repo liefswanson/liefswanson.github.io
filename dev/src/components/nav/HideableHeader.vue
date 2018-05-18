@@ -11,9 +11,12 @@
             <i class='fa fa-bars'/>
         </button>
 
-        <!-- logo TODO inlined svg so I can manipulate color and font-->
-        <name :color='color'
-              class='extra-pad'/>
+        <router-link to='/'
+                     exact>
+            <name :color='color'
+                  class='extra-pad'/>
+        </router-link>
+
     </header>
 </transition>
 </template>
@@ -26,6 +29,8 @@ import Name from '@/components/nav/Name.vue';
 import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
 import Events      from '@/scripts/nav/Events';
 import Swatch      from '@/style/ts/Swatch';
+import Measurement from "@/style/ts/Meausurement";
+import { pxInStd } from "@/style/ts/StandardUnits";
 
 export default Vue.extend({
     name: "HideableHeader",
@@ -53,7 +58,10 @@ export default Vue.extend({
                 this.show = false;
                 NavEventBus.$emit(Events.closeHeader);
             }
-            else if (!this.show && scrollingUp) {
+
+            let belowMinScroll = current < Measurement.minScroll * pxInStd;
+
+            if (!this.show && scrollingUp || belowMinScroll) {
                 this.show = true;
                 NavEventBus.$emit(Events.openHeader);
             }
