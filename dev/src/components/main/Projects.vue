@@ -62,7 +62,7 @@
         <div v-else
              key='right'
              class='panel'>
-            <sticky-bar>
+            <!-- <sticky-bar>
                 <div class='action-bar'>
                     <div class='spacer'></div>
                     <button title='Back to Projects'
@@ -70,11 +70,11 @@
                         <router-link to='/projects'
                                      exact
                                      class='override-color'>
-                            <i class='fa fa-times-circle'/>
+                            <i class='fa fa-arrow-alt-circle-left'/>
                         </router-link>
                     </button>
                 </div>
-            </sticky-bar>
+            </sticky-bar> -->
             <div class='main-content'>
                 <router-view/>
             </div>
@@ -117,9 +117,6 @@ export default Vue.extend({
                 "grid-gap": this.gap + std,
             }
         }
-    },
-    watch: {
-
     },
     components: {
         'project-item': ProjectItem,

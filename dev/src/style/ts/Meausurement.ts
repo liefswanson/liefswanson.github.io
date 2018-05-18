@@ -1,5 +1,6 @@
 enum Measurement {
-    headerHeight = 3.5
+    headerHeight = 4.25,
+    minScroll = 1
 }
 
 export default Measurement;

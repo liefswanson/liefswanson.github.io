@@ -1,5 +1,6 @@
 <template>
 
+
 <svg :style='{fill: color}'
      width="214.37mm"
      height="31.61mm"

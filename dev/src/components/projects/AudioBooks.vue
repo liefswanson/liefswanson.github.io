@@ -4,13 +4,13 @@
             I Listen to a lot of Audio Books
         </h1>
 
-        <p class='p-wide p-highlight'>
+        <p class='p-wide p-text'>
             I don't read that much, mostly because I have dyslexia and as such find it a bit exhausting.
             It takes me a while longer to read things than most people, and I can often get stuck reading words without actually processing what they mean.
             Because I am not one for inefficiency, but want to know about things people took the time to write down, I listen to audio books!
         </p>
 
-        <p class='p-wide p-highlight'>
+        <p class='p-wide p-text'>
             For the most part I listen to non-fiction books.
             History, biographies, and anything genuinely informational are what I usually go for.
         </p>
@@ -45,7 +45,8 @@
 
         <p class='p-thin-grow p-note'>
             They say you can't judge a book by its cover, but we can try can't we?
-            Take a look at the covers of a few books I have listened to and quite enjoyed.
+            Take a look at the covers of a few books I have listened to.
+            I didn't enjoy all of them, but I do think every one of them is worth listening to.
         </p>
     </article>
 </template>

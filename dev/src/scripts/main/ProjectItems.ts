@@ -37,7 +37,7 @@ const Projects:Project[] = [
         name: "OptimizingKeyboards",
         component: OptimizingKeyboards,
 
-        title: "Optimizing Gesture Keyboards for Clarity, Done Dirt Cheap",
+        title: "Optimizing Gesture Keyboards",
         blurb: "I received a grant to do some undergrad research; I came up with a heuristic for determining if any individual person would be likely to make errors given a keyboard layout. The heuristic is orders of magnitude faster than other existing methods.",
         thumb: "static/optimizing-keyboards/thumb.png",
         tags: [code, misc]

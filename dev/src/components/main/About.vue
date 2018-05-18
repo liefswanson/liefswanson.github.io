@@ -1,9 +1,9 @@
 <template>
 <div class='main-content'>
-    <collapse title='The Short Version'
+    <collapse title='Hello!'
               :initShow='true'>
         <p class='u-para'>
-            Hello! My name is Lief Swanson.
+            My name is Lief Swanson.
             I am a student of software engineering and user centric design.
             I am nearly finished a double major at SFU for both of these disciplines.
         </p>
@@ -204,7 +204,11 @@ export default Vue.extend({
     components: {
         'collapse': Collapsible
     },
-
+    watch: {
+        $route(to, from) {
+            window.scrollTo(0, 0);
+        }
+    }
 
 });
 </script>
@@ -219,6 +223,7 @@ export default Vue.extend({
 
 .main-content {
     max-width: $small-size;
+    margin: auto;
 }
 
 .columns {

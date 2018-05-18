@@ -100,8 +100,10 @@ export default Vue.extend({
 .section {
     display: flex;
     max-width: $small-size;
-    padding: 0.5rem;
+    padding: 0.25rem;
+    padding-left: 1rem;
     margin: 0;
+    margin-top: 0.5rem;
     border-bottom: 0.2rem solid $bright;
     cursor: pointer;
 
@@ -118,14 +120,16 @@ export default Vue.extend({
 }
 
 .icon-container {
+    padding-left: 1rem;
+    width: 1em;
     position: relative;
 }
 
 .toggle-icon {
     font-size: 0.8em;
-    position: absolute;
     right: 0;
-    top: 0.5rem;
+    top: 0.5em;
+    position: absolute;
 }
 
 .collapsible {
@@ -135,7 +139,10 @@ export default Vue.extend({
 
 
 .padded {
-    padding: 1.5rem;
+    $top: 0.5rem;
+    $side: 1.5rem;
+    $bottom: 2rem;
+    padding: $top $side $bottom;
 }
 
 .toggling-enter-active,
