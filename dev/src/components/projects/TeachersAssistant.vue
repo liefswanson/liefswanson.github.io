@@ -10,8 +10,8 @@
 
         <p class='p-text p-wide'>
             This presented an uncommon challenge.
-            It is pretty difficult to engage with 90 students and mark them effictively, thoroughly, and consistently.
-            To mark them effictively, you need to be fast.
+            It is pretty difficult to engage with 90 students and mark them effectively, thoroughly, and consistently.
+            To mark them effectively, you need to be fast.
             To mark them thoroughly, will obviously slow you down.
             To mark them consistently, you must maintain the same standard and enthusiasm with every student.
         </p>

@@ -62,19 +62,19 @@
         <div v-else
              key='right'
              class='panel'>
-            <!-- <sticky-bar>
+             <sticky-bar>
                 <div class='action-bar'>
                     <div class='spacer'></div>
                     <button title='Back to Projects'
-                            class='btn'>
+                            class='btn x'>
                         <router-link to='/projects'
                                      exact
                                      class='override-color'>
-                            <i class='fa fa-arrow-alt-circle-left'/>
+                            <i class='fas fa-times'/>
                         </router-link>
                     </button>
                 </div>
-            </sticky-bar> -->
+            </sticky-bar>
             <div class='main-content'>
                 <router-view/>
             </div>
@@ -201,6 +201,11 @@ export default Vue.extend({
     transition: color $action-bar-animation-time ease;
 }
 
+.x {
+    @extend .btn;
+    color: $xlight;
+}
+
 .btn:hover {
     color: $projects-swatch;
     border-style: none;
@@ -212,8 +217,8 @@ export default Vue.extend({
 }
 
 .action-bar {
-    font-size: 3rem;
-    padding-right: 1rem;
+    padding-right: 0.4rem;
+    font-size: 1.25rem;
     display: flex;
     background: none;
 }
