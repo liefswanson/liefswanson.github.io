@@ -4,7 +4,7 @@
               :initShow='true'>
         <p class='u-para'>
             My name is Lief Swanson.
-            I am a student of software engineering and user centric design.
+            I am a student of software engineering and user-centric design.
             I am nearly finished a double major at SFU for both of these disciplines.
         </p>
 
@@ -29,7 +29,7 @@
         </p>
 
         <p class='u-para'>
-            I don't like to think of myself as just a software engineer or a UX/UI designer, but rather as mashup of the two.
+            I don't like to think of myself as just a software engineer or a UX/UI designer, but rather a mashup of the two.
             Though, to be fair my skills probably lie a little closer to the computer science side of things.
         </p>
 

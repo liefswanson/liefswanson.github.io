@@ -28,7 +28,7 @@
         </p>
 
         <p class='p-wide p-text'>
-            If you followed the link in my note at the top there, you would know about the main method already used to gesture keyboard clarity optimization.
+            If you followed the link in my note at the top there, you would know about the main method already used in gesture keyboard clarity optimization.
             The biggest problem with the existing method, is it takes a <b>very</b> long time.
             If you take into consideration the number of words in the dictionary, square that, you are now in the ballpark of how many comparisons need to be done to rate a single keyboard for gesture clarity.
         </p>
@@ -38,7 +38,7 @@
         </p>
 
         <p class='p-wide p-text'>
-            To fix this problem, by changing the goal.
+            Getting around this restriction is pretty difficult, so instead I went about changing the goal.
             Rather than performing this analysis directly, I created a new <v-link to='https://en.wikipedia.org/wiki/Heuristic'>heuristic</v-link> that matched the old heuristic closely.
             Instead of comparing every word against every other word for each keyboard, we do this step once, analyzing the lexical structures of the words.
             Based on what parts of the words are similar, we can extract the features which must differ for gestures to be different.
@@ -47,7 +47,7 @@
 
         <p class='p-note p-thin'>
             This actually makes the
-            <v-link to='https://en.wikipedia.org/wiki/Asymptotic_computational_complexity'>asymtotic complexity</v-link>
+            <v-link to='https://en.wikipedia.org/wiki/Asymptotic_computational_complexity'>asymptotic complexity</v-link>
             worse... if we have no way of comparing the number of letters in the alphabet to words in dictionary.
             However, in practice this theoretical problem is a non-starter.
         </p>
@@ -100,7 +100,7 @@
 
 
         <p class='p-wide p-text'>
-            I am working on publishing by the way, and making a keyboard that will do this optimization available via google play.
+            I am working on publishing by the way, and making a keyboard that will do this optimization available via Google Play.
             I will update this page when I can provide links to those things!
         </p>
 

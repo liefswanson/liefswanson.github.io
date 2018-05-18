@@ -1,7 +1,7 @@
 <template>
 <article class='p-article-grid'>
     <h1 class='p-wide p-title'>
-        This Portfolio You are Currently Viewing
+        The Portfolio You are Currently Viewing
     </h1>
 
     <p class='p-wide p-highlight'>
