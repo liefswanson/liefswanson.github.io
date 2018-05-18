@@ -125,7 +125,7 @@ export default Vue.extend({
             if (content == undefined) { return; }
 
             // otherwise all is well and continue!
-            var span = content.getBoundingClientRect().height / pxInStd;
+            var span = content.getBoundingClientRect().height / pxInStd();
             span = span / (this.autoRows + this.gap);
             span = Math.ceil(span);
 

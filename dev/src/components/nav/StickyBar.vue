@@ -52,7 +52,7 @@ export default Vue.extend({
             }
 
             // almost at top, but not quite
-            let y = window.scrollY / pxInStd;
+            let y = window.scrollY / pxInStd();
             if (y <= Meausurement.headerHeight) {
                 distance = 0;
             }
@@ -76,7 +76,7 @@ export default Vue.extend({
             this.headerShowing = true;
         },
         updateAdjustment() {
-            let y = window.scrollY / pxInStd;
+            let y = window.scrollY / pxInStd();
 
             if(!this.headerShowing) {
                 this.adjustment = 0;

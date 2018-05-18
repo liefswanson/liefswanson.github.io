@@ -4,7 +4,13 @@ const px  = 'px';
 const fr  = 'fr'
 
 const std = rem;
-const pxInStd = 16;
+function pxInStd():number {
+    let body = document.querySelector('body') as HTMLElement;
+    let style = getComputedStyle(body);
+    //@ts-ignore
+    let fontSize = style['font-size'];
+    return parseFloat(fontSize);
+}
 
 export {
     rem,

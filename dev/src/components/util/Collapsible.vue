@@ -76,7 +76,7 @@ export default Vue.extend({
             let px = wrapper.getBoundingClientRect().height;
 
 
-            this.maxHeight =  px / pxInStd + std;
+            this.maxHeight =  px / pxInStd() + std;
         },
     },
     mounted() {
