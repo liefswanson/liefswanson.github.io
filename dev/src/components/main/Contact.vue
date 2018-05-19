@@ -9,12 +9,13 @@
                 :key='contact.name'
                 class='icon'>
                 <input :id='contact.name'
-                        :value='contact'
-                        type="radio"
-                        class='radio'
-                        v-model='active'>
+                       :value='contact'
+                       type="radio"
+                       class='radio'
+                       v-model='active'>
                 <label :title='contact.name'
-                       :for='contact.name'>
+                       :for='contact.name'
+                       class='icon-wrapper'>
                     <i :class='[contact.fa, contact.icon]'/>
                 </label>
             </li>
@@ -49,6 +50,9 @@ export default Vue.extend({
             contacts: Contacts,
             active: Contacts[0]
         }
+    },
+    watch: {
+
     }
 });
 </script>
@@ -63,12 +67,16 @@ export default Vue.extend({
 }
 
 .icon-list {
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     font-size: 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 4rem);
-    grid-gap: 0.5rem;
-    list-style: none;
+    text-align: center;
+    list-style-type: none;
+}
+
+.icon-wrapper {
+    padding: 1rem;
 }
 
 .radio {
