@@ -36,9 +36,10 @@ import Vue from 'vue';
 import Events      from '@/scripts/nav/Events';
 import NavEventBus from '@/scripts/nav/NavEventBus';
 
+import { AnimationTimers,
+         toSeconds }    from '@/style/ts/Timers';
 import { std, pxInStd } from '@/style/ts/StandardUnits';
-import { AnimationTimers, toSeconds } from '@/style/ts/Timers';
-import Measurement from '@/style/ts/Meausurement';
+import Measurement      from '@/style/ts/Meausurement';
 
 export default Vue.extend({
     name: 'Collapsible',
@@ -62,14 +63,10 @@ export default Vue.extend({
         style():object {
             return {
                 'max-height': this.maxHeight + std,
-                'transition': 'max-height ' + this.time + 's ease-out'
+                'transition': 'max-height ' + this.time() + 's ease-out'
             }
         },
-        time(): number {
-            let base = AnimationTimers.collapsible * toSeconds;
-            let units = this.expandedHeight() / Measurement.collapsible;
-            return base * Math.sqrt(units);
-        }
+
     },
     methods: {
         toggle() {
@@ -82,6 +79,12 @@ export default Vue.extend({
             }
 
             return 'fa-plus';
+        },
+        time(): number {
+            let base = AnimationTimers.collapsible * toSeconds;
+            let units = this.expandedHeight() / Measurement.collapsible;
+            console.log(base);
+            return base * Math.sqrt(units);
         },
         expandedHeight(): number {
             let wrapper = this.$refs.wrapper as Element;
