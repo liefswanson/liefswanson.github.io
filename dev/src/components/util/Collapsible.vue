@@ -1,32 +1,36 @@
 <template>
 <div class='collapsible-root'>
-    <h1 class='section'
-        @click='toggle'>
+    <div>
+        <h1 class='section'
+            @click='toggle'>
 
-        {{title}}
+            {{title}}
 
-        <div class='spacer'></div>
+            <div class='spacer'></div>
 
-        <div class='icon-container'>
-            <transition name='toggling'>
-                <i v-if='show'
-                    key='minus'
-                    class='fas toggle-icon fa-minus'/>
-                <i v-else
-                    key='plus'
-                    class='fas toggle-icon fa-plus'/>
-            </transition>
+            <div class='icon-container'>
+                <transition name='toggling'>
+                    <i v-if='show'
+                        key='minus'
+                        class='fas toggle-icon fa-minus'/>
+                    <i v-else
+                        key='plus'
+                        class='fas toggle-icon fa-plus'/>
+                </transition>
+            </div>
+
+        </h1>
+
+        <div class='collapsible'
+            :style='style'>
+            <div ref='wrapper'
+                class='padded'>
+                <slot/>
+            </div>
         </div>
-
-    </h1>
-
-    <div class='collapsible'
-         :style='style'>
-         <div ref='wrapper'
-              class='padded'>
-            <slot/>
-         </div>
     </div>
+    <div class='overscroll'
+         :style='overscrollStyle()'/>
 </div>
 </template>
 
@@ -47,6 +51,7 @@ export default Vue.extend({
         return {
             show: false,
             maxHeight: 0,
+            loaded: false
         }
     },
     props: {
@@ -57,13 +62,17 @@ export default Vue.extend({
         initShow: {
             type: Boolean,
             default: false
+        },
+        overscroll: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
         style():object {
             return {
                 'max-height': this.maxHeight + std,
-                'transition': 'max-height ' + this.time() + 's ease-out'
+                'transition': 'max-height ' + this.time() + 's ease'
             }
         },
 
@@ -86,6 +95,16 @@ export default Vue.extend({
             console.log(base);
             return base * Math.sqrt(units);
         },
+        overscrollStyle(): object {
+            if(!this.overscroll) return {};
+
+            let height = !this.show ? this.expandedHeight() : 0;
+            let time = this.loaded ? this.time() : 0;
+            return {
+                'height': height + std,
+                'transition': 'height ' + time + 's ease'
+            }
+        },
         expandedHeight(): number {
             let wrapper = this.$refs.wrapper as Element;
 
@@ -102,6 +121,9 @@ export default Vue.extend({
 
             this.maxHeight = this.expandedHeight();
         },
+        load() {
+            this.loaded = true;
+        }
     },
     mounted() {
         NavEventBus.$on(Events.navAnimDone, this.calcHeight);
@@ -110,10 +132,18 @@ export default Vue.extend({
         if(this.initShow) {
             this.toggle();
         }
+
+        this.$forceUpdate();
+    },
+    updated() {
+        if(!this.loaded) {
+            Vue.nextTick(this.load);
+        }
     },
     beforeDestroy(){
         NavEventBus.$off(Events.navAnimDone, this.calcHeight);
         window.removeEventListener(Events.resize, this.calcHeight);
+        this.loaded = false;
     }
 });
 </script>
@@ -121,17 +151,38 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
+$pad-top: 0.25rem;
+$pad-bot: $pad-top;
+$margin-top: 0.5rem;
+$font-size: 2rem;
+$line-height: $font-size * 1.5;
+$underline: 0.2rem;
+// FIXME unaccounted for 0.8rem
+// something wrong with my math?
+$height: $pad-bot + $pad-bot + $margin-top +
+         $line-height + $underline + 0.8rem;
+
+
+.overscroll {
+    max-height: calc(100vh - #{$height});
+}
+
+.collapsible-root {
+    margin-top: $margin-top;
+}
+
 .section {
     display: flex;
     max-width: $small-size;
-    padding: 0.25rem;
-    padding-left: 1rem;
+    padding: $pad-top 1rem;
     margin: 0;
-    margin-top: 0.5rem;
-    border-bottom: 0.2rem solid $bright;
-    cursor: pointer;
 
-    transition: all $link-animation-time ease-out;
+    font-size: $font-size;
+    border-bottom: $underline solid $bright;
+    cursor: pointer;
+    @include not-selectable;
+
+    transition: all $link-animation-time ease;
 
     &:hover {
         border-color: $about-swatch;
@@ -157,10 +208,9 @@ export default Vue.extend({
 }
 
 .collapsible {
-    transition: max-height $collapse-animation-time ease-out;
+    transition: max-height $collapse-animation-time ease;
     overflow: hidden;
 }
-
 
 .padded {
     $top: 0.5rem;

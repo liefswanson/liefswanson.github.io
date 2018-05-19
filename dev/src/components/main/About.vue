@@ -118,7 +118,8 @@
             </div>
         </div>
     </collapse>
-    <collapse title='My Hobbies'>
+    <collapse title='My Hobbies'
+              overscroll>
         <p class='u-para'>
             Swimming is a thing I love to do in order to relax and get some exercise.
             I am not much for land sports, but in the water I feel right at home.
@@ -201,14 +202,14 @@ import Collapsible from '@/components/util/Collapsible.vue';
 
 export default Vue.extend({
     name: "About",
-    components: {
-        'collapse': Collapsible
-    },
     watch: {
         $route(to, from) {
             window.scrollTo(0, 0);
         }
-    }
+    },
+    components: {
+        'collapse': Collapsible
+    },
 
 });
 </script>
