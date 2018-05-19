@@ -1,6 +1,5 @@
 <template>
-<router-link @click.native='followLink'
-             :to='target'
+<router-link :to='target'
              exact
              class='item'
              tag='li'
@@ -113,9 +112,6 @@ export default Vue.extend({
         unfocus() {
             this.inFocus = false;
         },
-        followLink() {
-
-        },
         tagActive(tag: Tag): boolean {
             return this.properties.tags.indexOf(tag) !== -1;
         },
@@ -124,7 +120,6 @@ export default Vue.extend({
             // FIXME: kludge to avoid trying to resize if the compenent isn't loaded
             if (content == undefined) { return; }
 
-            // otherwise all is well and continue!
             var span = content.getBoundingClientRect().height / pxInStd();
             span = span / (this.autoRows + this.gap);
             span = Math.ceil(span);

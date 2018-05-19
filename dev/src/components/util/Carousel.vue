@@ -228,6 +228,15 @@ $arrow-space: 1rem;
     left: $arrow-space;
 }
 
+$arrow-adjustment: 0.3rem;
+.fa-angle-left{
+    margin-left: -$arrow-adjustment;
+}
+
+.fa-angle-right {
+    margin-left: $arrow-adjustment;
+}
+
 .right {
     right: $arrow-space;
 }

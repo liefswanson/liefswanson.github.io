@@ -6,6 +6,7 @@
         {{title}}
 
         <div class='spacer'></div>
+
         <div class='icon-container'>
             <transition name='toggling'>
                 <i v-if='show'
@@ -16,10 +17,11 @@
                     class='fas toggle-icon fa-plus'/>
             </transition>
         </div>
+
     </h1>
 
     <div class='collapsible'
-         :style='{ "max-height": maxHeight }'>
+         :style='style'>
          <div ref='wrapper'
               class='padded'>
             <slot/>
@@ -35,13 +37,15 @@ import Events      from '@/scripts/nav/Events';
 import NavEventBus from '@/scripts/nav/NavEventBus';
 
 import { std, pxInStd } from '@/style/ts/StandardUnits';
+import { AnimationTimers, toSeconds } from '@/style/ts/Timers';
+import Measurement from '@/style/ts/Meausurement';
 
 export default Vue.extend({
     name: 'Collapsible',
     data() {
         return {
             show: false,
-            maxHeight: '0'
+            maxHeight: 0,
         }
     },
     props: {
@@ -52,6 +56,19 @@ export default Vue.extend({
         initShow: {
             type: Boolean,
             default: false
+        }
+    },
+    computed: {
+        style():object {
+            return {
+                'max-height': this.maxHeight + std,
+                'transition': 'max-height ' + this.time + 's ease-out'
+            }
+        },
+        time(): number {
+            let base = AnimationTimers.collapsible * toSeconds;
+            let units = this.expandedHeight() / Measurement.collapsible;
+            return base * Math.sqrt(units);
         }
     },
     methods: {
@@ -66,17 +83,21 @@ export default Vue.extend({
 
             return 'fa-plus';
         },
+        expandedHeight(): number {
+            let wrapper = this.$refs.wrapper as Element;
+
+            if (wrapper == undefined) { return 0; }
+            let px = wrapper.getBoundingClientRect().height;
+
+            return  px / pxInStd();
+        },
         calcHeight() {
             if (!this.show) {
-                this.maxHeight = '0';
+                this.maxHeight = 0;
                 return;
             }
 
-            let wrapper = this.$refs.wrapper as Element;
-            let px = wrapper.getBoundingClientRect().height;
-
-
-            this.maxHeight =  px / pxInStd() + std;
+            this.maxHeight = this.expandedHeight();
         },
     },
     mounted() {
