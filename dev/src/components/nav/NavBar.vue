@@ -92,8 +92,8 @@ $blinder-opacity: 0.3;
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     @include on-laptop-or-up {
         display: none;
     }
