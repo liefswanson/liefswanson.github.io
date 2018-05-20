@@ -55,11 +55,14 @@ export default Vue.extend({
     watch: {
         show(val) {
             let body = document.querySelector('body') as HTMLElement;
-            let top = -document.documentElement.scrollTop;
+            let top = document.documentElement.scrollTop;
             let disableScroll = val && Breakpoints.onTabletOrDown();
 
-            let overflow = disableScroll ? 'hidden' : 'auto';
-            body.style.overflowY = overflow;
+            if(val) {
+                window.onscroll = function() { window.scrollTo(0, top); };
+            } else {
+                window.onscroll = null;
+            }
         }
     },
     methods: {
