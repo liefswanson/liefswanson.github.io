@@ -2,15 +2,11 @@
 <div class='carousel-root'>
     <ul class='carousel'
         :style="{
-            'left': -100 * (sliceLength - offset) + '%',
-            'transform': 'translateX(' + -100 * offset + '%)',
+            'transform': 'translateX(' + -100 * (i + 1) + '%)',
             'transition': 'transform ' + animTimeS + 's ease-in-out'
         }">
         <li v-for='(path, index) in images'
             :key='index'
-            :style="{
-                'order': order[index],
-            }"
             class='panel'
             @click='goToRelativePanel(1)'>
 
@@ -48,19 +44,25 @@
 //  reanimating will cause strange behaviour.
 //  kludge to keep illusion of round carousel... contains x3 the items repeated
 import Vue from 'vue';
-import { setTimeout, clearTimeout, setInterval, clearInterval } from 'timers';
-import { AnimationTimers, toSeconds } from '@/style/ts/Timers';
+import {
+    setTimeout,
+    clearTimeout,
+    setInterval,
+    clearInterval
+} from 'timers';
 
+import {
+    AnimationTimers,
+    DelayTimers,
+    toSeconds
+} from '@/style/ts/Timers';
 
 export default Vue.extend({
     name: 'Carousel',
     data(){
         return {
-            images: this.init
-                    .concat(this.init)
-                    .concat(this.init),
+            images: [] as string[],
             i: 0,
-            order: [] as number[],
             offset: 0,
             previousTimeout: setTimeout(function(){}, -1),
             interval: setInterval(function(){}, -1)
@@ -77,76 +79,71 @@ export default Vue.extend({
         }
     },
     computed: {
-        animating() : boolean {
+        animating(): boolean {
             return this.offset != 0
         },
-        absOffset() : number {
+        absOffset(): number {
             return Math.abs(this.offset);
         },
-        sliceLength() : number {
-            return this.images.length/3;
+        sliceLength(): number {
+            return this.images.length - 2;
         },
-        animTimeMS() : number {
+        animTimeMS(): number {
+            if(this.offset == 0) {
+                return 0;
+            }
             return AnimationTimers.carousel * Math.sqrt(this.absOffset);
         },
-        animTimeS() : number {
+        animTimeS(): number {
             return this.animTimeMS * toSeconds ;
         }
-
     },
     methods: {
-        bubbleLeft() {
-            let item = this.order.shift() as number;
-            this.order.push(item);
-        },
-        bubbleRight() {
-            let item = this.order.pop() as number;
-            this.order.unshift(item);
-        },
         active(index: number):boolean {
-            return this.i == index;
+            return this.i % this.sliceLength == index;
         },
         stopAnim() {
-            this.offset = 0;
-            this.interval = setInterval(this.increment, AnimationTimers.autoCarousel);
+            this.offset = 0; // setting offset to 0 will make anim time 0
+
+            if(this.i == -1) { // wrap backward
+                this.i = this.sliceLength - 1;
+            } else if (this.i == this.sliceLength) { // wrap forward
+                this.i = 0;
+            }
+
+            this.interval = setInterval(this.increment, DelayTimers.carousel);
         },
         increment() {
             this.goToRelativePanel(1);
         },
         goToRelativePanel(relative: number) {
-            relative = relative % this.sliceLength;
             this.offset = relative;
-            this.i = (this.i + relative) % this.sliceLength;
-            if (this.i < 0) {
-                this.i += this.sliceLength;
-            }
-
-            for (let i = 0; i < this.absOffset; i++) {
-                if (this.offset < 0) {
-                    this.bubbleLeft();
-                }
-                else {
-                    this.bubbleRight();
-                }
-            }
-
-            clearInterval(this.interval);
-            clearTimeout(this.previousTimeout);
-            this.previousTimeout = setTimeout(this.stopAnim, this.animTimeMS);
+            this.i += relative;
+            this.goToPanelHelper();
         },
         goToAbsolutePanel(index: number) {
-            let relative = (index - this.i) % this.sliceLength;
-            this.goToRelativePanel(relative);
+            this.offset = this.i - index;
+            this.i = index;
+            this.goToPanelHelper();
+        },
+        goToPanelHelper() {
+            clearInterval(this.interval);
+            clearTimeout(this.previousTimeout);
+
+            this.previousTimeout = setTimeout(this.stopAnim, this.animTimeMS);
+        },
+        initImages() {
+            this.images = this.init.slice();
+
+            let first = this.init[0];
+            let last = this.init[this.init.length-1];
+            this.images.push(first);
+            this.images.unshift(last);
         }
     },
     mounted() {
-        this.order = this.images.map(
-            function(e: string, i: number): number {
-                return i;
-            }
-        );
-
-        this.interval = setInterval(this.increment, AnimationTimers.autoCarousel);
+        this.initImages();
+        this.interval = setInterval(this.increment, DelayTimers.carousel);
     },
     beforeDestroy() {
         clearTimeout(this.previousTimeout);

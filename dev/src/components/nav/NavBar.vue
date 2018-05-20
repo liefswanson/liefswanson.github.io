@@ -2,8 +2,8 @@
 <div id='nav-root'>
     <transition name='fade'>
         <div class='blinder'
-                v-if='show'
-                @click='emitClose'>
+             v-if='show'
+             @click='emitClose'>
         </div>
     </transition>
 
@@ -11,14 +11,14 @@
                 @afterEnter='animFinished'
                 @afterLeave='animFinished'>
         <nav class='nav-bar'
-                v-show='show'>
+             v-show='show'>
             <div class='menu-container'>
                 <!-- hack necessary due to hideable header -->
                 <div class='spacer'></div>
                 <ul class='nav-links'>
                     <nav-item v-for='(item, key) in sections'
-                                :key='key'
-                                :properties="item"/>
+                              :key='key'
+                              :properties="item"/>
                 </ul>
 
                 <!-- allows for scrolling past the last element-->
@@ -43,7 +43,7 @@ export default Vue.extend({
     name: "NavBar",
     data() {
         return {
-            sections: Sections
+            sections: Sections,
         }
     },
     props: {
@@ -52,12 +52,26 @@ export default Vue.extend({
             required: true
         }
     },
+    watch: {
+        show(val) {
+            let body = document.querySelector('body') as HTMLElement;
+            let top = -document.documentElement.scrollTop;
+            let disableScroll = val && Breakpoints.onTabletOrDown();
+
+            let overflow = disableScroll ? 'hidden' : 'auto';
+            body.style.overflowY = overflow;
+        }
+    },
     methods: {
-        emitClose()    { NavEventBus.$emit(Events.closeNav); },
-        emitOpen()     { NavEventBus.$emit(Events.openNav); },
+        emitClose() {
+            NavEventBus.$emit(Events.closeNav);
+        },
+        emitOpen() {
+            NavEventBus.$emit(Events.openNav);
+        },
         animFinished() {
-            console.log('done');
-            NavEventBus.$emit(Events.navAnimDone); },
+            NavEventBus.$emit(Events.navAnimDone);
+        },
     },
     components: {
         "nav-item": NavItem

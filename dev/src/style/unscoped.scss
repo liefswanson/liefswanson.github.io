@@ -17,6 +17,10 @@ body {
     overflow-x: hidden;
 }
 
+.disable-scroll {
+    overflow-y: hidden;
+}
+
 .spacer {
     flex: 1;
 }

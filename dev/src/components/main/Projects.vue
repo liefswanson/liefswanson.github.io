@@ -160,7 +160,7 @@ export default Vue.extend({
 
     + label {
         color: transparentize($dark, 0.5);
-        @include on-phone {
+        @include on-tablet-or-down {
             color: $dark
         }
         transition: color $action-bar-animation-time ease;
@@ -180,7 +180,7 @@ export default Vue.extend({
 
     &:checked + label {
         color: transparentize($projects-swatch, 0.5);
-        @include on-phone {
+        @include on-tablet-or-down {
             color: $projects-swatch;
         }
 

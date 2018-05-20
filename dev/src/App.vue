@@ -1,13 +1,13 @@
 <template>
 <div id='root'
-        v-touch:swipe.right='enableNav'
-        v-touch:swipe.left='disableNav'>
+     v-touch:swipe.right='enableNav'
+     v-touch:swipe.left='disableNav'>
     <hideable-header :showNav='showNav'/>
     <nav-bar :show='showNav'/>
     <main id='main-root'
-            class='anim'
-            :class='{ "push":  showNav }'
-            :style='{ "color": color }'>
+          class='anim'
+          :class='{ "push":  showNav }'
+          :style='{ "color": color }'>
         <transition name='fade' mode='out-in'>
             <router-view class='main-router'/>
         </transition>
@@ -90,7 +90,7 @@ export default Vue.extend({
         }
     },
     watch: {
-        $route(to, from) {
+        $route() {
             window.scrollTo(0, 0);
         }
     },
@@ -101,8 +101,16 @@ export default Vue.extend({
     },
     methods: {
         disableNav() { this.showNav = false; },
-        enableNav()  { this.showNav = true; },
-        toggleNav()  { this.showNav = !this.showNav; },
+        enableNav()  {
+            this.showNav = true;
+            NavEventBus.$emit(Events.openHeader);
+        },
+        toggleNav()  {
+            this.showNav = !this.showNav;
+            if (this.showNav) {
+                NavEventBus.$emit(Events.openHeader);
+            }
+        },
 
         defaultNavState() {
             if (Breakpoints.onLaptopOrUp()) {
