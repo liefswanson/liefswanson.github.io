@@ -37,9 +37,10 @@
         </p>
 
         <p class='p-note p-thin'>
-            A pika is an adorable
-            <v-link to='https://www.google.ca/search?q=pika&tbm=isch'>rabbit-esque animal</v-link>
-            that may have been the idea behind pikachu
+            The language pika is named after this adorable
+            <v-link to='https://www.google.ca/search?q=pika&tbm=isch'>rabbit-esque animal</v-link>.
+            Some people think it is the inspiration behind pikachu.
+            On the other hand, ぴかぴか (pika-pika) is an onomatopoeia for sparkle in Japanese, so it could be either.
         </p>
 
         <ul class='p-wide p-list'>
@@ -57,10 +58,13 @@
                 </ul>
             </li>
             <li>
-                All data-typos had type inference, and casting was allowed within a strict hierarchy
+                All data-types had type inference, and casting was allowed within a strict hierarchy
             </li>
             <li>
-                Functions <span class='p-note'>able to use static variables in outer scopes and stack variables</span>
+                Scopes
+            </li>
+            <li>
+                Functions <span class='p-note'>able to use static variables in outer scopes and stack variables in the current scope</span>
             </li>
             <li>
                 Manually managed dynamic memory
@@ -79,18 +83,18 @@
                         trimming of unreferenced code via
                         <v-link to='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</v-link>
                     </li>
-                    <li>basic block reordering to reduce jumps</li>
+                    <li>basic block reordering and duplicating <span class='p-note'>to reduce jumps</span></li>
                     <li>some <b>very</b> basic constant variable replacement</li>
                 </ul>
             </li>
             <li>
-                It was possible to do following with every numeric data-type
+                It was possible to do the following with every numeric data-type
                 <ul class='p-list'>
                     <li>addition</li>
                     <li>subtraction</li>
                     <li>multiplication</li>
                     <li>division</li>
-                    <li>value comparisons</li>
+                    <li>value comparisons <span class='p-note'>{{"<, >, <=, >=, ==, !="}}</span></li>
                 </ul>
             </li>
             <li>
@@ -102,7 +106,7 @@
             <li>
                 It also contained some basic control structures
                 <ul class='p-list'>
-                    <li>if/else statements <span class='p-note'>no else if</span></li>
+                    <li>if/else statements <span class='p-note'>did not have "else if"</span></li>
                     <li>while loops</li>
                     <li>for loops and foreach loops</li>
                 </ul>

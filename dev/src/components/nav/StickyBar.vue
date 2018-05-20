@@ -1,8 +1,8 @@
 <template>
 <div class='sticky'
      :style='{height: height}'>
-    <div :style='{ "padding-top": adjustmentInUnits,
-                   "transition": animSettings}'>
+    <div class='adjuster'
+         :style='{ "padding-top": adjustmentInUnits }'>
         <slot/>
     </div>
 </div>
@@ -18,6 +18,7 @@ import Meausurement     from '@/style/ts/Meausurement';
 import { std, pxInStd } from '@/style/ts/StandardUnits';
 import { AnimationTimers,
          toSeconds }    from '@/style/ts/Timers';
+import Measurement from '@/style/ts/Meausurement';
 
 export default Vue.extend({
     name: 'StickyBar',
@@ -36,29 +37,14 @@ export default Vue.extend({
     watch: {
         headerShowing: function() {
             this.updateAdjustment();
+        },
+        $route() {
+            this.$forceUpdate();
         }
     },
     computed: {
         adjustmentInUnits(): string {
             return this.adjustment + std;
-        },
-        animSettings(): string {
-            // distance as measured in "header-height" units (NOT: rem, em, px, in... etc)
-            let distance = this.adjustment / Meausurement.headerHeight;
-
-            // scrolled well past top of page
-            if (this.adjustment == 0) {
-                distance = 1;
-            }
-
-            // almost at top, but not quite
-            let y = window.scrollY / pxInStd();
-            if (y <= Meausurement.headerHeight) {
-                distance = 0;
-            }
-
-            let animTime = distance * AnimationTimers.header * toSeconds;
-            return "padding-top " + animTime + 's ease';
         },
         height() : string {
             if (this.overlay){
@@ -76,19 +62,9 @@ export default Vue.extend({
             this.headerShowing = true;
         },
         updateAdjustment() {
-            let y = window.scrollY / pxInStd();
-
-            if(!this.headerShowing) {
-                this.adjustment = 0;
-                return;
-            }
-
-            if (y > Meausurement.headerHeight) {
-                this.adjustment = Meausurement.headerHeight;
-                return;
-            }
-
-            this.adjustment = y;
+            this.adjustment = this.headerShowing
+                                ? Measurement.headerHeight
+                                : 0;
         }
     },
     mounted() {
@@ -96,7 +72,7 @@ export default Vue.extend({
         NavEventBus.$on(Events.closeHeader, this.headerClosed);
         window.addEventListener(Events.scroll, this.updateAdjustment);
 
-        this.headerShowing = window.scrollY == 0;
+        this.updateAdjustment();
     },
     beforeDestroy() {
         NavEventBus.$off(Events.openHeader, this.headerOpened);
@@ -111,12 +87,18 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
 .sticky {
-    z-index: $sticky-z;
-    position: sticky;
-    top: 0;
+    width: 100%;
 
     @include on-phone {
         height: 100%;
     }
+}
+
+.adjuster {
+    transition: padding-top $header-animation-time ease;
+    position: fixed;
+    z-index: $sticky-z;
+    top: 0;
+    right: 0;
 }
 </style>

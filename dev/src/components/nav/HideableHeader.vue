@@ -38,7 +38,7 @@ export default Vue.extend({
         return {
             previous: 0,
             show: true,
-            color: Swatch.bright
+            color: Swatch.bright,
         };
     },
     props: {
@@ -55,14 +55,12 @@ export default Vue.extend({
             let scrollingUp = current < this.previous;
 
             if (this.show && scrollingDown) {
-                this.show = false;
                 NavEventBus.$emit(Events.closeHeader);
             }
 
             let belowMinScroll = current < Measurement.minScroll * pxInStd();
 
             if (!this.show && scrollingUp || belowMinScroll) {
-                this.show = true;
                 NavEventBus.$emit(Events.openHeader);
             }
             // else... already in the right state!
@@ -72,17 +70,29 @@ export default Vue.extend({
         hamburgerToggle() {
             NavEventBus.$emit(Events.toggleNav);
         },
-
-        changeColor(color: Swatch) { this.color = color; },
+        enable() {
+            this.show = true;
+        },
+        disable() {
+            this.show = false;
+        },
+        changeColor(color: Swatch) {
+            this.color = color;
+        },
 
     },
     mounted() {
         window.addEventListener(Events.scroll, this.handleScroll);
         NavEventBus.$on(Events.changeColor, this.changeColor);
+        NavEventBus.$on(Events.closeHeader, this.disable);
+        NavEventBus.$on(Events.openHeader, this.enable);
+
     },
     beforeDestroy() {
         window.removeEventListener(Events.scroll, this.handleScroll);
         NavEventBus.$off(Events.changeColor, this.changeColor);
+        NavEventBus.$off(Events.closeHeader, this.disable);
+        NavEventBus.$off(Events.openHeader, this.enable);
     },
     components: {
         'name': Name

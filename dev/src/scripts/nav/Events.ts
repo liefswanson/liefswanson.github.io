@@ -8,6 +8,8 @@ enum Events {
 
     openHeader  = 'header-open',
     closeHeader = 'header-close',
+    lockHeader = 'header-lock',
+    unlockHeader = 'header-unlock',
 
     scroll = "scroll",
     resize = "resize",

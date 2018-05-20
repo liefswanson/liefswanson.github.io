@@ -22,8 +22,8 @@
         I chose software systems for that exact reason.
         When I first came to SFU I actually came for my other major.
         I didn't even know that programming existed.
-        I had no concept of programming even was.
-        However, in first year I was required to take a computing course as part of my other major
+        I had no concept of what programming even was.
+        However, in first year I was required to take a course in python as part of my other major
         <v-link local to='/projects/siat'>SIAT</v-link>.
     </p>
 
@@ -65,7 +65,6 @@
         <li>Hardware design</li>
         <li>Technical writing</li>
         <li>Requirements gathering</li>
-
     </ul>
 
     <p class='p-thin p-note'>
