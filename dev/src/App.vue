@@ -1,7 +1,10 @@
 <template>
-<div id='root'
-     v-touch:swipe.right='enableNav'
-     v-touch:swipe.left='disableNav'>
+<v-touch id='root'
+         @swiperight='enableNav'
+         @swipeleft='disableNav'
+         :swipe-options="{
+             direction: 'horizontal'
+         }">
     <hideable-header :showNav='showNav'/>
     <nav-bar :show='showNav'/>
     <main id='main-root'
@@ -12,7 +15,7 @@
             <router-view class='main-router'/>
         </transition>
     </main>
-</div>
+</v-touch>
 </template>
 
 <script lang='ts'>
@@ -100,8 +103,10 @@ export default Vue.extend({
         }
     },
     methods: {
-        disableNav() { this.showNav = false; },
-        enableNav()  {
+        disableNav(e?: Event) {
+            this.showNav = false;
+        },
+        enableNav(e?: Event) {
             this.showNav = true;
             NavEventBus.$emit(Events.openHeader);
         },
@@ -149,7 +154,6 @@ export default Vue.extend({
         NavEventBus.$on(Events.closeNav,  this.disableNav);
         NavEventBus.$on(Events.openNav,   this.enableNav);
         NavEventBus.$on(Events.toggleNav, this.toggleNav);
-
 
         window.addEventListener(Events.resize, this.enableNavIfBigger);
 
