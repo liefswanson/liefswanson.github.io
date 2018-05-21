@@ -15,15 +15,15 @@
                 <span>{{title}}</span>
                 <div class='category-bar'>
                     <div class='spacer'></div>
-                    <i v-if='tagActive("code")'
-                       :class="filterActive('code') ? 'active': 'inactive'"
-                       class='fa fa-code icon'/>
-                    <i v-if='tagActive("design")'
-                       :class="filterActive('design') ? 'active': 'inactive'"
-                       class='fa fa-paint-brush icon'/>
-                    <i v-if='tagActive("misc")'
-                       :class="filterActive('misc') ? 'active': 'inactive'"
-                       class='fa fa-asterisk icon'/>
+                    <i v-for="elem in tags"
+                       :key="elem.name"
+                       v-if='tagActive(elem.name)'
+                       class='icon'
+                       :class="[
+                            elem.fa,
+                            elem.icon,
+                            filterActive(elem.name) ? '': 'inactive'
+                       ]"/>
                 </div>
             </h2>
         </div>
@@ -41,6 +41,7 @@ import Vue          from 'vue';
 import imagesLoaded from 'vue-images-loaded';
 
 import Tag            from '@/scripts/main/Tag';
+import TagItems       from '@/scripts/main/TagItems';
 import Project        from '@/scripts/main/Project';
 import { SectionMap } from '@/scripts/nav/NavItems';
 import NavEventBus    from '@/scripts/nav/NavEventBus';
@@ -58,7 +59,8 @@ export default Vue.extend({
     data() {
         return {
             rowSpan: 0,
-            inFocus: false
+            inFocus: false,
+            tags: TagItems
         };
     },
     props: {
@@ -126,8 +128,6 @@ export default Vue.extend({
         },
         updateSpan() {
             var content = this.$refs.content as Element;
-            // FIXME: kludge to avoid trying to resize if the compenent isn't loaded
-            if (content == undefined) { return; }
 
             var span = content.getBoundingClientRect().height / pxInStd();
             span = span / (this.autoRows + this.gap);
@@ -136,7 +136,7 @@ export default Vue.extend({
             this.rowSpan = span;
         },
         updateNextTick() {
-            setTimeout(this.updateSpan, 0);
+            Vue.nextTick(this.updateSpan);
         }
     },
     mounted() {
@@ -157,10 +157,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
-
-.active {
-
-}
 
 .inactive {
     color: $dark;
