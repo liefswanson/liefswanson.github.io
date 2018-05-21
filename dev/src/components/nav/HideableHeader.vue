@@ -161,7 +161,8 @@ export default Vue.extend({
 
     z-index: $hamburger-sideways-z;
 
-    transition: all $nav-animation-time ease;
+    transition: transform $nav-animation-time ease,
+                color $nav-hover-animation-time ease;
 
     &:hover {
         color: $xlight;
