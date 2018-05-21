@@ -33,7 +33,7 @@ import NavEventBus   from '@/scripts/nav/NavEventBus'; // FIXME give a better pa
 import Events        from '@/scripts/nav/Events';
 
 import Swatch      from '@/style/ts/Swatch';
-import Measurement from "@/style/ts/Meausurement";
+import Measurement from "@/style/ts/Measurement";
 import { pxInStd } from "@/style/ts/StandardUnits";
 
 export default Vue.extend({

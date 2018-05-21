@@ -43,7 +43,7 @@ import NavEventBus from '@/scripts/nav/NavEventBus';
 import { AnimationTimers,
          toSeconds }    from '@/style/ts/Timers';
 import { std, pxInStd } from '@/style/ts/StandardUnits';
-import Measurement      from '@/style/ts/Meausurement';
+import Measurement      from '@/style/ts/Measurement';
 
 export default Vue.extend({
     name: 'Collapsible',
