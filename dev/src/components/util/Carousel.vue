@@ -135,14 +135,16 @@ export default Vue.extend({
         initImages() {
             this.images = this.init.slice();
 
-            let first = this.init[0];
-            let last = this.init[this.init.length-1];
+            let first = this.images[0];
+            let last = this.images[this.images.length-1];
             this.images.push(first);
             this.images.unshift(last);
         }
     },
-    mounted() {
+    beforeMount() {
         this.initImages();
+    },
+    mounted() {
         this.interval = setInterval(this.increment, DelayTimers.carousel);
     },
     beforeDestroy() {

@@ -26,8 +26,12 @@ import Vue from "vue";
 
 import Name from '@/components/nav/Name.vue';
 
-import NavEventBus from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import Events      from '@/scripts/nav/Events';
+import {
+    scrollEnabled
+} from '@/scripts/nav/ScrollControl';
+import NavEventBus   from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
+import Events        from '@/scripts/nav/Events';
+
 import Swatch      from '@/style/ts/Swatch';
 import Measurement from "@/style/ts/Meausurement";
 import { pxInStd } from "@/style/ts/StandardUnits";
@@ -56,9 +60,19 @@ export default Vue.extend({
 
             let belowMinScroll = current < Measurement.minScroll * pxInStd();
 
-            if (this.show && scrollingDown && !belowMinScroll) {
+            let headerShouldClose =
+                this.show &&
+                scrollingDown &&
+                !belowMinScroll &&
+                scrollEnabled();
+
+            let headerShouldOpen =
+                !this.show &&
+                scrollingUp;
+
+            if (headerShouldClose) {
                 NavEventBus.$emit(Events.closeHeader);
-            } else if (!this.show && scrollingUp) {
+            } else if (headerShouldOpen) {
                 NavEventBus.$emit(Events.openHeader);
             }
             // else... already in the right state!
@@ -84,7 +98,6 @@ export default Vue.extend({
         NavEventBus.$on(Events.changeColor, this.changeColor);
         NavEventBus.$on(Events.closeHeader, this.disable);
         NavEventBus.$on(Events.openHeader, this.enable);
-
     },
     beforeDestroy() {
         window.removeEventListener(Events.scroll, this.handleScroll);

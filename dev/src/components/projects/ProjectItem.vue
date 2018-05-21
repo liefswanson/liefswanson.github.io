@@ -15,14 +15,20 @@
                 <span>{{title}}</span>
                 <div class='category-bar'>
                     <div class='spacer'></div>
-                    <i v-if='tagActive("code")' class='fa fa-code icon'/>
-                    <i v-if='tagActive("design")' class='fa fa-paint-brush icon'/>
-                    <i v-if='tagActive("misc")' class='fa fa-asterisk icon'/>
+                    <i v-if='tagActive("code")'
+                       :class="filterActive('code') ? 'active': 'inactive'"
+                       class='fa fa-code icon'/>
+                    <i v-if='tagActive("design")'
+                       :class="filterActive('design') ? 'active': 'inactive'"
+                       class='fa fa-paint-brush icon'/>
+                    <i v-if='tagActive("misc")'
+                       :class="filterActive('misc') ? 'active': 'inactive'"
+                       class='fa fa-asterisk icon'/>
                 </div>
             </h2>
         </div>
         <div class='desc'>
-            <p  class='blurb'>{{blurb}}</p>
+            <p class='blurb'>{{blurb}}</p>
         </div>
     </div>
     <div class='mask'></div>
@@ -115,6 +121,9 @@ export default Vue.extend({
         tagActive(tag: Tag): boolean {
             return this.properties.tags.indexOf(tag) !== -1;
         },
+        filterActive(tag: Tag) {
+            return this.filters.indexOf(tag) !== -1;
+        },
         updateSpan() {
             var content = this.$refs.content as Element;
             // FIXME: kludge to avoid trying to resize if the compenent isn't loaded
@@ -148,6 +157,14 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
+
+.active {
+
+}
+
+.inactive {
+    color: $dark;
+}
 
 .icon {
     padding-left: 0.5rem;
