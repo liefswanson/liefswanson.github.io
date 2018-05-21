@@ -1,7 +1,7 @@
 enum Tag {
     code   = "code",
     design = "design",
-    misc   = "misc",
+    miscellaneous = "miscellaneous",
 };
 
 export default Tag;

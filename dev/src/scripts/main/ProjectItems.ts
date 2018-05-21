@@ -28,7 +28,7 @@ import Project from '@/scripts/main/Project';
 
 import code   = Tag.code;
 import design = Tag.design;
-import misc   = Tag.misc
+import misc   = Tag.miscellaneous
 
 
 const Projects:Project[] = [

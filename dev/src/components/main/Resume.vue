@@ -6,7 +6,7 @@
             <button title='View with built-in PDF viewer'
                     class='btn'>
                 <a class='override-color'
-                   href='static/resume.pdf'
+                   href='static/resume-text.pdf'
                    target='_blank'>
                    <i class='fa fa-external-link-alt'/>
                 </a>
@@ -14,7 +14,7 @@
             <button title='Download'
                     class='btn'>
                 <a class='override-color'
-                   href="static/resume.pdf"
+                   href="static/resume-text.pdf"
                    download>
                     <i class='fa fa-download'/>
                 </a>
@@ -26,6 +26,8 @@
             </button>
         </div>
     </sticky-bar>
+    <!-- The in page render uses a different pdf,
+         to avoid font render errors in pdfjs -->
     <pdf class='pdf'
          ref='pdf'
          src='static/resume.pdf'/>

@@ -6,44 +6,23 @@
              key='left'
              class='panel'>
             <sticky-bar :overlay="false">
+
                 <div class='filter-bar'>
                     <div class='spacer'></div>
 
-                    <!-- these are unfortunately hardcoded,
-                         some more research may present a workaround
-                         may be nice to do with a v-for,
-                         but each needs a different class eg "fa-code" -->
-                    <input type='checkbox'
-                           id='code'
-                           value='code'
-                           class='filter'
-                           v-model='filters'>
-                    <label for='code'
-                           title='code'>
-                        <i class='fa fa-code'/>
+                    <label v-for='elem in tags'
+                           :key='elem.name'
+                           :for='elem.name'
+                           :title='elem.name'>
+                        <input type='checkbox'
+                               :id='elem.name'
+                               :value='elem.name'
+                               class='filter'
+                               v-model='filters'>
+                            <i :class='[elem.fa, elem.icon]'/>
                     </label>
-
-                    <input type='checkbox'
-                           id='design'
-                           value='design'
-                           class='filter'
-                           v-model='filters'>
-                    <label for='design'
-                           title='design'>
-                        <i class='fa fa-paint-brush'/>
-                    </label>
-
-                    <input type='checkbox'
-                           id='misc'
-                           value='misc'
-                           class='filter'
-                           v-model='filters'>
-                    <label for='misc'
-                           title='miscellaneous'>
-                        <i class='fa fa-asterisk'/>
-                    </label>
-
                 </div>
+
             </sticky-bar>
             <ul class='project-grid main-content'
                 :style='style'
@@ -89,6 +68,7 @@ import Vue         from 'vue';
 import ProjectItem from '@/components/projects/ProjectItem.vue';
 import StickyBar   from '@/components/nav/StickyBar.vue';
 
+import TagItems       from '@/scripts/main/TagItems';
 import Tag            from '@/scripts/main/Tag';
 import Project        from '@/scripts/main/Project';
 import ProjectList    from '@/scripts/main/ProjectItems';
@@ -104,6 +84,7 @@ export default Vue.extend({
             autoRows: 1, //measurements assume use of std
             gap: 1,
             filters: Object.keys(Tag) as Tag[],
+            tags: TagItems
         }
     },
     computed: {
@@ -143,11 +124,11 @@ export default Vue.extend({
         background: transparentize($medium, 0.5);
 
         .filter {
-            + label {
+            + i {
                 color: $dark;
             }
 
-            &:checked + label {
+            &:checked + i {
                 color: $projects-swatch;
             }
         }
@@ -158,7 +139,7 @@ export default Vue.extend({
     position: absolute;
     visibility: hidden;
 
-    + label {
+    + i {
         color: transparentize($dark, 0.5);
         @include on-tablet-or-down {
             color: $dark
@@ -166,6 +147,7 @@ export default Vue.extend({
         transition: color $action-bar-animation-time ease;
 
         font-size: $icon-size;
+        line-height: $icon-size * 1.5;
         padding: 0.5rem;
         width: $icon-size * 1.5; // compensate for how wide code icon is
         text-align: center;
@@ -178,7 +160,7 @@ export default Vue.extend({
         }
     }
 
-    &:checked + label {
+    &:checked + i {
         color: transparentize($projects-swatch, 0.5);
         @include on-tablet-or-down {
             color: $projects-swatch;
@@ -225,7 +207,6 @@ export default Vue.extend({
 
 .panel {
     height: calc(100% - $header-height);
-    //overflow-y: auto;
 }
 
 
