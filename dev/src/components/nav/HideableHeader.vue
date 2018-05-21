@@ -26,11 +26,9 @@ import Vue from "vue";
 
 import Name from '@/components/nav/Name.vue';
 
-import {
-    scrollEnabled
-} from '@/scripts/nav/ScrollControl';
-import NavEventBus   from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
-import Events        from '@/scripts/nav/Events';
+import { scrollEnabled } from '@/scripts/nav/ScrollControl';
+import NavEventBus       from '@/scripts/nav/NavEventBus'; // FIXME give a better path, if possible
+import Events            from '@/scripts/nav/Events';
 
 import Swatch      from '@/style/ts/Swatch';
 import Measurement from "@/style/ts/Measurement";
