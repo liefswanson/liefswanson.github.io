@@ -114,9 +114,5 @@ export default Vue.extend({
     z-index: $sticky-z;
     position: sticky;
     top: 0;
-
-    @include on-phone {
-        height: 100%;
-    }
 }
 </style>
