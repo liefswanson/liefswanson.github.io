@@ -100,5 +100,6 @@ export default Vue.extend({
     z-index: $sticky-z;
     top: 0;
     right: 0;
+    width: 100%;
 }
 </style>

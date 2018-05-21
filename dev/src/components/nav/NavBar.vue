@@ -2,6 +2,7 @@
 <div id='nav-root'>
     <transition name='fade'>
         <div class='blinder'
+             ref='blinder'
              v-if='show'
              @click='emitClose'>
         </div>
@@ -11,6 +12,9 @@
                 @afterEnter='animFinished'
                 @afterLeave='animFinished'>
         <nav class='nav-bar'
+             @scroll='handleScroll()'
+             :style="{'touch-action': touchActions}"
+             ref='navBar'
              v-show='show'>
             <div class='menu-container'>
                 <!-- hack necessary due to hideable header -->
@@ -33,9 +37,15 @@
 import Vue     from 'vue';
 import NavItem from './NavItem.vue';
 
-import NavEventBus from '@/scripts/nav/NavEventBus';
-import Sections    from '@/scripts/nav/NavItems';
-import Events      from '@/scripts/nav/Events';
+import {
+    enableScroll,
+    disableScroll,
+    scrollProgress,
+    scrollable
+} from '@/scripts/nav/ScrollControl';
+import NavEventBus   from '@/scripts/nav/NavEventBus';
+import Sections      from '@/scripts/nav/NavItems';
+import Events        from '@/scripts/nav/Events';
 
 import Breakpoints from '@/style/ts/Breakpoints';
 
@@ -44,6 +54,8 @@ export default Vue.extend({
     data() {
         return {
             sections: Sections,
+            scrollPercent: 0,
+            canScroll: false
         }
     },
     props: {
@@ -54,16 +66,42 @@ export default Vue.extend({
     },
     watch: {
         show(val) {
-            let body = document.querySelector('body') as HTMLElement;
-            let top = document.documentElement.scrollTop;
-            let disableScroll = val && Breakpoints.onTabletOrDown();
-
+            this.setScrollBehaviour(val);
             if(val) {
-                window.onscroll = function() { window.scrollTo(0, top); };
-            } else {
-                window.onscroll = null;
+                Vue.nextTick(this.handleScroll);
             }
-        }
+        },
+    },
+    computed: {
+        touchActions(): string {
+            var result = ''
+            if(this.panUp && this.panDown) {
+                result = 'pan-y ';
+            } else if(this.panUp) {
+                result = 'pan-up ';
+            } else if(this.panDown) {
+                result = 'pan-down ';
+            }
+            return result + 'pinch-zoom';
+
+        },
+        panUp(): boolean {
+            if(Breakpoints.onLaptopOrUp()) {
+                return true;
+            }
+
+            return this.scrollPercent !== 0 &&
+                   this.canScroll;
+        },
+        panDown(): boolean {
+            if(Breakpoints.onLaptopOrUp()) {
+                return true;
+            }
+
+            return this.scrollPercent !== 1 &&
+                   this.canScroll;
+        },
+
     },
     methods: {
         emitClose() {
@@ -75,6 +113,39 @@ export default Vue.extend({
         animFinished() {
             NavEventBus.$emit(Events.navAnimDone);
         },
+        handleResize() {
+            this.setScrollBehaviour(this.show);
+            if(this.show) {
+                this.handleScroll();
+            }
+        },
+        setScrollBehaviour(showing: boolean) {
+            let body = document.querySelector('body') as HTMLElement;
+            let top = document.documentElement.scrollTop;
+            let disabling = showing && Breakpoints.onTabletOrDown();
+
+            if(disabling) {
+                body.style.touchAction = 'pinch-zoom';
+                disableScroll();
+            } else {
+                body.style.touchAction = 'auto';
+                enableScroll();
+            }
+        },
+        handleScroll() {
+            let navBar = this.$refs.navBar as HTMLElement;
+            if(!navBar) { return; }
+
+            this.scrollPercent = scrollProgress(navBar);
+            this.canScroll = scrollable(navBar);
+        }
+
+    },
+    mounted() {
+        window.addEventListener(Events.resize, this.handleResize);
+    },
+    beforeDestroy(){
+        window.addEventListener(Events.resize, this.handleResize);
     },
     components: {
         "nav-item": NavItem
@@ -128,7 +199,7 @@ $blinder-opacity: 0.3;
     @include on-tablet-or-down {
         box-shadow: 0.5rem 0 3rem $dark;
     }
-    @include scrollable;
+    overflow-y: auto;
     // border-right: 0.25em solid $dark;
 }
 
