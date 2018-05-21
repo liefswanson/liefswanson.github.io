@@ -1,11 +1,11 @@
 // TODO: vue2-touch-events doesn't provide types
 // send pull request with some once I figure it out
 // @ts-ignore
-import Vue2TouchEvents from 'vue2-touch-events';
+import VueTouch     from 'vue-touch';
 // @ts-ignore
-import imagesLoaded    from 'vue-images-loaded';
-import Router          from 'vue-router';
-import Vue             from 'vue';
+import imagesLoaded from 'vue-images-loaded';
+import Router       from 'vue-router';
+import Vue          from 'vue';
 
 import { SectionMap }  from '@/scripts/nav/NavItems';
 import ProjectList     from '@/scripts/main/ProjectItems';
@@ -13,7 +13,7 @@ import ProjectList     from '@/scripts/main/ProjectItems';
 import NotFound        from '@/components/main/NotFound.vue';
 
 Vue.use(Router);
-Vue.use(Vue2TouchEvents);
+Vue.use(VueTouch);
 
 const landing = {
     path: "/",
