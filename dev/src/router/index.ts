@@ -2,11 +2,10 @@
 // send pull request with some once I figure it out
 // @ts-ignore
 import Vue2TouchEvents from 'vue2-touch-events';
-//@ts-ignore
+// @ts-ignore
 import imagesLoaded    from 'vue-images-loaded';
 import Router          from 'vue-router';
 import Vue             from 'vue';
-
 
 import { SectionMap }  from '@/scripts/nav/NavItems';
 import ProjectList     from '@/scripts/main/ProjectItems';
