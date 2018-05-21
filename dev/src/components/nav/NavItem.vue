@@ -2,7 +2,7 @@
 <router-link @click.native="followLink"
              :to='path'
              exact
-             class='item clickable'
+             class='item'
              :style='palette'
              @mouseenter.native='mouseEnter'
              @mouseleave.native='mouseLeave'
@@ -117,6 +117,7 @@ export default Vue.extend({
     font-size: $nav-item-size;
     font-weight: bolder;
     font-family: 'Comfortaa', sans-serif;
+    transition: all $nav-hover-animation-time ease;
 
     cursor: pointer;
     @include not-selectable;
