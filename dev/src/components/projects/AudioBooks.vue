@@ -43,7 +43,7 @@
                         'everything.jpg'
                     ]"/>
 
-        <p class='p-thin-grow p-note'>
+        <p class='p-thin-grow p-note p-push-right'>
             They say you can't judge a book by its cover, but we can try can't we?
             Take a look at the covers of a few books I have listened to.
             I didn't enjoy all of them, but I do think every one of them is worth listening to.

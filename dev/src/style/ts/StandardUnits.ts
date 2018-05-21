@@ -5,8 +5,7 @@ const std = rem;
 function pxInStd():number {
     let body = document.querySelector('body') as HTMLElement;
     let style = getComputedStyle(body);
-    //@ts-ignore
-    let fontSize = style['font-size'];
+    let fontSize = style.fontSize as string;
     return parseFloat(fontSize);
 }
 
