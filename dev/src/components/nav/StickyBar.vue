@@ -14,11 +14,15 @@ import Vue from 'vue';
 import NavEventBus from '@/scripts/nav/NavEventBus';
 import Events      from '@/scripts/nav/Events';
 
-import Meausurement     from '@/style/ts/Meausurement';
-import { std, pxInStd } from '@/style/ts/StandardUnits';
-import { AnimationTimers,
-         toSeconds }    from '@/style/ts/Timers';
-import Measurement from '@/style/ts/Meausurement';
+import Measurement from '@/style/ts/Measurement';
+import {
+    std,
+    pxInStd
+} from '@/style/ts/StandardUnits';
+import {
+    AnimationTimers,
+    toSeconds
+} from '@/style/ts/Timers';
 
 export default Vue.extend({
     name: 'StickyBar',
@@ -51,7 +55,7 @@ export default Vue.extend({
                 return '0'
             }
 
-            return Meausurement.headerHeight + std
+            return Measurement.headerHeight + std
         }
     },
     methods: {
