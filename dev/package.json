@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@types/hammerjs": "^2.0.35",
     "normalize.css": "^8.0.0",
     "sloc": "^0.2.0",
     "vue": "^2.5.2",

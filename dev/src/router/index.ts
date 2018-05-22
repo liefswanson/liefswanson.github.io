@@ -1,9 +1,7 @@
 // TODO: vue2-touch-events doesn't provide types
 // send pull request with some once I figure it out
-// @ts-ignore
-import VueTouch     from 'vue-touch';
-// @ts-ignore
-import imagesLoaded from 'vue-images-loaded';
+import VueTouch from 'vue-touch';
+import magesLoaded from 'vue-images-loaded';
 import Router       from 'vue-router';
 import Vue          from 'vue';
 
