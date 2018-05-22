@@ -25,65 +25,15 @@ import * as Hammer    from 'hammerjs';
 import NavBar         from "@/components/nav/NavBar.vue";
 import HideableHeader from "@/components/nav/HideableHeader.vue";
 
+import {
+    makeNewFavicon,
+    makeNewSelectionColor
+} from '@/scripts/nav/DynamicColor';
 import NavEventBus from '@/scripts/nav/NavEventBus';
 import Events      from '@/scripts/nav/Events'
 
 import Breakpoints from '@/style/ts/Breakpoints';
 import Swatch      from '@/style/ts/Swatch';
-
-const faviconId   = 'dynamic-favicon';
-const selectionId = 'dynamic-selection';
-
-function makeNewFavicon(color: Swatch): Element {
-    //console.log(color);
-
-    const tag = 'link';
-    const rel = 'icon';
-
-    let pathId = color.slice(1);
-    let path   = 'static/logo-' + pathId + '.png?v=2';
-
-    let link  = document.createElement(tag);
-    link.id   = faviconId;
-    link.rel  = rel;
-    link.href = path;
-
-    return link;
-}
-
-function makeNewSelectionColor(color: Swatch):Element {
-    const tag = 'style';
-    const type = 'text/css';
-
-    let style = document.createElement(tag);
-    style.id = selectionId;
-    style.type = type;
-    style.innerHTML =
-    '::selection {' +
-        'background:' + color + ';' +
-        'color:' + Swatch.bright + ';' +
-    '}' +
-
-    '::-moz-selection {' +
-        'background:' + color + ';' +
-        'color:' + Swatch.bright + ';' +
-    '}';
-
-    return style;
-}
-
-function swapHeadElementById(id: string, elem: Element) {
-
-    let old  = document.getElementById(id) as HTMLElement;
-
-    if (old) {
-        document.head.removeChild(old);
-    }
-
-    document.head.appendChild(elem);
-}
-
-
 
 export default Vue.extend({
     name: 'App',
@@ -149,10 +99,8 @@ export default Vue.extend({
 
         changeColor(color: Swatch) {
             this.color = color;
-            let favicon   = makeNewFavicon(this.color);
-            let selection = makeNewSelectionColor(this.color);
-            swapHeadElementById(faviconId,   favicon);
-            swapHeadElementById(selectionId, selection);
+            makeNewFavicon(this.color);
+            makeNewSelectionColor(this.color);
         },
 
     },
