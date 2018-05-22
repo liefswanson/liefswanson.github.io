@@ -20,6 +20,8 @@
 
 <script lang='ts'>
 import Vue            from 'vue';
+import * as Hammer    from 'hammerjs';
+
 import NavBar         from "@/components/nav/NavBar.vue";
 import HideableHeader from "@/components/nav/HideableHeader.vue";
 
@@ -103,10 +105,18 @@ export default Vue.extend({
         }
     },
     methods: {
-        disableNav(e?: Event) {
+        disableNav(e?: HammerInput) {
+            if(e !== undefined &&
+               e.pointerType !== 'touch') {
+                return;
+            }
             this.showNav = false;
         },
-        enableNav(e?: Event) {
+        enableNav(e?: HammerInput) {
+            if(e !== undefined &&
+               e.pointerType !== 'touch') {
+                return;
+            }
             this.showNav = true;
             NavEventBus.$emit(Events.openHeader);
         },
@@ -181,7 +191,9 @@ export default Vue.extend({
 #root {
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
+    user-select: auto !important;
 }
+
 
 #main-root {
     padding-top: $header-height;

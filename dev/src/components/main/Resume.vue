@@ -37,7 +37,6 @@
 <script lang="ts">
 
 import Vue from 'vue';
-//@ts-ignore
 import pdf from 'vue-pdf';
 
 import StickyBar from '@/components/nav/StickyBar.vue';
