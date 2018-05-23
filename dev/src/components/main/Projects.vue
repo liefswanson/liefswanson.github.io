@@ -121,7 +121,9 @@ export default Vue.extend({
     transition: background $action-bar-animation-time ease;
 
     &:hover {
-        background: transparentize($medium, 0.5);
+        @include on-laptop-or-up{
+            background: transparentize($medium, 0.5);
+        }
 
         .filter {
             + i {
