@@ -2,26 +2,26 @@ import Swatch from '@/style/ts/Swatch';
 
 
 function makeNewFavicon(color: Swatch) {
-    const faviconId = 'dynamic-favicon';
+    const id  = 'dynamic-favicon';
     const tag = 'link';
     const rel = 'icon';
 
-    let pathId = color.slice(1);
+    let pathId = color.slice(1); // remove the # infront of the color
     let path   = 'static/logo-' + pathId + '.png?v=2';
 
     let link  = document.createElement(tag);
     link.rel  = rel;
     link.href = path;
 
-    swapHeadElementById(faviconId, link);
+    swapHeadElementById(id, link);
 }
 
 function makeNewSelectionColor(color: Swatch) {
-    const selectionId = 'dynamic-selection';
+    const id   = 'dynamic-selection';
     const tag  = 'style';
     const type = 'text/css';
 
-    let style = document.createElement(tag);
+    let style  = document.createElement(tag);
     style.type = type;
     style.innerHTML =
     '::selection {' +
@@ -34,14 +34,14 @@ function makeNewSelectionColor(color: Swatch) {
         'color:' + Swatch.bright + ';' +
     '}';
 
-    swapHeadElementById(selectionId, style);
+    swapHeadElementById(id, style);
 }
 
 function swapHeadElementById(id: string, elem: HTMLElement) {
-    let old = document.getElementById(id) as HTMLElement;
+    let oldElem = document.getElementById(id) as HTMLElement;
 
-    if (old) {
-        document.head.removeChild(old);
+    if (oldElem) {
+        document.head.removeChild(oldElem);
     }
 
     elem.id = id;
