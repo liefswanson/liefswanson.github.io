@@ -1,5 +1,6 @@
 <template>
 <v-touch id='root'
+         refs='root'
          @swiperight='enableNav'
          @swipeleft='disableNav'
          :swipe-options="{
@@ -116,6 +117,10 @@ export default Vue.extend({
         window.addEventListener(Events.resize, this.enableNavIfBigger);
 
         this.defaultNavState();
+        //@ts-ignore
+        this.$refs.root.disableAll();
+        //@ts-ignore
+        this.$refs.root.enable('swipe');
     },
     beforeDestroy() {
         NavEventBus.$off(Events.changeColor, this.changeColor);
@@ -140,6 +145,7 @@ export default Vue.extend({
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
     user-select: auto !important;
+    touch-action: pan-y pinch-zoom !important;
 }
 
 
