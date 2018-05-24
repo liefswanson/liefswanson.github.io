@@ -25,6 +25,10 @@ body {
     flex: 1;
 }
 
+.raw-list {
+    padding-left: 3rem;
+}
+
 // classes prefixed by u- mean universal, and are used in multiple SFCs
 .u-link {
     color: inherit;

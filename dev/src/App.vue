@@ -1,11 +1,12 @@
 <template>
 <v-touch id='root'
-         refs='root'
+         ref='root'
          @swiperight='enableNav'
          @swipeleft='disableNav'
          :swipe-options="{
              direction: 'horizontal'
          }">
+    <ie-warning/>
     <hideable-header :showNav='showNav'/>
     <nav-bar :show='showNav'/>
     <main id='main-root'
@@ -25,6 +26,7 @@ import * as Hammer    from 'hammerjs';
 
 import NavBar         from "@/components/nav/NavBar.vue";
 import HideableHeader from "@/components/nav/HideableHeader.vue";
+import IEWarning      from '@/components/util/IEWarning.vue';
 
 import {
     makeNewFavicon,
@@ -42,7 +44,7 @@ export default Vue.extend({
         return {
             showNav: false,
             previouslyOnTablet: false,
-            color: Swatch.bright
+            color: Swatch.bright,
         }
     },
     watch: {
@@ -53,7 +55,7 @@ export default Vue.extend({
     computed: {
         shouldPush(): boolean {
             return this.showNav && Breakpoints.onLaptopOrUp();
-        }
+        },
     },
     methods: {
         disableNav(e?: HammerInput) {
@@ -103,7 +105,6 @@ export default Vue.extend({
             makeNewFavicon(this.color);
             makeNewSelectionColor(this.color);
         },
-
     },
     created() {
         // needs to be set before navItems are created and mounted
@@ -133,7 +134,8 @@ export default Vue.extend({
     },
     components: {
         "nav-bar": NavBar,
-        "hideable-header" : HideableHeader
+        "hideable-header" : HideableHeader,
+        "ie-warning" : IEWarning
     },
 });
 </script>
