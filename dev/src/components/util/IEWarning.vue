@@ -12,7 +12,7 @@
                     If you want to continue you can, but I gurantee certain parts of the site won't work as intended.
                     This site makes liberal use of many tools that Internet Explorer doesn't support... but <b>every</b> other major internet browser does.
                     It would take a very long time to implement support for Internet Explorer... and frankly, I don't think it is worth the investment.
-                    In fact, I think it is better that I actively don't support it on principal.
+                    In fact, I think it is better that I actively don't support it on principle.
                 </p>
 
                 <h2>
@@ -25,7 +25,7 @@
                     As such, it is becoming increasingly difficult to develop for within the quickly changing web.
                     Approximately <b>1 of 10</b> people still use Internet Explorer, <a href='https://en.wikipedia.org/wiki/Usage_share_of_web_browsers#Summary_tables'>as of May 2018</a>,
                     and that fact is the sole cause of lots of arduous work that doesn't need to exist.
-                    It is for these reasons I choose not to support Internet Explorer on my portfolio site.
+                    It is for these reasons I choose not to support Internet Explorer for my portfolio site, on principle.
                 </p>
 
                 <h2>
