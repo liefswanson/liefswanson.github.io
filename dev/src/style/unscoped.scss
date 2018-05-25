@@ -195,8 +195,8 @@ body {
 .main-content {
     padding: 1rem;
 
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        padding-top: $header-height;
+    @include is-IE {
+        padding-top: $header-height + 1rem;
     }
 }
 
