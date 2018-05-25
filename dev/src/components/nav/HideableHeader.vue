@@ -11,6 +11,8 @@
             <i class='fa fa-bars'/>
         </button>
 
+        <div class='spacer'></div>
+
         <router-link to='/'
                      exact>
             <name :color='color'
@@ -118,21 +120,16 @@ export default Vue.extend({
     line-height: $header-height;
     width: 100vw;
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
-    text-align: right;
     z-index: $header-z;
 }
 
 .logo {
     padding: $hamburger-padding;
     padding-right: 2rem;
-    line-height: normal;
-    text-align: right;
-    font-family: "Comfortaa", sans-serif;
     margin: 0;
-
-    @include not-selectable;
 }
 
 .extra-pad {
@@ -141,10 +138,6 @@ export default Vue.extend({
 
 // hamburger
 .hamburger-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-
     color: $light;
     background: none;
     border-style: none;

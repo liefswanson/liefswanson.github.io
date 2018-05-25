@@ -63,12 +63,16 @@ export default Vue.extend({
             this.headerShowing = true;
         },
         updateAdjustment() {
-            if(!this.headerShowing) {
+            if(!this.headerShowing || !this.supportsSticky()) {
                 this.adjustment = 0;
                 return;
             }
 
             this.adjustment = Measurement.headerHeight;
+        },
+        supportsSticky(): boolean {
+            return  CSS !== undefined &&
+                    CSS.supports('(position: sticky)');
         }
     },
     mounted() {
@@ -92,7 +96,16 @@ export default Vue.extend({
 
 .sticky {
     z-index: $sticky-z;
-    position: sticky;
+    position: fixed;
+    padding-top: $header-height;
+    right: 0;
+    width: 100%;
+
+    @supports (position: sticky) {
+        position: sticky;
+        padding-top: 0;
+    }
+
     transition: top $header-animation-time ease;
 }
 
