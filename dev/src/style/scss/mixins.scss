@@ -24,3 +24,9 @@
         //font-size: 1.05em;
     }
 }
+
+@mixin is-IE  {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}

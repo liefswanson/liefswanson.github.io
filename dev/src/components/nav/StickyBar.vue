@@ -49,7 +49,7 @@ export default Vue.extend({
             return this.adjustment + std;
         },
         height() : string {
-            if (this.overlay || isIE()){
+            if (this.overlay || isIE() || !this.supportsSticky()){
                 return '0';
             }
 
@@ -64,7 +64,7 @@ export default Vue.extend({
             this.headerShowing = true;
         },
         updateAdjustment() {
-            if(!this.headerShowing || !this.supportsSticky()) {
+            if(!this.headerShowing || isIE()) {
                 this.adjustment = 0;
                 return;
             }
@@ -98,13 +98,15 @@ export default Vue.extend({
 .sticky {
     z-index: $sticky-z;
     position: fixed;
-    padding-top: $header-height;
     right: 0;
     width: 100%;
 
     @supports (position: sticky) {
         position: sticky;
-        padding-top: 0;
+    }
+
+    @include is-IE {
+        padding-top: $header-height;
     }
 
     transition: top $header-animation-time ease;
