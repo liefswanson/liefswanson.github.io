@@ -54,7 +54,7 @@
                     </button>
                 </div>
             </sticky-bar>
-            <div class='main-content'>
+            <div class='main-content project-focused'>
                 <router-view/>
             </div>
         </div>
@@ -213,9 +213,43 @@ export default Vue.extend({
 
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
+
+
+    @include on-phone {
+        column-count: 1;
+    }
+
+    @include on-tablet {
+        column-count: 2;
+    }
+
+    @include on-laptop {
+        column-count: 3;
+    }
+
+    @include on-desktop {
+        column-count: 4;
+    }
+
     list-style-type: none;
+}
+
+.project-focused {
+    max-width: $medium-size;
+    margin: auto;
+    @supports (display: grid){
+        max-width: none;
+        margin: none;
+    }
+}
+
+.project-card {
+    display: inline-block;
 }
 
 .focus-enter-active,
