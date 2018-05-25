@@ -23,6 +23,7 @@ import {
     AnimationTimers,
     toSeconds
 } from '@/style/ts/Timers';
+import isIE from '@/scripts/main/IE';
 
 export default Vue.extend({
     name: 'StickyBar',
@@ -48,7 +49,7 @@ export default Vue.extend({
             return this.adjustment + std;
         },
         height() : string {
-            if (this.overlay){
+            if (this.overlay || isIE()){
                 return '0';
             }
 
