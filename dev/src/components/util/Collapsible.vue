@@ -92,7 +92,6 @@ export default Vue.extend({
         time(): number {
             let base = AnimationTimers.collapsible * toSeconds;
             let units = this.expandedHeight() / Measurement.collapsible;
-            console.log(base);
             return base * Math.sqrt(units);
         },
         overscrollStyle(): object {
