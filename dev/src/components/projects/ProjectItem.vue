@@ -3,8 +3,7 @@
              exact
              class='item'
              tag='li'
-             :style='style'
-             v-if='visible'>
+             :style='style'>
     <div ref='content'>
         <div class='card-header'>
             <img v-images-loaded="updateSpan"
@@ -101,15 +100,6 @@ export default Vue.extend({
         },
         target(): string {
             return SectionMap.projects.path + '/' + this.path;
-        },
-        visible(): boolean {
-            let filters = this.filters;
-            function intersection(filter: Tag): boolean {
-                return filters.indexOf(filter) !== -1;
-            }
-
-            this.updateNextTick();
-            return this.properties.tags.filter(intersection).length !== 0;
         }
     },
     methods: {
@@ -232,4 +222,5 @@ export default Vue.extend({
 .desc {
     padding: 1.5rem;
 }
+
 </style>
