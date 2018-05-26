@@ -164,6 +164,7 @@ export default Vue.extend({
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    background: $bright;
 }
 
 .mask {

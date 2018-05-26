@@ -1,6 +1,7 @@
 <template>
 <div class='projects-root'>
-    <transition name='focus' mode='out-in'>
+    <transition name='focus'
+                mode='out-in'>
 
         <div v-if='leftActive'
              key='left'
@@ -30,7 +31,7 @@
                               name='project-group'
                               tag='ul'>
                 <project-item v-for='project in filteredProjects'
-                              :key='project'
+                              :key='project.path'
                               :properties="project"
                               :autoRows='autoRows'
                               :gap='gap'
@@ -82,7 +83,6 @@ export default Vue.extend({
     data() {
         return {
             projects: ProjectList,
-            filteredProjects: ProjectList,
             autoRows: 1, //measurements assume use of std
             gap: 1,
             filters: Object.keys(Tag) as Tag[],
@@ -98,21 +98,20 @@ export default Vue.extend({
                 "grid-auto-rows": this.autoRows + std,
                 "grid-gap": this.gap + std,
             }
+        },
+        filteredProjects(): Project[] {
+            return this.projects.filter(this.visible);
         }
     },
-    watch: {
-        filters(value) {
-            function visible(project: Project):boolean {
-                let filters = value;
-                function intersection(filter: Tag): boolean {
-                    return filters.indexOf(filter) !== -1;
-                }
-
-                let result = project.tags.filter(intersection).length !== 0;
-                return result;
+    methods: {
+        visible(project: Project):boolean {
+            let filters = this.filters;
+            function intersection(filter: Tag): boolean {
+                return filters.indexOf(filter) !== -1;
             }
 
-            this.filteredProjects = this.projects.filter(visible)
+            let result = project.tags.filter(intersection).length !== 0;
+            return result;
         }
     },
     components: {
@@ -264,20 +263,29 @@ export default Vue.extend({
     }
 }
 
-.project-group-enter,
-.project-group-leave-to {
+.project-group-move {
+    transition: transform $grid-rearrange-animation-time ease;
+}
+
+.project-group-enter {
     opacity: 0;
+    transform: translateY(-2rem);
+}
+
+.project-group-enter-active,
+.project-group-leave-active {
+    transition: opacity $grid-rearrange-animation-time ease,
+                transform $grid-rearrange-animation-time ease;
 }
 
 .project-group-leave-active {
-
+    position: absolute !important;
+    visibility: hidden;
 }
 
 .project-card {
-    transition: all 0.75s ease;
     display: inline-block;
 }
-
 
 .focus-enter-active,
 .focus-leave-active {
