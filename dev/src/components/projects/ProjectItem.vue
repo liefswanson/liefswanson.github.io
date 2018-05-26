@@ -4,7 +4,7 @@
              class='item'
              tag='li'
              :style='style'
-             v-if='visible'>
+             v-show='visible'>
     <div ref='content'>
         <div class='card-header'>
             <img v-images-loaded="updateSpan"
