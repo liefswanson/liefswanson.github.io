@@ -24,18 +24,19 @@
                 </div>
 
             </sticky-bar>
-            <ul class='project-grid main-content'
-                :style='style'
-                ref='container'>
-                <project-item v-for='(project, key) in projects'
-                              :ref='project.name'
-                              :key='key'
+            <transition-group class='project-grid main-content'
+                              :style='style'
+                              ref='container'
+                              name='project-group'
+                              tag='ul'>
+                <project-item v-for='project in filteredProjects'
+                              :key='project'
                               :properties="project"
                               :autoRows='autoRows'
                               :gap='gap'
                               :filters='filters'
                               class='project-card'/>
-            </ul>
+            </transition-group>
         </div>
 
         <div v-else
@@ -81,6 +82,7 @@ export default Vue.extend({
     data() {
         return {
             projects: ProjectList,
+            filteredProjects: ProjectList,
             autoRows: 1, //measurements assume use of std
             gap: 1,
             filters: Object.keys(Tag) as Tag[],
@@ -89,7 +91,6 @@ export default Vue.extend({
     },
     computed: {
         leftActive(): boolean {
-            this.$refs.ProjectList
             return this.$route.path == SectionMap.projects.path;
         },
         style(): object {
@@ -97,6 +98,32 @@ export default Vue.extend({
                 "grid-auto-rows": this.autoRows + std,
                 "grid-gap": this.gap + std,
             }
+        }
+    },
+    watch: {
+        filters(value) {
+            function visible(project: Project):boolean {
+                let filters = value;
+                function intersection(filter: Tag): boolean {
+                    return filters.indexOf(filter) !== -1;
+                }
+
+                let result = project.tags.filter(intersection).length !== 0;
+                return result;
+            }
+
+            this.filteredProjects = this.projects.filter(visible)
+        }
+    },
+    methods: {
+        visible(project: Project): boolean {
+            let filters = this.filters;
+            function intersection(filter: Tag): boolean {
+                return filters.indexOf(filter) !== -1;
+            }
+
+            let result = project.tags.filter(intersection).length !== 0;
+            return result;
         }
     },
     components: {
@@ -248,9 +275,20 @@ export default Vue.extend({
     }
 }
 
+.project-group-enter,
+.project-group-leave-to {
+    opacity: 0;
+}
+
+.project-group-leave-active {
+
+}
+
 .project-card {
+    transition: all 0.75s ease;
     display: inline-block;
 }
+
 
 .focus-enter-active,
 .focus-leave-active {
