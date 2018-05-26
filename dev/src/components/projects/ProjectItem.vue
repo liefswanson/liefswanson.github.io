@@ -124,15 +124,12 @@ export default Vue.extend({
 
             this.rowSpan = span;
         },
-        updateNextTick() {
-            Vue.nextTick(this.updateSpan);
-        }
     },
     mounted() {
         window.addEventListener(Events.resize, this.updateSpan);
         NavEventBus.$on(Events.navAnimDone, this.updateSpan);
 
-        this.updateNextTick();
+        this.updateSpan();
     },
     beforeDestroy() {
         window.removeEventListener(Events.resize, this.updateSpan);
