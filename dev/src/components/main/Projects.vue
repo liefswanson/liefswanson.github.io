@@ -115,17 +115,6 @@ export default Vue.extend({
             this.filteredProjects = this.projects.filter(visible)
         }
     },
-    methods: {
-        visible(project: Project): boolean {
-            let filters = this.filters;
-            function intersection(filter: Tag): boolean {
-                return filters.indexOf(filter) !== -1;
-            }
-
-            let result = project.tags.filter(intersection).length !== 0;
-            return result;
-        }
-    },
     components: {
         'project-item': ProjectItem,
         'sticky-bar': StickyBar,
