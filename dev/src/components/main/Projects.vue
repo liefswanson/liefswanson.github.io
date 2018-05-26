@@ -20,7 +20,7 @@
                                :value='elem.name'
                                class='filter'
                                v-model='filters'>
-                            <i :class='[elem.fa, elem.icon]'/>
+                        <i :class='[elem.fa, elem.icon]'/>
                     </label>
                 </div>
 
