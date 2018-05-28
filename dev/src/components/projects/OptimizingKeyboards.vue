@@ -62,7 +62,7 @@
             <v-link to='https://en.wikipedia.org/wiki/Richter_magnitude_scale'>Richter scale</v-link>
             or
             <v-link to='https://en.wikipedia.org/wiki/Decibel'>Decibels</v-link>.
-            For 3000 keyboards, with a dictionary of 8000 words, it took <b>12 hours</b> for my computer to evaluate using my version of Smith's method, and less than <b>20 seconds</b> using my method.
+            For 3000 keyboards, with a dictionary of 8000 words, it took more than <b>4 hours</b> for my computer to evaluate using my version of Smith's method, and less than <b>20 seconds</b> using my method.
 
             <br> <br>
             The mysterious <v-link to='http://www.cs.columbia.edu/~brian/index.html'>Smith</v-link> mentioned here and in the graph is the the person that presents in that
