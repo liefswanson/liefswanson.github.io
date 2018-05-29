@@ -16,7 +16,7 @@
             It was a great opportunity to make use of my DSLR.
             I don't get excuses to do photography that often, but I really enjoy it... and I even think my photography isn't half bad!
             I don't think I am quite at the level of being a photographer as my day job, but it has come in really handy whenever I need photos and can't find what I am looking for.
-            It is like any skill, being able to do it yourself is valuable.
+            It is like any skill; being able to do it yourself is valuable.
         </p>
 
         <v-carousel class='p-image p-wide-grow'

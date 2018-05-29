@@ -5,7 +5,7 @@
     </h1>
 
     <p class='p-wide p-text'>
-        Unlike most people, I don't use Windows10 or OSX day to day on my computer.
+        Unlike most people, I don't use Windows 10 or OSX day to day on my computer.
         I use
         <v-link to='https://www.archlinux.org/'>Arch Linux</v-link>
         almost exclusively.
@@ -19,12 +19,12 @@
     </p>
 
     <p class='p-wide p-text'>
-        I also use the command line regularly, which isn't really a thing that is all that effortless in Windows or even Mac.
-        On an average day I use the commandline no less than 3 or 4 times, and average much much higher than that.
+        I also use the commandline regularly, which isn't really a thing that is all that effortless in Windows or even Mac.
+        On an average day I use the commandline no less than 3 or 4 times, and average much, much more than that.
     </p>
 
     <p class='p-thin p-note'>
-        Even as a student of design I can assure you there are some things GUIs just haven't figured out yet.
+        Even as a student of design, I can assure you there are some things GUIs just haven't figured out yet.
     </p>
 
     <p class='p-wide p-text'>
@@ -34,15 +34,15 @@
         some of the things it can do are amazing.
         KDE is incredibly extensible, and plays well with a host of other applications.
         It is frankly amazing the things you can get to work in KDE.
-        KDE even has a Quake style drop-down terminal called
+        KDE even has a Quake-style drop-down terminal called
         <v-link to='https://www.kde.org/applications/system/yakuake/'>Yakuake</v-link>...
         and it feels like cheating in a game every time I use it.
     </p>
 
     <p class='p-thin p-note'>
-        It is hard to find anything on the original terminal from the game quake anywhere on the internet.
+        It is hard to find anything on the original terminal from the game Quake anywhere on the internet.
         However, lots of games have a drop down terminal these days.
-        Skyrim is pretty famous for having one but many other games have them as well, they are just disabled as they are intended for developer use.
+        Skyrim is pretty famous for having one, but many other games have them as well; they are just disabled as they are intended for developer use.
     </p>
 
     <p class='p-wide p-text'>

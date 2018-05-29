@@ -5,7 +5,7 @@
     </h1>
 
     <p class='p-wide p-text'>
-        I my spare time I volunteer at the
+        In my spare time I volunteer at the
         <v-link to='https://cslabsfu.wordpress.com/'>Cognitive Science Lab</v-link>
         at SFU.
         Unfortunately, I don't get to spend as much time in there as I would like, but when I do get to spend time there it is great.
@@ -14,7 +14,6 @@
     <p class='p-wide p-text'>
         The research I helped with had to do with analyzing replays of StarCraft 2.
         The data consists of replays from players of all skill levels, from some of the worst in the world, to some of the best.
-        It yields some interesting data worth looking at.
         There are many phenomena in the data worth spending an afternoon speculating about.
     </p>
 
@@ -25,7 +24,7 @@
     </p>
 
     <p class='p-note p-thin'>
-        Think about the last time you were driving, similar things can happen where you make subconscious decisions.
+        Think about the last time you were driving. Similar things can happen where you make subconscious decisions.
     </p>
 
     <p class='p-wide p-text'>

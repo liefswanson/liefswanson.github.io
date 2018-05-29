@@ -6,13 +6,12 @@
 
     <p class='p-wide p-highlight'>
         Check out the
-        <v-link to='http://www.sfu.ca/students/calendar/2018/summer/programs/interactive-arts-and-technology/major/bachelor-of-arts.html'>
-            Cirriculum<i class='fas fa-graduation-cap p-icon'/>
+        <v-link to='http://www.sfu.ca/students/calendar/2018/summer/programs/interactive-arts-and-technology/major/bachelor-of-arts.html'>Curriculum<i class='fas fa-graduation-cap p-icon'/>
         </v-link>
     </p>
 
     <p class='p-wide p-text'>
-        While I am definitely better at the computer science than I am at design,
+        While I am definitely better at computer science than I am at design,
         I did originally come to university for design.
         I also think it is really important to consider the user when making anything.
         While it is great to be able to implement something, it is critical that users like what you create, and know how to use it.
@@ -21,8 +20,8 @@
     </p>
 
     <p class='p-thin p-note'>
-        I have a page about my other major
-        <v-link local to='/projects/sosy'>SoSy</v-link>
+        I have a page about my other major,
+        <v-link local to='/projects/sosy'>SoSy</v-link>,
         as well.
     </p>
 

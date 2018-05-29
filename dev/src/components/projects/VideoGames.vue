@@ -5,7 +5,7 @@
         </h1>
 
         <p class='p-wide p-text'>
-            One of the things that actually got me interested in software development and user centric design is video games.
+            One of the things that actually got me interested in software development and user-centric design is video games.
             I am a sucker for a game that makes me think, or has a story capable of true escapism.
         </p>
 
@@ -39,7 +39,7 @@
                     ]"/>
 
         <p class='p-thin-grow p-note'>
-            Here are some of the games that really captured my imagination, either for their story, social aspects, and/or their incredible brain engaging mechanics.
+            Here are some of the games that really captured my imagination, either for their story, social aspects, and/or their incredible brain-engaging mechanics.
         </p>
     </article>
 </template>

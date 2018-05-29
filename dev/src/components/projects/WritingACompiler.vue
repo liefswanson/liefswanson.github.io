@@ -7,7 +7,7 @@
         <p class='p-wide p-text'>
             For my undergrad degree in Software Systems at SFU, I took a course in compilers.
             The course was a really great, in my opnion.
-            I took it with <v-link to='https://www.sfu.ca/computing/people/faculty/thomasshermer.html'>Tom Shermer</v-link>, who is one of those professors that will make you work because he knows it will cause you to learn things.
+            I took it with <v-link to='https://www.sfu.ca/computing/people/faculty/thomasshermer.html'>Tom Shermer</v-link>, who is one of those professors that will make you work hard because he knows it will cause you to learn things.
         </p>
 
         <p class='p-wide p-text'>
@@ -18,7 +18,7 @@
 
         <p class='p-note p-thin'>
             The only time I experienced this outside of one of Tom's classes was in a
-            <v-link local to='/projects/big-team-project'>semester long team project</v-link>
+            <v-link local to='/projects/big-team-project'>semester-long team project</v-link>
             where we had a real client.
         </p>
 
@@ -45,7 +45,7 @@
 
         <ul class='p-wide p-list'>
             <li>
-                Supported first-class data-types
+                Supported first-class data-types:
                 <ul class='p-list'>
                     <li>Booleans</li>
                     <li>8bit Characters</li>
@@ -75,7 +75,7 @@
                 form
             </li>
             <li>
-                An Optimizer which could do all the following optimizations.
+                An Optimizer which could do all the following optimizations:
                 <ul class='p-list'>
                     <li>peephole</li>
                     <li>string deduplication</li>
@@ -88,7 +88,7 @@
                 </ul>
             </li>
             <li>
-                It was possible to do the following with every numeric data-type
+                It was possible to do the following with every numeric data-type:
                 <ul class='p-list'>
                     <li>addition</li>
                     <li>subtraction</li>
@@ -104,7 +104,7 @@
                 <v-link to='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</v-link>
             </li>
             <li>
-                It also contained some basic control structures
+                It also contained some basic control structures:
                 <ul class='p-list'>
                     <li>if/else statements <span class='p-note'>did not have "else if"</span></li>
                     <li>while loops</li>
@@ -112,7 +112,7 @@
                 </ul>
             </li>
             <li>
-                Finally, it had some built in routines which could be performed on arrays
+                Finally, it had some built in routines which could be performed on arrays:
                 <ul class='p-list'>
                     <li>map</li>
                     <li>filter</li>
@@ -122,12 +122,12 @@
         </ul>
 
         <p class='p-note p-thin'>
-            Wow that is a lot of things for one semester right?
+            Wow, that is a lot of things for one semester right?
             I ended up writing enough code to create a net of 15-18k lines for this class.
             That is excluding any removed lines.
             That is just how much bigger the compiler was by the end.
-            <br>
-            <br>
+            <br/>
+            <br/>
             That is a lot of work to test while doing other classes.
             That is why I wrote my own
             <v-link local to='/projects/gtr'>testing harness</v-link>
