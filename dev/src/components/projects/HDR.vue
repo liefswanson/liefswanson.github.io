@@ -6,8 +6,8 @@
 
 
         <p class='p-wide p-text'>
-            For a class in Media Arts, for my
-            <v-link local to='/projects/sosy'>Software Systems degree</v-link>
+            For a class in Media Arts for my
+            <v-link local to='/projects/sosy'>Software Systems degree</v-link>,
             I had to do some photo manipulation.
             It wasn't anything terribly difficult, just implementing our own spin on HDR.
             We weren't given any equations for how to make it work, we were told just to play it by ear.
@@ -21,8 +21,8 @@
         </p>
 
         <p class='p-note p-thin'>
-            Oh Also... while we are on the topic of photography don't forget to check out
-            <v-link to='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr</v-link>
+            Oh also... while we are on the topic of photography, don't forget to check out
+            <v-link to='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr</v-link>.
         </p>
 
         <p class='p-wide p-text'>
@@ -51,13 +51,13 @@
              class='p-thin-grow p-image'>
 
         <p class='p-wide p-text'>
-            The main challenge here was not so much reading in the images. That part is pretty straight forward.
+            The main challenge here was not so much reading in the images. That part is pretty straightforward.
             We were working in Java, and as anyone will tell you, there are a lot of things the Java standard library can do.
             Certainly there are also a lot of things it can't do... but that aside, it does have the ability to read JPEGs, and that is the thing I cared about.
         </p>
 
         <p class='p-wide p-text'>
-            The big problem was trying to get an equation that would map the 3 exposures well to some kind of happy middle ground of all the exposures.
+            The big problem was trying to get an equation that would map the three exposures well to some kind of happy middle ground of all the exposures.
             Below you can see some of the stages I went through trying to make it work, as well as what I settled on.
         </p>
 
@@ -72,7 +72,7 @@
         <p class='p-note p-thin-grow'>
             That second one with the lightning bolt going through the sky is pretty cool hey?
             You can see a reverse effect in the one I finally went with, if you look closely enough.
-            Those resulted from the equation I chose, it was a little to sharp near the average brightness value in the image.
+            Those resulted from the equation I chose, it was a little too sharp near the average brightness value in the image.
             <br/>
             <br/>
             Those were pretty much impossible to get rid of without completely rethinking the custom equation I was using to weight the brightnesses of each image into the final one.
@@ -94,5 +94,3 @@ export default Vue.extend({
     }
 });
 </script>
-
-

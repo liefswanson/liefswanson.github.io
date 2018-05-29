@@ -34,7 +34,7 @@
         </p>
 
         <p class='p-wide p-text'>
-            The way the game works with the same rules as tetris, with one addition.
+            The way the game works with the same rules as Tetris, with one addition.
             You may have noticed that the pieces are multi-coloured. This is because it also works sort of like Candy Crush.
             If 4 of the same colour end up connecting, they will break, leaving the pieces around them floating even if they are unconnected to the rest of the pieces.
         </p>
@@ -44,12 +44,12 @@
         </p>
 
         <ul class='p-wide p-list'>
-            <li>To debug the rendering, I created a cool colourized pretty string of the board that would output to stdout each frame.</li>
+            <li>To debug the rendering, I created a cool colourized pretty string of the board that would output to stdout each frame</li>
             <li>Every single block shares the <b>exact</b> same model</li>
             <li>All checks to see if blocks were destroyed are done in a batch process
                 <ul class='p-list'>
-                    <li>this allows color breaks and row breaks to happen in the same action</li>
-                    <li>to achieve this, I created the ability to diff the board</li>
+                    <li>This allows color breaks and row breaks to happen in the same action</li>
+                    <li>To achieve this, I created the ability to diff the board</li>
                 </ul>
             </li>
             <li>It was required that the colors could shift left and right on the pieces while they are falling</li>

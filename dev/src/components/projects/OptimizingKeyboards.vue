@@ -4,9 +4,9 @@
             Optimizing Gesture Keyboards for Clarity, Done Dirt Cheap
         </h1>
         <p class='p-wide p-text'>
-            I had the opportunity to do a sort of self directed research project under the
+            I had the opportunity to do a sort of self-directed research project under the
             <v-link to="http://www.sfu.ca/dean-gradstudies/awards/undergraduate-awards/NSERC.html">Canadian NSERC USRA at SFU</v-link>.
-            I used this opportunity to tackle a problem I deal with every day; the terrible error rate on gesture keyboards like
+            I used this opportunity to tackle a problem I deal with every day: the terrible error rate on gesture keyboards like
             <v-link to="https://www.microsoft.com/en-us/swiftkey?activetab=pivot_1%3aprimaryr2">SwiftKey</v-link>
             and
             <v-link to="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin&hl=en_CA">Gboard</v-link>.
@@ -16,21 +16,21 @@
             If you are unfamiliar with gesture keyboards, and trying to optimize them, I recommend checking out this
             <v-link to="https://www.youtube.com/watch?v=0PHjN4GjSi8">video</v-link>...
             or read the
-            <v-link to='http://www.cs.columbia.edu/~brian/publications/optimizing_keyboards.html'>paper</v-link>
+            <v-link to='http://www.cs.columbia.edu/~brian/publications/optimizing_keyboards.html'>paper</v-link>.
         </p>
 
         <p class='p-wide p-text'>
             Explaining all the specifics here would probably be too much to read, but the concept is pretty easy to cover.
-            When a gesture keyboard tries to determine what word was being gestured for, it compares the gestures for each possible word, to the gesture given.
+            When a gesture keyboard tries to determine what word was being gestured for, it compares the gestures for each possible word to the gesture given.
             The closest one is then chosen, after taking into consideration the user's history and preferences.
-            The problem here is, many words have very similar gestures or sometimes identical gestures.
+            The problem here is that many words have very similar gestures or sometimes identical gestures.
             I set out to fix this in the most obvious way I could think to.
         </p>
 
         <p class='p-wide p-text'>
             If you followed the link in my note at the top there, you would know about the main method already used in gesture keyboard clarity optimization.
-            The biggest problem with the existing method, is it takes a <b>very</b> long time.
-            If you take into consideration the number of words in the dictionary, square that, you are now in the ballpark of how many comparisons need to be done to rate a single keyboard for gesture clarity.
+            The biggest problem with the existing method is it takes a <b>very</b> long time.
+            If you take into consideration the number of words in the dictionary, and square that, you are now in the ballpark of how many comparisons need to be done to rate a single keyboard for gesture clarity.
         </p>
 
         <p class='p-note p-thin'>
@@ -61,7 +61,7 @@
             The scale in this graph is logarithmic, like the
             <v-link to='https://en.wikipedia.org/wiki/Richter_magnitude_scale'>Richter scale</v-link>
             or
-            <v-link to='https://en.wikipedia.org/wiki/Decibel'>Decibels</v-link>.
+            <v-link to='https://en.wikipedia.org/wiki/Decibel'>decibels</v-link>.
             For 3000 keyboards, with a dictionary of 8000 words, it took more than <b>4 hours</b> for my computer to evaluate using my version of Smith's method, and less than <b>20 seconds</b> using my method.
 
             <br> <br>
@@ -73,7 +73,7 @@
 
         <p class='p-wide p-text'>
             In the end, it turns out that my heuristic is pretty close to the analysis we would otherwise perform.
-            Which means, that it is a good method for filtering out bad keyboards. Sometimes we may discard a good keyboard, but most of the time the keyboard wasn't worth considering.
+            Which means it is a good method for filtering out bad keyboards. Sometimes we may discard a good keyboard, but most of the time the keyboard wasn't worth considering.
             Moreover, throwing away a few good keyboards doesn't really matter, because there are lots and lots of keyboards.
             There are plenty of fish in the sea as it were.
         </p>
@@ -118,5 +118,3 @@ export default Vue.extend({
     }
 });
 </script>
-
-

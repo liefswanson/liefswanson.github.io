@@ -5,7 +5,7 @@
         </h1>
         <p class='p-text p-wide'>
             I was the TA for a second year class in Object Oriented Programming at SFU.
-            Actually, I was the only TA, and there was 90 students.
+            Actually, I was the only TA, and there were 90 students.
         </p>
 
         <p class='p-text p-wide'>
@@ -36,7 +36,7 @@
                 <v-link to='https://fishshell.com/'>Fish</v-link>
                 & Bash
             </li>
-            <li>Python <span class='p-note'>especially the core I/O, regex, and json libraries</span></li>
+            <li>Python <span class='p-note'>especially the core I/O, regex, and JSON libraries</span></li>
             <li>GNU coreutils</li>
             <li>grep</li>
             <li><v-link to='https://github.com/jordansissel/xdotool'>xdotool</v-link></li>
@@ -58,7 +58,7 @@
         <p class='p-text p-wide'>
             Reading student code created a good opportunity to teach students.
             From what students told me, I think they appreciated the feedback.
-            I found also that to be an enriching experience, especially when students told me they found it helpful to have someone earnestly read and comment on their work.
+            I also found that to be an enriching experience, especially when students told me they found it helpful to have someone earnestly read and comment on their work.
             I have taken classes during my
             <v-link local to='/projects/sosy'>Software Systems degree</v-link>
             at SFU where I have written absolutely terrible code, and the TA marking my work never even commented on it... probably because they never read it.

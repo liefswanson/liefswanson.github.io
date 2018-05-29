@@ -6,12 +6,12 @@
 
     <p class='p-wide p-text'>
         Anyone that has ever done a group project knows they can go pretty poorly.
-        It is pretty common to get people that want to cost on your hard work.
-        That was not the case here, people worked pretty hard, but I think we bit off more than we could chew...
+        It is pretty common to get people that want to coast on your hard work.
+        That was not the case here. People worked pretty hard, but I think we bit off more than we could chew...
     </p>
 
     <p class='p-thin p-note'>
-        Unfortunately, the code is not on my github. I may share it there eventually, but it isn't all that impressive.
+        Unfortunately, the code is not on my GitHub. I may share it there eventually, but it isn't all that impressive.
         I think the experience is worth more than the resulting code.
     </p>
 
@@ -23,7 +23,7 @@
     </p>
 
     <p class='p-wide p-text'>
-        This assignment in particular was a software development project, where we had an actual client.
+        This assignment in particular was a software development project where we had an actual client.
         The client had a thing they wanted built, and we took their requirements, and tried to make them real.
         None of the requirements were known beforehand, and all the tasks were complex enough that we didn't really know how to effectively break them down so we could all work on them.
         The class wasn't just about how to write code, but also how to work with other people so that work gets done effectively.
@@ -35,11 +35,11 @@
         It is an infamous problem that has sunk more projects than anything else in the world of software.
         Check out a
         <v-link to='https://www.goodreads.com/book/show/19288230-scrum'>book</v-link>
-        on this topic, that I like very much.
+        on this topic that I like very much.
     </p>
 
     <p class='p-wide p-text'>
-        I think one of the things that was a mistake on our part, was we picked tools that were becoming popular in industry as opposed to the ones we thought would be easiest to learn.
+        I think one of the things that was a mistake on our part was that we picked tools that were becoming popular in the industry, as opposed to the ones we thought would be the easiest to learn.
     </p>
 
     <p class='p-wide p-text'>
@@ -69,7 +69,7 @@
     </ul>
 
     <p class='p-thin p-note'>
-        Moreover, we learned all of those things in 4 months, while trying to figure out what our client actually wanted us to do... and each of us were taking other classes.
+        Moreover, we learned all of those things in four months, while trying to figure out what our client actually wanted us to do... and each of us were taking other classes.
     </p>
 
     <p class='p-wide p-text'>
@@ -80,7 +80,7 @@
     <p class='p-wide p-text'>
         Ultimately, I think we did a poor job of finding a way for everyone to work on something.
         At first we tried specializing, and that didn't work all that well, due to our erratic student schedules.
-        Often we endded up getting bottlenecked by other peoples' schedules.
+        Often we ended up getting bottlenecked by other peoples' schedules.
         There was one thing I found worked though, and it has yet to let me down...
         <v-link to='https://en.wikipedia.org/wiki/Pair_programming'>pair programming</v-link>.
     </p>
