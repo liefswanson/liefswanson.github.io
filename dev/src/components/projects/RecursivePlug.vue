@@ -11,7 +11,7 @@
 
     <p class='p-wide p-text'>
         This portfolio is itself a portfolio piece.
-        I spent a lot of time researching many different things to make this website
+        I spent a lot of time researching many different things to make this website:
     </p>
 
     <ul class='p-wide p-list'>
@@ -60,18 +60,18 @@
                 <li>variable height collapsible divs</li>
                 <li>
                     custom
-                    <v-link to='https://masonry.desandro.com/'>masonry</v-link> style layout
+                    <v-link to='https://masonry.desandro.com/'>Masonry</v-link> style layout
                 </li>
                 <li>image carousel</li>
                 <li>media queries <span class='p-note'>in both SCSS and TypeScript</span></li>
                 <li>Sticky ribbon and automatically hiding header</li>
             </ul>
         </li>
-        <li>The site makes use of inline svgs and font-awesome</li>
-        <li>I have custom fonts loaded from the google font library</li>
+        <li>The site makes use of inline SVGs and font-awesome</li>
+        <li>I have custom fonts loaded from the Google Font Library</li>
         <li>
-            The pdf of my resume displays in page via
-            <v-link to='https://github.com/mozilla/pdf.js'>pdfjs</v-link>
+            The PDF of my resume displays in page via
+            <v-link to='https://github.com/mozilla/pdf.js'>PDF.js</v-link>
         </li>
     </ul>
 
@@ -91,7 +91,7 @@
         It isn't perfect, but it is a pretty nice image carousel for my first attempt right?
         <br/>
         <br/>
-        Also the logos arent bad!
+        Also the logos aren't bad!
         Maybe a bit hyperbolic, but they still look pretty good I think... and they are definitely recognizable.
     </p>
 
@@ -99,7 +99,7 @@
         I did make a few concessions with my design decisions.
         The entire website is static, not because I don't know how to use a website backend, but because I didn't want to pay for hosting.
         GitHub will provide free static hosting and you can even use a custom domain name.
-        I also ended up doing some strange things in the source to accomodate the design changing of having a dynamic primary colour.
+        I also ended up doing some strange things in the source to accommodate the design having a dynamic primary colour.
     </p>
 
     <p class='p-thin p-note'>

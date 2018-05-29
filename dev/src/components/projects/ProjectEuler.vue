@@ -23,7 +23,7 @@
     </p>
 
     <p class='p-wide p-text'>
-        Comparitively to how many problems there are, I haven't made it that far.
+        Compared to how many problems there are, I haven't made it that far.
         However, I have used the problems to practice all these languages:
     </p>
 
@@ -41,7 +41,7 @@
         For instance, I solved the problem to find all the prime numbers below N using a strange implementation of the
         <v-link to='https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes'>Sieve of Eratosthenes</v-link>.
         In my version, I used an infinite sum of
-        <v-link to='https://en.wikipedia.org/wiki/Generating_function'>generating functions</v-link>,
+        <v-link to='https://en.wikipedia.org/wiki/Generating_function'>generating functions</v-link>
         to avoid using the modulo operator... as an arbitrary restriction that I thought was pretty fun.
     </p>
 
@@ -53,12 +53,12 @@
     <p class='p-wide p-text'>
         I have also done some other parts of similar problems sets.
         There is a really good set of problems that gets ported around from one language to the next called
-        <v-link to='http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html'>L-99</v-link>
+        <v-link to='http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html'>L-99</v-link>,
         <span class='p-note'>which focuses on Lisp</span>.
         I have done about half of each
-        H-99 <span class='p-note'>Haskell</span>,
-        P-99 <span class='p-note'>Prolog</span>,
-        and S-99 <span class='p-note'>Scala</span>.
+        H-99 <span class='p-note'>(Haskell)</span>,
+        P-99 <span class='p-note'>(Prolog)</span>,
+        and S-99 <span class='p-note'>(Scala)</span>.
     </p>
 
 </article>

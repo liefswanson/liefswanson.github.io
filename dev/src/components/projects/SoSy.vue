@@ -6,24 +6,23 @@
 
     <p class='p-wide p-highlight'>
         Check out the
-        <v-link to='http://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems/curriculum.html'>
-            Cirriculum<i class='fas fa-graduation-cap p-icon'/>
+        <v-link to='http://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems/curriculum.html'>Curriculum<i class='fas fa-graduation-cap p-icon'/>
         </v-link>
     </p>
 
     <p class='p-wide p-text'>
-        Software systems is like the applied version of computing science.
-        At SFU both are offered, but I took Software Systems because I wanted to have more experiences actually making software!
-        I am actually pretty good at comptuing science theory, and have taken some interesting courses in it.
+        Software Systems is like the applied version of computing science.
+        At SFU both are offered, but I took Software Systems because I wanted to have more experience actually making software!
+        I am actually pretty good at computing science theory, and have taken some interesting courses in it.
         However, I find I am more interested in making things that people want to use than anything else.
     </p>
 
     <p class='p-wide p-text'>
-        I chose software systems for that exact reason.
-        When I first came to SFU I actually came for my other major.
+        I chose Software Systems for that exact reason.
+        When I first came to SFU, I actually came for my other major.
         I didn't even know that programming existed.
         I had no concept of what programming even was.
-        However, in first year I was required to take a course in python as part of my other major
+        However, in first year I was required to take a course in Python as part of my other major
         <v-link local to='/projects/siat'>SIAT</v-link>.
     </p>
 
@@ -68,8 +67,8 @@
     </ul>
 
     <p class='p-thin p-note'>
-        More importantly though, I think the best parts of being at SFU has been the people that I have met.
-        Many of them introduce me to things I didn't even know existed.
+        More importantly though, I think the best part of being at SFU has been the people that I have met.
+        Many of them introduced me to things I didn't even know existed.
         The classes are fine, but definitely the people have taught me more.
     </p>
 
