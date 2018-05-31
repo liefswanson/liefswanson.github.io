@@ -26,7 +26,6 @@
         <i class='fas fa-angle-right'/>
     </div>
 
-
     <div class='dots'>
         <i v-for='index in sliceLength'
            :key="index"
@@ -44,12 +43,17 @@
 //  reanimating will cause strange behaviour.
 //  kludge to keep illusion of round carousel... contains x3 the items repeated
 import Vue from 'vue';
+
 import {
     setTimeout,
     clearTimeout,
     setInterval,
     clearInterval
 } from 'timers';
+
+import {
+    positiveMod
+} from '@/scripts/main/Utils'
 
 import {
     AnimationTimers,
@@ -89,9 +93,6 @@ export default Vue.extend({
             return this.images.length - 2;
         },
         animTimeMS(): number {
-            if(this.offset == 0) {
-                return 0;
-            }
             return AnimationTimers.carousel * Math.sqrt(this.absOffset);
         },
         animTimeS(): number {
@@ -105,11 +106,7 @@ export default Vue.extend({
         stopAnim() {
             this.offset = 0; // setting offset to 0 will make anim time 0
 
-            if(this.i == -1) { // wrap backward
-                this.i = this.sliceLength - 1;
-            } else if (this.i == this.sliceLength) { // wrap forward
-                this.i = 0;
-            }
+            this.i = positiveMod(this.i, this.sliceLength)
 
             this.interval = setInterval(this.increment, DelayTimers.carousel);
         },
@@ -117,12 +114,16 @@ export default Vue.extend({
             this.goToRelativePanel(1);
         },
         goToRelativePanel(relative: number) {
+            if(this.i + relative > this.sliceLength ||
+               this.i + relative < -1) {
+                return;
+            }
             this.offset = relative;
             this.i += relative;
             this.goToPanelHelper();
         },
         goToAbsolutePanel(index: number) {
-            this.offset = this.i - index;
+            this.offset = index - this.i;
             this.i = index;
             this.goToPanelHelper();
         },
