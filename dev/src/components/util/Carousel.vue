@@ -218,7 +218,8 @@ $arrow-space: 1rem;
 
     transition: all $link-animation-time ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: inherit;
         background: transparentize($dark, 0.25);
     }
@@ -264,7 +265,8 @@ $arrow-adjustment: 0.3rem;
     }
     transition: all $carousel-animation-time ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: $medium;
     }
 }

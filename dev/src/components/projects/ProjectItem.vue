@@ -10,7 +10,7 @@
                  :src="thumb"
                  class="thumb"
                  :alt="thumb">
-            <h2 class='title'>
+            <h1 class='title'>
                 <span>{{title}}</span>
                 <div class='category-bar'>
                     <div class='spacer'></div>
@@ -24,7 +24,7 @@
                             filterActive(elem.name) ? '': 'inactive'
                        ]"/>
                 </div>
-            </h2>
+            </h1>
         </div>
         <div class='desc'>
             <p class='blurb'>{{blurb}}</p>
@@ -175,7 +175,8 @@ export default Vue.extend({
 
     transition: background $highlight-animation-time ease;
 
-    &:hover{
+    &:hover,
+    &:focus {
         background: transparentize($projects-swatch, 0.75);
     }
 }
@@ -201,6 +202,8 @@ export default Vue.extend({
 
 .title {
     $padding: 0.5rem;
+    font-size: 1.5rem;
+    margin: 0;
     padding: $padding;
     padding-left: $padding * 2;
 
