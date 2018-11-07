@@ -113,7 +113,8 @@ export default Vue.extend({
             return this.properties.tags.indexOf(tag) !== -1;
         },
         filterActive(tag: Tag) {
-            return this.filters.indexOf(tag) !== -1;
+            return this.filters.length == 0 ||
+                   this.filters.indexOf(tag) !== -1;
         },
         updateSpan() {
             var content = this.$refs.content as Element;
