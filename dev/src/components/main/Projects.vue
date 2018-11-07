@@ -83,8 +83,23 @@ export default Vue.extend({
             projects: ProjectList,
             autoRows: 1, //measurements assume use of std
             gap: 1,
-            filters: Object.keys(Tag) as Tag[],
+            filters: [] as Tag[],
             tags: TagItems
+        }
+    },
+    watch: {
+        filters(newFilters: Tag[], oldFilters: Tag[]):void {
+            // if new filters only 1 or 0 long, no need to wipe all but last filter clicked
+            // this also stops infinite loops (modifying filters inside its own watcher)
+            if(newFilters.length <= 1) {
+                return;
+            }
+
+            function difference(filter: Tag): boolean {
+                return oldFilters.indexOf(filter) == -1;
+            }
+
+            this.filters = newFilters.filter(difference);
         }
     },
     computed: {
@@ -104,12 +119,13 @@ export default Vue.extend({
     methods: {
         visible(project: Project):boolean {
             let filters = this.filters;
+            // Having no filters active is considered the same as having all filters active.
             function intersection(filter: Tag): boolean {
-                return filters.indexOf(filter) !== -1;
+                return filters.length == 0 ||
+                       filters.indexOf(filter) !== -1;
             }
 
-            let result = project.tags.filter(intersection).length !== 0;
-            return result;
+            return project.tags.filter(intersection).length !== 0;
         }
     },
     components: {
