@@ -36,7 +36,8 @@ body {
     transition: font-size $link-animation-time ease;
 
 
-    &:hover {
+    &:hover,
+    &:focus {
         font-size: 1.33em;
     }
 

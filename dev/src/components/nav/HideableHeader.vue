@@ -155,7 +155,8 @@ export default Vue.extend({
     transition: transform $nav-animation-time ease,
                 color $nav-hover-animation-time ease;
 
-    &:hover {
+    &:hover,
+    &:focus  {
         color: $xlight;
     }
 }

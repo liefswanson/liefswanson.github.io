@@ -9,8 +9,8 @@ const TagItems: TagItem[] = [
     },
     {
         name: Tag.design,
-        icon: 'fa-paint-brush',
-        fa: 'fa'
+        icon: 'fa-pencil-ruler',
+        fa: 'fas'
     },
     {
         name: Tag.miscellaneous,
