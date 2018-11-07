@@ -46,14 +46,12 @@
              <sticky-bar>
                 <div class='action-bar'>
                     <div class='spacer'></div>
-                    <button title='Back to Projects'
-                            class='btn x'>
-                        <router-link to='/projects'
-                                     exact
-                                     class='override-color'>
-                            <i class='fas fa-times'/>
-                        </router-link>
-                    </button>
+                    <router-link to='/projects'
+                                 exact
+                                 title='Back to Projects'
+                                 class='x-btn'>
+                        <i class='fas fa-times'/>
+                    </router-link>
                 </div>
             </sticky-bar>
             <div class='main-content project-focused'>
@@ -135,7 +133,8 @@ export default Vue.extend({
     background: transparentize($medium, 1);
     transition: background $action-bar-animation-time ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
         @include on-laptop-or-up{
             background: transparentize($medium, 0.5);
         }
@@ -171,7 +170,8 @@ export default Vue.extend({
         cursor: pointer;
 
         @include on-laptop-or-up {
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $bright !important;
             }
         }
@@ -184,7 +184,8 @@ export default Vue.extend({
         }
 
         @include on-laptop-or-up {
-            &:hover {
+            &:hover,
+            &:focus {
                 color: lighten($projects-swatch, 10%) !important;
             }
         }
@@ -200,19 +201,16 @@ export default Vue.extend({
     transition: color $action-bar-animation-time ease;
 }
 
-.x {
+.x-btn {
     @extend .btn;
     color: $xlight;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     color: $projects-swatch;
     border-style: none;
     cursor: pointer;
-}
-
-.override-color {
-    color: inherit;
 }
 
 .action-bar {

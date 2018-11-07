@@ -90,7 +90,8 @@ export default Vue.extend({
         cursor: pointer;
         transition: color 0.25s ease;
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: $dark;
         }
     }
@@ -98,7 +99,8 @@ export default Vue.extend({
     &:checked + label {
         color: $contact-swatch;
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: darken($contact-swatch, 15%);
         }
     }
@@ -110,7 +112,8 @@ export default Vue.extend({
     transition: font-size $link-animation-time ease;
 
 
-    &:hover {
+    &:hover,
+    &:focus {
         font-size: 1.33em;
     }
 

@@ -183,7 +183,8 @@ $height: $pad-bot + $pad-bot + $margin-top +
 
     transition: all $link-animation-time ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
         border-color: $about-swatch;
         background: darken($bright, 5%);
     }

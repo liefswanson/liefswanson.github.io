@@ -3,22 +3,18 @@
     <sticky-bar>
         <div class='action-bar'>
             <div class='spacer'></div>
-            <button title='View with built-in PDF viewer'
-                    class='btn'>
-                <a class='override-color'
-                   href='static/resume-text.pdf'
-                   target='_blank'>
-                   <i class='fa fa-external-link-alt'/>
-                </a>
-            </button>
-            <button title='Download'
-                    class='btn'>
-                <a class='override-color'
-                   href="static/resume-text.pdf"
-                   download>
-                    <i class='fa fa-download'/>
-                </a>
-            </button>
+            <a class='btn'
+                title='View with built-in PDF viewer'
+                href='static/resume-text.pdf'
+                target='_blank'>
+                <i class='fa fa-external-link-alt'/>
+            </a>
+            <a class='btn'
+                title='Download'
+                href="static/resume-text.pdf"
+                download>
+                <i class='fa fa-download'/>
+            </a>
             <button title='Print'
                     class='btn'
                     @click='$refs.pdf.print()'>
@@ -67,18 +63,14 @@ export default Vue.extend({
 
     transition: background $action-bar-animation-time ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background: transparentize($medium, 0.5);
 
         .btn {
             color: $dark;
         }
     }
-}
-
-
-.override-color {
-    color: inherit;
 }
 
 .btn {
@@ -92,7 +84,8 @@ export default Vue.extend({
     padding: 0.5rem;
     padding-right: 1rem;
 
-    &:hover {
+    &:hover,
+    &:focus  {
         color: $resume-swatch !important;
         border-style: none;
         cursor: pointer;

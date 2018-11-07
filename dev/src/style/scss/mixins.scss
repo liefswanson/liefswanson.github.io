@@ -19,7 +19,8 @@
         color: $light;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: darken($color, 10%);
         //font-size: 1.05em;
     }
