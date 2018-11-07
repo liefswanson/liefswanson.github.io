@@ -6,7 +6,6 @@
          :swipe-options="{
              direction: 'horizontal'
          }">
-    <ie-warning/>
     <hideable-header :showNav='showNav'/>
     <nav-bar :show='showNav'/>
     <main id='main-root'
@@ -26,7 +25,6 @@ import * as Hammer    from 'hammerjs';
 
 import NavBar         from "@/components/nav/NavBar.vue";
 import HideableHeader from "@/components/nav/HideableHeader.vue";
-import IEWarning      from '@/components/util/IEWarning.vue';
 
 import {
     makeNewFavicon,
@@ -134,8 +132,7 @@ export default Vue.extend({
     },
     components: {
         "nav-bar": NavBar,
-        "hideable-header" : HideableHeader,
-        "ie-warning" : IEWarning
+        "hideable-header" : HideableHeader
     },
 });
 </script>
