@@ -10,7 +10,7 @@
                  :src="thumb"
                  class="thumb"
                  :alt="thumb">
-            <h1 class='title'>
+            <h2 class='title'>
                 <span>{{title}}</span>
                 <div class='category-bar'>
                     <div class='spacer'></div>
@@ -24,7 +24,7 @@
                             filterActive(elem.name) ? '': 'inactive'
                        ]"/>
                 </div>
-            </h1>
+            </h2>
         </div>
         <div class='desc'>
             <p class='blurb'>{{blurb}}</p>
@@ -223,6 +223,7 @@ export default Vue.extend({
 
 .desc {
     padding: 1.5rem;
+    //display: none;
 }
 
 </style>
