@@ -23,13 +23,6 @@ const Contacts: Contact[] = [
         link: 'https://www.flickr.com/photos/124866205@N05'
     },
     {
-        name: 'google+',
-        fa: 'fab',
-        icon: 'fa-google-plus',
-        msg: 'add me or chat with me via',
-        link: 'https://plus.google.com/103101824275581846879/about'
-    },
-    {
         name: 'linkedin',
         fa: 'fab',
         icon: 'fa-linkedin',
