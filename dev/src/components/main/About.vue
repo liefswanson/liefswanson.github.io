@@ -4,37 +4,24 @@
               :initShow='true'>
         <p class='u-para'>
             My name is Lief Swanson.
-            I am a student of software engineering and user-centric design.
-            I am nearly finished a double major at SFU for both of these disciplines.
+            I am a <a class='a-link' title='Person with a wide range of knowledge or learning.' href='https://simple.wikipedia.org/wiki/Renaissance_man'>polymath</a>.
+            I have knowledge of and aptitude for: software engineering, design, user interaction, science, math, visual art, history, politics, philosophy (especially ethics), teaching, and even a little creative writing.
+            If I don't know much about a subject, it is because I am busy learning other subjects first.
         </p>
 
         <p class='u-para'>
-            One thing people often note about me is I am an information sponge.
-            I try to learn things no matter what I am doing, and I have a knack for applying the knowledge I collect in novel ways.
-        </p>
-
-        <p class='u-para'>
-            I live to solve problems.
-            It's even better when there is a reason I am solving the problem!
-            Ultimately my goal is to make things that people enjoy using.
-            I hope to do just that as long as I can through design and software engineering.
-            It would be even better if I was able to supply the software I build open-source, while still making a living.
+            I live to solve problems, because every unsolved problem is an opportunity to learn something.
+            I think in our modern information-dense world there is no valid excuse to avoid learning a wide variety of new things all the time.
         </p>
     </collapse>
     <collapse title='My Education'>
         <p class='u-para'>
-            I have been going to SFU (Simon Fraser University) for about eight years.
-            The reason it has been so long is in addition to a couple of set backs in my personal life, and I am going for two degrees.
-            I'm working away at a BSc from a program called SoSy (Software Systems) and a BA in a program called IAT (Interactive Arts and Technology).
+            I went to <a class='a-link' title='Simon Fraser University' href='https://www.kde.org/'>SFU</a> for nine years.
+            The reason it took so long is in addition to a couple of set backs in my personal life, and I went for two degrees: A BSc in Computer Science and a BSc in Interactive Design.
         </p>
 
         <p class='u-para'>
-            I don't like to think of myself as just a software engineer or a UX/UI designer, but rather a mashup of the two.
-            Though, to be fair my skills probably lie a little closer to the computer science side of things.
-        </p>
-
-        <p class='u-para'>
-            I am also working on publishing some self-directed research and I have volunteered in a few labs helping complete other peoples' research.
+            I am also currently trying to publish some self-directed research and I have volunteered in a few labs helping complete other peoples' research.
             Check out the <router-link class='a-link' exact to='/projects'>projects section</router-link> to see more on that!
         </p>
     </collapse>
@@ -50,7 +37,7 @@
             <a class='a-link' href='https://www.kde.org/'>KDE</a>
             &
             <a class='a-link' href='https://www.archlinux.org/'>Arch Linux</a>.
-            Here is an incomplete list of some of the tools I have used frequently enough in the recent past to be comfortable with:
+            Here is an incomplete list of some of the languages and tools I have used frequently enough in the recent past to want to brag about it:
         </p>
 
         <div class='columns'>
@@ -76,10 +63,11 @@
                             'SQL',
                             'Fish',
                             'Bash',
-                            'LaTeX'
+                            'LaTeX',
+                            'Polish'
                         ]"
                         :key='item'>
-                        <div class='item'>{{item}}</div>
+                        <span class='item'>{{item}}</span>
                     </li>
                 </ul>
             </div>
@@ -112,7 +100,7 @@
                             'Audacity'
                         ]"
                         :key='item'>
-                        <div class=item>{{item}}</div>
+                        <span class=item>{{item}}</span>
                     </li>
                 </ul>
             </div>
@@ -121,16 +109,21 @@
     <collapse title='My Hobbies'
               overscroll>
         <p class='u-para'>
-            Swimming is a thing I love to do in order to relax and get some exercise.
+            I love to swim, in order to relax and get some exercise.
             I am not much for land sports, but in the water I feel right at home.
             I can swim laps for literally hours, while I just think about things.
         </p>
         <p class='u-para'>
-            I am pretty big on video games, especially ones that provide an intellectual challenge or a story worthy of escapism.
+            I am pretty big on video games, I find game developers and the work they create inspiring.
+            I think the amazing work they do is partly why I worked to obtain two bachelor's of science in interaction design and computer science.
             My top five games of all time are:
 
 
             <ol class='list emphasized'>
+                <li>
+                    Hellblade : Senua's Sacrifice
+                    <i class='low'>by Ninja Theory</i>
+                </li>
                 <li>
                     The Witcher 3 : Wild Hunt
                     <i class='low'>by CD Projekt Red</i>
@@ -145,11 +138,7 @@
                 </li>
                 <li>
                     Minecraft (modded beyond all recognition)
-                    <i class='low'>by Mojang and <b>many</b> modders</i>
-                </li>
-                <li>
-                    Planetary Annihilation : Titans
-                    <i class='low'>by Uber Entertainment</i>
+                    <i class='low'>by Mojang and <strong>many</strong> modders</i>
                 </li>
             </ol>
         </p>
@@ -186,8 +175,7 @@
         </p>
 
         <p class='u-para'>
-            I also like movies, TV shows, and YouTube videos;
-            sometimes even bad ones! I won't give you a list of my top five...
+            I also like movies, I won't give you a list of my top five...
             but my favourite movie of all time is <b class='high'>Cloud Atlas</b> <i class='low'>by The Wachowskis</i>.
             There is something about the way the story is told in combination with the reuse of actors, cinematography, and editing that I think makes it a true masterpiece...
             even if most people don't agree.
