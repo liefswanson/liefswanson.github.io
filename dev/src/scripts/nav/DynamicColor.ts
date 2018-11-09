@@ -39,13 +39,14 @@ function makeNewSelectionColor(color: Swatch) {
 
 function swapHeadElementById(id: string, elem: HTMLElement) {
     let oldElem = document.getElementById(id) as HTMLElement;
+    let head = document.head as HTMLElement;
 
     if (oldElem) {
-        document.head.removeChild(oldElem);
+        head.removeChild(oldElem);
     }
 
     elem.id = id;
-    document.head.appendChild(elem);
+    head.appendChild(elem);
 }
 
 export {

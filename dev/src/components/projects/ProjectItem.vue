@@ -164,7 +164,7 @@ export default Vue.extend({
     position: relative;
     cursor: pointer;
     background: $bright;
-
+    margin-bottom: $grid-gap;
 }
 
 

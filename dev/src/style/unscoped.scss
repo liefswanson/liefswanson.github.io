@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     line-height: 1.5em;
+    //box-sizing: border-box;
 }
 
 button:focus {
@@ -84,6 +85,11 @@ body {
 .p-title {
     font-family: 'Comfortaa', sans-serif;
     margin: 0;
+}
+
+.p-sub-title {
+    @extend .p-title;
+    padding-left: 2rem;
 }
 
 .p-fill-row {
