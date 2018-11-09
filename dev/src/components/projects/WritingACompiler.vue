@@ -94,7 +94,7 @@
                     <li>subtraction</li>
                     <li>multiplication</li>
                     <li>division</li>
-                    <li>value comparisons <span class='p-note'>{{"<, >, <=, >=, ==, !="}}</span></li>
+                    <li>value comparisons <span class='p-note'>&lt;, &gt;, &lt;=, &gt;=, ==, !=</span></li>
                 </ul>
             </li>
             <li>
