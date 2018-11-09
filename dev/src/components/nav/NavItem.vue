@@ -1,14 +1,15 @@
 <template>
-<router-link @click.native="followLink"
-             :to='path'
-             exact
-             class='item'
-             :style='palette'
-             @mouseenter.native='mouseEnter'
-             @mouseleave.native='mouseLeave'
-             tag='li'>
-    {{ name }}
-</router-link>
+<li class='item'
+    :style='palette'
+    @mouseenter='mouseEnter'
+    @mouseleave='mouseLeave'
+    @click="followLink">
+    <router-link :to='path'
+                 exact
+                 class='enclosed suppress-link-style'>
+        {{ name }}
+    </router-link>
+</li>
 </template>
 
 <script lang="ts">
@@ -111,8 +112,7 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
 .item {
-    padding: $nav-item-padding;
-    padding-left: 0;
+    padding: 0;
     color: $bright;
     font-size: $nav-item-size;
     font-weight: bolder;
@@ -121,6 +121,15 @@ export default Vue.extend({
 
     cursor: pointer;
     @include not-selectable;
+}
+
+.enclosed {
+    box-sizing: border-box;
+    padding: $nav-item-padding;
+    padding-left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
 }
 
 </style>
