@@ -139,6 +139,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
+.projects-root {
+
+}
+
 .action-bar {
     height: 0;
 }
@@ -230,7 +234,7 @@ export default Vue.extend({
 
 .action-bar {
     padding-right: 0.4rem;
-    font-size: 1.25rem;
+    font-size: 2.5rem;
     display: flex;
     background: none;
 }

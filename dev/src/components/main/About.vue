@@ -16,8 +16,7 @@
     </collapse>
     <collapse title='My Education'>
         <p class='u-para'>
-            I went to <a class='a-link' title='Simon Fraser University' href='https://www.kde.org/'>SFU</a> for nine years.
-            The reason it took so long is in addition to a couple of set backs in my personal life, and I went for two degrees: A BSc in Computer Science and a BSc in Interactive Design.
+            I went to <a class='a-link' title='Simon Fraser University' href='https://www.kde.org/'>SFU</a> and did two degrees in parrallel: a Bachelor's of Science in Computer Science and a second Bachelor's of Science in Interactive Design.
         </p>
 
         <p class='u-para'>
