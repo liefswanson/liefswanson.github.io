@@ -7,7 +7,8 @@
         <p class='p-text p-wide'>
             I was an undergrad teaching assistant at Simon Fraser University.
             I worked with 90 students, helping them learn Object Oriented Programming in Java.
-            As I was the only TA, and thus only marker, marking consistently and fairly became a herculean task.
+            As I was the only TA marking became a herculean task.
+            It was even harder to do promptly, thoroughly, and fairly.
             To achieve this, I automated a huge portion of my job, so I could spend time on the good parts, such as giving feedback on code style and thoroughly responding to students’ questions.
             Without automation, even just downloading, unzipping, compiling, and running every student’s code would have taken more than 3 hours total per assignment.
         </p>
@@ -28,11 +29,12 @@
                 <li>Providing refactoring suggestions &amp; examples</li>
                 <li>Giving detailed marking feedback</li>
                 <li>Building my own test suite &amp; harness to mark with</li>
-                <li>Reverse engineering project specifications as part of verifying outputs</li>
+                <li>Implementing the inverse of project specifications as part of verifying outputs</li>
                 <li>Debugging broken code submissions <span class='p-note'>so part marks could be given where appropriate</span></li>
                 <li>Catching cheaters</li>
             </ul>
-            <br>
+        </p>
+        <p class='p-text p-wide'>
             Helping Students online and in person
             <ul class='p-list'>
                 <li>Teaching students how to verify the correctness of their own code</li>
@@ -42,7 +44,8 @@
                 <li>Giving advice I wish I had gotten early in my degrees</li>
                 <li>Helping students understand why and where they made mistakes</li>
             </ul>
-            <br>
+        </p>
+        <p class='p-text p-wide'>
             Helping transition the course toward modern paradigms
             <ul class='p-list'>
                 <li>Moved away from Java Swing applications</li>
@@ -60,12 +63,11 @@
         </h2>
 
         <p class='p-text p-wide'>
-            I don’t like to talk about myself that much.
-            I prefer to talk about the things I am interested in.
-            However, a portfolio is like a product page… my time, perspective, and knowledge are the products being sold, and as such those are what I need to talk about.
-            It was a fulfilling challenge to express who I am through the interactions, functionality, visuals, and content of this portfolio.
+            This was a very demanding job, because I chose to make it so; teaching is something I get great joy out of.
+            It would have been entirely possible for me to do the bare minimum, and still get paid the same.
+            However, I saw this as a learning opportunity; it is amazing seeing 90 different people try and implement the same application.
+            It taught me a lot about my own idiosyncrasies, seeing those same traits in others.
         </p>
-
         <h2 id='how' class='p-wide p-sub-title'>
             How I tackled it
         </h2>
