@@ -57,7 +57,7 @@ const Projects:Project[] = [
         name: "TeachersAssistant",
         component: TeachersAssistant,
 
-        title: "1 TA / 90 Students",
+        title: "Teaching Like a Pro",
         blurb: "I was the only TA for a second year course in OOP which had 90 students. It was hard work, but well worth it.",
         thumb: 'static/teachers-assistant/thumb.jpg',
         tags: [code, misc]
@@ -77,7 +77,7 @@ const Projects:Project[] = [
         name: "RecursivePlug",
         component: RecursivePlug,
 
-        title: "The Portfolio You are Currently Viewing",
+        title: "Designing and Implementing this portfolio",
         blurb: "I am by no means above using recursion, especially when I worked hard on this website and want to show it off... inside this website.",
         thumb: "static/recursive-plug/thumb.svg",
         tags: [code, design, misc]

@@ -81,8 +81,8 @@ export default Vue.extend({
     data() {
         return {
             projects: ProjectList,
-            autoRows: 1, //measurements assume use of std
-            gap: 1,
+            autoRows: 0.5, //measurements assume use of std
+            gap: 0,
             filters: [] as Tag[],
             tags: TagItems
         }
@@ -108,8 +108,7 @@ export default Vue.extend({
         },
         style(): object {
             return {
-                "grid-auto-rows": this.autoRows + std,
-                "grid-gap": this.gap + std,
+                "grid-auto-rows": this.autoRows + std
             }
         },
         filteredProjects(): Project[] {
@@ -266,6 +265,8 @@ export default Vue.extend({
     }
 
     list-style-type: none;
+
+    grid-column-gap: $grid-gap;
 }
 
 .project-focused {
