@@ -51,6 +51,7 @@ import { setTimeout } from 'timers';
 import { pxInStd }         from '@/style/ts/StandardUnits';
 import { AnimationTimers } from '@/style/ts/Timers';
 import Swatch              from '@/style/ts/Swatch';
+import Measurement         from '@/style/ts/Measurement';
 
 
 export default Vue.extend({
@@ -124,7 +125,9 @@ export default Vue.extend({
             span = span / (this.autoRows + this.gap);
             span = Math.ceil(span);
 
-            this.rowSpan = span;
+            let margin = Measurement.gridGap/this.autoRows;
+
+            this.rowSpan = span + margin;
         },
     },
     mounted() {
@@ -164,6 +167,7 @@ export default Vue.extend({
     position: relative;
     cursor: pointer;
     background: $bright;
+    box-sizing: border-box;
     margin-bottom: $grid-gap;
 }
 
@@ -223,11 +227,12 @@ export default Vue.extend({
 
 .blurb {
     color: $dark;
+    padding: 1.5rem;
 }
 
 .desc {
-    padding: 1.5rem;
     //display: none;
+    box-sizing: border-box;
 }
 
 </style>
