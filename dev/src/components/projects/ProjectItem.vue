@@ -166,9 +166,11 @@ export default Vue.extend({
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    background: $bright;
+    background: darken($bright, 5%);
     box-sizing: border-box;
     margin-bottom: $grid-gap;
+    border-bottom: 0.1rem solid $xlight;
+    //box-shadow: 0.25rem 0.25rem 1rem $dark;
 }
 
 
@@ -226,13 +228,13 @@ export default Vue.extend({
 }
 
 .blurb {
-    color: $dark;
-    padding: 1.5rem;
 }
 
 .desc {
-    //display: none;
+    padding: 1.5rem;
+    color: $dark;
     box-sizing: border-box;
+    //display: none;
 }
 
 </style>

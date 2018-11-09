@@ -14,9 +14,9 @@
 
 
         <p class='p-wide p-text'>
-            If the above looks familiar to you, then you know how unreliable gesture typing is.
+            If the above looks familiar to you, then you know how unreliable gesture typing is in apps like Gboard and SwiftKey.
             I use gesture typing regularly, because it offers speed while not restricting vocabulary the way predictive methods do.
-            I decided I would solve this problem, because it is important to my own user experience.
+            I decided I would solve this unreliability by finding a keyboard layout designed specifically for gesture typing, because it is important to my own user experience.
         </p>
 
         <h2 id='what' class='p-wide p-sub-title'>
@@ -24,8 +24,7 @@
         </h2>
 
         <p class='p-wide p-text'>
-            I had the idea, did the research, created the theory &amp; algorithms, and implemented the software required to test a new method of optimizing keyboard layouts for gesture clarity.
-            I also wrote the paper that is in the process of being getting published.
+            I had the project ideas, did the research into existing work, created the theory &amp; algorithms, and implemented the software required to test a new method of optimizing keyboard layouts for gesture clarity.
             This new method is designed to be extremely fast by comparison to existing methods, because it is intended to run on a phone and use an individual user’s vocabulary, so a keyboard layout is found for <strong>you</strong> not for the language you speak.
         </p>
 
@@ -34,11 +33,7 @@
         </h2>
 
         <p class='p-wide p-text'>
-           This project was an opportunity for me to exercise multiple skills at once, including: geometry, statistics, morphology, interaction design, programming, software design, and technical &amp; persuasive writing.
-           One of the things I learned from this project was how to narrow down ideas.
-           I had dozens of ideas how to tackle this problem when I started, and I think I settled on a really good one by the end.
-           I think many users like me would find this to be a godsend for when they have to input text on their mobile devices, as machine learning algorithms just haven’t been able to pick up the slack on this particular problem yet.
-           There are still more things to do in the future with this project, and I look forward to tackling them.
+           I had the opportunity to follow an idea all the way from inception to empirical testing.
         </p>
 
         <h2 id='how' class='p-wide p-sub-title'>
