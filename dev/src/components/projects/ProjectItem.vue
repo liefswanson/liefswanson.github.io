@@ -1,37 +1,38 @@
 <template>
-<router-link :to='target'
-             exact
-             class='item'
-             tag='li'
-             :style='style'>
-    <div ref='content'>
-        <div class='card-header'>
-            <img v-images-loaded="updateSpan"
-                 :src="thumb"
-                 class="thumb"
-                 :alt="thumb">
-            <h2 class='title'>
-                <span>{{title}}</span>
-                <div class='category-bar'>
-                    <div class='spacer'></div>
-                    <i v-for="elem in tags"
-                       :key="elem.name"
-                       v-if='tagActive(elem.name)'
-                       class='icon'
-                       :class="[
-                            elem.fa,
-                            elem.icon,
-                            filterActive(elem.name) ? '': 'inactive'
-                       ]"/>
-                </div>
-            </h2>
+<li class='item'
+    :style='style'>
+    <router-link :to='target'
+                 exact
+                 class='suppress-link-style'>
+        <div ref='content'>
+            <div class='card-header'>
+                <img v-images-loaded="updateSpan"
+                     :src="thumb"
+                     class="thumb"
+                     :alt="thumb">
+                <h2 class='title'>
+                    <span>{{title}}</span>
+                    <div class='category-bar'>
+                        <div class='spacer'></div>
+                        <i v-for="elem in tags"
+                           :key="elem.name"
+                           v-if='tagActive(elem.name)'
+                           class='icon'
+                           :class="[
+                                    elem.fa,
+                                    elem.icon,
+                                    filterActive(elem.name) ? '': 'inactive'
+                           ]"/>
+                    </div>
+                </h2>
+            </div>
+            <div class='desc'>
+                <p class='blurb'>{{blurb}}</p>
+            </div>
         </div>
-        <div class='desc'>
-            <p class='blurb'>{{blurb}}</p>
-        </div>
-    </div>
-    <div class='mask'></div>
-</router-link>
+        <div class='mask'></div>
+    </router-link>
+</li>
 </template>
 
 <script lang="ts">
@@ -163,7 +164,10 @@ export default Vue.extend({
     position: relative;
     cursor: pointer;
     background: $bright;
+
 }
+
+
 
 .mask {
     background: transparentize($projects-swatch, 1);
