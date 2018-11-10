@@ -14,9 +14,14 @@
 
 
         <p class='p-wide p-text'>
-            If the above looks familiar to you, then you know how unreliable gesture typing is in apps like Gboard and SwiftKey.
-            I use gesture typing regularly, because it offers speed while not restricting vocabulary the way predictive methods do.
-            I decided I would solve this unreliability by finding a keyboard layout designed specifically for gesture typing, because it is important to my own user experience.
+            If the above looks familiar to you, then you know how unreliable
+            <v-link to='https://www.youtube.com/watch?v=obAlmLLD0O0'>gesture typing</v-link>
+            is in apps like
+            <v-link to='https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin'>Gboard</v-link>
+            and
+            <v-link to='https://play.google.com/store/apps/details?id=com.touchtype.swiftkey'>SwiftKey</v-link>.
+            I use gesture typing regularly, because it offers speed while not restricting vocabulary the way predictive input methods do.
+            I decided I would improve this shortcoming of gesture typing by finding a method for optimizing keyboard layouts specifically to reduce error rates.
         </p>
 
         <h2 id='what' class='p-wide p-sub-title'>
@@ -33,7 +38,7 @@
         </h2>
 
         <p class='p-wide p-text'>
-           I had the opportunity to follow an idea all the way from inception to empirical testing.
+
         </p>
 
         <h2 id='how' class='p-wide p-sub-title'>
