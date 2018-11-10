@@ -79,14 +79,18 @@ export default Vue.extend({
     mounted() {
         NavEventBus.$on(Events.openHeader, this.headerOpened);
         NavEventBus.$on(Events.closeHeader, this.headerClosed);
-        window.addEventListener(Events.scroll, this.updateAdjustment);
+        if (!isIE()) {
+            window.addEventListener(Events.scroll, this.updateAdjustment);
+        }
 
         this.headerShowing = window.scrollY == 0;
     },
     beforeDestroy() {
         NavEventBus.$off(Events.openHeader, this.headerOpened);
         NavEventBus.$off(Events.closeHeader, this.headerClosed);
-        window.removeEventListener(Events.scroll, this.updateAdjustment);
+        if (!isIE()) {
+            window.removeEventListener(Events.scroll, this.updateAdjustment);
+        }
     },
 });
 </script>

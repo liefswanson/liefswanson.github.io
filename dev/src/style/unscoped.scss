@@ -80,6 +80,9 @@ body {
         padding-bottom: unset;
     }
 
+    @include on-tablet-or-down {
+        padding-top: $icon-size;
+    }
 }
 
 .p-title {
