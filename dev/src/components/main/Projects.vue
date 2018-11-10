@@ -12,6 +12,7 @@
                     <div class='spacer'></div>
 
                     <label v-for='elem in tags'
+                           class='btn-back'
                            :key='elem.name'
                            :for='elem.name'
                            :title='elem.name'>
@@ -20,7 +21,11 @@
                                :value='elem.name'
                                class='filter'
                                v-model='filters'>
-                        <i :class='[elem.fa, elem.icon]'/>
+                        <span class='toggleable'>
+                            <i :class='[elem.fa, elem.icon]'/>
+                            <strong v-if='selected(elem.name)'>{{ elem.name }}</strong>
+                        </span>
+
                     </label>
                 </div>
 
@@ -119,12 +124,18 @@ export default Vue.extend({
         visible(project: Project):boolean {
             let filters = this.filters;
             // Having no filters active is considered the same as having all filters active.
+            if (filters.length == 0) {
+                return true;
+            }
+
             function intersection(filter: Tag): boolean {
-                return filters.length == 0 ||
-                       filters.indexOf(filter) !== -1;
+                return filters.indexOf(filter) !== -1;
             }
 
             return project.tags.filter(intersection).length !== 0;
+        },
+        selected(filter: Tag) {
+            return this.filters.indexOf(filter) !== -1;
         }
     },
     components: {
@@ -147,15 +158,31 @@ export default Vue.extend({
     height: 0;
 }
 
+.btn-back {
+    @include on-tablet-or-down {
+        background: darken($bright, 5%);
+        border-radius: 2rem;
+        margin-left: 0.3rem;
+    }
+}
+
+.toggleable {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .filter-bar {
     display: flex;
     background: transparentize($medium, 1);
     transition: background $action-bar-animation-time ease;
 
+    font-size: $icon-size;
+    line-height: $icon-size * 1.5;
+
     &:hover,
     &:focus {
         @include on-laptop-or-up{
-            background: transparentize($medium, 0.5);
+            background: transparentize($medium, 0.25);
         }
 
         .filter {
@@ -174,17 +201,18 @@ export default Vue.extend({
     position: absolute;
     visibility: hidden;
 
-    + i {
+    + .toggleable {
         color: transparentize($dark, 0.5);
         @include on-tablet-or-down {
             color: $dark
         }
         transition: color $action-bar-animation-time ease;
 
-        font-size: $icon-size;
-        line-height: $icon-size * 1.5;
+
         padding: 0.5rem;
-        width: $icon-size * 1.5; // compensate for how wide code icon is
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+        //width: $icon-size * 1.5; // compensate for how wide code icon is
         text-align: center;
         cursor: pointer;
 
@@ -196,7 +224,7 @@ export default Vue.extend({
         }
     }
 
-    &:checked + i {
+    &:checked + .toggleable {
         color: transparentize($projects-swatch, 0.5);
         @include on-tablet-or-down {
             color: $projects-swatch;
@@ -234,7 +262,7 @@ export default Vue.extend({
 
 .action-bar {
     padding-right: 0.4rem;
-    font-size: 2.5rem;
+    font-size: $icon-size;
     display: flex;
     background: none;
 }

@@ -43,8 +43,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-
-
 .p-link {
     @include link($projects-swatch);
 }
