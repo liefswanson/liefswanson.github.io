@@ -160,7 +160,7 @@ export default Vue.extend({
 
 .btn-back {
     @include on-tablet-or-down {
-        background: darken($bright, 5%);
+        background: $bright;
         border-radius: 2rem;
         margin-left: 0.3rem;
     }

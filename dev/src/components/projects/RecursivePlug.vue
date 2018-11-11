@@ -16,7 +16,7 @@
 
         <p class='p-text p-wide'>
             Everything.
-            My goal was to create a thorough portfolio that speaks to my wide range of interests and abilities, without making me look full of myself.
+            My goal was to create a portfolio that speaks to my wide range of interests and abilities, without making me look full of myself.
             The best way I could see to do that was to display my skills, instead of talk about them.
         </p>
 
