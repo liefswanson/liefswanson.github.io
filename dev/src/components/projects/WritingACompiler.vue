@@ -8,7 +8,7 @@
             For my Software Systems degree at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>,
             I took a course in compilers.
-            The course was a great deal of work; we started with a minimally functional compiler, written in Java, targetting the source language Pika and we were expected to continually build upon it as the class progressed.
+            The course was a great deal of work; we started with a minimally functional compiler, written in Java, targeting the source language Pika and we were expected to continually build upon it as the class progressed.
         </p>
 
         <p class='p-note p-thin'>
@@ -122,11 +122,17 @@
             It was not a project that was done in a few days and then never touched again.
             In the process of writing this compiler, I got lots of practice maintaining, organizing, and testing my own code.
         </p>
-
         <p class='p-thin p-note'>
             The only other time I had a class that actually emulated real software development practices was a
             <router-link class='p-link' exact to='/projects/big-team-project'>semester-long 8-person project</router-link>
             where we had a real client.
+        </p>
+
+        <p class='p-text p-wide'>
+            By the end of the class I had added over 15,000 lines of code to the compiler, taking it from around 3,000 lines to somewhere in the range of 18,000.
+            <span class='p-note'>not including any lines that were removed</span>.
+            While that isn't a huge project, it is sizeable enough for one person; I wasn't able to remember every line I had written.
+            Which meant that I had to rely on writing good understandable code, rather than brute forcing my way through a wall of spaghetti.
         </p>
 
         <h2 id='how' class='p-wide p-sub-title'>
@@ -161,7 +167,7 @@
 
         <p class='p-wide p-text'>
             Once I had a testing harness down, I started working one language feature at a time.
-            I was trying to do my best to follow a sort of agile-like aproach, working on features such that they can be quickly seen and tested, rather than trying to work on sections of code that would be best to do in a perfect world where I can make no mistakes.
+            I was trying to do my best to follow a sort of agile-like approach, working on features such that they can be quickly seen and tested, rather than trying to work on sections of code that would be best to do in a perfect world where I can make no mistakes.
         </p>
         <p class='p-thin p-note'>
             Agile was the right call, as we didn't know the requirements of each part of the project until we got to it.
@@ -169,13 +175,11 @@
         </p>
 
         <p class='p-wide p-text'>
-            With every new language feature, I would implement everything required for the feature and nothing more.
-            This involved following my debugging information all the way from lexical analysis right through to un-optimized assembly output.
-            Once I was confident I could get meaningful assembly out of the related language feature, I started adding tests around the feature I wanted to check.
-            I would write several small files in the source language Pika, and then write an equivalent program in another programming language <span class='p-note'>python</span>.
+            With every new language feature, I would implement everything required for a simplified version of feature and nothing more.
+            Once I was confident I could get meaningful assembly out of the related language feature, I started adding tests around the feature, and building it up to pass those tests.
+            I would write several small files in the source language Pika, and then write equivalent programs in Python.
             I took the output from the other program, and used it as the expected test result for my Pika program.
-            In other words, every test was based on functionality, and not the output assembly.
-            This was the best way I could see to do this, as I didn't want to make mistakes when writing my own tests and many different ways of writing assembly can have the exact same functionality.
+            In other words every test was based on functionality and not the output assembly, keeping my tests robust and correct.
         </p>
         <p class='p-thin p-note'>
             Luckily, as optimization should never change the output of a program, all I had to do to test optimized programs was make sure they had the exact same output as the unoptimized ones.

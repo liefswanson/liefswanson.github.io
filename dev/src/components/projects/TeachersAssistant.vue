@@ -8,7 +8,7 @@
             I was an undergrad teaching assistant at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>.
             I worked with 90 students, helping them learn Object Oriented Programming in Java.
-            As I was the only TA marking became a herculean task.
+            As I was the only TA, marking became a herculean task.
             It was even harder to do promptly, thoroughly, and fairly.
             To achieve this, I automated a huge portion of my job, so I could spend time on the good parts, such as giving feedback on code style and thoroughly responding to students’ questions.
             Without automation, even just downloading, unzipping, compiling, and running every student’s code would have taken more than 3 hours total per assignment.
@@ -24,14 +24,14 @@
         </h2>
 
         <p class='p-text p-wide'>
-            <strong>Marking student's projects</strong>
+            <strong>Marking students' projects</strong>
             <ul class='p-list'>
                 <li>Commenting on code style</li>
                 <li>Providing refactoring suggestions &amp; examples</li>
                 <li>Giving detailed marking feedback</li>
                 <li>Building my own test suite &amp; harness to mark with</li>
                 <li>Implementing the inverse of project specifications as part of verifying outputs</li>
-                <li>Debugging broken code submissions <span class='p-note'>so part marks could be given where appropriate</span></li>
+                <li>Debugging broken code submissions <span class='p-note'>so partial marks could be given where appropriate</span></li>
                 <li>Catching cheaters</li>
             </ul>
             <br>
@@ -63,7 +63,7 @@
 
         <p class='p-text p-wide'>
             This was a very demanding job, because I chose to make it so; teaching is something I get great joy out of.
-            It would have been entirely possible for me to do the bare minimum, and still get paid the same.
+            It would have been entirely possible for me to do the bare minimum and still get paid the same.
             However, I saw this as a learning opportunity; it is amazing seeing 90 different people try and implement the same application.
             It taught me a lot about my own idiosyncrasies in my own work process, seeing such a range of idiosyncrasies in others.
         </p>
