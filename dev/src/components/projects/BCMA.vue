@@ -7,7 +7,7 @@
         <p class='p-wide p-text'>
             As one of my co-ops at SFU, I worked for the British Columbia Medical Association <span class='p-note'>(BCMA)</span>.
             They have since changed their name to
-            <v-link to='https://www.doctorsofbc.ca/'>Doctors of BC</v-link>.
+            <a class='p-link' href='https://www.doctorsofbc.ca/'>Doctors of BC</a>.
             It is sort of like a doctor's union. The place where I worked was their main office.
         </p>
 
@@ -46,12 +46,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'BCMA',
     components: {
-        'v-link': Link,
     }
 });
 </script>

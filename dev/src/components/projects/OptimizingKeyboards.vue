@@ -13,8 +13,17 @@
         </div>
 
         <p class='p-wide p-text'>
-            If the above looks familiar to you, then you know how unreliable <v-link to='https://www.youtube.com/watch?v=obAlmLLD0O0'>gesture typing</v-link> is, in apps like <v-link to='https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin'>Gboard</v-link> and <v-link to='https://www.microsoft.com/en-us/swiftkey'>SwiftKey</v-link>.
+            If the above looks familiar to you, then you know how unreliable
+            <a class='p-link' href='https://www.youtube.com/watch?v=obAlmLLD0O0'>gesture typing</a>
+            is, in apps like
+            <a class='p-link' href='https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin'>Gboard</a>
+            and
+            <a class='p-link' href='https://www.microsoft.com/en-us/swiftkey'>SwiftKey</a>.
             To try and solve this problem, I developed a new method, from scratch, for evaluating how likely it is that typos would occur on a given keyboard while gesture typing.
+        </p>
+
+        <p class='p-thin p-note'>
+            I use gesture typing almost exclusively on my mobile devices; it improves typing speed without crippling vocabulary the way predictive methods do.
         </p>
 
         <h2 id='what' class='p-wide p-sub-title'>
@@ -28,7 +37,9 @@
         </p>
 
         <p class='p-note p-thin'>
-            Gesture clarity is a term defined in a <v-link to='https://dl.acm.org/authorize.cfm?key=N97906'>paper</v-link>, by Smith, Bi, and Zhai.
+            Gesture clarity is a term defined in a
+            <a class='p-link' href='https://dl.acm.org/authorize.cfm?key=N97906'>paper</a>,
+            by Smith, Bi, and Zhai.
             This paper details an approach for calculating gesture clarity that I was trying to improve upon.
         </p>
 
@@ -37,7 +48,8 @@
         </h2>
 
         <p class='p-wide p-text'>
-            This project was done under the <v-link to='http://www.sfu.ca/dean-gradstudies/awards/undergraduate-awards/NSERC.html'>NSERC USRA at SFU</v-link>.
+            This project was done under the
+            <a class='p-link' href='http://www.sfu.ca/dean-gradstudies/awards/undergraduate-awards/NSERC.html'>NSERC USRA at SFU</a>.
             I was given free reign to do any project that interested me.
             I had dozens of ideas, and had to quickly narrow things down to a single idea that was achievable in one semester.
             The process of repeated refinement was an extremely freeing experience.
@@ -47,7 +59,9 @@
 
         <p class='p-thin p-note'>
             The NSERC USRA grant is done with a professor sponsoring an undergrad student.
-            Some students participate in their sponsor's work... but my sponsor <v-link to='https://www.sfu.ca/computing/people/faculty/binaybhattacharya.html'>Binay Bhattarachya</v-link> gave me free reign.
+            Some students participate in their sponsor's work... but my sponsor
+            <a class='p-link' href='https://www.sfu.ca/computing/people/faculty/binaybhattacharya.html'>Binay Bhattarachya</a>
+            gave me free reign.
         </p>
 
         <h2 id='how' class='p-wide p-sub-title'>
@@ -60,12 +74,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'OptimizingKeyboards',
     components: {
-        'v-link': Link
     }
 });
 </script>

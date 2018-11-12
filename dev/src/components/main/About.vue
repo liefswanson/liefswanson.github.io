@@ -1,11 +1,19 @@
 <template>
 <div class='main-content'>
     <collapse title='Hello!'
-              :initShow='true'>
+              initShow>
         <p class='u-para'>
             My name is Lief Swanson.
             I am a <a class='a-link' title='Person with a wide range of knowledge or learning.' href='https://simple.wikipedia.org/wiki/Renaissance_man'>polymath</a>.
-            I have knowledge of and aptitude for: software engineering, design, user interaction, science, math, visual art, history, politics, philosophy (especially ethics), teaching, and even a little creative writing.
+            I have knowledge of and aptitude for:
+            <router-link class='a-link' exact to='/projects/writing-a-compiler'>software engineering</router-link>,
+            <router-link class='a-link' exact to='/projects/font'>design</router-link>,
+            <router-link class='a-link' exact to='/projects/cog-sci-lab'>science</router-link>,
+            <router-link class='a-link' exact to='/projects/project-euler'>math</router-link>,
+            <router-link class='a-link' exact to='/projects/recursive-plug'>user interaction</router-link>,
+            <router-link class='a-link' exact to='/projects/photography-2014-summer'>photography</router-link>,
+            <router-link class='a-link' exact to='/projects/teachers-assistant'>teaching</router-link>,
+            history, politics, philosophy <em class='low'>especially ethics</em>, and even a little creative writing.
             If I don't know much about a subject, it is because I am busy learning other subjects first.
         </p>
 
@@ -16,12 +24,23 @@
     </collapse>
     <collapse title='My Education'>
         <p class='u-para'>
-            I went to <a class='a-link' title='Simon Fraser University' href='https://www.kde.org/'>SFU</a> and did two degrees concurrently: a Bachelor's of Science in Computer Science and a second Bachelor's of Science in Interactive Design.
+            I went to <a class='a-link' title='Simon Fraser University' href='https://www.sfu.ca'>SFU</a> and did two degrees concurrently: a Bachelor's of Science in
+            <router-link class='a-link' exact to='/projects/sosy'>Software Systems</router-link>
+            and a second Bachelor's of Science in
+            <router-link class='a-link' exact to='/projects/siat'>Interactitive Technologies</router-link>.
         </p>
 
         <p class='u-para'>
-            I am also currently trying to publish some self-directed research and I have volunteered in a few labs helping complete other peoples' research.
-            Check out the <router-link class='a-link' exact to='/projects'>projects section</router-link> to see more on that!
+            I studied both, because it made perfect sense to me.
+            They are closely related fields, but seldom do the two meet within one person.
+            I think that software implementation and interaction design are two sides of the same coin, and it doesn't pay for one to be ignorant of the other.
+        </p>
+
+        <p class='u-para'>
+            I am also currently trying to publish some
+            <router-link class='a-link' exact to='/projects/optimizing-keyboards'>self-directed research</router-link>
+            and I have volunteered in a few labs helping complete
+            <router-link class='a-link' exact to='/projects/cog-sci-lab'>other peoples' research</router-link>.
         </p>
     </collapse>
     <collapse title='My Skills'>
@@ -114,30 +133,32 @@
         </p>
         <p class='u-para'>
             I am pretty big on video games, I find game developers and the work they create inspiring.
+            There is actually a fair amount to be learned from video games, when viewed through the right; I consider many of the
+            <router-link class='a-link' exact to='/projects/video-games'>games I have played</router-link>
+            to be a valuable part of my own experience in software and user interaction.
             I think the amazing work they do is partly why I worked to obtain two bachelor's of science in interaction design and computer science.
             My top five games of all time are:
-
 
             <ol class='list emphasized'>
                 <li>
                     Hellblade : Senua's Sacrifice
-                    <i class='low'>by Ninja Theory</i>
+                    <em class='low'>by Ninja Theory</em>
                 </li>
                 <li>
                     The Witcher 3 : Wild Hunt
-                    <i class='low'>by CD Projekt Red</i>
+                    <em class='low'>by CD Projekt Red</em>
                 </li>
                 <li>
                     Total War : Shogun 2
-                    <i class='low'>by Creative Assembly</i>
+                    <em class='low'>by Creative Assembly</em>
                 </li>
                 <li>
                     Grim Dawn
-                    <i class='low'>by Crate Entertainment</i>
+                    <em class='low'>by Crate Entertainment</em>
                 </li>
                 <li>
                     Minecraft (modded beyond all recognition)
-                    <i class='low'>by Mojang and <strong>many</strong> modders</i>
+                    <em class='low'>by Mojang and <strong>many</strong> modders</em>
                 </li>
             </ol>
         </p>
@@ -145,30 +166,31 @@
         <p class='u-para'>
             I have dyslexia, so I can find reading for very long periods exhausting.
             However, that doesn't stop me from enjoying a good book!
-            I have listened to a pretty good selection of audio books.
+            I have listened to
+            <router-link class='a-link' exact to='/projects/audio-books'>many audio books</router-link>.
             My top five are nearly impossible to pick... but here are five really good ones that I never heard of before I decided to read them:
 
 
             <ol class='list emphasized'>
                 <li>
                     The Etymologicon : A Circular Stroll Through the Hidden Connections of the English Language
-                    <i class='low'>by Mark Forsyth</i>
+                    <em class='low'>by Mark Forsyth</em>
                 </li>
                 <li>
                     A History of the World in 6 Glasses
-                    <i class='low'>by Tom Standage</i>
+                    <em class='low'>by Tom Standage</em>
                 </li>
                 <li>
                     Misbehaving : The Making of Behavioural Economics
-                    <i class='low'>by Richard Thaler</i>
+                    <em class='low'>by Richard Thaler</em>
                 </li>
                 <li>
                     The Drunkard's Walk : How Randomness Rules Our Lives
-                    <i class='low'>by Leonard Mlodinow</i>
+                    <em class='low'>by Leonard Mlodinow</em>
                 </li>
                 <li>
                     The Half Has Never Been Told : Slavery and the Making of American Capitalism
-                    <i class='low'>by Edward E. Baptist</i>
+                    <em class='low'>by Edward E. Baptist</em>
                 </li>
             </ol>
         </p>
@@ -232,6 +254,7 @@ export default Vue.extend({
 .list {
     padding-top: 1rem;
     padding-left: 2rem;
+    font-size: 1.25rem;
     color: $about-swatch;
     font-weight: bold;
 }

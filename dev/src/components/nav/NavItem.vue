@@ -48,7 +48,6 @@ export default Vue.extend({
     computed: {
         path():  string  { return this.properties.path  },
         name():  string  { return this.properties.name  },
-        icon():  string  { return this.properties.icon  },
         color(): Swatch  { return this.properties.color },
 
         active(): boolean {

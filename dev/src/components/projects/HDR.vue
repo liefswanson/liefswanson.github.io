@@ -7,7 +7,7 @@
 
         <p class='p-wide p-text'>
             For a class in Media Arts for my
-            <v-link local to='/projects/sosy'>Software Systems degree</v-link>,
+            <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>,
             I had to do some photo manipulation.
             It wasn't anything terribly difficult, just implementing our own spin on HDR.
             We weren't given any equations for how to make it work, we were told just to play it by ear.
@@ -22,7 +22,7 @@
 
         <p class='p-note p-thin'>
             Oh also... while we are on the topic of photography, don't forget to check out
-            <v-link to='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr</v-link>.
+            <a class='p-link' href='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr</a>.
         </p>
 
         <p class='p-wide p-text'>
@@ -34,7 +34,7 @@
         <p class='p-thin p-note'>
             Actually, that is only partly true, one is missing from the set we were given in class!
             You can see if you check out the
-            <v-link to='https://en.wikipedia.org/wiki/High-dynamic-range_imaging#HDR_processing'>Wikipedia article</v-link>.
+            <a class='p-link' href='https://en.wikipedia.org/wiki/High-dynamic-range_imaging#HDR_processing'>Wikipedia article</a>.
         </p>
 
         <img src='/static/hdr/dark.png'
@@ -83,13 +83,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'HDR',
     components: {
-        'v-link': Link,
         'v-carousel': Carousel
     }
 });
