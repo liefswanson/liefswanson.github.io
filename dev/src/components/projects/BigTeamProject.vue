@@ -34,7 +34,7 @@
         Hence why we had a class in it.
         It is an infamous problem that has sunk more projects than anything else in the world of software.
         Check out a
-        <v-link to='https://www.goodreads.com/book/show/19288230-scrum'>book</v-link>
+        <a class='p-link' href='https://www.goodreads.com/book/show/19288230-scrum'>book</a>
         on this topic that I like very much.
     </p>
 
@@ -82,7 +82,7 @@
         At first we tried specializing, and that didn't work all that well, due to our erratic student schedules.
         Often we ended up getting bottlenecked by other peoples' schedules.
         There was one thing I found worked though, and it has yet to let me down...
-        <v-link to='https://en.wikipedia.org/wiki/Pair_programming'>pair programming</v-link>.
+        <a class='p-link' href='https://en.wikipedia.org/wiki/Pair_programming'>pair programming</a>.
     </p>
 
     <p class='p-thin p-note'>
@@ -99,12 +99,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'BigTeamProject',
     components: {
-        'v-link': Link,
     }
 });
 </script>

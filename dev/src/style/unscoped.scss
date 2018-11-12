@@ -18,6 +18,14 @@ body {
     overflow-x: hidden;
 }
 
+.p-link {
+    @include link($projects-swatch);
+}
+
+.r-link {
+    @include link($status-swatch);
+}
+
 .suppress-link-style {
     color: inherit;
     text-decoration: none;
@@ -54,7 +62,7 @@ body {
 
 .u-para {
     color: $dark;
-    font-size: 1.1rem;
+    font-size: $text-size;
     margin-bottom: 1rem;
 
     &:last-child {
@@ -195,7 +203,7 @@ body {
 }
 
 .p-text {
-    font-size: 1.25rem;
+    font-size: $text-size;
     color: $dark;
 }
 

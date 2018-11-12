@@ -6,7 +6,7 @@
 
     <p class='p-highlight p-wide'>
         Check it out on
-        <v-link to='https://github.com/liefswanson/projectEuler'>My GitHub<i class='p-icon fab fa-github'/></v-link>...
+        <a class='p-link' href='https://github.com/liefswanson/projectEuler'>My GitHub<i class='p-icon fab fa-github'/></a>...
         but don't use my solutions to cheat!
     </p>
 
@@ -39,9 +39,9 @@
     <p class='p-wide p-text'>
         The really nice thing about project Euler is it gives the freedom to try interesting solutions as well.
         For instance, I solved the problem to find all the prime numbers below N using a strange implementation of the
-        <v-link to='https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes'>Sieve of Eratosthenes</v-link>.
+        <a class='p-link' href='https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes'>Sieve of Eratosthenes</a>.
         In my version, I used an infinite sum of
-        <v-link to='https://en.wikipedia.org/wiki/Generating_function'>generating functions</v-link>
+        <a class='p-link' href='https://en.wikipedia.org/wiki/Generating_function'>generating functions</a>
         to avoid using the modulo operator... as an arbitrary restriction that I thought was pretty fun.
     </p>
 
@@ -53,7 +53,7 @@
     <p class='p-wide p-text'>
         I have also done some other parts of similar problems sets.
         There is a really good set of problems that gets ported around from one language to the next called
-        <v-link to='http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html'>L-99</v-link>,
+        <a class='p-link' href='http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html'>L-99</a>,
         <span class='p-note'>which focuses on Lisp</span>.
         I have done about half of each
         H-99 <span class='p-note'>(Haskell)</span>,
@@ -66,13 +66,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'ProjectEuler',
     components: {
-        'v-link': Link,
         'v-carousel': Carousel
     }
 });

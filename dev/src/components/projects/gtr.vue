@@ -6,19 +6,19 @@
 
         <p class='p-highlight p-wide'>
             Check it out on
-            <v-link to='https://github.com/liefswanson/gtr'>My GitHub<i class='p-icon fab fa-github'/></v-link>
+            <a class='p-link' href='https://github.com/liefswanson/gtr'>My GitHub<i class='p-icon fab fa-github'/></a>
         </p>
 
         <p class='p-text p-wide'>
             During my
-            <v-link local to='/projects/writing-a-compiler'>class in Compilers</v-link>
+            <router-link class='p-link' exact to='/projects/writing-a-compiler'>class in Compilers</router-link>
             that I took as part of my
-            <v-link local to='/projects/sosy'>Software Systems degree</v-link>,
+            <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>,
             I quickly realized I was going to spend a lot of time testing.
             The projects in that class were all about iteratively building up a compiler and optimizer.
             Writing a compiler is a pretty cool experience, but compilers are actually kind of hard to test;
             there is a lot of state involved in the process of building up and using an
-            <v-link to='https://en.wikipedia.org/wiki/Abstract_syntax_tree'>abstract syntax tree</v-link>.
+            <a class='p-link' href='https://en.wikipedia.org/wiki/Abstract_syntax_tree'>abstract syntax tree</a>.
             Which means it is hard to test the internals effectively.
             Especially when the language is actively evolving month to month, as was the case with our iteratively-designed compiler.
         </p>
@@ -26,12 +26,12 @@
         <p class='p-thin p-note'>
             You may not believe me that compilers are hard to unit test, but I assure you they are.
             Languages are very complex constructs.
-            <v-link to='https://www.reddit.com/r/javascript/comments/4oxtgk/javascript_developers_be_warned_about_this_crazy/'>Here</v-link>
+            <a class='p-link' href='https://www.reddit.com/r/javascript/comments/4oxtgk/javascript_developers_be_warned_about_this_crazy/'>Here</a>
             is one of my favourite bugs, that was found in V8.
             <br/>
             <br/>
             V8 is the
-            <v-link to='https://en.wikipedia.org/wiki/Just-in-time_compilation'>JIT</v-link>
+            <a class='p-link' href='https://en.wikipedia.org/wiki/Just-in-time_compilation'>JIT</a>
             used in Google Chrome and NodeJS.
         </p>
 
@@ -70,14 +70,14 @@
             <li>Interface easily with other commandline utilities like Wine
                 <span class='p-note'>
                     The VM was built to work in Windows, but I work in
-                    <v-link to='/projects/arch-linux'>Linux</v-link>
+                    <a class='p-link' href='/projects/arch-linux'>Linux</a>
                 </span>
             </li>
         </ul>
 
         <p class='p-wide p-text'>
             While I was at it, I wanted to learn a new language, so I wrote the harness in
-            <v-link to='https://golang.org/'>Golang</v-link>.
+            <a class='p-link' href='https://golang.org/'>Golang</a>.
             Having a reason to learn a tool always makes things go more smoothly.
             Golang was a good choice because of the ease with which it can be multi-threaded.
             Also, Golang writes sort of like a scripting language, and normally I would do this sort of work in a scripting language like Python or Fish.
@@ -100,12 +100,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'gtr',
     components: {
-        'v-link': Link,
     }
 });
 </script>

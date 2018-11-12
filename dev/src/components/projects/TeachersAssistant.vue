@@ -23,7 +23,7 @@
         </h2>
 
         <p class='p-text p-wide'>
-            Marking student's projects
+            <strong>Marking student's projects</strong>
             <ul class='p-list'>
                 <li>Commenting on code style</li>
                 <li>Providing refactoring suggestions &amp; examples</li>
@@ -33,9 +33,8 @@
                 <li>Debugging broken code submissions <span class='p-note'>so part marks could be given where appropriate</span></li>
                 <li>Catching cheaters</li>
             </ul>
-        </p>
-        <p class='p-text p-wide'>
-            Helping Students online and in person
+            <br>
+            <strong>Helping Students online and in person</strong>
             <ul class='p-list'>
                 <li>Teaching students how to verify the correctness of their own code</li>
                 <li>Thoroughly explaining software design patterns</li>
@@ -44,16 +43,15 @@
                 <li>Giving advice I wish I had gotten early in my degrees</li>
                 <li>Helping students understand why and where they made mistakes</li>
             </ul>
-        </p>
-        <p class='p-text p-wide'>
-            Helping transition the course toward modern paradigms
+            <br>
+            <strong>Helping transition the course toward modern paradigms</strong>
             <ul class='p-list'>
                 <li>Moved away from Java Swing applications</li>
                 <li>Moved toward Java Spring REST APIs</li>
             </ul>
         </p>
 
-        <p class='p-text p-wide'>
+        <p class='p-wide p-text'>
             I think by the end I did a pretty great job.
             I even received thank you cards and emails from many students saying they think I was the best TA they had ever met, not even just the best they had... the best they ever met.
         </p>
@@ -66,7 +64,7 @@
             This was a very demanding job, because I chose to make it so; teaching is something I get great joy out of.
             It would have been entirely possible for me to do the bare minimum, and still get paid the same.
             However, I saw this as a learning opportunity; it is amazing seeing 90 different people try and implement the same application.
-            It taught me a lot about my own idiosyncrasies, seeing those same traits in others.
+            It taught me a lot about my own idiosyncrasies in my own work process, seeing such a range of idiosyncrasies in others.
         </p>
         <h2 id='how' class='p-wide p-sub-title'>
             How I tackled it
@@ -77,12 +75,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'TeachersAssistant',
     components : {
-        'v-link': Link,
     }
 });
 </script>

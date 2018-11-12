@@ -6,8 +6,8 @@
 
     <p class='p-wide p-highlight'>
         Check out the
-        <v-link to='http://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems/curriculum.html'>Curriculum<i class='fas fa-graduation-cap p-icon'/>
-        </v-link>
+        <a class='p-link' href='http://www.sfu.ca/computing/prospective-students/undergraduate-students/programs/degree-programs/softwaresystems/curriculum.html'>Curriculum<i class='fas fa-graduation-cap p-icon'/>
+        </a>
     </p>
 
     <p class='p-wide p-text'>
@@ -23,7 +23,7 @@
         I didn't even know that programming existed.
         I had no concept of what programming even was.
         However, in first year I was required to take a course in Python as part of my other major
-        <v-link local to='/projects/siat'>SIAT</v-link>.
+        <router-link exact to='/projects/siat'>SIAT</router-link>.
     </p>
 
     <p class='p-wide p-text'>
@@ -39,7 +39,11 @@
     <ul class='p-wide p-list'>
         <li>Computational complexity <span class='p-note'>and algorithm analysis</span></li>
         <li>Computational geometry</li>
-        <li>Compilers <span class='p-note'>which you can see <v-link to='/static/projects/writing-a-compiler'>here</v-link></span></li>
+        <li>Compilers
+            <span class='p-note'>which you can see
+                <router-link exact to='/static/projects/writing-a-compiler'>here</router-link>
+            </span>
+        </li>
         <li>Graphics</li>
         <li>Design patterns</li>
         <li>Data Structures</li>
@@ -78,12 +82,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'SoSy',
     components: {
-        'v-link': Link,
     }
 });
 </script>
