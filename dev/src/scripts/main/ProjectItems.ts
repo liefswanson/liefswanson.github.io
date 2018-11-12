@@ -38,7 +38,7 @@ const Projects:Project[] = [
         component: OptimizingKeyboards,
 
         title: "Optimizing Gesture Keyboards",
-        blurb: "I received a grant to do some undergrad research; I came up with a heuristic for determining if any individual person would be likely to make errors given a keyboard layout. The heuristic is orders of magnitude faster than other existing methods.",
+        blurb: "I came up with a heuristic for determining the likelihood of a user making gesture-typing errors given a keyboard layout. The heuristic is orders of magnitude faster than other existing methods.",
         thumb: "static/optimizing-keyboards/thumb.png",
         tags: [code, misc]
     },
@@ -48,7 +48,7 @@ const Projects:Project[] = [
         component: WritingACompiler,
 
         title: "Writing a Compiler, the Hard Way",
-        blurb: "I took a class at SFU in compilers. In it I wrote approximately 15,000 lines of Java without the aid of external libraries, building up a compiler and optimizer for Pika. Pika is a language designed specifically for that class.",
+        blurb: "I in a compilers class I wrote a feature rich compiler without the aid of external libraries. Everything was done from scratch in a semester long project.",
         thumb: "static/writing-a-compiler/thumb.svg",
         tags: [code]
     },
@@ -57,7 +57,7 @@ const Projects:Project[] = [
         name: "TeachersAssistant",
         component: TeachersAssistant,
 
-        title: "Teaching Like a Pro",
+        title: "Teaching 90 Students to Write Clear Code",
         blurb: "I was the only TA for a second year course in OOP which had 90 students. It was hard work, but well worth it.",
         thumb: 'static/teachers-assistant/thumb.jpg',
         tags: [code, misc]
@@ -77,7 +77,7 @@ const Projects:Project[] = [
         name: "RecursivePlug",
         component: RecursivePlug,
 
-        title: "Designing and Implementing this portfolio",
+        title: "Designing and Implementing this Portfolio",
         blurb: "I am by no means above using recursion, especially when I worked hard on this website and want to show it off... inside this website.",
         thumb: "static/recursive-plug/thumb.svg",
         tags: [code, design, misc]
@@ -190,7 +190,7 @@ const Projects:Project[] = [
         title: 'SoSy Undergrad at SFU',
         blurb: 'An overview of my experience in the Software Systems (SoSy) undergraduate program at SFU',
         thumb: 'static/sosy/thumb.jpg',
-        tags: [code, design, misc]
+        tags: [code, misc]
     },
     {
         path: 'siat',
@@ -200,7 +200,7 @@ const Projects:Project[] = [
         title: 'SIAT Undergrad at SFU',
         blurb: 'An overview of my experience in the School of Interactive Arts and Technology (SIAT) undergraduate program at SFU',
         thumb: 'static/siat/thumb.jpg',
-        tags: [code, design, misc]
+        tags: [design, misc]
     },
     {
         path: 'arch-linux',

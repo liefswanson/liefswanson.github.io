@@ -53,7 +53,7 @@
             I was given free reign to do any project that interested me.
             I had dozens of ideas, and had to quickly narrow things down to a single idea that was achievable in one semester.
             The process of repeated refinement was an extremely freeing experience.
-            I like taking something all the way from a very eathereal idea right through to implementation.
+            I like taking something all the way from a very ethereal idea right through to implementation.
             Typically, I am only ever given the opportunity to do a very narrowly defined task, but this was quite a different experience, and I much preferred it.
         </p>
 
@@ -77,7 +77,7 @@
         </p>
         <p class='p-wide p-text'>
             In the end, I chose to look at the way words are constructed.
-            Using similarities in the structures of words I figured out which keys should be physically separate frome one another on in any given keyboard layout.
+            Using similarities in the structures of words I figured out which keys should be physically separate from one another on in any given keyboard layout.
         </p>
         <p class='p-wide p-text'>
             I did this by comparing every pair of words using the famous
@@ -103,14 +103,14 @@
         <p class='p-wide p-text'>
             The reason this technique is so much faster than other techniques is it does not require simulating inputs given a particular keyboard layout.
             The simulation of inputs creates a huge amount of work to do in evaluating each keyboard layout.
-            My technique avoids this problem, by doing most of the input simulation using weaker keyboard agnostic preprocessing methods.
+            My technique avoids this problem, by doing most of the input simulation using weaker, keyboard-agnostic preprocessing methods.
             This weaker form of input simulation is done using the comparison of similar word structures.
             As it turns out there are not many unique geometric structures that arise from word similarities, meaning many of ambiguities from similar gestures can be treated as identical.
             These weaker input simulations can then be generalized over any given keyboard layout, and only a few cheap measurements need to be done for each keyboard.
         </p>
         <p class='p-thin p-note'>
             Even better, if we use gradient descent, most of the work of estimating a keyboard layout's clarity is already done, because it is very similar to a keyboard we already evaluated.
-            This is much less straight forward to do in older methods... but theoretically possible.
+            This is much less straightforward to do in older methods... but theoretically possible.
         </p>
         <p class='p-wide p-text'>
             Once the preprocessing is done, my method takes
