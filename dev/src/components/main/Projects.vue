@@ -150,10 +150,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-.projects-root {
-
-}
-
 .action-bar {
     height: 0;
 }

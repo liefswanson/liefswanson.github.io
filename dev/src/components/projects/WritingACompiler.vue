@@ -8,7 +8,7 @@
             For my Software Systems degree at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>,
             I took a course in compilers.
-            The course was a great deal of work; we started with a minimally functional compiler, written in Java, and we were expected to continually build upon it as the class progressed.
+            The course was a great deal of work; we started with a minimally functional compiler, written in Java, targetting the source language Pika and we were expected to continually build upon it as the class progressed.
         </p>
 
         <p class='p-note p-thin'>
@@ -19,11 +19,11 @@
             What my role was
         </h2>
         <p class='p-wide p-text'>
-            In addition to the work of my other classes, and studying for the tests in this class, every student was expected to implement a wide range of functionality into our compilers.
-            Most students did not complete a large portion of their compiler, as is common in that class; it is a demanding course.
+            In addition to the work of my other classes, and studying for the tests in this class, every student was expected to implement a wide range of functionality into our Pika compilers.
+            Most students did not complete a large portion of their Pika compiler, as is common in that class; it is a demanding course.
         </p>
         <p class='p-wide p-text'>
-            <strong>Unlike most other students, I did implement every feature:</strong>
+            <strong>Unlike most other students, I did implement every feature in Pika:</strong>
         <ul class='p-wide p-list'>
             <li>
                 Supported first-class data-types:
@@ -103,6 +103,16 @@
         </ul>
         </p>
 
+        <p class='p-note p-thin'>
+            The language Pika is named after this adorable
+            <a class='p-link' href="https://www.google.ca/search?q=pika&tbm=isch">rabbit-esque animal</a>.
+            Some people think the pika is the inspiration behind pikachu.
+            However this is untrue; ぴかぴか (pika-pika) is an onomatopoeia for sparkle in Japanese, and チューチュー (chu-chu) is an onomatopoeia for a squeaking mouse.
+            The combination of these two sounds turns out be the real origin of pikachu as the
+            <a class='p-link' href="https://www.polygon.com/2018/6/4/17425162/pikachu-design-interview-creation">artist has stated</a>.
+            Basically, pikachu is a sparkling squeaky mouse.
+        </p>
+
         <h2 id='why' class='p-wide p-sub-title'>
             Why this project is important to me
         </h2>
@@ -114,7 +124,9 @@
         </p>
 
         <p class='p-thin p-note'>
-            The only other time I had a class that actually emulated real software development practices was a semester long 8-person project where we had a real client.
+            The only other time I had a class that actually emulated real software development practices was a
+            <router-link class='p-link' exact to='/projects/big-team-project'>semester-long 8-person project</router-link>
+            where we had a real client.
         </p>
 
         <h2 id='how' class='p-wide p-sub-title'>
@@ -122,15 +134,51 @@
         </h2>
 
         <p class='p-text p-wide'>
-            On the first day of class, our professor let us know that compilers courses are often considered the hardest courses in a computer science major, regardless of what university the course is being taught at.
+            On the first day of class, our professor let us know that compilers courses are often considered the hardest courses in a computer science curriculum, regardless of what university the course is being taught at.
             He then let us know that his class was even harder than most compilers courses.
             He expected us to write every feature from scratch; no libraries were allowed, and every project was going to build on the previous project.
         </p>
+        <p class='p-thin p-note'>
+            Moreover, the iteration of the class I took was the only time the professor had students write an optimizer along with the compiler.
+        </p>
+
         <p class='p-text p-wide'>
             The prospect of writing so many features from scratch immediately told me that I needed a better way of testing.
-            JUnit is fine, if you are testing Java, but I wasn't only testing Java, I was testing Java that would write assembly for a virtual machine that didn't exist outside of this course.
-            I needed a test suite that would test the compiler, then the program's it output, and then the optimizer, and then the optimized programs it output.
-            The only way I could see to do this was to <router-link class='p-link' exact to='/projects/gtr'>write my own</router-link>.
+            <a class='p-link' href="https://junit.org/junit5/">JUnit</a>
+            is fine, if you are testing Java, but I wasn't only testing Java, I was testing Java that would write assembly for a virtual machine that didn't exist outside of this course.
+            I needed a
+            <a class='p-link' href='https://en.wikipedia.org/wiki/Test_harness'>testing harness</a>
+            that would test the compiler, then the programs it output, and then the optimizer, and then the optimized programs the optimizer output.
+            The only way I could see to do this was to
+            <router-link class='p-link' exact to='/projects/gtr'>write my own</router-link>.
+        </p>
+        <p class='p-thin p-note'>
+            What's more is I work on
+            <router-link class='p-link' exact to='/projects/arch-linux'>Linux</router-link>
+            whenever I can, because I have a much better workflow there, and I prefer it for ethical reasons.
+            The target virtual machine was a windows binary, so that is just another thing I had to make my tool take care of for me.
+        </p>
+
+        <p class='p-wide p-text'>
+            Once I had a testing harness down, I started working one language feature at a time.
+            I was trying to do my best to follow a sort of agile-like aproach, working on features such that they can be quickly seen and tested, rather than trying to work on sections of code that would be best to do in a perfect world where I can make no mistakes.
+        </p>
+        <p class='p-thin p-note'>
+            Agile was the right call, as we didn't know the requirements of each part of the project until we got to it.
+            The language is different every semester, as the professor decides which language features to include as we go.
+        </p>
+
+        <p class='p-wide p-text'>
+            With every new language feature, I would implement everything required for the feature and nothing more.
+            This involved following my debugging information all the way from lexical analysis right through to un-optimized assembly output.
+            Once I was confident I could get meaningful assembly out of the related language feature, I started adding tests around the feature I wanted to check.
+            I would write several small files in the source language Pika, and then write an equivalent program in another programming language <span class='p-note'>python</span>.
+            I took the output from the other program, and used it as the expected test result for my Pika program.
+            In other words, every test was based on functionality, and not the output assembly.
+            This was the best way I could see to do this, as I didn't want to make mistakes when writing my own tests and many different ways of writing assembly can have the exact same functionality.
+        </p>
+        <p class='p-thin p-note'>
+            Luckily, as optimization should never change the output of a program, all I had to do to test optimized programs was make sure they had the exact same output as the unoptimized ones.
         </p>
 
     </article>
