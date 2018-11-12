@@ -120,7 +120,7 @@
             time.
             While theoretically this is worse
             <a class='p-link' href="https://en.wikipedia.org/wiki/Computational_complexity_theory">computational complexity</a>,
-            in practice it is much faster; alphabets are always <strong>significantly</strong> smaller than dictionaries... except in languages like Chinese, which gesture typing doesn't work for anyway.
+            in practice it is much faster; alphabets are <strong>significantly</strong> smaller than dictionaries... except in languages like Chinese, which gesture typing doesn't work for anyway!
         </p>
         <p class='p-thin p-note'>
             While it is true that my preprocessing takes O(dictionary_size<sup>2</sup>), the preprocessing only needs to be done once, not for every keyboard.
