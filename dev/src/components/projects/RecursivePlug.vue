@@ -40,13 +40,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'ProjectEuler',
     components: {
-        'v-link': Link,
         'v-carousel': Carousel
     }
 });

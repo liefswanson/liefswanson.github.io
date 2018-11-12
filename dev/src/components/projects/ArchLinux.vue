@@ -4,10 +4,25 @@
         Arch Linux : My Primary Operating System (OS)
     </h1>
 
+
+    <h2 id='what' class='p-wide p-sub-title'>
+        What my role was
+    </h2>
+    <h2 id='why' class='p-wide p-sub-title'>
+        Why this project is important to me
+    </h2>
+
+    <h2 id='why' class='p-wide p-sub-title'>
+        Why this project is important to me
+    </h2>
+    <h2 id='how' class='p-wide p-sub-title'>
+        How I tackled it
+    </h2>
+
     <p class='p-wide p-text'>
         Unlike most people, I don't use Windows 10 or OSX day to day on my computer.
         I use
-        <v-link to='https://www.archlinux.org/'>Arch Linux</v-link>
+        <a class='p-link' href='https://www.archlinux.org/'>Arch Linux</a>
         almost exclusively.
         There are a couple of reasons for this, primary among them is the extra flexibility it affords me in day to day tasks.
         That might sound crazy to people that have heard of Arch Linux before, but I think there is a lot Windows and OSX could learn from any major Linux distribution.
@@ -30,12 +45,12 @@
     <p class='p-wide p-text'>
         Another thing I quite like about Linux is the desktop environments have features that put OSX and Windows to shame.
         Take a look at
-        <v-link to='https://www.kde.org/plasma-desktop'>KDE Plasma</v-link>;
+        <a class='p-link' href='https://www.kde.org/plasma-desktop'>KDE Plasma</a>;
         some of the things it can do are amazing.
         KDE is incredibly extensible, and plays well with a host of other applications.
         It is frankly amazing the things you can get to work in KDE.
         KDE even has a Quake-style drop-down terminal called
-        <v-link to='https://www.kde.org/applications/system/yakuake/'>Yakuake</v-link>...
+        <a class='p-link' href='https://www.kde.org/applications/system/yakuake/'>Yakuake</a>...
         and it feels like cheating in a game every time I use it.
     </p>
 
@@ -55,13 +70,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'ProjectEuler',
     components: {
-        'v-link': Link,
         'v-carousel': Carousel
     }
 });

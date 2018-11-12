@@ -6,12 +6,12 @@
 
         <p class='p-highlight p-wide'>
             Check it out on
-            <v-link to='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr<i class='p-icon fab fa-flickr'/></v-link>
+            <a class='p-link' href='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr<i class='p-icon fab fa-flickr'/></a>
         </p>
 
         <p class='p-wide p-text'>
             A while ago, I took a photography class as part of my
-            <v-link local to='/projects/siat'>SIAT degree</v-link>
+            <router-link class='p-link' exact to='/projects/siat'>SIAT degree</router-link>
             at SFU.
             It was a great opportunity to make use of my DSLR.
             I don't get excuses to do photography that often, but I really enjoy it... and I even think my photography isn't half bad!
@@ -45,14 +45,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 
 export default Vue.extend({
     name: 'Photography2014Summer',
     components : {
-        'v-link': Link,
         'v-carousel': Carousel
 
     }

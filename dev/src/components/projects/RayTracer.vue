@@ -6,12 +6,12 @@
 
         <p class='p-highlight p-wide'>
             Check it out on
-            <v-link to='https://github.com/liefswanson/raycast'>My GitHub<i class='p-icon fab fa-github'/></v-link>
+            <a class='p-link' href='https://github.com/liefswanson/raycast'>My GitHub<i class='p-icon fab fa-github'/></a>
         </p>
 
         <p class='p-wide p-text'>
             In a class about computer graphics I took for my
-            <v-link local to='/projects/sosy'>Software Systems degree</v-link>
+            <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>
             I built a ray tracer from scratch.
             While it isn't exactly what one would call fully featured, it is pretty cool!
             It can do a lot of things:
@@ -61,7 +61,7 @@
 
         <p class='p-thin p-note'>
             Maybe I just watch too many videos of
-            <v-link to='https://www.youtube.com/watch?v=NuSER0NszwM'>cool path tracers</v-link>...
+            <a class='p-link' href='https://www.youtube.com/watch?v=NuSER0NszwM'>cool path tracers</a>...
         </p>
 
         <p class='p-wide p-text'>
@@ -72,20 +72,18 @@
         <p class='p-thin p-note'>
             Would that cost a ridiculous amount of bandwidth? Yes, probably, but it also sounds so cool.
             Maybe utilizing
-            <v-link to='http://zeromq.org/'>ZeroMQ</v-link> would be a better bet than using sockets and sending JSON through them.
+            <a class='p-link' href='http://zeromq.org/'>ZeroMQ</a> would be a better bet than using sockets and sending JSON through them.
         </p>
     </article>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'HDR',
     components: {
-        'v-link': Link,
         'v-carousel': Carousel
     }
 });

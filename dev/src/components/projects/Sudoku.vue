@@ -6,12 +6,12 @@
 
         <p class='p-highlight p-wide'>
             Check it out on
-            <v-link to='https://github.com/liefswanson/auto-sudoku'>My GitHub<i class='p-icon fab fa-github'/></v-link>
+            <a class='p-link' href='https://github.com/liefswanson/auto-sudoku'>My GitHub<i class='p-icon fab fa-github'/></a>
         </p>
 
         <p class='p-text p-wide'>
             I decided I wanted to learn the relatively new programming language
-            <v-link to='https://kotlinlang.org'>Kotlin</v-link>,
+            <a class='p-link' href='https://kotlinlang.org'>Kotlin</a>,
             because I had heard good things about it.
             Given my experience learning new programming languages in the past, I have found it's best to have a goal.
             My goal for learning Kotlin was to make something that could do Sudoku puzzles for me.
@@ -29,7 +29,7 @@
             I only wanted to add techniques that I know how to use really well.
             So, I limited solving to use of finding singles <span class='p-note'>both hidden and naked</span> and guessing.
             The guessing is pretty cool though, because it is done recursively the way a
-            <v-link to='https://en.wikipedia.org/wiki/Depth-first_search'>depth-first search</v-link>
+            <a class='p-link' href='https://en.wikipedia.org/wiki/Depth-first_search'>depth-first search</a>
             would be.
         </p>
 
@@ -54,12 +54,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'Sudoku',
     components: {
-        'v-link': Link,
     }
 });
 </script>

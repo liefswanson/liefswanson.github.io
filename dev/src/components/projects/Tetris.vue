@@ -6,12 +6,12 @@
 
         <p class='p-highlight p-wide'>
             Check it out on
-            <v-link to='https://github.com/liefswanson/fruit-tetris'>My GitHub<i class='p-icon fab fa-github'/></v-link>
+            <a class='p-link' href='https://github.com/liefswanson/fruit-tetris'>My GitHub<i class='p-icon fab fa-github'/></a>
         </p>
 
         <p class='p-wide p-text'>
             For a class in computer graphics that I took as part of my
-            <v-link local to='/static/projects/sosy'>Software Systems degree</v-link>
+            <router-link exact to='/static/projects/sosy'>Software Systems degree</router-link>
             I built a game of tetris.
             Well sort of...
             It is more like a hybrid of Tetris and Candy Crush.
@@ -83,7 +83,7 @@
 
         <p class='p-thin p-note'>
             I also mode a
-            <v-link to='/projects/ray-tracer'>ray tracer</v-link>
+            <router-link exact to='/projects/ray-tracer'>ray tracer</router-link>
             for this same class, you should check that out, it made a very pretty picture.
         </p>
     </article>
@@ -91,12 +91,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'HDR',
     components: {
-        'v-link': Link,
     }
 });
 </script>

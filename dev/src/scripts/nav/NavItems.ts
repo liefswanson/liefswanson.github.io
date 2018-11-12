@@ -1,6 +1,6 @@
 import Section from './Section'
 
-import Featured from '@/components/main/Featured.vue';
+import Featured from '@/components/main/Status.vue';
 import Projects from '@/components/main/Projects.vue';
 import Resume   from '@/components/main/Resume.vue';
 import Contact  from '@/components/main/Contact.vue';
@@ -12,35 +12,30 @@ const Sections = [
     {
         path: "/projects",
         name: "Projects",
-        icon: "./assets/projects.min.svg",
         color: Swatch.projects,
         component: Projects
     },
     {
-        path: "/featured",
-        name: "Featured",
-        icon: "./assets/featured.min.svg",
-        color: Swatch.feature,
-        component: Featured
-    },
-    {
         path: "/resume",
         name: "Résumé",
-        icon: "./assets/resume.min.svg",
         color: Swatch.resume,
         component: Resume
     },
     {
         path: "/contact",
         name: "Contact",
-        icon: "./assets/contact.min.svg",
         color: Swatch.contact,
         component: Contact
     },
     {
+        path: "/status",
+        name: "Status",
+        color: Swatch.status,
+        component: Featured
+    },
+    {
         path: "/about",
         name: "About",
-        icon: "./assets/about.min.svg",
         color: Swatch.about,
         component: About
     },

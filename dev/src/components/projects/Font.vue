@@ -6,7 +6,7 @@
 
         <p class='p-highlight p-wide'>
             Check it out on
-            <v-link to='https://github.com/liefswanson/phibonacci'>My GitHub<i class='p-icon fab fa-github'/></v-link>
+            <a class='p-link' href='https://github.com/liefswanson/phibonacci'>My GitHub<i class='p-icon fab fa-github'/></a>
         </p>
 
         <p class='p-wide p-text'>
@@ -18,30 +18,31 @@
 
         <p class='p-wide p-text'>
             I use an open source program called
-            <v-link to='https://fontforge.github.io'>FontForge</v-link>
+            <a class='p-link' href='https://fontforge.github.io'>FontForge</a>
             to make the glyphs, and sometimes I use
-            <v-link to='https://inkscape.org'>Inkscape</v-link>
+            <a class='p-link' href='https://inkscape.org'>Inkscape</a>
             to turn the glyphs into SVGs if I want to style them a little.
             I did exactly that when making the SVG used for my name in the top right.
             I considered making it the font itself, but that would require I build a Web Font, and it would also mean I couldn't play with the kerning and details as easily.
-            I wanted it to match the logo I put as the <v-link to='https://en.wikipedia.org/wiki/Favicon'>favicon</v-link>.
+            I wanted it to match the logo I put as the
+            <a class='p-link' href='https://en.wikipedia.org/wiki/Favicon'>favicon</a>.
         </p>
 
         <p class='p-note p-thin'>
             If you are unfamiliar with typography, I recommend watching
-            <v-link to='https://www.imdb.com/title/tt0847817/'>Helvetica</v-link>,
+            <a class='p-link' href='https://www.imdb.com/title/tt0847817/'>Helvetica</a>,
             a great documentary which talks a little about the work that goes into making a font, as well as the significance Helvetica has in our world.
         </p>
 
         <p class='p-text p-wide'>
             The motif I chose for this font was the Fibonacci sequence.
             I am a big math geek, so I thought I would go old school European and use only measurements which followed the golden ratio, aka
-            <v-link to='https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate'>phi</v-link>.
+            <a class='p-link' href='https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate'>phi</a>.
         </p>
 
         <p class='p-thin p-note'>
             Check out
-            <v-link to='https://www.youtube.com/watch?v=7lRgeTmxnlg'>this video</v-link>
+            <a class='p-link' href='https://www.youtube.com/watch?v=7lRgeTmxnlg'>this video</a>
             about the metallic ratios, by a YouTube channel I really like called Numberphile.
         </p>
 
@@ -68,13 +69,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 import Carousel from '@/components/util/Carousel.vue';
 
 export default Vue.extend({
     name: 'Font',
     components: {
-        'v-link': Link,
         'v-carousel': Carousel
     }
 });

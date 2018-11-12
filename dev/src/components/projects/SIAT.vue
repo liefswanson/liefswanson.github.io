@@ -6,8 +6,8 @@
 
     <p class='p-wide p-highlight'>
         Check out the
-        <v-link to='http://www.sfu.ca/students/calendar/2018/summer/programs/interactive-arts-and-technology/major/bachelor-of-arts.html'>Curriculum<i class='fas fa-graduation-cap p-icon'/>
-        </v-link>
+        <a class='p-link' href='http://www.sfu.ca/students/calendar/2018/summer/programs/interactive-arts-and-technology/major/bachelor-of-arts.html'>Curriculum<i class='fas fa-graduation-cap p-icon'/>
+        </a>
     </p>
 
     <p class='p-wide p-text'>
@@ -21,7 +21,7 @@
 
     <p class='p-thin p-note'>
         I have a page about my other major,
-        <v-link local to='/projects/sosy'>SoSy</v-link>,
+        <router-link class='p-link' exact to='/projects/sosy'>SoSy</router-link>,
         as well.
     </p>
 
@@ -59,12 +59,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'SIAT',
     components: {
-        'v-link': Link,
     }
 });
 </script>

@@ -6,7 +6,7 @@
 
     <p class='p-wide p-text'>
         In my spare time I volunteer at the
-        <v-link to='https://cslabsfu.wordpress.com/'>Cognitive Science Lab</v-link>
+        <a class='p-link' href='https://cslabsfu.wordpress.com/'>Cognitive Science Lab</a>
         at SFU.
         Unfortunately, I don't get to spend as much time in there as I would like, but when I do get to spend time there it is great.
     </p>
@@ -36,12 +36,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'CogSciLab',
     components: {
-        'v-link': Link,
     }
 });
 </script>

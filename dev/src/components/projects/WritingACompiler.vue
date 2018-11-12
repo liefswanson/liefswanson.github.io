@@ -5,54 +5,35 @@
         </h1>
 
         <p class='p-wide p-text'>
-            For my undergrad degree in Software Systems at SFU, I took a course in compilers.
-            The course was a really great, in my opnion.
-            I took it with <v-link to='https://www.sfu.ca/computing/people/faculty/thomasshermer.html'>Tom Shermer</v-link>, who is one of those professors that will make you work hard because he knows it will cause you to learn things.
-        </p>
-
-        <p class='p-wide p-text'>
-            All the projects in the course were connected.
-            They were one long project, broken into several parts.
-            In other words, each project relied on the previous project being completed, much like implementing real software, which is something I haven't often seen in classes.
+            For my Software Systems degree at
+            <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>,
+            I took a course in compilers.
+            The course was a great deal of work; we started with a minimally functional compiler, written in Java, and we were expected to continually build upon it as the class progressed.
         </p>
 
         <p class='p-note p-thin'>
-            The only time I experienced this outside of one of Tom's classes was in a
-            <v-link local to='/projects/big-team-project'>semester-long team project</v-link>
-            where we had a real client.
+            The language the compiler actually compiled was one designed specifically for the course, as was our target architecture.
         </p>
 
+        <h2 id='what' class='p-wide p-sub-title'>
+            What my role was
+        </h2>
         <p class='p-wide p-text'>
-            For this class, we were targeting a simple stack machine with a several dozen commands.
-            The virtual stack machine we used was designed by Tom, and made specifically for teaching students compilers without having to simultaneously worry about the hardware.
+            In addition to the work of my other classes, and studying for the tests in this class, every student was expected to implement a wide range of functionality into our compilers.
+            Most students did not complete a large portion of their compiler, as is common in that class; it is a demanding course.
         </p>
-
         <p class='p-wide p-text'>
-            The language we were compiling was called Pika.
-            The compiler was all written without the help of external libraries.
-            We weren't even allowed to use a
-            <v-link to='https://en.wikipedia.org/wiki/Regular_expression'>regular expressions</v-link> unless we wrote the libraries from scratch.
-            All we had were Java's core libraries and a minimally functional compiler Tom started us with.
-            By the end it had surprisingly many features:
-        </p>
-
-        <p class='p-note p-thin'>
-            The language pika is named after this adorable
-            <v-link to='https://www.google.ca/search?q=pika&tbm=isch'>rabbit-esque animal</v-link>.
-            Some people think it is the inspiration behind pikachu.
-            On the other hand, ぴかぴか (pika-pika) is an onomatopoeia for sparkle in Japanese, so it could be either.
-        </p>
-
+            <strong>Unlike most other students, I did implement every feature:</strong>
         <ul class='p-wide p-list'>
             <li>
                 Supported first-class data-types:
                 <ul class='p-list'>
                     <li>Booleans</li>
-                    <li>8bit Characters</li>
+                    <li>8-bit Characters</li>
                     <li>Strings</li>
-                    <li>32bit Integers</li>
-                    <li>32bit Floats</li>
-                    <li>64bit Rationals <span class='p-note'>composed of two 32bit Integers</span></li>
+                    <li>32-bit Integers</li>
+                    <li>32-bit Floats</li>
+                    <li>64-bit Rationals <span class='p-note'>composed of two 32-bit Integers</span></li>
                     <li>Higher Order Functions</li>
                     <li>Arrays <span class='p-note'>composed of any type here including arrays</span></li>
                 </ul>
@@ -71,7 +52,7 @@
             </li>
             <li>
                 Rationals were automatically reduced to
-                <v-link to='https://en.wikipedia.org/wiki/Greatest_common_divisor'>gcd</v-link>
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Greatest_common_divisor'>gcd</a>
                 form
             </li>
             <li>
@@ -81,7 +62,7 @@
                     <li>string deduplication</li>
                     <li>
                         trimming of unreferenced code via
-                        <v-link to='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</v-link>
+                        <a class='p-link' href='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</a>
                     </li>
                     <li>basic block reordering and duplicating <span class='p-note'>to reduce jumps</span></li>
                     <li>some <b>very</b> basic constant variable replacement</li>
@@ -99,9 +80,9 @@
             </li>
             <li>
                 Statements had binding by use of a
-                <v-link to='https://en.wikipedia.org/wiki/Recursive_descent_parser'>recursive descent parser</v-link>
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Recursive_descent_parser'>recursive descent parser</a>
                 just like
-                <v-link to='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</v-link>
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</a>
             </li>
             <li>
                 It also contained some basic control structures:
@@ -120,35 +101,47 @@
                 </ul>
             </li>
         </ul>
-
-        <p class='p-note p-thin'>
-            Wow, that is a lot of things for one semester right?
-            I ended up writing enough code to create a net of 15-18k lines for this class.
-            That is excluding any removed lines.
-            That is just how much bigger the compiler was by the end.
-            <br/>
-            <br/>
-            That is a lot of work to test while doing other classes.
-            That is why I wrote my own
-            <v-link local to='/projects/gtr'>testing harness</v-link>
-            to help me. It came in very handy; two evenings well spent.
         </p>
 
-        <p class='p-wide p-text'>
-            When the minimal compiler was given to us, it could do addition and subtraction.
-            It also had some unused code for helping with symbol tables and scopes, which we had to hook up.
+        <h2 id='why' class='p-wide p-sub-title'>
+            Why this project is important to me
+        </h2>
+        <p class='p-text p-wide'>
+            Unlike other courses at university, this course gave us the opportunity to follow real development practices.
+            Code style really mattered, as poorly written code is harder to debug, and this compiler had to be supported through the entirety of the course.
+            It was not a project that was done in a few days and then never touched again.
+            In the process of writing this compiler, I got lots of practice maintaining, organizing, and testing my own code.
         </p>
+
+        <p class='p-thin p-note'>
+            The only other time I had a class that actually emulated real software development practices was a semester long 8-person project where we had a real client.
+        </p>
+
+        <h2 id='how' class='p-wide p-sub-title'>
+            How I tackled it
+        </h2>
+
+        <p class='p-text p-wide'>
+            On the first day of class, our professor let us know that compilers courses are often considered the hardest courses in a computer science major, regardless of what university the course is being taught at.
+            He then let us know that his class was even harder than most compilers courses.
+            He expected us to write every feature from scratch; no libraries were allowed, and every project was going to build on the previous project.
+        </p>
+        <p class='p-text p-wide'>
+            The prospect of writing so many features from scratch immediately told me that I needed a better way of testing.
+            JUnit is fine, if you are testing Java, but I wasn't only testing Java, I was testing Java that would write assembly for a virtual machine that didn't exist outside of this course.
+            I needed a test suite that would test the compiler, then the program's it output, and then the optimizer, and then the optimized programs it output.
+            The only way I could see to do this was to <router-link class='p-link' exact to='/projects/gtr'>write my own</router-link>.
+        </p>
+
     </article>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'WritingACompiler',
     components : {
-        'v-link': Link
     }
 });
 </script>

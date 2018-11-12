@@ -36,12 +36,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Link from '@/components/util/Link.vue';
 
 export default Vue.extend({
     name: 'WhittingtonIT',
     components: {
-        'v-link': Link,
     }
 });
 </script>
