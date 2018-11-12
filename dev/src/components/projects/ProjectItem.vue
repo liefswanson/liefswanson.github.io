@@ -26,9 +26,9 @@
                     </div>
                 </h2>
             </div>
-            <div class='desc'>
-                <p class='blurb'>{{blurb}}</p>
-            </div>
+            <p class='desc'>
+                {{blurb}}
+            </p>
         </div>
         <div class='mask'></div>
     </router-link>
@@ -225,9 +225,6 @@ export default Vue.extend({
     font-family: 'Comfortaa', sans-serif;
     //border-bottom: 0.25em solid $projects-swatch;
     //color: $projects-swatch; //medium;
-}
-
-.blurb {
 }
 
 .desc {
