@@ -5,7 +5,8 @@
         </h1>
 
         <p class='p-text p-wide'>
-            I was an undergrad teaching assistant at Simon Fraser University.
+            I was an undergrad teaching assistant at
+            <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>.
             I worked with 90 students, helping them learn Object Oriented Programming in Java.
             As I was the only TA marking became a herculean task.
             It was even harder to do promptly, thoroughly, and fairly.
