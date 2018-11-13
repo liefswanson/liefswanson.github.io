@@ -22,8 +22,8 @@ body {
     @include link($projects-swatch);
 }
 
-.r-link {
-    @include link($status-swatch);
+.o-link {
+    @include link($ongoing-swatch);
 }
 
 .suppress-link-style {

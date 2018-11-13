@@ -1,0 +1,73 @@
+<template>
+<div class='featured-root'>
+    <h1 class='title'>
+        Some Projects I Have in the Works
+    </h1>
+    <p class='p-note'>
+        I look forward to getting these to a point where they can each have their own page.
+        <br>
+        If any of these interest you, feel free to
+        <router-link class='o-link' exact to='/contact'>contact</router-link>
+        me about them!
+        <br>
+        I always welcome ideas and people to work with.
+    </p>
+    <upcoming name='Expanding my Research About Optimizing Gesture Keyboard Layouts'
+              img='/static/optimizing-keyboards/thumb.png'
+              alt='picture of a mobile keyboard with a typing gesture drawn ontop of it.'
+              stamp='November 13<sup>th</sup> 2018'>
+        I am expanding on the work I did
+        <router-link class='o-link' exact to='/projects/optimizing-keyboards'>finding customized gesture typing layouts</router-link>,
+        by publishing my finding and by integrating them into my own mobile keyboard based on the AOSP keyboard.
+    </upcoming>
+    <upcoming name='Turning my Automatic Sudoku Solver into an Android Application'
+              img='/static/updates/sudoku-book.jpg'
+              alt='picture of a book of unsolved sudokus'
+              stamp='November 13<sup>th</sup> 2018'>
+        I am working on integrating a camera and character recognition into an Android application along with
+        <router-link class='o-link' exact to='projects/sudoku'>my automatic sudoku solver</router-link>.
+        Take a picture and it solves itself, so you never have to again.
+    </upcoming>
+    <upcoming name='Teaching Myself Polish'
+              img='/static/updates/poland.png'
+              alt='picture of an unsolved sudoku board'
+              stamp='November 13<sup>th</sup> 2018'>
+        As of the time of writing this, I have a 100+ day Polish streak on
+        <a class='o-link' href="https://www.duolingo.com">duolingo</a>
+        doing 30+ minutes per day.
+        Why Polish? One of my
+        <router-link title='The Witcher 3' class='o-link' exact to='projects/video-games'>favourite video games</router-link>
+        is made by a
+        <a class='o-link' title='CDPR' href="https://en.cdprojektred.com">Polish development studio</a>,
+        and I figured it is probably even more polished in Polish.
+    </upcoming>
+</div>
+</template>
+
+<script lang='ts'>
+import Vue from 'vue';
+
+import UpcomingItem from '@/components/util/UpcomingItem.vue';
+
+export default Vue.extend({
+    name: 'Updates',
+    data () {
+        return {
+        }
+    },
+    components: {
+        upcoming: UpcomingItem
+    }
+});
+</script>
+
+<style lang="scss" scoped>
+@import '@/style/master.scss';
+.featured-root {
+    max-width: $medium-size;
+    margin: auto;
+    padding: 2rem;
+    padding-top: 1rem;
+}
+
+</style>
