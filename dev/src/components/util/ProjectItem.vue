@@ -19,9 +19,9 @@
                            v-if='tagActive(elem.name)'
                            class='icon'
                            :class="[
-                                    elem.fa,
-                                    elem.icon,
-                                    filterActive(elem.name) ? '': 'inactive'
+                                elem.fa,
+                                elem.icon,
+                                filterActive(elem.name) ? '': 'inactive'
                            ]"/>
                     </div>
                 </h2>

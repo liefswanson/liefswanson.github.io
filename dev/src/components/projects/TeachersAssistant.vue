@@ -1,7 +1,7 @@
 <template>
     <article class='p-article-grid'>
         <h1 class='p-wide p-title'>
-            Teaching Like a Pro
+            Teaching 90 Students to Write Clear Code
         </h1>
 
         <p class='p-text p-wide'>
@@ -11,7 +11,7 @@
             As I was the only TA, marking became a herculean task.
             It was even harder to do promptly, thoroughly, and fairly.
             To achieve this, I automated a huge portion of my job, so I could spend time on the good parts, such as giving feedback on code style and thoroughly responding to students’ questions.
-            Without automation, even just downloading, unzipping, compiling, and running every student’s code would have taken more than 3 hours total per assignment.
+            Without automation, even just downloading, unzipping, configuring, compiling, and running every student’s code would have taken more than 3 hours total per assignment.
         </p>
 
         <p class='p-thin-grow p-note'>
@@ -70,6 +70,45 @@
         <h2 id='how' class='p-wide p-sub-title'>
             How I tackled it
         </h2>
+        <p class='p-text p-wide'>
+            As I already stated, probably the most important aspect of being able to handle this workload was creating as much automation as possible.
+            Just trying to download, unzip, configure, compile, and execute every indidivual's code took about 2 minutes.
+            There were 90 students, 90 students &times; 2 minutes/student = 180 minutes = 3 hours...
+            At that point, I wouldn't have even observed the output of their program yet, meaning I wouldn't even be marking it yet.
+            So, I automated not only standard tests to run against student's assignments, but also the 2 minutes of work to get a project running.
+        </p>
+        <p class='p-thin p-note'>
+            After automation, I managed to get the time I spent running a student's project down to a minute average. That included everything except choosing which project to mark and reading the output of the tests.
+        </p>
+        <p class='p-wide p-text'>
+            My pursuit of automation was so zealous I even automated testing of one particular assignment where the student's program was supposed to paint specific geometry into a window.
+            Students were expected do simple monospaced
+            <a class='p-link' href="https://www.techwalla.com/articles/what-is-text-reflow">text reflow</a>
+            inside of the shapes they rendered, and the shapes they were supposed to render were static.
+            This meant every student should have a window that renders identically. I took advantage of this, automatically took a screenshot of the window they rendered and ran it through
+            <a class='p-link' href="https://github.com/yahoo/blink-diff">Yahoo's blink-diff</a>.
+        </p>
+        <p class='p-wide p-text'>
+            In another class, I had the professor add a feature one assignment where students were supposed to make a game similar to
+            <a class='p-link' href="https://en.wikipedia.org/wiki/Battleship_(game)">battleship</a>.
+            I had them add a debug output, showing the locations of all their ships.
+            I then took that debug output, and used it as input for my own program that would play the game identically for every student, despite the fact they had randomized their ships.
+            So, I would always hit a a specific ship, miss, hit the same spot etc etc in the same order.
+            This allowed me to standardize testing of a game where one of the criteria being marked was their ability to randomize the game!
+        </p>
+
+        <p class='p-wide p-text'>
+            In the end, all of this automation had a point.
+            It made me a more fair, consistent, and prompt marker.
+            It also gave me more time to do something I have never had anyone do for me during the entirety of my degree... review my code style.
+            Every second I gained from automation, I spent analyzing the coding style of each student, and offering them suggestions on how they could make their code easier to read... and thus debug.
+        </p>
+        <p class='p-thin p-note'>
+            I got so good at it, I kid you not, I could tell if code was buggy before I ran it by the shape of the
+            <a class='p-link' href="https://en.wikipedia.org/wiki/Negative_space">negative space</a>
+            created by their style of
+            <a class='p-link' href="https://en.wikibooks.org/wiki/Computer_Programming/Coding_Style/Minimize_nesting">code nesting</a>.
+        </p>
 
     </article>
 </template>
