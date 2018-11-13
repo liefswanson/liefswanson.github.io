@@ -60,7 +60,7 @@
              class='p-wide p-image'>
 
         <p class='p-thin p-note'>
-            Here I literally found a stump sticking out of the water in a pond, and just happened to catch the reflection of a yellow rhododendron in the background, and it just matched up.
+            Here I literally found a stump sticking out of a pond, and just happened to catch the reflection of a yellow rhododendron in the background. It just felt like the right shot as soon as I saw it.
         </p>
 
         <p class='p-text p-wide'>
@@ -72,8 +72,8 @@
 
         <p class='p-thin p-note'>
             I wanted to do something that made people think.
-            I remember seeing awareness ads about domestic violence in a magazine years before, and I wanted to do an homage to that.
-            It just so happened a friend of mine was thinking of getting into movie makeup as a profession; she made the perfect subject, and she got to show off her skills, a win for everyone.
+            I remembered seeing ads about raising awareness around domestic violence, in a magazine years before. I wanted to pay homage to that.
+            It just so happened a friend of mine was thinking of getting into movie makeup as a profession; she made the perfect subject and she got to show off her skills, a win for everyone.
         </p>
 
         <p class='p-wide p-text'>
@@ -88,9 +88,9 @@
         </p>
 
         <p class='p-wide p-text'>
-            Lighting is probably my greatest nemesis when it comes to taking editing photos.
+            Lighting is probably my greatest nemesis when it comes to editing photos.
             It is what I have the hardest time fixing after the fact, and I think that is true for most people.
-            That is why I try to use as many practical effects to try many different kinds of lighting when I have the opportunity, and I rarely take outdoor photos outside the
+            That is why I try to use as many practical effects to try many different kinds of lighting when I have the opportunity, and I try to schedule outdoor shooting only around the
             <a class='p-link' href="https://en.wikipedia.org/wiki/Golden_hour_(photography)">golden hours</a>.
         </p>
         <p class='p-thin p-note'>

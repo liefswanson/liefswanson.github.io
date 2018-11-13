@@ -70,7 +70,7 @@
 
 <script lang="ts">
 import Vue         from 'vue';
-import ProjectItem from '@/components/projects/ProjectItem.vue';
+import ProjectItem from '@/components/util/ProjectItem.vue';
 import StickyBar   from '@/components/nav/StickyBar.vue';
 
 import TagItems       from '@/scripts/main/TagItems';
