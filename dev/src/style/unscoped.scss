@@ -72,14 +72,18 @@ body {
 
 // classes prefixed by p- mean projects, and are used in all project SFCs
 .p-article-grid {
-    max-width: $large-size;
-    margin: auto;
+
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 
     grid-gap: 1.5rem;
 
+}
+
+.p-root {
+    max-width: $large-size;
+    margin: auto;
 }
 
 .p-article-grid > * {
