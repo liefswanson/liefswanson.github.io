@@ -1,7 +1,8 @@
 <template>
-<div class='main-content'>
+<article class='main-content'>
     <collapse title='Hello!'
-              initShow>
+              initShow
+              about>
         <p class='u-para'>
             My name is Lief Swanson.
             I am a <a class='a-link' title='Person with a wide range of knowledge or learning.' href='https://simple.wikipedia.org/wiki/Renaissance_man'>polymath</a>.
@@ -22,7 +23,8 @@
             I think in our modern information-dense world there is no valid excuse to avoid learning a wide variety of new things all the time.
         </p>
     </collapse>
-    <collapse title='My Education'>
+    <collapse title='My Education'
+              about>
         <p class='u-para'>
             I went to <a class='a-link' title='Simon Fraser University' href='https://www.sfu.ca'>SFU</a> and did two degrees concurrently: a Bachelor's of Science in
             <router-link class='a-link' exact to='/projects/sosy'>Software Systems</router-link>
@@ -37,13 +39,14 @@
         </p>
 
         <p class='u-para'>
-            I am also currently trying to publish some
+            I am also currently working toward publish some
             <router-link class='a-link' exact to='/projects/optimizing-keyboards'>self-directed research</router-link>
             and I have volunteered in a few labs helping complete
             <router-link class='a-link' exact to='/projects/cog-sci-lab'>other peoples' research</router-link>.
         </p>
     </collapse>
-    <collapse title='My Skills'>
+    <collapse title='My Skills'
+              about>
         <p class='u-para'>
             I spend a lot of time on my computer, for both work and play.
             So as a necessity I have built up quite the arsenal of skills with a computer.
@@ -125,7 +128,8 @@
         </div>
     </collapse>
     <collapse title='My Hobbies'
-              overscroll>
+              overscroll
+              about>
         <p class='u-para'>
             I love to swim, in order to relax and get some exercise.
             I am not much for land sports, but in the water I feel right at home.
@@ -202,7 +206,7 @@
             even if most people don't agree.
         </p>
     </collapse>
-</div>
+</article>
 </template>
 
 <script lang="ts">
