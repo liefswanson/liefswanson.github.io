@@ -1,7 +1,8 @@
 <template>
-<div class='collapsible-root'>
+<section class='collapsible-root'>
     <div>
         <h1 class='section'
+            :class='about ? "about" : "project"'
             @click='toggle'>
 
             {{title}}
@@ -31,7 +32,7 @@
     </div>
     <div class='overscroll'
          :style='overscrollStyle()'/>
-</div>
+</section>
 </template>
 
 <script lang="ts">
@@ -64,6 +65,10 @@ export default Vue.extend({
             default: false
         },
         overscroll: {
+            type: Boolean,
+            default: false
+        },
+        about: {
             type: Boolean,
             default: false
         }
@@ -172,7 +177,7 @@ $height: $pad-bot + $pad-bot + $margin-top +
 
 .section {
     display: flex;
-    max-width: $small-size;
+    //max-width: $small-size;
     padding: $pad-top 1rem;
     margin: 0;
 
@@ -185,8 +190,21 @@ $height: $pad-bot + $pad-bot + $margin-top +
 
     &:hover,
     &:focus {
-        border-color: $about-swatch;
         background: darken($bright, 5%);
+    }
+}
+
+.about {
+    &:hover,
+    &:focus {
+        border-color: $about-swatch;
+    }
+}
+
+.project {
+    &:hover,
+    &:focus {
+        border-color: $projects-swatch;
     }
 }
 
