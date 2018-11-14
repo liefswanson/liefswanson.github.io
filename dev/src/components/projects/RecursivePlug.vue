@@ -33,7 +33,8 @@
         </collapse>
 
 
-        <collapse title='How I tackled it'>
+        <collapse title='How I tackled it'
+                  overscroll>
             <div class='p-article-grid'>
 
             </div>
