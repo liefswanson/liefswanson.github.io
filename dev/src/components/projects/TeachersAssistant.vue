@@ -1,9 +1,6 @@
 <template>
-    <article class='p-article-grid'>
-        <h1 class='p-wide p-title'>
-            Teaching 90 Students to Write Clear Code
-        </h1>
-
+<project-template name='TeachersAssistant'>
+    <template slot='intro'>
         <p class='p-text p-wide'>
             I was an undergrad teaching assistant at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>.
@@ -18,11 +15,9 @@
             Being an undergrad teaching assistant at Simon Fraser University is not very common.
             The teaching assistants' union created a rule that <strong>every</strong> graduate student be considered for a position before an undergrad is allowed to apply.
         </p>
+    </template>
 
-        <h2 id='what' class='p-wide p-sub-title'>
-            What my role was
-        </h2>
-
+    <template slot='what'>
         <p class='p-text p-wide'>
             <strong>Marking students' projects</strong>
             <ul class='p-list'>
@@ -56,20 +51,18 @@
             I think by the end I did a pretty great job.
             I even received thank you cards and emails from many students saying they think I was the best TA they had ever met, not even just the best they had... the best they ever met.
         </p>
+    </template>
 
-        <h2 id='why' class='p-wide p-sub-title'>
-            Why this project is important to me
-        </h2>
-
+    <template slot='why'>
         <p class='p-text p-wide'>
             This was a very demanding job, because I chose to make it so; teaching is something I get great joy out of.
             It would have been entirely possible for me to do the bare minimum and still get paid the same.
             However, I saw this as a learning opportunity; it is amazing seeing 90 different people try and implement the same application.
             It taught me a lot about my own idiosyncrasies in my own work process, seeing such a range of idiosyncrasies in others.
         </p>
-        <h2 id='how' class='p-wide p-sub-title'>
-            How I tackled it
-        </h2>
+    </template>
+
+    <template slot='how'>
         <p class='p-text p-wide'>
             As I already stated, probably the most important aspect of being able to handle this workload was creating as much automation as possible.
             Just trying to download, unzip, configure, compile, and execute every indidivual's code took about 2 minutes.
@@ -109,16 +102,18 @@
             created by their style of
             <a class='p-link' href="https://en.wikibooks.org/wiki/Computer_Programming/Coding_Style/Minimize_nesting">code nesting</a>.
         </p>
-
-    </article>
+    </template>
+</project-template>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 
 export default Vue.extend({
-    name: 'TeachersAssistant',
-    components : {
-    }
+  name: "TeachersAssistant",
+  components: {
+      'project-template': ProjectTemplate
+  }
 });
 </script>
