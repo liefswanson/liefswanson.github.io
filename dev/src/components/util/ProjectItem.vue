@@ -172,6 +172,8 @@ export default Vue.extend({
     border-bottom: 0.1rem solid $xlight;
     //box-shadow: 0.25rem 0.25rem 1rem $dark;
     background: darken($bright, 5%);
+
+    @include not-selectable;
 }
 
 
