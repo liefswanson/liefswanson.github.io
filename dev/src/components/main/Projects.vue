@@ -35,6 +35,7 @@
                               ref='container'
                               name='project-group'
                               tag='ul'>
+
                 <project-item v-for='project in filteredProjects'
                               :key='project.path'
                               :properties="project"
@@ -48,17 +49,6 @@
         <div v-else
              key='right'
              class='panel'>
-             <sticky-bar>
-                <div class='action-bar'>
-                    <div class='spacer'></div>
-                    <router-link to='/projects'
-                                 exact
-                                 title='Back to Projects'
-                                 class='x-btn'>
-                        <i class='fas fa-times'/>
-                    </router-link>
-                </div>
-            </sticky-bar>
             <div class='main-content project-focused'>
                 <router-view/>
             </div>

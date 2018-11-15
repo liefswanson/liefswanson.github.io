@@ -18,6 +18,14 @@ body {
     overflow-x: hidden;
 }
 
+.strike {
+    text-decoration: line-through;
+}
+
+.p-title-section {
+    padding: 0 1rem;
+}
+
 .p-link {
     @include link($projects-swatch);
 }
@@ -93,18 +101,13 @@ body {
     }
 
     @include on-tablet-or-down {
-        padding-top: $icon-size;
+        //padding-top: $icon-size;
     }
 }
 
 .p-title {
     font-family: 'Comfortaa', sans-serif;
     margin: 0;
-}
-
-.p-sub-title {
-    @extend .p-title;
-    padding-left: 2rem;
 }
 
 .p-fill-row {
@@ -127,6 +130,13 @@ body {
     }
 }
 
+.p-mid {
+    grid-column: span 6;
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
 .p-shrink {
     grid-column: span 8;
     @include on-tablet {
@@ -141,6 +151,16 @@ body {
     grid-column: span 4;
     @include on-tablet {
         grid-column: span 8;
+    }
+    @include on-phone {
+        grid-column: span 12;
+    }
+}
+
+.p-grow-to-mid {
+    grid-column: span 4;
+    @include on-tablet {
+        grid-column: span 6;
     }
     @include on-phone {
         grid-column: span 12;
@@ -191,9 +211,7 @@ body {
 }
 
 .p-push-right {
-    @include on-laptop-or-up{
-        grid-column-end: 13;
-    }
+    grid-column-end: 13;
 }
 
 .p-full {
@@ -224,7 +242,7 @@ body {
 }
 
 .p-icon {
-    font-size: 2.5rem;
+    //font-size: 2.5rem;
     padding-left: 0.7rem;
 }
 

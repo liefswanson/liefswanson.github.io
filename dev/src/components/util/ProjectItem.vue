@@ -4,7 +4,8 @@
     <router-link :to='target'
                  exact
                  class='suppress-link-style'>
-        <div ref='content'>
+        <div ref='content'
+             class='content'>
             <div class='card-header'>
                 <img v-images-loaded="updateSpan"
                      :src="thumb"
@@ -166,11 +167,11 @@ export default Vue.extend({
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    background: darken($bright, 5%);
     box-sizing: border-box;
     margin-bottom: $grid-gap;
     border-bottom: 0.1rem solid $xlight;
     //box-shadow: 0.25rem 0.25rem 1rem $dark;
+    background: darken($bright, 5%);
 }
 
 
@@ -201,6 +202,7 @@ export default Vue.extend({
 
 .card-header {
     position: relative;
+    background: $medium;
 }
 
 // currently unused
@@ -211,14 +213,13 @@ export default Vue.extend({
     left: 0;
 }
 
+
 .title {
     $padding: 0.5rem;
     font-size: 1.5rem;
     margin: 0;
     padding: $padding;
     padding-left: $padding * 2;
-
-    background: $medium;
 
     font-weight: bold;
     width: calc(100% - #{$padding * 3});

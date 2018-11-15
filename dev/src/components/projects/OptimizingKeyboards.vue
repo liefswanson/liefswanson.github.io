@@ -1,8 +1,6 @@
 <template>
-    <article class='p-article-grid'>
-        <h1 class='p-wide p-title'>
-            Optimizing Gesture Keyboards for Clarity, Done Dirt Cheap
-        </h1>
+<project-template name='OptimizingKeyboards'>
+    <template slot='intro'>
         <div class='p-wide p-text'>
             <p class='strike'>
                 <strong>Sort fir the tips; my keyboard is adding yup.</strong>
@@ -25,11 +23,9 @@
         <p class='p-thin p-note'>
             I use gesture typing almost exclusively on my mobile devices; it improves typing speed without crippling vocabulary the way predictive methods do.
         </p>
+    </template>
 
-        <h2 id='what' class='p-wide p-sub-title'>
-            What my role was
-        </h2>
-
+    <template slot='what'>
         <p class='p-wide p-text'>
             I had the project ideas, did the research into existing work, created new algorithms &amp; theory, and implemented the software.
             All of this was for the purpose of testing a new method of optimizing keyboard layouts for gesture clarity.
@@ -42,11 +38,9 @@
             by Smith, Bi, and Zhai.
             This paper details an approach for calculating gesture clarity that I was trying to improve upon.
         </p>
+    </template>
 
-        <h2 id='why' class='p-wide p-sub-title'>
-            Why this project is important to me
-        </h2>
-
+    <template slot='why'>
         <p class='p-wide p-text'>
             This project was done under the
             <a class='p-link' href='http://www.sfu.ca/dean-gradstudies/awards/undergraduate-awards/NSERC.html'>NSERC USRA at SFU</a>.
@@ -63,11 +57,9 @@
             <a class='p-link' href='https://www.sfu.ca/computing/people/faculty/binaybhattacharya.html'>Binay Bhattarachya</a>
             gave me free reign.
         </p>
+    </template>
 
-        <h2 id='how' class='p-wide p-sub-title'>
-            How I tackled it
-        </h2>
-
+    <template slot='how'>
         <p class='p-wide p-text'>
             There were several stages to implementing my idea for finding better keyboard layouts for gesture typing.
             First I narrowed down one solid idea, instead of 20 possibly viable ones.
@@ -125,22 +117,19 @@
         <p class='p-thin p-note'>
             While it is true that my preprocessing takes O(dictionary_size<sup>2</sup>), the preprocessing only needs to be done once, not for every keyboard.
         </p>
-
-    </article>
+    </template>
+</project-template>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 
 export default Vue.extend({
-    name: 'OptimizingKeyboards',
-    components: {
-    }
+  name: "OptimizingKeyboards",
+  components: {
+      'project-template': ProjectTemplate
+  }
 });
 </script>
 
-<style lang="scss" scoped>
-.strike {
-    text-decoration: line-through;
-}
-</style>

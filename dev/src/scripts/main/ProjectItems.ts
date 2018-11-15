@@ -23,6 +23,9 @@ import ProjectEuler          from '@/components/projects/ProjectEuler.vue';
 import AudioBooks            from '@/components/projects/AudioBooks.vue';
 import VideoGames            from '@/components/projects/VideoGames.vue';
 
+import nullProjectVue        from '@/components/util/ProjectTemplate.vue';
+
+
 import Tag     from '@/scripts/main/Tag';
 import Project from '@/scripts/main/Project';
 
@@ -30,6 +33,27 @@ import code   = Tag.code;
 import design = Tag.design;
 import misc   = Tag.miscellaneous
 
+const nullProject:Project =
+{
+    path: "",
+    name: "",
+    component: nullProjectVue,
+
+    title: "",
+    blurb: "",
+    thumb: "",
+    tags: []
+};
+
+function getProject(name: string) {
+    for (let project of Projects) {
+        if(project.name == name) {
+            return project
+        }
+    }
+    console.error("Incorrect name \"" + name + "\" given to getProject");
+    return nullProject
+}
 
 const Projects:Project[] = [
     {
@@ -37,7 +61,7 @@ const Projects:Project[] = [
         name: "OptimizingKeyboards",
         component: OptimizingKeyboards,
 
-        title: "Optimizing Gesture Keyboards",
+        title: "Optimizing Gesture Keyboards, Done Dirt Cheap",
         blurb: "I came up with a heuristic for determining the likelihood of a user making gesture-typing errors given a keyboard layout. The heuristic is orders of magnitude faster than other existing methods.",
         thumb: "static/optimizing-keyboards/thumb.png",
         tags: [code, misc]
@@ -246,4 +270,9 @@ const Projects:Project[] = [
 
 ];
 
+export {
+    Projects,
+    nullProject,
+    getProject
+};
 export default Projects;
