@@ -26,12 +26,7 @@
     </template>
 
     <template slot='how'>
-        <p class='p-text p-wide'>
-            I don’t like to talk about myself that much.
-            I prefer to talk about the things I am interested in.
-            However, a portfolio is like a product page… my time, perspective, and knowledge are the products being sold, and as such those are what I need to talk about.
-            It was a fulfilling challenge to express who I am through the interactions, functionality, visuals, and content of this portfolio.
-        </p>
+
     </template>
 </project-template>
 </template>

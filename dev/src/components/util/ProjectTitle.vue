@@ -9,7 +9,6 @@
         <p class='p-note'>
             {{ project.blurb }}
         </p>
-        <slot></slot>
     </div>
 
     <img v-if='!onPhone'
