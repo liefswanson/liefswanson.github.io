@@ -1,94 +1,121 @@
 <template>
-    <article class='p-article-grid'>
-        <h1 class='p-wide p-title'>
-            Implementing HDR Instead of Just Using It
-        </h1>
-
-
+<project-template name='HDR'>
+    <template slot='intro'>
         <p class='p-wide p-text'>
             For a class in Media Arts for my
             <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>,
-            I had to do some photo manipulation.
-            It wasn't anything terribly difficult, just implementing our own spin on HDR.
+            I had to create an algorithm for combining several images into a single
+            <a class='p-link' href="https://en.wikipedia.org/wiki/High-dynamic-range_imaging">HDR image</a>.
             We weren't given any equations for how to make it work, we were told just to play it by ear.
             We also had to give justification for why we chose the algorithm we did.
         </p>
+    </template>
 
+    <template slot='what'>
         <p class='p-wide p-text'>
-            I found this assignment pretty interesting, because I actually use HDR from time to time in my photography.
-            Unfortunately, I never got permission to share my solution to this assignment online.
-            Instead, I will just show some of the results...
+            For this assignment one of the requirements was that we come up with our own completely original algorithm for creating an HDR image.
+            This meant we were not allowed to research existing algorithms until after we had completed the assignment.
+            Some people did, but I didn't.
+            So, I had to use some math to try and figure out a good way to get the a full range of exposures out of some mostly over/under exposed images.
         </p>
 
+        <p class='p-wide p-text'>
+            Unfortunately, I was never given permission to share my code online.
+            So instead, I will show the resuts my code output!
+        </p>
+        <figure class='p-mid'>
+            <img class='p-image'
+                 src='/static/hdr/thumb.png'
+                 alt='the final result from my HDR assignment'>
+            <figcaption class='p-note'>
+                Here you can see the final result from my assignment!
+            </figcaption>
+        </figure>
+    </template>
+
+    <template slot='why'>
+        <p class='p-wide p-text'>
+            I actually use HDR from time to time in my photography, so it was interesting to learn about how it is implemented.
+            It gave me an opportunity to combine software and art, because the goal of the software I was making was art!
+        </p>
         <p class='p-note p-thin'>
             Oh also... while we are on the topic of photography, don't forget to check out
-            <a class='p-link' href='https://www.flickr.com/photos/124866205@N05/albums/72157645984109166'>My Flickr</a>.
+            <router-link class='p-link' exact to='/projects/photography-2014-summer'>some of mine</router-link>.
         </p>
+    </template>
+
+    <template slot='how'>
+        <p class='p-wide p-text'>
+            This assignment was pretty straight forward, we were given 3 images, and told to combine them to bring out a full range of exposures.
+            Because we were working in Java, and not a language like matlab or python were a few things that I needed to do before I could start combining images.
+            <ul>
+                <li>Build a window to render the image in</li>
+                <li>Add a file selector to pick source images</li>
+                <li>Read all images into objects that can be drawn in a Java Swing window</li>
+                <li>Add the ability to save the output</li>
+            </ul>
+        </p>
+
+        <figure class='p-wide'>
+            <v-carousel class='p-image'
+                    relative='/static/hdr/'
+                    :init="[
+                        'dark.png',
+                        'med.png',
+                        'light.png',
+                    ]"/>
+            <figcaption class='p-note'>
+                Here are the source images I used.
+            </figcaption>
+        </figure>
 
         <p class='p-wide p-text'>
-            Before I can do that though, I need to show you what I was working with.
-            Below you will find the three images I used while implementing my own HDR algorithm.
-            To my understanding, these are the "traditional" set of images used when testing HDR.
-        </p>
-
-        <p class='p-thin p-note'>
-            Actually, that is only partly true, one is missing from the set we were given in class!
-            You can see if you check out the
+            If you are familiar with this set of photos, you know that one of them is missing!
+            However, these are the ones that I was given to work with.
+            You can find the original set in the
             <a class='p-link' href='https://en.wikipedia.org/wiki/High-dynamic-range_imaging#HDR_processing'>Wikipedia article</a>.
         </p>
 
-        <img src='/static/hdr/dark.png'
-             alt='dark'
-             class='p-thin-grow p-image'>
-
-        <img src='/static/hdr/med.png'
-             alt='medium'
-             class='p-thin-grow p-image'>
-
-
-        <img src='/static/hdr/light.png'
-             alt='light'
-             class='p-thin-grow p-image'>
-
         <p class='p-wide p-text'>
-            The main challenge here was not so much reading in the images. That part is pretty straightforward.
-            We were working in Java, and as anyone will tell you, there are a lot of things the Java standard library can do.
-            Certainly there are also a lot of things it can't do... but that aside, it does have the ability to read JPEGs, and that is the thing I cared about.
+            The interesting part of this assignment for me was coming up with an equation I could apply to the images that would work to combine them in general.
+            I tried a few ideas, such as averaging, knowing they wouldn't work... but I wanted to see what features they lacked.
+            Once I saw the boring washed out nature of the averaged image, I figured that there should be some form of dynamic weighting, based on the amount of information can be found from each pixel across the three images.
+            For instance, a pixel might be almost completely black in 2 images, but green in the 1 image. The green pixel is thought to have more information, based on it having exposure closer to the middle of the range.
         </p>
 
         <p class='p-wide p-text'>
-            The big problem was trying to get an equation that would map the three exposures well to some kind of happy middle ground of all the exposures.
-            Below you can see some of the stages I went through trying to make it work, as well as what I settled on.
+            I used a function similar to what is seen in gamma correction to weight the pixels from each image.
+            The major difference was I looked at the average exposure across all three images and applied this function to each pixel's distance from the average exposure.
+            This gave me a very flexible way of weighting the 3 images, though it did have some drawbacks. If you look in the images below, you may see something that looks like a lightning bolt arcing across the sky.
+            This was caused by the way I did the weighting; because I was using a function that gets very steep right around the average exposure, lines of colour near the average exposure create these interesting artifacts.
         </p>
 
-        <v-carousel class='p-image p-wide-grow'
-                    relative='/static/hdr/'
-                    :init="[
-                        '1.png',
-                        '2.png',
-                        'thumb.png',
-                    ]"/>
-
-        <p class='p-note p-thin-grow'>
-            That second one with the lightning bolt going through the sky is pretty cool hey?
-            You can see a reverse effect in the one I finally went with, if you look closely enough.
-            Those resulted from the equation I chose, it was a little too sharp near the average brightness value in the image.
-            <br/>
-            <br/>
-            Those were pretty much impossible to get rid of without completely rethinking the custom equation I was using to weight the brightnesses of each image into the final one.
-        </p>
-
-    </article>
+        <figure class='p-wide'>
+            <v-carousel class='p-image'
+                relative='/static/hdr/'
+                :init="[
+                    '1.png',
+                    '2.png',
+                    'thumb.png',
+                ]"/>
+            <figcaption class='p-note'>
+                It took a few iterations to get the output image to look right.
+            </figcaption>
+        </figure>
+    </template>
+</project-template>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Carousel from '@/components/util/Carousel.vue';
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
+import Carousel from "@/components/util/Carousel.vue";
 
 export default Vue.extend({
-    name: 'HDR',
-    components: {
-        'v-carousel': Carousel
-    }
+  name: "HDR",
+  components: {
+      'project-template': ProjectTemplate,
+      'v-carousel': Carousel
+  }
 });
 </script>
