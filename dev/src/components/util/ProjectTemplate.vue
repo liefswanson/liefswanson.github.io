@@ -1,8 +1,6 @@
 <template>
 <article class='p-root'>
-    <project-title :name='name'>
-        <slot name='plug'/>
-    </project-title>
+    <project-title :name='name'/>
 
     <collapse title='Introduction'
               initShow>

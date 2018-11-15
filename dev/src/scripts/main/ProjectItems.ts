@@ -131,8 +131,8 @@ const Projects:Project[] = [
         name: 'font',
         component: Font,
 
-        title: 'My Own Font (WIP)',
-        blurb: "Bauhaus style fonts are so cool, but really hard to read. That hasn't stopped me from trying to make my own. There is a lot of work left to go, but check out the logo in the top right, I used a modified version of it there.",
+        title: 'Making My Own Font From Scratch',
+        blurb: "Bauhaus style fonts are so cool, but really hard to read. That hasn't stopped me from trying to make my own. Check out the logo in top right, I use a modified version of it there.",
         thumb: "static/font/thumb.png",
         tags: [design]
     },
@@ -171,8 +171,8 @@ const Projects:Project[] = [
         name: 'BCMA',
         component: BCMA,
 
-        title: 'Working for the BCMA',
-        blurb: 'I did a brief stint working IT at the British Columbia Medical Association (BCMA), which has since changed its name to Doctors of BC.' ,
+        title: "Working IT for a Doctors of BC",
+        blurb: 'I did a brief stint working IT for what can sort of be thought of as a union for doctors in British Columbia Canada.' ,
         thumb: 'static/bcma/thumb.jpg',
         tags: [misc]
     },
@@ -182,7 +182,7 @@ const Projects:Project[] = [
         component: WhittingtonIT,
 
         title: 'Working for Whittington IT',
-        blurb: "I worked for a small IT company in Brisbane Australia which provided support for Doctor's offices.",
+        blurb: "I worked for a small IT company in Brisbane Australia which provided support for many local doctor's offices.",
         thumb: 'static/whittington-it/thumb.jpg',
         tags: [misc]
     },
