@@ -1,12 +1,11 @@
 <template>
 <section class='collapsible-root'>
     <div>
-        <h1 class='section'
-            :class='about ? "about" : "project"'
-            @click='toggle'>
-
+        <component class='section'
+                   :is='about ? "h1" : "h2"'
+                   :class='about ? "about" : "project"'
+                   @click='toggle'>
             {{title}}
-
             <div class='spacer'></div>
 
             <div class='icon-container'>
@@ -19,8 +18,7 @@
                         class='fas toggle-icon fa-plus'/>
                 </transition>
             </div>
-
-        </h1>
+        </component>
 
         <div class='collapsible'
             :style='style'>
@@ -87,6 +85,14 @@ export default Vue.extend({
             this.show = !this.show;
             this.calcHeight();
         },
+        expand() {
+            this.show = true;
+            this.calcHeight();
+        },
+        collapse() {
+            this.show = false;
+            this.calcHeight();
+        },
         icon():string {
             if (this.show){
                 return 'fa-minus';
@@ -131,6 +137,8 @@ export default Vue.extend({
     },
     mounted() {
         NavEventBus.$on(Events.navAnimDone, this.calcHeight);
+        NavEventBus.$on(Events.collapseAll, this.collapse);
+        NavEventBus.$on(Events.expandAll, this.expand);
         window.addEventListener(Events.resize, this.calcHeight);
 
         if(this.initShow) {
@@ -146,6 +154,8 @@ export default Vue.extend({
     },
     beforeDestroy(){
         NavEventBus.$off(Events.navAnimDone, this.calcHeight);
+        NavEventBus.$off(Events.collapseAll, this.collapse);
+        NavEventBus.$off(Events.collapseAll, this.expand);
         window.removeEventListener(Events.resize, this.calcHeight);
         this.loaded = false;
     }
@@ -232,7 +242,7 @@ $height: $pad-bot + $pad-bot + $margin-top +
 
 .padded {
     $top: 0.5rem;
-    $side: 1.5rem;
+    $side: 1rem;
     $bottom: 2rem;
     padding: $top $side $bottom;
 }

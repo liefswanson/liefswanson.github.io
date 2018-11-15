@@ -1,9 +1,6 @@
 <template>
-    <article class='p-article-grid'>
-        <h1 class='p-wide p-title'>
-            Writing A Compiler, the Hard Way
-        </h1>
-
+<project-template name='WritingACompiler'>
+    <template slot='intro'>
         <p class='p-wide p-text'>
             For my Software Systems degree at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>,
@@ -14,93 +11,92 @@
         <p class='p-note p-thin'>
             The language the compiler actually compiled was one designed specifically for the course, as was our target architecture.
         </p>
+    </template>
 
-        <h2 id='what' class='p-wide p-sub-title'>
-            What my role was
-        </h2>
+    <template slot='what'>
         <p class='p-wide p-text'>
             In addition to the work of my other classes, and studying for the tests in this class, every student was expected to implement a wide range of functionality into our Pika compilers.
             Most students did not complete a large portion of their Pika compiler, as is common in that class; it is a demanding course.
         </p>
         <p class='p-wide p-text'>
             <strong>Unlike most other students, I did implement every feature in Pika:</strong>
-        <ul class='p-wide p-list'>
-            <li>
-                Supported first-class data-types:
-                <ul class='p-list'>
-                    <li>Booleans</li>
-                    <li>8-bit Characters</li>
-                    <li>Strings</li>
-                    <li>32-bit Integers</li>
-                    <li>32-bit Floats</li>
-                    <li>64-bit Rationals <span class='p-note'>composed of two 32-bit Integers</span></li>
-                    <li>Higher Order Functions</li>
-                    <li>Arrays <span class='p-note'>composed of any type here including arrays</span></li>
-                </ul>
-            </li>
-            <li>
-                All data-types had type inference, and casting was allowed within a strict hierarchy
-            </li>
-            <li>
-                Scopes
-            </li>
-            <li>
-                Functions <span class='p-note'>able to use static variables in outer scopes and stack variables in the current scope</span>
-            </li>
-            <li>
-                Manually managed dynamic memory
-            </li>
-            <li>
-                Rationals were automatically reduced to
-                <a class='p-link' href='https://en.wikipedia.org/wiki/Greatest_common_divisor'>gcd</a>
-                form
-            </li>
-            <li>
-                An Optimizer which could do all the following optimizations:
-                <ul class='p-list'>
-                    <li>peephole</li>
-                    <li>string deduplication</li>
-                    <li>
-                        trimming of unreferenced code via
-                        <a class='p-link' href='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</a>
-                    </li>
-                    <li>basic block reordering and duplicating <span class='p-note'>to reduce jumps</span></li>
-                    <li>some <b>very</b> basic constant variable replacement</li>
-                </ul>
-            </li>
-            <li>
-                It was possible to do the following with every numeric data-type:
-                <ul class='p-list'>
-                    <li>addition</li>
-                    <li>subtraction</li>
-                    <li>multiplication</li>
-                    <li>division</li>
-                    <li>value comparisons <span class='p-note'>&lt;, &gt;, &lt;=, &gt;=, ==, !=</span></li>
-                </ul>
-            </li>
-            <li>
-                Statements had binding by use of a
-                <a class='p-link' href='https://en.wikipedia.org/wiki/Recursive_descent_parser'>recursive descent parser</a>
-                just like
-                <a class='p-link' href='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</a>
-            </li>
-            <li>
-                It also contained some basic control structures:
-                <ul class='p-list'>
-                    <li>if/else statements <span class='p-note'>did not have "else if"</span></li>
-                    <li>while loops</li>
-                    <li>for loops and foreach loops</li>
-                </ul>
-            </li>
-            <li>
-                Finally, it had some built in routines which could be performed on arrays:
-                <ul class='p-list'>
-                    <li>map</li>
-                    <li>filter</li>
-                    <li>fold and reduce <span class='p-note'>left and right</span></li>
-                </ul>
-            </li>
-        </ul>
+            <ul class='p-wide p-list'>
+                <li>
+                    Supported first-class data-types:
+                    <ul class='p-list'>
+                        <li>Booleans</li>
+                        <li>8-bit Characters</li>
+                        <li>Strings</li>
+                        <li>32-bit Integers</li>
+                        <li>32-bit Floats</li>
+                        <li>64-bit Rationals <span class='p-note'>composed of two 32-bit Integers</span></li>
+                        <li>Higher Order Functions</li>
+                        <li>Arrays <span class='p-note'>composed of any type here including arrays</span></li>
+                    </ul>
+                </li>
+                <li>
+                    All data-types had type inference, and casting was allowed within a strict hierarchy
+                </li>
+                <li>
+                    Scopes
+                </li>
+                <li>
+                    Functions <span class='p-note'>able to use static variables in outer scopes and stack variables in the current scope</span>
+                </li>
+                <li>
+                    Manually managed dynamic memory
+                </li>
+                <li>
+                    Rationals were automatically reduced to
+                    <a class='p-link' href='https://en.wikipedia.org/wiki/Greatest_common_divisor'>gcd</a>
+                    form
+                </li>
+                <li>
+                    An Optimizer which could do all the following optimizations:
+                    <ul class='p-list'>
+                        <li>peephole</li>
+                        <li>string deduplication</li>
+                        <li>
+                            trimming of unreferenced code via
+                            <a class='p-link' href='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</a>
+                        </li>
+                        <li>basic block reordering and duplicating <span class='p-note'>to reduce jumps</span></li>
+                        <li>some <b>very</b> basic constant variable replacement</li>
+                    </ul>
+                </li>
+                <li>
+                    It was possible to do the following with every numeric data-type:
+                    <ul class='p-list'>
+                        <li>addition</li>
+                        <li>subtraction</li>
+                        <li>multiplication</li>
+                        <li>division</li>
+                        <li>value comparisons <span class='p-note'>&lt;, &gt;, &lt;=, &gt;=, ==, !=</span></li>
+                    </ul>
+                </li>
+                <li>
+                    Statements had binding by use of a
+                    <a class='p-link' href='https://en.wikipedia.org/wiki/Recursive_descent_parser'>recursive descent parser</a>
+                    just like
+                    <a class='p-link' href='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</a>
+                </li>
+                <li>
+                    It also contained some basic control structures:
+                    <ul class='p-list'>
+                        <li>if/else statements <span class='p-note'>did not have "else if"</span></li>
+                        <li>while loops</li>
+                        <li>for loops and foreach loops</li>
+                    </ul>
+                </li>
+                <li>
+                    Finally, it had some built in routines which could be performed on arrays:
+                    <ul class='p-list'>
+                        <li>map</li>
+                        <li>filter</li>
+                        <li>fold and reduce <span class='p-note'>left and right</span></li>
+                    </ul>
+                </li>
+            </ul>
         </p>
 
         <p class='p-note p-thin'>
@@ -112,10 +108,9 @@
             <a class='p-link' href="https://www.polygon.com/2018/6/4/17425162/pikachu-design-interview-creation">artist has stated</a>.
             Basically, pikachu is a sparkling squeaky mouse.
         </p>
+    </template>
 
-        <h2 id='why' class='p-wide p-sub-title'>
-            Why this project is important to me
-        </h2>
+    <template slot='why'>
         <p class='p-text p-wide'>
             Unlike other courses at university, this course gave us the opportunity to follow real development practices.
             Code style really mattered, as poorly written code is harder to debug, and this compiler had to be supported through the entirety of the course.
@@ -134,11 +129,9 @@
             While that isn't a huge project, it is sizeable enough for one person; I wasn't able to remember every line I had written.
             Which meant that I had to rely on writing good understandable code, rather than brute forcing my way through a wall of spaghetti.
         </p>
+    </template>
 
-        <h2 id='how' class='p-wide p-sub-title'>
-            How I tackled it
-        </h2>
-
+    <template slot='how'>
         <p class='p-text p-wide'>
             On the first day of class, our professor let us know that compilers courses are often considered the hardest courses in a computer science curriculum, regardless of what university the course is being taught at.
             He then let us know that his class was even harder than most compilers courses.
@@ -184,16 +177,18 @@
         <p class='p-thin p-note'>
             Luckily, as optimization should never change the output of a program, all I had to do to test optimized programs was make sure they had the exact same output as the unoptimized ones.
         </p>
-
-    </article>
-</template>
+    </template>
+</project-template>
+ </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 
 export default Vue.extend({
-    name: 'WritingACompiler',
-    components : {
-    }
+  name: "OptimizingKeyboards",
+  components: {
+      'project-template': ProjectTemplate
+  }
 });
 </script>
