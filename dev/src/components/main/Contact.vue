@@ -28,11 +28,11 @@
             :key='contact.name'
             v-if='active == contact'>
                 {{active.msg}}
-                <a target='_blank'
-                   :href='active.link'
-                   class='link'>
-                   {{active.name}}
-                </a>
+            <a target='_blank'
+                :href='active.link'
+                class='link'>
+                {{active.name}}
+            </a>
         </h1>
     </transition>
 </div>
@@ -42,17 +42,39 @@
 import Vue from 'vue';
 
 import Contacts from '@/scripts/main/Contacts';
+import Contact from '@/scripts/main/Contact';
+import { DelayTimers } from '@/style/ts/Timers';
 
 export default Vue.extend({
     name: "Contact",
     data() {
         return {
             contacts: Contacts,
-            active: Contacts[0]
+            active: Contacts[0],
+            idx: 0,
+            interval: setInterval(function(){}, -1)
         }
     },
     watch: {
+        active() {
+            this.idx = this.contacts.indexOf(this.active);
+            clearInterval(this.interval)
+            this.interval = setInterval(this.increment, DelayTimers.contact);
+        }
+    },
+    methods: {
+        increment() {
+            this.idx++;
+            this.idx = this.idx % this.contacts.length;
 
+            this.active = this.contacts[this.idx];
+        }
+    },
+    mounted() {
+        this.interval = setInterval(this.increment, DelayTimers.contact);
+    },
+    beforeDestroy() {
+        clearInterval(this.interval)
     }
 });
 </script>
