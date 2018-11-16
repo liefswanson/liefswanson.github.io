@@ -126,8 +126,14 @@
         <p class='p-text p-wide'>
             By the end of the class I had added over 15,000 lines of code to the compiler, taking it from around 3,000 lines to somewhere in the range of 18,000.
             <span class='p-note'>not including any lines that were removed</span>.
-            While that isn't a huge project, it is sizeable enough for one person; I wasn't able to remember every line I had written.
-            Which meant that I had to rely on writing good understandable code, rather than brute forcing my way through a wall of spaghetti.
+            While that isn't a huge project, by enterprise standards, it is sizeable enough for one person; I wasn't able to remember every line I had written.
+            Which meant that I had to rely on writing good understandable code, rather than brute forcing my way through a
+            <a class='p-link' href="https://sourcemaking.com/antipatterns/spaghetti-code">wall of spaghetti</a>.
+        </p>
+        <p class='p-note p-thin'>
+            Speaking of spaghetti code, there is actually a contest where people try to create the least understandable
+            <a class='p-link' href="https://en.wikipedia.org/wiki/International_Obfuscated_C_Code_Contest">code</a>
+            possible.
         </p>
     </template>
 

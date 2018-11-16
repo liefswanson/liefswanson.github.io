@@ -1,60 +1,40 @@
 <template>
-    <article class='p-article-grid'>
-        <h1 class='p-wide p-title'>
-            Automated Feature Testing
-        </h1>
-
-        <p class='p-highlight p-wide'>
-            Check it out on
-            <a class='p-link' href='https://github.com/liefswanson/gtr'>My GitHub<i class='p-icon fab fa-github'/></a>
-        </p>
-
+<project-template name='gtr'>
+    <template slot='intro'>
         <p class='p-text p-wide'>
             During my
             <router-link class='p-link' exact to='/projects/writing-a-compiler'>class in Compilers</router-link>
             that I took as part of my
             <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>,
-            I quickly realized I was going to spend a lot of time testing.
-            The projects in that class were all about iteratively building up a compiler and optimizer.
-            Writing a compiler is a pretty cool experience, but compilers are actually kind of hard to test;
-            there is a lot of state involved in the process of building up and using an
-            <a class='p-link' href='https://en.wikipedia.org/wiki/Abstract_syntax_tree'>abstract syntax tree</a>.
-            Which means it is hard to test the internals effectively.
+            I quickly realized I was going to spend a lot of time testing, so I built my own testing harness to meet my exact needs.
+            Writing a compiler is a pretty cool experience, but compilers are actually kind of hard to test.
             Especially when the language is actively evolving month to month, as was the case with our iteratively-designed compiler.
         </p>
+        <p class='p-text p-wide'>
+            You can find the code on
+            <a class='p-link' href='https://github.com/liefswanson/gtr'>My GitHub<i class='p-icon fab fa-github'/></a>
+        </p>
+    </template>
 
-        <p class='p-thin p-note'>
-            You may not believe me that compilers are hard to unit test, but I assure you they are.
-            Languages are very complex constructs.
-            <a class='p-link' href='https://www.reddit.com/r/javascript/comments/4oxtgk/javascript_developers_be_warned_about_this_crazy/'>Here</a>
-            is one of my favourite bugs, that was found in V8.
-            <br/>
-            <br/>
-            V8 is the
-            <a class='p-link' href='https://en.wikipedia.org/wiki/Just-in-time_compilation'>JIT</a>
-            used in Google Chrome and NodeJS.
+    <template slot='what'>
+        <p class='p-text p-wide'>
+            I designed and implemented the entire testing harness.
+            I also shilled it to some of the other students taking the class, because I like sharing the stuff I create.
         </p>
 
         <p class='p-text p-wide'>
-            I decided I would make things easier on myself by building a testing harness designed around my development process.
-            JUNIT and similar frameworks are great for testing code in your project, but given there were some specific problems that I wanted to circumvent,
-            JUNIT would have a pretty big problem with each of them:
+            There were several requirements I needed to meet for my test harness to be useful.
         </p>
-
         <ul class='p-wide p-list'>
-            <li>The target code ran in a custom VM</li>
-            <li>I wanted to write source files, not strings, inside JUNIT tests</li>
-            <li>The compiled output couldn't be checked directly <span class='p-note'>(the output code may change in a future version without invalidating the program)</span></li>
-            <li>When something failed, I wanted to know very concisely how it differed from my expectation</li>
-        </ul>
-
-        <p class='p-wide p-text'>
-            JUNIT would struggle with <b>all</b> of these requirements.
-            So, I decided to handle each and every one of the problems myself.
-            In the end my test harness would need to help me:
-        </p>
-
-        <ul class='p-wide p-list'>
+            <li>The harness had to interact with several different tools
+                <ul class='p-list'>
+                    <li>My IDE</li>
+                    <li>The compiler</li>
+                    <li>My favourite text editor <span class='p-note'>for writing tests</span></li>
+                    <li>The target VM</li>
+                    <li>Wine <span class='p-note'>because the VM was an .exe and I work on Linux</span></li>
+                </ul>
+            </li>
             <li>Split each test into multiple phases
                 <ul class='p-list'>
                     <li>Compilation</li>
@@ -63,28 +43,18 @@
                     <li>Running optimized code</li>
                 </ul>
             </li>
-            <li>Make new tests, automatically opening the source of the test in my preferred editor</li>
-            <li>Run lots and lots of tests in parallel</li>
-            <li>Diff test results, only showing me what changed and how</li>
-            <li>Easily change the expected results of a test <span class='p-note'>in case the language spec changed</span></li>
-            <li>Interface easily with other commandline utilities like Wine
-                <span class='p-note'>
-                    The VM was built to work in Windows, but I work in
-                    <a class='p-link' href='/projects/arch-linux'>Linux</a>
-                </span>
-            </li>
+            <li>Scale across multiple threads by spinning up multiple instances of the compiler, optimizer, or VM</li>
+            <li>Add and manage tests effortlessly at a macro level... <span class='p-note'>I had lots of tests</span></li>
+            <li>The compiled assembly couldn't be checked directly, only the resulting behaviour <span class='p-note'>the output code may change due to future features</span></li>
+            <li>When something failed, I wanted to see a diff not a pass/fail</li>
+            <li>The tests had to be able to ignore time stamps in the compiler log output</li>
         </ul>
+    </template>
 
-        <p class='p-wide p-text'>
-            While I was at it, I wanted to learn a new language, so I wrote the harness in
-            <a class='p-link' href='https://golang.org/'>Golang</a>.
-            Having a reason to learn a tool always makes things go more smoothly.
-            Golang was a good choice because of the ease with which it can be multi-threaded.
-            Also, Golang writes sort of like a scripting language, and normally I would do this sort of work in a scripting language like Python or Fish.
-        </p>
-
-        <p class='p-thin p-note'>
-            Also, Golang having a built in package for dealing with commandline arguments made life much easier.
+    <template slot='why'>
+        <p class='p-text p-wide'>
+            I was super happy with myself after having written this tool.
+            It saved me an incredible amount of time, and I think was the single most important tool in my workflow right after my IDE.
         </p>
 
         <p class='p-wide p-text'>
@@ -94,16 +64,36 @@
             they got pretty taken aback, because for 75% of the class, they had been testing everything by hand.
             The test harness I wrote quickly became an indispensable part of their work flow for the final project.
         </p>
+    </template>
 
-    </article>
+    <template slot='how'>
+        <p class='p-text p-wide'>
+            The how might have been the easiest part of this.
+            Certainly there were hiccups during development, but honestly I managed to hack it out in 2 nights.
+            There were hardly any issues, and things were pretty well organized
+        </p>
+        <p class='p-text p-wide'>
+            The only hiccup I can remember coming across was the VM didn't like having its
+            <a class='p-link' href="https://www.computerhope.com/jargon/s/stderr.htm">stderr</a>
+            watched, and would refuse to quit if it was watched.
+            Luckily, it never output anything through stderr, so I just stopped watching the stderr.
+        </p>
+        <p class='p-text p-wide'>
+            Oh also if you wrote code with infinite loops, the test harness would never time out... but that was a small issue it only forced me to turn off my laptop once...
+            The solution to that problem was simple, just never write bad code!
+        </p>
+    </template>
+</project-template>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 
 export default Vue.extend({
-    name: 'gtr',
-    components: {
-    }
+  name: "OptimizingKeyboards",
+  components: {
+      'project-template': ProjectTemplate
+  }
 });
 </script>

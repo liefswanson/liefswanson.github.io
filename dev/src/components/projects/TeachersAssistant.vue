@@ -60,6 +60,11 @@
             However, I saw this as a learning opportunity; it is amazing seeing 90 different people try and implement the same application.
             It taught me a lot about my own idiosyncrasies in my own work process, seeing such a range of idiosyncrasies in others.
         </p>
+
+        <p class='p-text p-wide'>
+            I am also very very proud of the work I did for this job.
+            Students still tell me to this day they really appreciated the time and effort I put into making sure they learn.
+        </p>
     </template>
 
     <template slot='how'>
@@ -82,7 +87,7 @@
             <a class='p-link' href="https://github.com/yahoo/blink-diff">Yahoo's blink-diff</a>.
         </p>
         <p class='p-wide p-text'>
-            In another class, I had the professor add a feature one assignment where students were supposed to make a game similar to
+            In another class, I had the professor add a feature to one assignment where students were supposed to make a game similar to
             <a class='p-link' href="https://en.wikipedia.org/wiki/Battleship_(game)">battleship</a>.
             I had them add a debug output, showing the locations of all their ships.
             I then took that debug output, and used it as input for my own program that would play the game identically for every student, despite the fact they had randomized their ships.

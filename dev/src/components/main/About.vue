@@ -1,6 +1,6 @@
 <template>
 <article class='main-content'>
-    <collapse title='Hello!'
+    <collapse title='About Me'
               initShow
               about>
         <p class='u-para'>
