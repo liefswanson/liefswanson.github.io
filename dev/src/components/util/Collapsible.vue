@@ -197,6 +197,7 @@ $height: $pad-bot + $pad-bot + $margin-top +
     @include not-selectable;
 
     transition: all $link-animation-time ease;
+    font-family: 'Comfortaa', sans-serif;
 
     &:hover,
     &:focus {

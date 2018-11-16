@@ -8,7 +8,7 @@ import Photography2014Summer from '@/components/projects/Photography2014Summer.v
 import RecursivePlug         from '@/components/projects/RecursivePlug.vue';
 import HDR                   from '@/components/projects/HDR.vue';
 import RayTracer             from '@/components/projects/RayTracer.vue';
-import Font                  from '@/components/projects/Font.vue';
+import MyFont                from '@/components/projects/MyFont.vue';
 import Tetris                from '@/components/projects/Tetris.vue';
 import Sudoku                from '@/components/projects/Sudoku.vue';
 import gtr                   from '@/components/projects/gtr.vue';
@@ -114,7 +114,7 @@ const Projects:Project[] = [
         title: "Implementing HDR Instead of Just Using It",
         blurb: "In a class in computer media protocols and algorithms I implemented a simple custom algorithm for creating HDR images.",
         thumb: "static/hdr/thumb.png",
-        tags: [code]
+        tags: [code, design]
     },
     {
         path: "ray-tracer",
@@ -127,9 +127,9 @@ const Projects:Project[] = [
         tags: [code]
     },
     {
-        path: 'font',
-        name: 'font',
-        component: Font,
+        path: 'my-font',
+        name: 'MyFont',
+        component: MyFont,
 
         title: 'Making My Own Font From Scratch',
         blurb: "Bauhaus style fonts are so cool, but really hard to read. That hasn't stopped me from trying to make my own. Check out the logo in top right, I use a modified version of it there.",
@@ -171,7 +171,7 @@ const Projects:Project[] = [
         name: 'BCMA',
         component: BCMA,
 
-        title: "Working IT for a Doctors of BC",
+        title: "Working IT for Doctors of BC",
         blurb: 'I did a brief stint working IT for what can sort of be thought of as a union for doctors in British Columbia Canada.' ,
         thumb: 'static/bcma/thumb.jpg',
         tags: [misc]

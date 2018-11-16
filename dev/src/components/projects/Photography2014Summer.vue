@@ -17,16 +17,18 @@
             I was both the photographer and photo editor.
             The goal was to produce an photo album that I was happy to put on a portfolio.
         </p>
-        <v-carousel class='p-image p-wide-grow'
-                    relative='/static/photography-2014-summer/'
-                    :init="[
-                        'building.jpg',
-                        'flower.jpg',
-                        'gun.jpg'
-                    ]"/>
-        <p class='p-note p-thin-grow'>
-            These are just a sample of the photos from the album.
-        </p>
+        <figure class='p-wide-grow'>
+            <v-carousel class='p-image p-wide-grow'
+                        relative='/static/photography-2014-summer/'
+                        :init="[
+                            'building.jpg',
+                            'flower.jpg',
+                            'gun.jpg'
+                        ]"/>
+            <figcaption class='p-note'>
+                These are just a sample of the photos from the album.
+            </figcaption>
+        </figure>
     </template>
 
     <template slot='why'>
@@ -46,28 +48,34 @@
         <p class='p-text p-wide'>
             I start with a subject I find naturally and build an idea around it...
         </p>
-        <img src='/static/photography-2014-summer/reflect.jpg'
-            alt='bright reflection of nature in a pond'
-            class='p-wide p-image'>
-
-        <p class='p-thin p-note'>
-            Here I literally found a stump sticking out of a pond, and just happened to catch the reflection of a yellow rhododendron in the background.
-            It just felt like the right shot as soon as I saw it.
-            I thought it was very interesting that something rotting in still water could be so visually alive.
-        </p>
+        <figure class='p-wide-grow'>
+            <img src='/static/photography-2014-summer/reflect.jpg'
+                 alt='bright reflection of nature in a pond'
+                 class='p-wide p-image'>
+            <figcaption class='p-note'>
+                Here I literally found a stump sticking out of a pond, and just happened to catch the reflection of a yellow rhododendron in the background.
+                It just felt like the right shot as soon as I saw it.
+                I thought it was very interesting that something rotting in still water could be so visually alive.
+            </figcaption>
+        </figure>
 
         <p class='p-text p-wide'>
             ... or I start with an idea and go out searching for a subject.
         </p>
-        <img src='/static/photography-2014-summer/abuse.jpg'
-            alt='dark image of domestic abuse'
-            class='p-wide p-image'>
 
-        <p class='p-thin p-note'>
-            I wanted to do something that made people think.
-            I remembered seeing ads about raising awareness around domestic violence, in a magazine years before, and wanted to pay homage to that.
-            It just so happened a friend of mine was thinking of getting into movie makeup as a profession; she made the perfect subject and she got to show off her skills, a win for everyone.
-        </p>
+
+
+        <figure class='p-wide-grow'>
+            <img src='/static/photography-2014-summer/abuse.jpg'
+                 alt='dark image of domestic abuse'
+                 class='p-wide p-image'>
+            <figcaption class='p-note'>
+                I wanted to do something that made people think.
+                I remembered seeing ads about raising awareness around domestic violence, in a magazine years before, and wanted to pay homage to that.
+                It just so happened a friend of mine was thinking of getting into movie makeup as a profession; she made the perfect subject and she got to show off her skills, a win for everyone.
+           </figcaption>
+        </figure>
+
 
         <p class='p-wide p-text'>
             When it comes to deciding when to take a photo, I don't wait for the perfect shot.

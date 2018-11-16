@@ -7,7 +7,8 @@ enum AnimationTimers {
 }
 
 enum DelayTimers {
-    carousel = 5000
+    carousel = 5000,
+    contact  = 5000,
 }
 
 const toSeconds = 1/1000;
