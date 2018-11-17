@@ -11,7 +11,7 @@
             Without automation, even just downloading, unzipping, configuring, compiling, and running every student’s code would have taken more than 3 hours total per assignment.
         </p>
 
-        <p class='p-thin-grow p-note'>
+        <p class='p-thin p-note'>
             Being an undergrad teaching assistant at Simon Fraser University is not very common.
             The teaching assistants' union created a rule that <strong>every</strong> graduate student be considered for a position before an undergrad is allowed to apply.
         </p>

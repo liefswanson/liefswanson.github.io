@@ -72,7 +72,6 @@ export default Vue.extend({
 }
 
 .section {
-    padding-bottom: 2rem;
 }
 </style>
 
