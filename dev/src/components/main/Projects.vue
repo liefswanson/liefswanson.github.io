@@ -11,22 +11,14 @@
                 <div class='filter-bar'>
                     <div class='spacer'></div>
 
-                    <label v-for='elem in tags'
-                           class='btn-back'
+                    <button v-for='elem in tags'
                            :key='elem.name'
-                           :for='elem.name'
-                           :title='elem.name'>
-                        <input type='checkbox'
-                               :id='elem.name'
-                               :value='elem.name'
-                               class='filter'
-                               v-model='filters'>
-                        <span class='toggleable'>
-                            <i :class='[elem.fa, elem.icon]'/>
-                            <strong v-if='selected(elem.name)'>{{ elem.name }}</strong>
-                        </span>
-
-                    </label>
+                            class='toggleable btn'
+                            :class='selected(elem.name) ? "active" : ""'
+                            @click='click(elem.name)'>
+                        <i :class='[elem.fa, elem.icon]'/>
+                        <strong v-if='selected(elem.name)'>{{ elem.name }}</strong>
+                    </button>
                 </div>
 
             </sticky-bar>
@@ -82,21 +74,6 @@ export default Vue.extend({
             tags: TagItems
         }
     },
-    watch: {
-        filters(newFilters: Tag[], oldFilters: Tag[]):void {
-            // if new filters only 1 or 0 long, no need to wipe all but last filter clicked
-            // this also stops infinite loops (modifying filters inside its own watcher)
-            if(newFilters.length <= 1) {
-                return;
-            }
-
-            function difference(filter: Tag): boolean {
-                return oldFilters.indexOf(filter) == -1;
-            }
-
-            this.filters = newFilters.filter(difference);
-        }
-    },
     computed: {
         leftActive(): boolean {
             return this.$route.path == SectionMap.projects.path;
@@ -111,6 +88,14 @@ export default Vue.extend({
         }
     },
     methods: {
+        click(filter: Tag) {
+            let wasSelected = this.selected(filter);
+            this.filters = []
+
+            if (!wasSelected){
+                this.filters.push(filter);
+            }
+        },
         visible(project: Project):boolean {
             let filters = this.filters;
             // Having no filters active is considered the same as having all filters active.
@@ -144,7 +129,10 @@ export default Vue.extend({
     height: 0;
 }
 
-.btn-back {
+.btn {
+    @include on-laptop-or-up {
+        background: none;
+    }
     @include on-tablet-or-down {
         background: $bright;
         border-radius: 2rem;
@@ -171,57 +159,48 @@ export default Vue.extend({
             background: transparentize($medium, 0.25);
         }
 
-        .filter {
-            + i {
-                color: $dark;
-            }
-
-            &:checked + i {
-                color: $projects-swatch;
-            }
+        .toggleable {
+            color: $dark;
+        }
+        .toggleable.active{
+            color: $projects-swatch;
         }
     }
 }
 
-.filter {
-    position: absolute;
-    visibility: hidden;
 
-    + .toggleable {
-        color: transparentize($dark, 0.5);
-        @include on-tablet-or-down {
-            color: $dark
-        }
-        transition: color $action-bar-animation-time ease;
+.toggleable {
+    color: transparentize($dark, 0.5);
+    @include on-tablet-or-down {
+        color: $dark
+    }
+    transition: color $action-bar-animation-time ease;
 
 
-        padding: 0.5rem;
-        margin-left: 0.3rem;
-        margin-right: 0.3rem;
-        //width: $icon-size * 1.5; // compensate for how wide code icon is
-        text-align: center;
-        cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    //width: $icon-size * 1.5; // compensate for how wide code icon is
+    text-align: center;
+    cursor: pointer;
 
-        @include on-laptop-or-up {
-            &:hover,
-            &:focus {
-                color: $bright !important;
-            }
-        }
+    &:hover,
+    &:focus {
+        color: $bright !important;
+    }
+}
+
+.toggleable.active {
+    @include on-laptop-or-up{
+        color: transparentize($projects-swatch, 0.5);
+    }
+    @include on-tablet-or-down {
+        color: $projects-swatch;
     }
 
-    &:checked + .toggleable {
-        color: transparentize($projects-swatch, 0.5);
-        @include on-tablet-or-down {
-            color: $projects-swatch;
-        }
-
-        @include on-laptop-or-up {
-            &:hover,
-            &:focus {
-                color: lighten($projects-swatch, 10%) !important;
-            }
-        }
+    &:hover,
+    &:focus {
+        color: lighten($projects-swatch, 10%) !important;
     }
 }
 

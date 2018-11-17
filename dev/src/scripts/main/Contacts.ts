@@ -2,17 +2,17 @@ import Contact from '@/scripts/main/Contact';
 
 const Contacts: Contact[] = [
     {
-        name: 'email',
+        name: 'liefs@sfu.ca',
         fa: 'fa',
         icon: 'fa-envelope-square',
-        msg: 'send me an',
+        msg: 'email',
         link: 'mailto:liefs@sfu.ca'
     },
     {
         name: 'github',
         fa: 'fab',
         icon: 'fa-github',
-        msg: 'check out what I am doing on',
+        msg: 'check out my',
         link: 'https://github.com/liefswanson'
     },
     {
@@ -26,7 +26,7 @@ const Contacts: Contact[] = [
         name: 'linkedin',
         fa: 'fab',
         icon: 'fa-linkedin',
-        msg: 'message or invite me on',
+        msg: 'find me on',
         link: 'https://www.linkedin.com/pub/lief-swanson/106/531/a7a'
     }
 ];

@@ -209,7 +209,7 @@ export default Vue.extend({
 
 // currently unused
 .overlayed {
-    background: transparentize( $medium, 0.1); //projects-swatch;
+    background: transparentize($medium, 0.1); //projects-swatch;
     position: absolute;
     bottom: 0;
     left: 0;
