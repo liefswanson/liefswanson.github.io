@@ -76,6 +76,8 @@ export default Vue.extend({
     border: 0.125rem solid $btn-back;
     font-size: $icon-size;
 
+    transition: all $action-bar-animation-time ease;
+
     cursor: pointer;
     box-sizing: border-box;
 }

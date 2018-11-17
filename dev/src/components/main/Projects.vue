@@ -15,7 +15,7 @@
                            :key='elem.name'
                             class='toggleable btn'
                             :class='selected(elem.name) ? "active" : ""'
-                            @mousedown='click(elem.name)'>
+                            @click='click(elem.name)'>
                         <i :class='[elem.fa, elem.icon]'/>
                         <strong class='tag-name' v-if='selected(elem.name)'>{{ elem.name }}</strong>
                     </button>
@@ -145,6 +145,7 @@ export default Vue.extend({
 
 .toggleable {
     color: $medium;
+    transition: all $action-bar-animation-time ease;
 }
 
 .toggleable:hover,
