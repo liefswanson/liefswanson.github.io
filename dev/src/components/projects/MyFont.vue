@@ -32,7 +32,7 @@
             The link provided is to a video all about the metalic ratios, by a very mathy youtube channel.
         </p>
 
-        <figure class='p-wide-grow'>
+        <figure class='p-mid-grow'>
             <v-carousel class='p-image'
                         relative='/static/font/'
                         :init="[
@@ -46,7 +46,7 @@
                             'u.png',
                             'big-s.png',
                         ]"/>
-        <figcaption class='p-note'>
+        <figcaption class='p-note separate'>
             This is just a sampling of the glyphs I have made.
         </figcaption>
         </figure>

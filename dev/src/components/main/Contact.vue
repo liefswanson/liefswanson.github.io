@@ -7,34 +7,28 @@
         <ul class='icon-list'>
             <li v-for='contact in contacts'
                 :key='contact.name'
-                class='icon'>
-                <input :id='contact.name'
-                       :value='contact'
-                       type="radio"
-                       class='radio'
-                       v-model='active'>
-                <label :title='contact.name'
-                       :for='contact.name'
-                       class='icon-wrapper'>
-                    <i :class='[contact.fa, contact.icon]'/>
-                </label>
+                class='icon'
+                @mouseenter='mouseEnter(contact)'
+                @mouseleave='mouseLeave(contact)'
+                @click='click(contact)'>
+                <i :title='contact.name'
+                    :for='contact.name'
+                    :class='[contact.fa,
+                             contact.icon,
+                             active == contact ? "active": ""]'
+                    class='icon-wrapper'/>
+                <strong class='details'
+                        :class='active != contact ? "transparent" : ""'>
+                        {{contact.msg}}
+                    <a target='_blank'
+                        :href='contact.link'
+                        class='link'>
+                        {{contact.name}}
+                    </a>
+                </strong>
             </li>
         </ul>
     </div>
-
-    <transition name='fade'
-                mode='out-in'>
-        <h1 v-for='contact in contacts'
-            :key='contact.name'
-            v-if='active == contact'>
-                {{active.msg}}
-            <a target='_blank'
-                :href='active.link'
-                class='link'>
-                {{active.name}}
-            </a>
-        </h1>
-    </transition>
 </div>
 </template>
 
@@ -45,6 +39,8 @@ import Contacts from '@/scripts/main/Contacts';
 import Contact from '@/scripts/main/Contact';
 import { DelayTimers } from '@/style/ts/Timers';
 
+let defaultInterval = setInterval(function(){}, -1)
+
 export default Vue.extend({
     name: "Contact",
     data() {
@@ -52,17 +48,39 @@ export default Vue.extend({
             contacts: Contacts,
             active: Contacts[0],
             idx: 0,
-            interval: setInterval(function(){}, -1)
-        }
-    },
-    watch: {
-        active() {
-            this.idx = this.contacts.indexOf(this.active);
-            clearInterval(this.interval)
-            this.interval = setInterval(this.increment, DelayTimers.contact);
+            paused: false,
+            interval: defaultInterval
         }
     },
     methods: {
+        stopCarousel() {
+            if (this.interval != defaultInterval) {
+                clearInterval(this.interval)
+                this.interval = defaultInterval
+            }
+        },
+        startCarousel() {
+            this.interval = setInterval(this.increment, DelayTimers.contact);
+        },
+        mouseEnter(entering: Contact) {
+            this.active = entering;
+            this.idx = this.contacts.indexOf(this.active);
+
+            this.stopCarousel();
+        },
+        mouseLeave(leaving: Contact){
+            if (this.paused) {
+                return;
+            }
+
+            this.stopCarousel();
+            if (!this.paused) {
+                this.startCarousel();
+            }
+        },
+        click(clicked: Contact) {
+            this.paused = !this.paused
+        },
         increment() {
             this.idx++;
             this.idx = this.idx % this.contacts.length;
@@ -84,41 +102,47 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
 .main-content {
-    text-align: center;
-    align-content: center;
+    max-width: $small-size;
+    margin: auto;
+}
+
+$contact-size: 3rem;
+.details {
+    $detail-size: 2rem;
+    font-size: $detail-size;
+    vertical-align: ($contact-size - $detail-size)/2;
+    transition: opacity $highlight-animation-time ease;
 }
 
 .icon-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    font-size: 3rem;
-    text-align: center;
+    font-size: $contact-size;
     list-style-type: none;
+}
+
+.transparent {
+    opacity: 0;
+    @include not-selectable;
 }
 
 .icon-wrapper {
     padding: 1rem;
-}
+    padding-left: 0;
+    @include not-selectable;
 
-.radio {
-    position: absolute;
-    top: -1000px;
-    visibility: hidden;
+    transition: color $highlight-animation-time ease !important;
+    color: $light;
+    cursor: pointer;
+    transition: color 0.25s ease;
 
-    + label {
-        transition: color $highlight-animation-time ease !important;
-        color: $light;
-        cursor: pointer;
-        transition: color 0.25s ease;
-
-        &:hover,
-        &:focus {
-            color: $dark;
-        }
+    &:hover,
+    &:focus {
+        color: $dark;
     }
 
-    &:checked + label {
+
+}
+
+    .icon-wrapper.active {
         color: $contact-swatch;
 
         &:hover,
@@ -126,17 +150,24 @@ export default Vue.extend({
             color: darken($contact-swatch, 15%);
         }
     }
+
+.radio {
+    position: absolute;
+    top: -1000px;
+    visibility: hidden;
+
+
 }
 
 .link {
     color: $dark;
 
-    transition: font-size $link-animation-time ease;
+    transition: all $link-animation-time ease;
 
 
     &:hover,
     &:focus {
-        font-size: 1.33em;
+        font-size: 1.25em;
     }
 
     &:visited {
@@ -146,8 +177,7 @@ export default Vue.extend({
 
 .fade-enter-active,
 .fade-leave-active {
-    text-align: center;
-    transition: all $highlight-animation-time / 2 ease;
+    transition: all $highlight-animation-time ease;
 }
 
 .fade-enter,

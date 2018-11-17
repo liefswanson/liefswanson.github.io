@@ -64,7 +64,7 @@
                         'med.png',
                         'light.png',
                     ]"/>
-            <figcaption class='p-note'>
+            <figcaption class='p-note separate'>
                 Here are the source images I used.
             </figcaption>
         </figure>

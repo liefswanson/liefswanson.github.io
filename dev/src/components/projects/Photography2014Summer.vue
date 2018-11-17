@@ -25,7 +25,7 @@
                             'flower.jpg',
                             'gun.jpg'
                         ]"/>
-            <figcaption class='p-note'>
+            <figcaption class='p-note separate'>
                 These are just a sample of the photos from the album.
             </figcaption>
         </figure>

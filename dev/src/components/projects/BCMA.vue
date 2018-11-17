@@ -1,55 +1,70 @@
 <template>
-    <article class='p-article-grid'>
-        <h1 class='p-wide p-title'>
-            Working for the BCMA
-        </h1>
-
+<project-template name='BCMA'>
+    <template slot='intro'>
         <p class='p-wide p-text'>
-            As one of my co-ops at SFU, I worked for the British Columbia Medical Association <span class='p-note'>(BCMA)</span>.
+            As one of my co-ops at SFU, I worked IT for the British Columbia Medical Association <span class='p-note'>(BCMA)</span>.
             They have since changed their name to
             <a class='p-link' href='https://www.doctorsofbc.ca/'>Doctors of BC</a>.
-            It is sort of like a doctor's union. The place where I worked was their main office.
+            It is sort of like a doctor's union.
         </p>
+    </template>
 
+    <template slot='what'>
         <p class='p-wide p-text'>
             I worked under contract, covering both day-to-day and long-term IT tasks.
             At the time of my employment, dozens of employees had been displaced by a renovation. They all either worked from home, or worked from inside other departments they were not familiar with.
             It was my job to make sure everything went smoothly.
         </p>
-
         <p class='p-thin p-note'>
-            It was no small task. The extra stress on the printers alone caused all kinds of problems that needed to be addressed.
-            One wall had to be rewired because the printer was causing the  two-decade-old wiring to give out.
+            There were all sorts of problems you might not expect, such as having printers break in a cascade... likely due to more people using fewer printers.
         </p>
+    </template>
 
+    <template slot='why'>
         <p class='p-wide p-text'>
-            I found plenty of opportunities to flex my skillsets.
-            At the time, some of the servers in the office were being swapped over to Linux.
-            I had the second most experience with Linux of any of the staff other than the person I worked under.
-            User documentation for in-house tools needed to be updated as well, so I got to work using my experience in design to make new documentation.
-        </p>
-
-        <p class='p-wide p-text'>
-            Ultimately though, I think the biggest part of the job was interacting with people daily who required help to keep their jobs going smoothly.
-            People would expect me to fix things so that they could keep doing their job, and make sure that the problem wouldn't come back to slow them down again.
-            Learning to deal with stressed-out people on a daily basis was a pretty good experience.
-            Dealing with people is something that I think is a very necessary skill, and also a hard one to acquire.
+            It was my first experience working a job where I had more than 100 coworkers and also my first time manning a formal helpdesk with a ticketing system.
+            I think that on the whole I did pretty well, the team actually had a dinner to see me off in my last week of my contract.
         </p>
 
         <p class='p-thin p-note'>
-            There is an old adage that people who work in the food service industry need to be very good at dealing with stressed-out people:
-            People are at their worst when they are very hungry...
-            Having your computer stop working also seems to bring out the worst in people.
+            So either they were going to miss me or they were really glad to be rid of me!
         </p>
-    </article>
+
+        <p class='p-wide p-text'>
+            By the end, I think the most important thing I gained was experience interacting with stressed out people!
+            People are at their worst when they are hungry... and when their computer mysteriously stops working.
+            Defusing stressful situations is part of the job, and probably the best part of the job.
+            Helping someone destress by removing the source of their stress, and being kind about it in the process, is a pretty fulfilling job!
+        </p>
+    </template>
+
+    <template slot='how'>
+        <p class='p-wide p-text'>
+            I worked under the loose supervision of 3 seasoned IT professionals, so that made things pretty easy; making the ocassional mistake was not a huge problem.
+            I think the hardest part was figuring out how to use the down-time to preempt future issues.
+            It tends to be that problems that need to be solved comes in waves, just by the nature of them taking a non-zero amount of time to solve, and following a
+            <a class='p-link' href="https://en.wikipedia.org/wiki/Poisson_distribution">poisson distribution</a>
+            ... and it is even worse when you push out an update with a mistake in it!
+        </p>
+
+        <p class='p-wide p-text'>
+            One of the things I did with my down time was making user documentation, available over the company intranet, to help users diagnose and solve their own simple problems.
+        a</p>
+
+    </template>
+</project-template>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
+import Carousel from "@/components/util/Carousel.vue";
 
 export default Vue.extend({
-    name: 'BCMA',
-    components: {
-    }
+  name: "BigTeamProject",
+  components: {
+      'project-template': ProjectTemplate,
+      'v-carousel': Carousel
+  }
 });
 </script>
