@@ -1,6 +1,6 @@
 <template>
 <div class='resume-container'>
-    <sticky-bar>
+    <sticky-bar :overlay="false">
         <div class='action-bar'>
             <div class='spacer'></div>
             <a class='btn'
@@ -56,41 +56,34 @@ export default Vue.extend({
     margin: auto;
 }
 
+
 .action-bar {
-    font-size: $icon-size;
     display: flex;
-    background: transparentize($medium, 1);
-
-    transition: background $action-bar-animation-time ease;
-
-    &:hover,
-    &:focus {
-        background: transparentize($medium, 0.5);
-
-        .btn {
-            color: $dark;
-        }
-    }
+    padding: $bar-spacing;
 }
 
+
 .btn {
-    transition: color $action-bar-animation-time ease;
-    color: transparentize($dark, 0.5);
-    @include on-phone {
-        color: $dark;
-    }
-    background: none;
-    border-style: none;
-    padding: 0.5rem;
-    padding-right: 1rem;
+    color: $medium;
+    display: block;
 
-    &:hover,
-    &:focus  {
-        color: $resume-swatch !important;
-        border-style: none;
-        cursor: pointer;
-    }
+    $btn-back: darken($bright, 7%);
+    background: $btn-back;
+    margin-left: $bar-spacing;
+    padding: $bar-pad;
+    line-height: 0;
+    border-radius: $icon-size;
+    border: 0.125rem solid $btn-back;
+    font-size: $icon-size;
 
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn:hover,
+.btn:focus {
+    color: $resume-swatch;
+    border-color: $resume-swatch;
 }
 
 </style>

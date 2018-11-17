@@ -67,7 +67,7 @@ export default Vue.extend({
 }
 
 .title {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
 }
 

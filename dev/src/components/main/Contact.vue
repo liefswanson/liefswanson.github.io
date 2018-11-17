@@ -1,6 +1,6 @@
 <template>
 <div class='main-content'>
-    <h1>
+    <h1 class='intro'>
         If you want to contact or follow me, you can...
     </h1>
     <div class='contacts'>
@@ -106,9 +106,13 @@ export default Vue.extend({
     margin: auto;
 }
 
-$contact-size: 3rem;
+.intro {
+    font-size: 1.75rem;
+}
+
+$contact-size: 2.75rem;
 .details {
-    $detail-size: 2rem;
+    $detail-size: 1.75rem;
     font-size: $detail-size;
     vertical-align: ($contact-size - $detail-size)/2;
     transition: opacity $highlight-animation-time ease;

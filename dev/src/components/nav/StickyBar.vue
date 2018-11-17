@@ -100,6 +100,8 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
 .sticky {
+    display: inline-block;
+    flex-direction: row;
     z-index: $sticky-z;
     position: fixed;
     right: 0;
