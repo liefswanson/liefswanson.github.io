@@ -2,6 +2,8 @@
 <article class='p-root'>
     <project-title :name='name'/>
 
+    <project-controls next='derp'/>
+
     <collapse title='Introduction'
               initShow>
         <div class='p-article-grid'>
@@ -15,7 +17,7 @@
         </div>
     </collapse>
 
-    <collapse title='Why it matters to me'>
+    <collapse :title='"Why it matters to\xa0me"'>
         <div class='p-article-grid'>
             <slot name='why'/>
         </div>
@@ -35,12 +37,14 @@ import Vue from 'vue';
 import Carousel from '@/components/util/Carousel.vue';
 import Collapsible from '@/components/util/Collapsible.vue';
 import ProjectTitle from '@/components/util/ProjectTitle.vue';
+import ProjectControls from '@/components/util/ProjectControls.vue';
 
 export default Vue.extend({
     name: 'ProjectTemplate',
     components: {
         'collapse': Collapsible,
-        'project-title': ProjectTitle
+        'project-title': ProjectTitle,
+        'project-controls': ProjectControls
     },
     props: {
         name: {
