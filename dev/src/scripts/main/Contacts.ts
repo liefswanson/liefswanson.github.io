@@ -12,14 +12,14 @@ const Contacts: Contact[] = [
         name: 'github',
         fa: 'fab',
         icon: 'fa-github',
-        msg: 'check out my',
+        msg: 'fork me on',
         link: 'https://github.com/liefswanson'
     },
     {
         name: 'flickr',
         fa: 'fab',
         icon: 'fa-flickr',
-        msg: 'take a gander at my',
+        msg: 'peek at my',
         link: 'https://www.flickr.com/photos/124866205@N05'
     },
     {

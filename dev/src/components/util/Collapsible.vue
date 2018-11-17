@@ -170,7 +170,7 @@ export default Vue.extend({
 $pad-top: 0.25rem;
 $pad-bot: $pad-top;
 $margin-top: 0.5rem;
-$font-size: 2rem;
+$font-size: 1.5rem;
 $line-height: $font-size * 1.5;
 $underline: 0.2rem;
 // FIXME unaccounted for 0.8rem
@@ -191,6 +191,7 @@ $height: $pad-bot + $pad-bot + $margin-top +
     font-size: $font-size;
     font-family: 'Comfortaa', sans-serif;
     margin: 0;
+    text-align: left;
 }
 
 .section {
