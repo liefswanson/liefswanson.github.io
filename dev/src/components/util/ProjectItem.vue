@@ -169,17 +169,23 @@ export default Vue.extend({
     cursor: pointer;
     box-sizing: border-box;
     margin-bottom: $grid-gap;
-    border-bottom: 0.1rem solid $xlight;
+    border: 0.125rem solid $xlight;
     //box-shadow: 0.25rem 0.25rem 1rem $dark;
     background: darken($bright, 5%);
 
     @include not-selectable;
+
+    &:hover,
+    &:focus {
+        border-color: $projects-swatch;
+    }
 }
 
 
 
 .mask {
-    background: transparentize($projects-swatch, 1);
+    background: $projects-swatch;
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -187,11 +193,11 @@ export default Vue.extend({
     width: 100%;
     z-index: $item-highlight-z;
 
-    transition: background $highlight-animation-time ease;
+    transition: opacity $highlight-animation-time ease;
 
     &:hover,
     &:focus {
-        background: transparentize($projects-swatch, 0.75);
+        opacity: 0.25;
     }
 }
 

@@ -15,9 +15,9 @@
                            :key='elem.name'
                             class='toggleable btn'
                             :class='selected(elem.name) ? "active" : ""'
-                            @click='click(elem.name)'>
+                            @mousedown='click(elem.name)'>
                         <i :class='[elem.fa, elem.icon]'/>
-                        <strong v-if='selected(elem.name)'>{{ elem.name }}</strong>
+                        <strong class='tag-name' v-if='selected(elem.name)'>{{ elem.name }}</strong>
                     </button>
                 </div>
 
@@ -125,138 +125,66 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '@/style/master.scss';
 
-.action-bar {
-    height: 0;
+.filter-bar {
+    display: flex;
+    padding: $bar-spacing;
 }
 
 .btn {
-    @include on-laptop-or-up {
-        background: none;
-    }
-    @include on-tablet-or-down {
-        background: $bright;
-        border-radius: 2rem;
-        margin-left: 0.3rem;
-    }
-}
-
-.toggleable {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.filter-bar {
-    display: flex;
-    background: transparentize($medium, 1);
-    transition: background $action-bar-animation-time ease;
-
+    $btn-back: darken($bright, 7%);
+    background: $btn-back;
+    margin-left: $bar-spacing;
+    padding: $bar-pad;
+    border-radius: $icon-size;
+    border: 0.125rem solid $btn-back;
     font-size: $icon-size;
-    line-height: $icon-size * 1.5;
 
-    &:hover,
-    &:focus {
-        @include on-laptop-or-up{
-            background: transparentize($medium, 0.25);
-        }
-
-        .toggleable {
-            color: $dark;
-        }
-        .toggleable.active{
-            color: $projects-swatch;
-        }
-    }
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
-
 .toggleable {
-    color: transparentize($dark, 0.5);
-    @include on-tablet-or-down {
-        color: $dark
-    }
-    transition: color $action-bar-animation-time ease;
+    color: $medium;
+}
 
-
-    padding: 0.5rem;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-    //width: $icon-size * 1.5; // compensate for how wide code icon is
-    text-align: center;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-        color: $bright !important;
-    }
+.toggleable:hover,
+.toggleable:focus {
+    color: $dark;
+    border-color: $projects-swatch;
 }
 
 .toggleable.active {
-    @include on-laptop-or-up{
-        color: transparentize($projects-swatch, 0.5);
-    }
-    @include on-tablet-or-down {
-        color: $projects-swatch;
-    }
-
-    &:hover,
-    &:focus {
-        color: lighten($projects-swatch, 10%) !important;
-    }
-}
-
-.btn {
-    color: $medium;
-    background: none;
-    border-style: none;
-    padding: 0.5rem;
-
-    transition: color $action-bar-animation-time ease;
-}
-
-.x-btn {
-    @extend .btn;
-    color: $xlight;
-}
-
-.btn:hover,
-.btn:focus {
     color: $projects-swatch;
-    border-style: none;
-    cursor: pointer;
 }
 
-.action-bar {
-    padding-right: 0.4rem;
-    font-size: $icon-size;
-    display: flex;
-    background: none;
+.toggleable.active:hover,
+.toggleable.active:focus {
+    color: darken($projects-swatch, 10%);
+}
+
+.tag-name {
+    line-height: 0;
 }
 
 .panel {
     height: calc(100% - $header-height);
 }
 
-
 .project-grid {
-
     @supports (display: grid) {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     }
 
-
     @include on-phone {
         column-count: 1;
     }
-
     @include on-tablet {
         column-count: 2;
     }
-
     @include on-laptop {
         column-count: 3;
     }
-
     @include on-desktop {
         column-count: 4;
     }
