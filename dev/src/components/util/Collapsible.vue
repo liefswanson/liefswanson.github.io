@@ -1,11 +1,13 @@
 <template>
 <section class='collapsible-root'>
     <div>
-        <component class='section'
-                   :is='about ? "h1" : "h2"'
-                   :class='about ? "about" : "project"'
-                   @click='toggle'>
-            {{title}}
+        <button class='section'
+                :class='about ? "about" : "project"'
+                @click='toggle'>
+            <component :is='about? "h1" : "h2"'
+                       class='label'>
+                {{title}}
+            </component>
             <div class='spacer'></div>
 
             <div class='icon-container'>
@@ -18,7 +20,7 @@
                         class='fas toggle-icon fa-plus'/>
                 </transition>
             </div>
-        </component>
+        </button>
 
         <div class='collapsible'
             :style='style'>
@@ -185,19 +187,28 @@ $height: $pad-bot + $pad-bot + $margin-top +
     margin-top: $margin-top;
 }
 
+.label {
+    font-size: $font-size;
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+}
+
 .section {
+    color: inherit;
+    outline: none;
     display: flex;
+    background: inherit;
+    width: 100%;
     //max-width: $small-size;
     padding: $pad-top 1rem;
     margin: 0;
 
-    font-size: $font-size;
+    border: none;
     border-bottom: $underline solid $bright;
     cursor: pointer;
     @include not-selectable;
 
     transition: all $link-animation-time ease;
-    font-family: 'Comfortaa', sans-serif;
 
     &:hover,
     &:focus {
@@ -227,6 +238,7 @@ $height: $pad-bot + $pad-bot + $margin-top +
     padding-left: 1rem;
     width: 1em;
     position: relative;
+    font-size: $font-size;
 }
 
 .toggle-icon {

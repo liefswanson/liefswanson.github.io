@@ -99,10 +99,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
+import Carousel from "@/components/util/Carousel.vue";
 
 export default Vue.extend({
-    name: 'BigTeamProject',
-    components: {
-    }
+  name: "BigTeamProject",
+  components: {
+      'project-template': ProjectTemplate,
+      'v-carousel': Carousel
+  }
 });
 </script>
