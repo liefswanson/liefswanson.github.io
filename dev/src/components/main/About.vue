@@ -14,7 +14,7 @@
             <router-link class='a-link' exact to='/projects/recursive-plug'>user interaction</router-link>,
             <router-link class='a-link' exact to='/projects/photography-2014-summer'>photography</router-link>,
             <router-link class='a-link' exact to='/projects/teachers-assistant'>teaching</router-link>,
-            history, politics, philosophy <em class='low'>especially ethics</em>, and even a little creative writing.
+            history, politics, philosophy (mostly ethics), and even a little creative writing.
             If I don't know much about a subject, it is because I am busy learning other subjects first.
         </p>
 
