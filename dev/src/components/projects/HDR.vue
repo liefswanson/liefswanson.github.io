@@ -24,9 +24,13 @@
             So instead, I will show the resuts my code output!
         </p>
         <figure class='p-mid'>
-            <img class='p-image'
-                 src='/static/hdr/thumb.png'
-                 alt='the final result from my HDR assignment'>
+            <prealloc class='p-image'
+                      :img="{
+                                path:'/static/hdr/thumb.png',
+                                alt:'the final result from my HDR assignment',
+                                width:388,
+                                height:292
+                            }"/>
             <figcaption class='p-note'>
                 Here you can see the final result from my assignment!
             </figcaption>
@@ -59,11 +63,7 @@
         <figure class='p-wide'>
             <v-carousel class='p-image'
                     relative='/static/hdr/'
-                    :init="[
-                        'dark.png',
-                        'med.png',
-                        'light.png',
-                    ]"/>
+                    :init="carouselSources"/>
             <figcaption class='p-note separate'>
                 Here are the source images I used.
             </figcaption>
@@ -93,11 +93,7 @@
         <figure class='p-wide'>
             <v-carousel class='p-image'
                 relative='/static/hdr/'
-                :init="[
-                    '1.png',
-                    '2.png',
-                    'thumb.png',
-                ]"/>
+                :init="carouselOutputs"/>
             <figcaption class='p-note'>
                 It took a few iterations to get the output image to look right.
             </figcaption>
@@ -110,12 +106,59 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 export default Vue.extend({
   name: "HDR",
+  data() {
+      return {
+          carouselSources: [
+              {
+                  path:'dark.jpg',
+                  alt:'an under exposed image',
+                  width:389,
+                  height:292
+              },
+              {
+                  path:'mid.jpg',
+                  alt:'an image with low dynamic range',
+                  width:389,
+                  height:292
+              },
+              {
+                  path:'bright.jpg',
+                  alt:'an over exposed image',
+                  width:389,
+                  height:292
+              }
+          ] as PreallocatedImage[],
+          carouselOutputs: [
+              {
+                  path:'1.jpg',
+                  alt:'a washed out image resulting from averaging inputs',
+                  width:389,
+                  height:292
+              },
+              {
+                  path:'2.jpg',
+                  alt:'an hdr image with obvious artifacting, and no tonal mapping',
+                  width:389,
+                  height:292
+              },
+              {
+                  path:'thumb.jpg',
+                  alt:'an hdr image, without a tonal mapping',
+                  width:389,
+                  height:292
+              }
+          ] as PreallocatedImage[]
+      }
+  },
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
+      'v-carousel': Carousel,
+      'prealloc': PreallocatedImageVue
   }
 });
 </script>

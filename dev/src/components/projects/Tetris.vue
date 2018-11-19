@@ -26,9 +26,13 @@
         </p>
 
         <figure class='p-mid'>
-            <img class='p-image'
-                 src="/static/tetris/thumb.png"
-                 alt="fruity-tetris">
+            <prealloc class='p-image'
+                      :img="{
+                          path: '/static/tetris/thumb.jpg',
+                          alt: 'a screenshot of an oddly rainbow coloured version of tetris',
+                          width: 375,
+                          height: 375,
+                      }"/>
 
             <figcaption class='p-note'>
                 It was sort of like Tetris on Froot Loops.
@@ -46,9 +50,13 @@
         </p>
 
         <figure class='p-mid'>
-            <img class='p-image'
-                 src="/static/tetris/arm.png"
-                 alt="fruity-tetris">
+            <prealloc class='p-image'
+                      :img="{
+                          path: '/static/tetris/arm.jpg',
+                          alt: 'a screenshot of rainbow... not with a arcade game claw!',
+                          width: 381,
+                          height: 380,
+                      }"/>
 
             <figcaption class='p-note'>
                 And thus it transformed into one of those arcade claw games
@@ -107,12 +115,15 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 export default Vue.extend({
   name: "Tetris",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
+      'v-carousel': Carousel,
+      'prealloc': PreallocatedImageVue
   }
 });
 </script>
