@@ -6,6 +6,8 @@
 
         <!-- rotating hamburger button -->
         <button class='hamburger-wrapper'
+                :title='hamburgerMessage'
+                :aria-label='hamburgerMessage'
                 :class='{ rotated: showNav }'
                 @click='hamburgerToggle'>
             <i class='fa fa-bars'/>
@@ -13,8 +15,10 @@
 
         <div class='spacer'></div>
 
-        <router-link to='/'
-                     exact>
+        <router-link exact
+                     to='/'
+                     title='to projects'
+                     aria-label='to projects'>
             <name :color='color'
                   class='extra-pad'/>
         </router-link>
@@ -49,6 +53,11 @@ export default Vue.extend({
         showNav: {
             type: Boolean,
             require: true
+        }
+    },
+    computed: {
+        hamburgerMessage():string {
+            return this.showNav ? "Hide Navigation Bar" : "Show Navigation Bar"
         }
     },
     methods: {

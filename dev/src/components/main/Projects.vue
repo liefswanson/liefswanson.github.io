@@ -12,7 +12,9 @@
                     <div class='spacer'></div>
 
                     <button v-for='elem in tags'
-                           :key='elem.name'
+                            :key='elem.name'
+                            :title='filterMessage(elem.name)'
+                            :aria-label='filterMessage(elem.name)'
                             class='toggleable btn'
                             :class='selected(elem.name) ? "active" : ""'
                             @click='click(elem.name)'>
@@ -88,6 +90,14 @@ export default Vue.extend({
         }
     },
     methods: {
+        filterMessage(filter: Tag):string {
+            let active = this.selected(filter);
+            if (active) {
+                return "disable all filters";
+            } else {
+                return "filter by " + filter;
+            }
+        },
         click(filter: Tag) {
             let wasSelected = this.selected(filter);
             this.filters = []

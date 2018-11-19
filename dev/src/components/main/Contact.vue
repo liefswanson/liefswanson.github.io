@@ -9,14 +9,15 @@
                 :key='contact.name'
                 class='icon'
                 @mouseenter='mouseEnter(contact)'
-                @mouseleave='mouseLeave(contact)'
-                @click='click(contact)'>
-                <i :title='contact.name'
-                    :for='contact.name'
-                    :class='[contact.fa,
-                             contact.icon,
-                             active == contact ? "active": ""]'
-                    class='icon-wrapper'/>
+                @mouseleave='mouseLeave(contact)'>
+                <button :title='contactMessage(contact)'
+                        :aria-label='contactMessage(contact)'
+                        @click='click(contact)'
+                        :for='contact.name'
+                        :class='[contact.fa,
+                                 contact.icon,
+                                 active == contact ? "active": ""]'
+                        class='icon-wrapper'/>
                 <strong class='details'
                         :class='active != contact ? "transparent" : ""'>
                         {{contact.msg}}
@@ -53,6 +54,9 @@ export default Vue.extend({
         }
     },
     methods: {
+        contactMessage(contact: Contact) {
+            return !this.paused ? "pause carousel on " + contact.name : "restart carousel";
+        },
         stopCarousel() {
             if (this.interval != defaultInterval) {
                 clearInterval(this.interval)
@@ -129,6 +133,8 @@ $contact-size: 2.75rem;
 }
 
 .icon-wrapper {
+    background: none;
+    border: none;
     padding: 1rem;
     padding-left: 0;
     @include not-selectable;
@@ -146,14 +152,14 @@ $contact-size: 2.75rem;
 
 }
 
-    .icon-wrapper.active {
-        color: $contact-swatch;
+.icon-wrapper.active {
+    color: $contact-swatch;
 
-        &:hover,
-        &:focus {
-            color: darken($contact-swatch, 15%);
-        }
+    &:hover,
+    &:focus {
+        color: darken($contact-swatch, 15%);
     }
+}
 
 .radio {
     position: absolute;

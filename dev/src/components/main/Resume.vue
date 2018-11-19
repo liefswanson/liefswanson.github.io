@@ -5,18 +5,21 @@
             <div class='spacer'></div>
             <a class='btn'
                 title='View with built-in PDF viewer'
+                aria-label='View with built-in PDF viewer'
                 href='static/resume-text.pdf'
                 target='_blank'>
                 <i class='fa fa-external-link-alt'/>
             </a>
             <a class='btn'
-                title='Download'
-                href="static/resume-text.pdf"
-                download>
+               title='Download'
+               aria-label='Download'
+               href="static/resume-text.pdf"
+               download>
                 <i class='fa fa-download'/>
             </a>
-            <button title='Print'
-                    class='btn'
+            <button class='btn'
+                    title='Print'
+                    aria-label='Print'
                     @click='$refs.pdf.print()'>
                 <i class='fa fa-print'/>
             </button>
