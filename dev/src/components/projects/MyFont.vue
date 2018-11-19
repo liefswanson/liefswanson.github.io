@@ -35,22 +35,11 @@
         <figure class='p-mid-grow'>
             <v-carousel class='p-image'
                         relative='/static/font/'
-                        :init="[
-                            'b.png',
-                            'q.png',
-                            'e.png',
-                            'e2.png',
-                            'f.png',
-                            'f2.png',
-                            't.png',
-                            'u.png',
-                            'big-s.png',
-                        ]"/>
+                        :init="letters"/>
         <figcaption class='p-note separate'>
             This is just a sampling of the glyphs I have made.
         </figcaption>
         </figure>
-
     </template>
 
     <template slot='why'>
@@ -83,7 +72,6 @@
             Currently, the font is not complete at any weight, but that is just because I only design the glyphs I need when I need them.
             If someone else wants to expand upon it, they can be my guest!
         </p>
-
     </template>
 
     <template slot='how'>
@@ -105,7 +93,6 @@
             After the last scrapping of Phibonacci, I relaxed the design constraint of always following the Fibonnaci sequence with every measurement.
             I still make every measurement contain a Fibonacci number, but as you might have noticed with the letter "n", I don't force the measurement to be between the same two lines every time.
         </p>
-
     </template>
 </project-template>
 </template>
@@ -114,12 +101,75 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 export default Vue.extend({
   name: "MyFont",
+  data(){
+      return {
+          letters: [
+              {
+                  path: 'b.jpg',
+                  alt: 'the letter b',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'q.jpg',
+                  alt: 'the letter q',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'e.jpg',
+                  alt: 'the letter e',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'e2.jpg',
+                  alt: 'the letter e, bolded',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'f.jpg',
+                  alt: 'the letter f',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'f2.jpg',
+                  alt: 'the letter f, bolded',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 't.jpg',
+                  alt: 'the letter t',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'u.jpg',
+                  alt: 'the letter u',
+                  height: 810,
+                  width: 810
+              },
+              {
+                  path: 'big-s.jpg',
+                  alt: 'the letter s, capitalized',
+                  height: 810,
+                  width: 810
+              },
+          ] as PreallocatedImage[]
+      }
+  },
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
+      'v-carousel': Carousel,
+      'prealloc': PreallocatedImageVue
   }
 });
 </script>

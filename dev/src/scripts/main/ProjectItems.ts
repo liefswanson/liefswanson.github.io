@@ -41,7 +41,6 @@ const nullProject:Project =
 
     title: "",
     blurb: "",
-    thumb: "",
     img: {
         path:"",
         alt:"",
@@ -69,9 +68,8 @@ const Projects:Project[] = [
 
         title: "Optimizing Gesture Keyboards, Done Dirt Cheap",
         blurb: "I came up with a heuristic for determining the likelihood of a user making gesture-typing errors given a keyboard layout. The heuristic is orders of magnitude faster than other existing methods.",
-        thumb: "static/optimizing-keyboards/thumb.png",
         img: {
-            path:"static/optimizing-keyboards/thumb.png",
+            path:"static/optimizing-keyboards/thumb.jpg",
             alt:"illustration of gesturing on a mobile keyboard",
             width:346,
             height:196
@@ -85,7 +83,6 @@ const Projects:Project[] = [
 
         title: "Writing a Compiler, the Hard Way",
         blurb: "I in a compilers class I wrote a feature rich compiler without the aid of external libraries. Everything was done from scratch in a semester long project.",
-        thumb: "static/writing-a-compiler/thumb.svg",
         img: {
             path:"static/writing-a-compiler/thumb.svg",
             alt:"high level illustration of compiling code",
@@ -101,7 +98,6 @@ const Projects:Project[] = [
 
         title: "Teaching 90 Students to Write Clear Code",
         blurb: "I was the only TA for a second year course in OOP which had 90 students. It was hard work, but well worth it.",
-        thumb: 'static/teachers-assistant/thumb.jpg',
         img: {
             path:"static/teachers-assistant/thumb.jpg",
             alt:"picture of a two people studying together",
@@ -117,7 +113,6 @@ const Projects:Project[] = [
 
         title: "Taking Photos in the Summer Time",
         blurb: "I took a class in photography, as an excuse to use my DSLR. It turned into a lot of fun; a summer well spent.",
-        thumb: "static/photography-2014-summer/thumb.jpg",
         img: {
             path:"static/photography-2014-summer/thumb.jpg",
             alt:"stylized picture of me hanging off the side of a building with a high contrast clouds in the background",
@@ -133,7 +128,6 @@ const Projects:Project[] = [
 
         title: "Designing and Implementing this Portfolio",
         blurb: "I am by no means above using recursion, especially when I worked hard on this website and want to show it off... inside this website.",
-        thumb: "static/recursive-plug/thumb.svg",
         img: {
             path:"static/recursive-plug/thumb.svg",
             alt:"my logo as seen in the favicon",
@@ -149,9 +143,8 @@ const Projects:Project[] = [
 
         title: "Implementing HDR Instead of Just Using It",
         blurb: "In a class in computer media protocols and algorithms I implemented a simple custom algorithm for creating HDR images.",
-        thumb: "static/hdr/thumb.png",
         img: {
-            path:"static/hdr/thumb.png",
+            path:"static/hdr/thumb.jpg",
             alt:"a high dynamic range image of the St. Louis",
             width:388,
             height:292
@@ -165,7 +158,6 @@ const Projects:Project[] = [
 
         title: "Implementing a Ray Tracer",
         blurb: "For a class in computer graphics, I implemented a ray tracer. It looks pretty good, but I think I would do it differently if I did it again.",
-        thumb: "static/ray-tracer/thumb.png",
         img: {
             path:"static/ray-tracer/thumb.jpg",
             alt:"render of a simple scene by a ray tracer I built",
@@ -181,9 +173,8 @@ const Projects:Project[] = [
 
         title: 'Making My Own Font From Scratch',
         blurb: "Bauhaus style fonts are so cool, but really hard to read. That hasn't stopped me from trying to make my own. Check out the logo in top right, I use a modified version of it there.",
-        thumb: "static/font/thumb.png",
         img: {
-            path:"static/font/thumb.png",
+            path:"static/font/thumb.jpg",
             alt:"a picture of the letter e from the font I designed",
             width:484,
             height:484
@@ -197,9 +188,8 @@ const Projects:Project[] = [
 
         title: 'A Crazy Version of Tetris in OpenGL',
         blurb: "For a class in computer graphics, I made a weird version of tetris using only OpenGL, C++, and glfw3.",
-        thumb: "static/tetris/thumb.png",
         img: {
-            path:"static/tetris/thumb.png",
+            path:"static/tetris/thumb.jpg",
             alt:"a picture of a very colourful game of tetris I made",
             width:375,
             height:375
@@ -213,9 +203,8 @@ const Projects:Project[] = [
 
         title: 'Automatic Sudoku Solver',
         blurb: 'I like sudokus but I am pretty slow at them. To solve this problem, I wrote a program that solves sudokus for me.',
-        thumb: 'static/sudoku/thumb.png',
         img: {
-            path:"static/sudoku/thumb.png",
+            path:"static/sudoku/thumb.jpg",
             alt:"a picture of an unsolved sudoku",
             width:361,
             height:361
@@ -229,7 +218,6 @@ const Projects:Project[] = [
 
         title: 'Automated Feature Testing',
         blurb: "It turns out that building a compiler from scratch is difficult, and it's difficult to test... So I built my own automated testing harness to save me lots of headaches.",
-        thumb: 'static/gtr/thumb.svg',
         img: {
             path:"static/gtr/thumb.svg",
             alt:"an illustration of a bug with a red line through it",
@@ -245,7 +233,6 @@ const Projects:Project[] = [
 
         title: "Working IT for Doctors of BC",
         blurb: 'I did a brief stint working IT for what can sort of be thought of as a union for doctors in British Columbia Canada.' ,
-        thumb: 'static/bcma/thumb.jpg',
         img: {
             path:"static/bcma/thumb.jpg",
             alt:"a picture of a stethoscope",
@@ -261,7 +248,6 @@ const Projects:Project[] = [
 
         title: 'Working for Whittington IT',
         blurb: "I worked for a small IT company in Brisbane Australia which provided support for many local doctor's offices.",
-        thumb: 'static/whittington-it/thumb.jpg',
         img: {
             path:"static/whittington-it/thumb.jpg",
             alt:"picture of someone working on the ports of a networking switch",
@@ -277,7 +263,6 @@ const Projects:Project[] = [
 
         title: 'A Large Team Project for School',
         blurb: "I worked on a semester long team project where we took a client's specifications, and built a product for them.",
-        thumb: 'static/big-team-project/thumb.jpg',
         img: {
             path:"static/big-team-project/thumb.jpg",
             alt:"A zoomed in picture of several people working around a single table",
@@ -293,7 +278,6 @@ const Projects:Project[] = [
 
         title: 'Cognitive Science Lab at SFU',
         blurb: 'I have spent some of my time volunteering in a research lab at SFU that looks at how people allocate attention during a task, as a function of their mastery of that task.',
-        thumb: 'static/cog-sci-lab/thumb.jpg',
         img: {
             path:"static/cog-sci-lab/thumb.jpg",
             alt:"an illustration of the human brain on a chalkboard",
@@ -307,9 +291,8 @@ const Projects:Project[] = [
         name: 'SoSy',
         component: SoSy,
 
-        title: 'SoSy Undergrad at SFU',
+        title: 'Obtaining My BSc in Software Systems',
         blurb: 'An overview of my experience in the Software Systems (SoSy) undergraduate program at SFU',
-        thumb: 'static/sosy/thumb.jpg',
         img: {
             path:"static/sosy/thumb.jpg",
             alt:"picture of some very colorful code in a dark theme",
@@ -323,9 +306,8 @@ const Projects:Project[] = [
         name: 'SIAT',
         component: SIAT,
 
-        title: 'SIAT Undergrad at SFU',
+        title: 'Obtaining My BSc in SIAT',
         blurb: 'An overview of my experience in the School of Interactive Arts and Technology (SIAT) undergraduate program at SFU',
-        thumb: 'static/siat/thumb.jpg',
         img: {
             path:"static/siat/thumb.jpg",
             alt:"picture of pencil and paper design mockups, neatly layout out",
@@ -341,9 +323,8 @@ const Projects:Project[] = [
 
         title: 'I Use Arch Linux as My Primary OS',
         blurb: 'I have been using Linux as my primary OS since 2011. As such I have picked up a few things about Linux, and I am quite comfortable in it. More specifically, I use Arch Linux which I have found to be a great experience.',
-        thumb: 'static/arch-linux/thumb.png',
         img: {
-            path:"static/arch-linux/thumb.png",
+            path:"static/arch-linux/thumb.jpg",
             alt:"the Arch Linux logo",
             width:930,
             height:425
@@ -357,7 +338,6 @@ const Projects:Project[] = [
 
         title: 'I Solve Online Math & Coding Problems',
         blurb: 'Project Euler is a set of math problems online that I sometimes play around with while I teach myself new programming languages. Especially Project Euler, which is named after the mathematician in the painting here!',
-        thumb: 'static/project-euler/thumb.jpg',
         img: {
             path:"static/project-euler/thumb.jpg",
             alt:"oil portrait of Leonhard Euler",
@@ -373,7 +353,6 @@ const Projects:Project[] = [
 
         title: 'I Listen to a Lot of Audio Books',
         blurb: "I have dyslexia, which means I read a bit too slowly to easily make it through a some books. However, I still like a good book, so I listen to lots of audio books.",
-        thumb: 'static/audio-books/thumb.jpg',
         img: {
             path:"static/audio-books/thumb.jpg",
             alt:"screenshot of myself playing The Witcher 3: Wild Hunt",
@@ -387,9 +366,8 @@ const Projects:Project[] = [
         name: 'VideoGames',
         component: VideoGames,
 
-        title: 'I Play Video Games',
+        title: 'I Play Video Games, While I Study Them',
         blurb: "I really like playing video games, when they make you think... or if they have truly enthralling stories and mechanics.",
-        thumb: 'static/video-games/thumb.jpg',
         img: {
             path:"static/video-games/thumb.jpg",
             alt:"picture of a phone connected to over ear headphones",

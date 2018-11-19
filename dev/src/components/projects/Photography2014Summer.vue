@@ -20,11 +20,7 @@
         <figure class='p-wide-grow'>
             <v-carousel class='p-image p-wide-grow'
                         relative='/static/photography-2014-summer/'
-                        :init="[
-                            'building.jpg',
-                            'flower.jpg',
-                            'gun.jpg'
-                        ]"/>
+                        :init="imgs"/>
             <figcaption class='p-note separate'>
                 These are just a sample of the photos from the album.
             </figcaption>
@@ -49,9 +45,13 @@
             I start with a subject I find naturally and build an idea around it...
         </p>
         <figure class='p-wide-grow'>
-            <img src='/static/photography-2014-summer/reflect.jpg'
-                 alt='bright reflection of nature in a pond'
-                 class='p-wide p-image'>
+            <prealloc class='p-image'
+                      :img="{
+                                path: '/static/photography-2014-summer/reflect.jpg',
+                                alt: 'a picture of bright reflection of nature, amongst a piece of wood, in a pond',
+                                width: 640,
+                                height: 427
+                            }"/>
             <figcaption class='p-note'>
                 Here I literally found a stump sticking out of a pond, and just happened to catch the reflection of a yellow rhododendron in the background.
                 It just felt like the right shot as soon as I saw it.
@@ -63,12 +63,14 @@
             ... or I start with an idea and go out searching for a subject.
         </p>
 
-
-
         <figure class='p-wide-grow'>
-            <img src='/static/photography-2014-summer/abuse.jpg'
-                 alt='dark image of domestic abuse'
-                 class='p-wide p-image'>
+            <prealloc class='p-image'
+                      :img="{
+                                path:'/static/photography-2014-summer/abuse.jpg',
+                                alt:'a dim lit image depicting an actress portraying a domestic abuse victim',
+                                width:1024,
+                                height:733
+                            }"/>
             <figcaption class='p-note'>
                 I wanted to do something that made people think.
                 I remembered seeing ads about raising awareness around domestic violence, in a magazine years before, and wanted to pay homage to that.
@@ -109,12 +111,39 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 export default Vue.extend({
-  name: "Photography2014Summer",
-  components: {
-      'project-template': ProjectTemplate,
-      'v-carousel': Carousel
-  }
+    name: "Photography2014Summer",
+    data() {
+        return {
+            imgs: [
+                {
+                    path: 'building.jpg',
+                    alt: 'a Wes Anderson-esque picture of a looming post office',
+                    width: 640,
+                    height: 465
+                },
+                {
+                    path: 'flower.jpg',
+                    alt: 'a close-up picture of a crisp pink and white flower',
+                    width: 640,
+                    height: 485
+                },
+                {
+                    path: 'gun.jpg',
+                    alt: 'a picture of a dirty hand grasping at a flintlock pistol',
+                    width: 640,
+                    height: 429
+                }
+            ] as PreallocatedImage[]
+        }
+    },
+    components: {
+        'project-template': ProjectTemplate,
+        'v-carousel': Carousel,
+        'prealloc': PreallocatedImageVue
+    }
 });
 </script>

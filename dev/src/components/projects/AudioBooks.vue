@@ -15,29 +15,7 @@
         <figure class='p-mid-grow'>
             <v-carousel class='p-image'
                         relative='/static/audio-books/'
-                        :init="[
-                            '6glasses.jpg',
-                            'algorithms.jpg',
-                            'atlas.jpg',
-                            'marx.jpg',
-                            'chomsky.jpg',
-                            'etymologicon.jpg',
-                            'genghis.jpg',
-                            '5rings.jpg',
-                            'hat.jpg',
-                            'irrational.jpg',
-                            'misbehaving.jpg',
-                            '1984.jpg',
-                            'pinker.jpg',
-                            'plex.jpg',
-                            'random.jpg',
-                            'batman.jpg',
-                            'scrum.jpg',
-                            'snow.jpg',
-                            'social.jpg',
-                            'super.jpg',
-                            'everything.jpg'
-                        ]"/>
+                        :init="books"/>
             <figcaption class='p-note'>
                 They say you can't judge a book by its cover, but we can try can't we?
                 Take a look at the covers of a few books I have listened to.
@@ -104,12 +82,148 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 export default Vue.extend({
   name: "AudioBooks",
+  data() {
+      return {
+          books: [
+              {
+                  path: '6glasses.jpg',
+                  alt: 'cover of "The History of The World In 6 Glasses" by Tom Standage',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'algorithms.jpg',
+                  alt: 'cover of "Algorithms to Live By: The Computer Science of Human Decisions" by Brian Christian and Tom Griffiths',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'atlas.jpg',
+                  alt: 'cover of "Atlas Shrugged" by Ayn Rand',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'marx.jpg',
+                  alt: 'cover of "The Communist Manifesto" by Karl Marx and Friedrich Engels',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'chomsky.jpg',
+                  alt: 'cover of "Understanding Power: The Indispensable Chomsky" edited by Peter R Mitchell and John Schoeffel',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'etymologicon.jpg',
+                  alt: 'cover of "The Etymologicon: A Circular Stroll Through the Hidden Connections of the English Language" by Mark Forsyth',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'genghis.jpg',
+                  alt: 'cover of "Ghenghis Khan and the Making of the Modern World" by Jack Weatherford',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: '5rings.jpg',
+                  alt: 'cover of "The Book of the Five Rings" by Miyamoto Musashi and edited by Kenji Tokitsu',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'social.jpg',
+                  alt: 'cover of "Social Engineering: The Art of Human Hacking" by Christopher Hadnagy',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'hat.jpg',
+                  alt: 'cover of "The Man Who Mistook His Wife for a Hat and Other Clinical Tales" by Oliver Sacks',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'irrational.jpg',
+                  alt: 'cover of "Predictably Irrational: The Hidden Forces That Shape Our Decisions" by Dan Ariely',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'misbehaving.jpg',
+                  alt: 'cover of "Misbehaving: The making of Behaviour Economics" by Richard H. Thaler',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: '1984.jpg',
+                  alt: 'cover of "1984" by George Orwell',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'pinker.jpg',
+                  alt: 'cover of "Words and Rules" by Steven Pinker',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'plex.jpg',
+                  alt: 'cover of "Into the Plex: How Google Thinks, Works, and Shapes Our Lives" by Steven Levy',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'random.jpg',
+                  alt: 'cover of "The Drunkard\'s Walk: How Randomness Rules Our Lives" by Leonard Mlodinow',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'batman.jpg',
+                  alt: 'cover of "Batman and Psychology: A Dark and Stormy Knight" by Travis Langley',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'scrum.jpg',
+                  alt: 'cover of "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeff Sutherland',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'snow.jpg',
+                  alt: 'cover of "Snow Crash" by Neal Stephenson',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'super.jpg',
+                  alt: 'cover of "Superintelligence: Paths, Dangers, Strategies" by Nick Bostrom',
+                  width: 500,
+                  height: 500
+              },
+              {
+                  path: 'everything.jpg',
+                  alt: 'cover of "The Theory of Everything: The Origin and Fate of the Universe" by Steven W. Hawking',
+                  width: 500,
+                  height: 500
+              },
+
+          ] as PreallocatedImage[]
+      }
+  },
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
+      'v-carousel': Carousel,
+      'prealloc': PreallocatedImageVue
   }
 });
 </script>

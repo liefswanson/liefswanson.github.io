@@ -15,21 +15,21 @@
         </li>
     </ul>
 
-    <div class='left'
+    <button class='left'
          @click='goToRelativePanel(-1)'>
         <i class='fas fa-angle-left'/>
-    </div>
+    </button>
 
-    <div class='right'
+    <button class='right'
          @click='goToRelativePanel(1)'>
         <i class='fas fa-angle-right'/>
-    </div>
+    </button>
 
     <div class='dots'>
-        <i v-for='index in sliceLength'
+        <button v-for='index in sliceLength'
            :key="index"
            class='fa fa-circle dot'
-           :class="[active(index-1) ? 'active' : 'inactive']"
+           :class="[active(index-1) ? 'active' : '']"
            @click='goToAbsolutePanel(index-1)'/>
     </div>
 </div>
@@ -209,6 +209,7 @@ $arrow-space: 1rem;
 
 .left,
 .right {
+    border: none;
     height: $icon-size;
     width: $icon-size;
     text-align: center;
@@ -221,6 +222,8 @@ $arrow-space: 1rem;
     @include on-phone {
         @include topcalc($phone-dot-size, $phone-dot-pad);
     }
+    cursor: pointer;
+    @include not-selectable;
 
     position: absolute;
     color: transparentize($bright, 0.25);
@@ -264,6 +267,8 @@ $arrow-adjustment: 0.3rem;
 
 
 .dot {
+    background: none;
+    border: none;
     font-size: $dot-size;
     padding: $dot-pad;
     @include on-tablet {
@@ -275,19 +280,18 @@ $arrow-adjustment: 0.3rem;
         font-size : $phone-dot-size;
     }
     transition: all $carousel-animation-time ease-in-out;
+    cursor: pointer;
+    @include not-selectable;
 
+    color: lighten($light, 20%);
     &:hover,
     &:focus {
-        color: $medium;
+        color: inherit;
     }
 }
 
 .active.dot {
     color: inherit;
-}
-
-.inactive.dot {
-    color: lighten($light, 20%);
 }
 
 </style>

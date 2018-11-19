@@ -1,9 +1,8 @@
 <template>
 <section class='container'>
     <figure class='left'>
-        <img class='img'
-             :src='img'
-             :alt='img'>
+        <prealloc class='img'
+                  :img="img"/>
         <figcaption>
             <p class='p-note'
                v-html='"Last updated: " + stamp'>
@@ -22,6 +21,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
+
 export default Vue.extend({
     name: 'UpcomingItem',
     data() {
@@ -34,7 +36,7 @@ export default Vue.extend({
             required: true
         },
         img: {
-            type: String,
+            type: Object as () => PreallocatedImage,
             required: true
         },
         stamp: {
@@ -42,6 +44,9 @@ export default Vue.extend({
             required: true
         }
     },
+    components: {
+        'prealloc': PreallocatedImageVue
+    }
 })
 </script>
 
