@@ -31,7 +31,7 @@ import Project from '@/scripts/main/Project';
 
 import code   = Tag.code;
 import design = Tag.design;
-import misc   = Tag.miscellaneous
+import misc   = Tag.miscellaneous;
 
 const nullProject:Project =
 {
@@ -231,8 +231,8 @@ const Projects:Project[] = [
         name: 'ArchLinux',
         component: ArchLinux,
 
-        title: 'Arch Linux : My Primary OS',
-        blurb: 'I use Arch Linux every day, and barely ever use Windows or OSX... or even other linux distros. I find it very convenient actually, as unlikely as that may sound.',
+        title: 'I Use Arch Linux as My Primary OS',
+        blurb: 'I have been using Linux as my primary OS since 2011. As such I have picked up a few things about Linux, and I am quite comfortable in it. More specifically, I use Arch Linux which I have found to be a great experience.',
         thumb: 'static/arch-linux/thumb.png',
         tags: [misc]
     },
@@ -241,8 +241,8 @@ const Projects:Project[] = [
         name: 'ProjectEuler',
         component: ProjectEuler,
 
-        title: 'Math Problems and Programming Languages',
-        blurb: 'Project Euler is a set of math problems online that I sometimes play around with while I teach myself new programming languages.',
+        title: 'I Solve Online Math & Coding Problems',
+        blurb: 'Project Euler is a set of math problems online that I sometimes play around with while I teach myself new programming languages. Especially Project Euler, which is named after the mathematician in the painting here!',
         thumb: 'static/project-euler/thumb.jpg',
         tags: [code, misc]
     },
@@ -265,7 +265,6 @@ const Projects:Project[] = [
         blurb: "I really like playing video games, when they make you think... or if they have truly enthralling stories and mechanics.",
         thumb: 'static/video-games/thumb.jpg',
         tags: [misc]
-
     }
 
 ];

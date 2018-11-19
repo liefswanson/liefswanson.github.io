@@ -168,7 +168,9 @@
         </p>
 
         <p class='u-para'>
-            I have dyslexia, so I can find reading for very long periods exhausting.
+            I have
+            <a class='a-link' href="dyslexia">dyslexia</a>,
+            so I can find reading for very long periods exhausting.
             However, that doesn't stop me from enjoying a good book!
             I have listened to
             <router-link class='a-link' exact to='/projects/audio-books'>many audio books</router-link>.
