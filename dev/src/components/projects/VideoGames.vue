@@ -20,22 +20,7 @@
         <figure class='p-wide-grow'>
             <v-carousel class='p-image'
                         relative='/static/video-games/'
-                        :init="[
-                            'witcher3.jpg',
-                            'hellblade.jpg',
-                            'grimdawn.jpg',
-                            'shogun2.jpg',
-                            'titans.jpg',
-                            'kotor2.jpg',
-                            'borderlands.jpg',
-                            'generals.jpg',
-                            'infamous.jpg',
-                            'guildwars.jpg',
-                            'shadow.jpg',
-                            'minecraft.jpg',
-                            'burnout.jpg',
-                            'gta.jpg'
-                        ]"/>
+                        :init="imgs"/>
 
             <figcaption class='p-note'>
                 Here are some of the games that really captured my imagination, either for their story, social aspects, and/or their incredible brain-engaging mechanics.
@@ -98,9 +83,100 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
 
 export default Vue.extend({
-  name: "VideoGames",
+    name: "VideoGames",
+    data(){
+        return {
+            imgs: [
+                {
+                    path: 'witcher3.jpg',
+                    alt: 'art for The Witcher 3: Wild Hunt',
+                    width: 960,
+                    height: 540
+                },
+                {
+                    path: 'hellblade.jpg',
+                    alt: "art for Hellblad: Senua's Sacrifice",
+                    width: 640,
+                    height: 360
+                },
+                {
+                    path: 'grimdawn.jpg',
+                    alt: 'art for Grim Dawn',
+                    width: 840,
+                    height: 389
+                },
+                {
+                    path: 'shogun2.jpg',
+                    alt: 'art for Total War: Shogun 2',
+                    width: 790,
+                    height: 444
+                },
+                {
+                    path: 'titans.jpg',
+                    alt: 'art for Planetary Annihilation: Titans',
+                    width: 864,
+                    height: 486
+                },
+                {
+                    path: 'kotor2.jpg',
+                    alt: 'art for Knights of the Old Republic 2: The Sith Lords',
+                    width: 900,
+                    height: 416
+                },
+                {
+                    path: 'borderlands.jpg',
+                    alt: 'art for Borderlands 2',
+                    width: 720,
+                    height: 405
+                },
+                {
+                    path: 'generals.jpg',
+                    alt: 'art for Generals: Zero Hour',
+                    width: 960,
+                    height: 720
+                },
+                {
+                    path: 'infamous.jpg',
+                    alt: 'art for Infamous 2',
+                    width: 1080,
+                    height: 608
+                },
+                {
+                    path: 'guildwars.jpg',
+                    alt: 'art for Guild Wars',
+                    width: 700,
+                    height: 330
+                },
+                {
+                    path: 'shadow.jpg',
+                    alt: 'art for Shadow of the Colossus',
+                    width: 800,
+                    height: 450
+                },
+                {
+                    path: 'minecraft.jpg',
+                    alt: 'art for Minecraft',
+                    width: 925,
+                    height: 521
+                },
+                {
+                    path: 'burnout.jpg',
+                    alt: 'art for Burnout Revenge',
+                    width: 960,
+                    height: 540
+                },
+                {
+                    path: 'gta.jpg',
+                    alt: 'art for Grand Theft Auto: San Andreas',
+                    width: 960,
+                    height: 540
+                }
+            ] as PreallocatedImage[]
+      }
+  },
   components: {
       'project-template': ProjectTemplate,
       'v-carousel': Carousel
