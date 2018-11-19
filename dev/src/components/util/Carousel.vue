@@ -5,14 +5,13 @@
             'transform': 'translateX(' + -100 * (i + 1) + '%)',
             'transition': 'transform ' + animTimeS + 's ease-in-out'
         }">
-        <li v-for='(path, index) in images'
+        <li v-for='(img, index) in images'
             :key='index'
             class='panel'
             @click='goToRelativePanel(1)'>
-
-            <img :src='relative + path'
-                 :alt='relative + path'
-                 class='image'>
+            <prealloc :img='applyRelative(relative, img)'
+                      :inCarousel="true"
+                      class='image'/>
         </li>
     </ul>
 
@@ -43,6 +42,8 @@
 //  reanimating will cause strange behaviour.
 //  kludge to keep illusion of round carousel... contains x3 the items repeated
 import Vue from 'vue';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
+import PreallocatedImage    from '@/scripts/main/PreallocatedImage';
 
 import {
     setTimeout,
@@ -65,7 +66,7 @@ export default Vue.extend({
     name: 'Carousel',
     data(){
         return {
-            images: [] as string[],
+            images: [] as PreallocatedImage[],
             i: 0,
             offset: 0,
             previousTimeout: setTimeout(function(){}, -1),
@@ -74,7 +75,7 @@ export default Vue.extend({
     },
     props: {
         init: {
-            type: Array as () => string[],
+            type: Array as () => PreallocatedImage[],
             required: true
         },
         relative: {
@@ -102,6 +103,14 @@ export default Vue.extend({
     methods: {
         active(index: number):boolean {
             return this.i % this.sliceLength == index;
+        },
+        applyRelative(relative: string, img: PreallocatedImage): PreallocatedImage {
+            return {
+                path: relative + img.path,
+                alt: img.alt,
+                width: img.width,
+                height: img.height
+            }
         },
         stopAnim() {
             this.offset = 0; // setting offset to 0 will make anim time 0
@@ -151,6 +160,9 @@ export default Vue.extend({
     beforeDestroy() {
         clearTimeout(this.previousTimeout);
         clearInterval(this.interval)
+    },
+    components: {
+        'prealloc': PreallocatedImageVue
     }
 });
 </script>
@@ -189,7 +201,6 @@ $arrow-space: 1rem;
 .image {
     height: 100%;
     width: 100%;
-    object-fit: contain;
 }
 
 @mixin topcalc($height, $pad) {

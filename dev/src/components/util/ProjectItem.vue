@@ -7,10 +7,8 @@
         <div ref='content'
              class='content'>
             <div class='card-header'>
-                <img v-images-loaded="updateSpan"
-                     :src="thumb"
-                     class="thumb"
-                     :alt="thumb">
+                <prealloc :img="properties.img"
+                          class="thumb"/>
                 <h2 class='title'>
                     <span>{{title}}</span>
                     <div class='category-bar'>
@@ -39,6 +37,8 @@
 <script lang="ts">
 import Vue          from 'vue';
 import imagesLoaded from 'vue-images-loaded';
+
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 import Tag            from '@/scripts/main/Tag';
 import TagItems       from '@/scripts/main/TagItems';
@@ -141,8 +141,8 @@ export default Vue.extend({
         window.removeEventListener(Events.resize, this.updateSpan);
         NavEventBus.$off(Events.navAnimDone, this.updateSpan);
     },
-    directives: {
-        imagesLoaded
+    components: {
+        'prealloc': PreallocatedImageVue
     }
 });
 </script>
