@@ -30,7 +30,7 @@
         <i v-for='index in sliceLength'
            :key="index"
            class='fa fa-circle dot'
-           :class="[active(index-1) ? 'active-dot' : 'inactive-dot']"
+           :class="[active(index-1) ? 'active' : 'inactive']"
            @click='goToAbsolutePanel(index-1)'/>
     </div>
 </div>
@@ -271,11 +271,11 @@ $arrow-adjustment: 0.3rem;
     }
 }
 
-.active-dot {
-    color: inherit !important;
+.active.dot {
+    color: inherit;
 }
 
-.inactive-dot {
+.inactive.dot {
     color: lighten($light, 20%);
 }
 
