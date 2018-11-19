@@ -11,7 +11,7 @@ import RayTracer             from '@/components/projects/RayTracer.vue';
 import MyFont                from '@/components/projects/MyFont.vue';
 import Tetris                from '@/components/projects/Tetris.vue';
 import Sudoku                from '@/components/projects/Sudoku.vue';
-import gtr                   from '@/components/projects/gtr.vue';
+import GTR                   from '@/components/projects/GTR.vue';
 import BCMA                  from '@/components/projects/BCMA.vue';
 import WhittingtonIT         from '@/components/projects/WhittingtonIT.vue';
 import BigTeamProject        from '@/components/projects/BigTeamProject.vue';
@@ -37,6 +37,7 @@ const nullProject:Project =
 {
     path: "",
     name: "",
+    next: "",
     component: nullProjectVue,
 
     title: "",
@@ -64,6 +65,7 @@ const Projects:Project[] = [
     {
         path: "optimizing-keyboards",
         name: "OptimizingKeyboards",
+        next: "WritingACompiler",
         component: OptimizingKeyboards,
 
         title: "Optimizing Gesture Keyboards, Done Dirt Cheap",
@@ -79,6 +81,7 @@ const Projects:Project[] = [
     {
         path: "writing-a-compiler",
         name: "WritingACompiler",
+        next: "GTR",
         component: WritingACompiler,
 
         title: "Writing a Compiler, the Hard Way",
@@ -94,6 +97,7 @@ const Projects:Project[] = [
     {
         path: "teachers-assistant",
         name: "TeachersAssistant",
+        next: "RecursivePlug",
         component: TeachersAssistant,
 
         title: "Teaching 90 Students to Write Clear Code",
@@ -109,6 +113,7 @@ const Projects:Project[] = [
     {
         path: "photography-2014-summer",
         name: "Photography2014Summer",
+        next: "MyFont",
         component: Photography2014Summer,
 
         title: "Taking Photos in the Summer Time",
@@ -124,6 +129,7 @@ const Projects:Project[] = [
     {
         path: "recursive-plug",
         name: "RecursivePlug",
+        next: "WritingACompiler",
         component: RecursivePlug,
 
         title: "Designing and Implementing this Portfolio",
@@ -139,6 +145,7 @@ const Projects:Project[] = [
     {
         path: "hdr",
         name: "HDR",
+        next: "Photography2014Summer",
         component: HDR,
 
         title: "Implementing HDR Instead of Just Using It",
@@ -154,6 +161,7 @@ const Projects:Project[] = [
     {
         path: "ray-tracer",
         name: "RayTracer",
+        next: "Tetris",
         component: RayTracer,
 
         title: "Implementing a Ray Tracer",
@@ -169,6 +177,7 @@ const Projects:Project[] = [
     {
         path: 'my-font',
         name: 'MyFont',
+        next: "HDR",
         component: MyFont,
 
         title: 'Making My Own Font From Scratch',
@@ -184,6 +193,7 @@ const Projects:Project[] = [
     {
         path: 'tetris',
         name: 'Tetris',
+        next: "RayTracer",
         component: Tetris,
 
         title: 'A Crazy Version of Tetris in OpenGL',
@@ -199,6 +209,7 @@ const Projects:Project[] = [
     {
         path: 'sudoku',
         name: 'Sudoku',
+        next: "ProjectEuler",
         component: Sudoku,
 
         title: 'Automatic Sudoku Solver',
@@ -213,8 +224,9 @@ const Projects:Project[] = [
     },
     {
         path: 'gtr',
-        name: 'gtr',
-        component: gtr,
+        name: 'GTR',
+        next: "TeachersAssistant",
+        component: GTR,
 
         title: 'Automated Feature Testing',
         blurb: "It turns out that building a compiler from scratch is difficult, and it's difficult to test... So I built my own automated testing harness to save me lots of headaches.",
@@ -229,6 +241,7 @@ const Projects:Project[] = [
     {
         path: 'bcma',
         name: 'BCMA',
+        next: "WhittingtonIT",
         component: BCMA,
 
         title: "Working IT for Doctors of BC",
@@ -244,6 +257,7 @@ const Projects:Project[] = [
     {
         path: 'whittington-it',
         name: 'WhittingtonIT',
+        next: "BCMA",
         component: WhittingtonIT,
 
         title: 'Working for Whittington IT',
@@ -259,6 +273,7 @@ const Projects:Project[] = [
     {
         path: 'big-team-project',
         name: 'BigTeamProject',
+        next: "TeachersAssistant",
         component: BigTeamProject,
 
         title: 'A Large Team Project for School',
@@ -274,6 +289,7 @@ const Projects:Project[] = [
     {
         path: 'cog-sci-lab',
         name: 'CogSciLab',
+        next: "OptimizingKeyboards",
         component: CogSciLab,
 
         title: 'Cognitive Science Lab at SFU',
@@ -289,6 +305,7 @@ const Projects:Project[] = [
     {
         path: 'sosy',
         name: 'SoSy',
+        next: "TeachersAssistant",
         component: SoSy,
 
         title: 'Obtaining My BSc in Software Systems',
@@ -304,6 +321,7 @@ const Projects:Project[] = [
     {
         path: 'siat',
         name: 'SIAT',
+        next: "MyFont",
         component: SIAT,
 
         title: 'Obtaining My BSc in SIAT',
@@ -319,6 +337,7 @@ const Projects:Project[] = [
     {
         path: 'arch-linux',
         name: 'ArchLinux',
+        next: "OptimizingKeyboards",
         component: ArchLinux,
 
         title: 'I Use Arch Linux as My Primary OS',
@@ -334,6 +353,7 @@ const Projects:Project[] = [
     {
         path: 'project-euler',
         name: 'ProjectEuler',
+        next: "Sudoku",
         component: ProjectEuler,
 
         title: 'I Solve Online Math & Coding Problems',
@@ -349,6 +369,7 @@ const Projects:Project[] = [
     {
         path: 'audio-books',
         name: 'AudioBooks',
+        next: "VideoGames",
         component: AudioBooks,
 
         title: 'I Listen to a Lot of Audio Books',
@@ -364,6 +385,7 @@ const Projects:Project[] = [
     {
         path: 'video-games',
         name: 'VideoGames',
+        next: "AudioBooks",
         component: VideoGames,
 
         title: 'I Play Video Games, While I Study Them',

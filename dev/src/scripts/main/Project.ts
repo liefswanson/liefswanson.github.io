@@ -9,6 +9,7 @@ export default interface Project {
     component: VueConstructor<Vue>,
 
     title: string,
+    next: string,
     img: PreallocatedImage,
 
     blurb: string,

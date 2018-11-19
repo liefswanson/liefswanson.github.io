@@ -1,5 +1,5 @@
 <template>
-<project-template name='gtr'>
+<project-template name='GTR'>
     <template slot='intro'>
         <p class='p-text p-wide'>
             During my

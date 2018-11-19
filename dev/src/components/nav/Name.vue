@@ -2,6 +2,7 @@
 
 
 <svg :style='{fill: color}'
+     class='name'
      width="214.37mm"
      height="31.61mm"
      version="1.1"
@@ -38,5 +39,12 @@ svg {
     height: $name-height;
     width: auto;
     padding: $name-padding;
+
+    transition: fill $link-animation-time ease;
+
+    &:hover,
+    &:focus {
+        fill: $bright !important;
+    }
 }
 </style>
