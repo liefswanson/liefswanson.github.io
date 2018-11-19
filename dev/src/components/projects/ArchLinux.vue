@@ -1,81 +1,96 @@
 <template>
-<article class='p-article-grid'>
-    <h1 class='p-wide p-title'>
-        Arch Linux : My Primary Operating System (OS)
-    </h1>
+<project-template name='ArchLinux'>
+    <template slot='intro'>
+        <p class='p-wide p-text'>
+            I am in the approximately 1.5% to 2% of people that use Linux as their primary operating system on their desktop/laptop.
+            I personally use the spin of Linux called
+            <a class='p-link' href='https://www.archlinux.org/'>Arch Linux</a>.
+            There are a couple of reasons for this, primary among them is the extra flexibility &amp; freedom it affords me in day to day tasks.
+            Though, tt doesn't come without work though, as few things in Arch Linux come preconfigured.
+            Using Arch Linux every day has become a pretty great learning experience about how software is packaged and deployed.
+        </p>
+    </template>
 
+    <template slot='what'>
+        <p class='p-wide p-text'>
+            Arch Linux's main difference to other Linux distributions is that it is rolling release and quick to adopt new standards, and as such it is always up to date... but it might break stuff.
+            I use Arch Linux almost exclusively for personal computing, and as such I have had to learn a few things in order to function reliably.
+        </p>
 
-    <h2 id='what' class='p-wide p-sub-title'>
-        What my role was
-    </h2>
-    <h2 id='why' class='p-wide p-sub-title'>
-        Why this project is important to me
-    </h2>
+        <ul class='p-wide p-list'>
+            <li>I've had to be very organized in the way I customize my computer, so that if something breaks it can be fixed easily</li>
+            <li>I've become <strong>very</strong> comfortable with the commandline</li>
+            <li>I've, on occassion, had to identify and fix many cryptic errors... typically in commercially supported products.</li>
+            <li>
+                I've become very good at utilizing documentation
+                <em class='p-note'>
+                    Arch Linux has
+                    <a class='p-link' href="https://wiki.archlinux.org">awesome documentation</a>
+                </em>
+            </li>
+        </ul>
 
-    <h2 id='why' class='p-wide p-sub-title'>
-        Why this project is important to me
-    </h2>
-    <h2 id='how' class='p-wide p-sub-title'>
-        How I tackled it
-    </h2>
+        <p class='p-thin p-note'>
+            Getting better at using written documentation has been really good for me, especially considering I have
+            <a class='p-link' href="https://en.wikipedia.org/wiki/Dyslexia">dyslexia</a>.
+        </p>
+    </template>
 
-    <p class='p-wide p-text'>
-        Unlike most people, I don't use Windows 10 or OSX day to day on my computer.
-        I use
-        <a class='p-link' href='https://www.archlinux.org/'>Arch Linux</a>
-        almost exclusively.
-        There are a couple of reasons for this, primary among them is the extra flexibility it affords me in day to day tasks.
-        That might sound crazy to people that have heard of Arch Linux before, but I think there is a lot Windows and OSX could learn from any major Linux distribution.
-    </p>
+    <template slot='why'>
+        <p class='p-wide p-text'>
+            I think my time spent in Linux has been really informative, teaching me all sorts of things about computers that I never knew... or even knew enough to ask about when I used Windows as my primary operating system.
+        </p>
 
-    <p class='p-wide p-text'>
-        One of the biggest things missing from both Windows and OSX is a good package manager with unified repositories and dedicated maintainers.
-        The fact these things don't exist beyond the AppStore and Windows Store is nearly unbelievable to me.
-    </p>
+        <p class='p-wide p-text'>
+            Overall, I think it has been another good learning experience that has empowered me with new knowledge and skills I would not have otherwise acquired.
+        </p>
 
-    <p class='p-wide p-text'>
-        I also use the commandline regularly, which isn't really a thing that is all that effortless in Windows or even Mac.
-        On an average day I use the commandline no less than 3 or 4 times, and average much, much more than that.
-    </p>
+        <p class='p-wide p-text'>
+            Using Linux has even been an experience in UX and UI design.
+            The desktop environment I use is called KDE, and it is extremely powerful but... poorly configured out of the box.
+            I spent a long time creating an environment for myself that optimized my own workflow, without creating something other people couldn't use if they had to... and people have had to use my computer before.
+        </p>
 
-    <p class='p-thin p-note'>
-        Even as a student of design, I can assure you there are some things GUIs just haven't figured out yet.
-    </p>
+        <p class='p-wide p-text'>
+            I even set up my own touch gestures on my laptop.
+            Which, turned out to be pretty funny.
+            When Windows 10 came around and I first used it... I realized Windows UI team had settled on the exact same gestures doing the exact same things in Windows as I had setup in KDE.
+        </p>
 
-    <p class='p-wide p-text'>
-        Another thing I quite like about Linux is the desktop environments have features that put OSX and Windows to shame.
-        Take a look at
-        <a class='p-link' href='https://www.kde.org/plasma-desktop'>KDE Plasma</a>;
-        some of the things it can do are amazing.
-        KDE is incredibly extensible, and plays well with a host of other applications.
-        It is frankly amazing the things you can get to work in KDE.
-        KDE even has a Quake-style drop-down terminal called
-        <a class='p-link' href='https://www.kde.org/applications/system/yakuake/'>Yakuake</a>...
-        and it feels like cheating in a game every time I use it.
-    </p>
+        <p class='p-thin p-note'>
+            I will gladly admit I was impressed with myself, coming up with the same set of interactions in a matter of hours that took a team months or years of user testing to settle on.
+        </p>
+    </template>
 
-    <p class='p-thin p-note'>
-        It is hard to find anything on the original terminal from the game Quake anywhere on the internet.
-        However, lots of games have a drop down terminal these days.
-        Skyrim is pretty famous for having one, but many other games have them as well; they are just disabled as they are intended for developer use.
-    </p>
+    <template slot='how'>
+        <p class='p-wide p-text'>
+            Using Linux isn't all that hard actually.
+            It just involves having some
+            <a class='p-link' href="https://en.wikipedia.org/wiki/Neuroplasticity">neural plasticity</a>.
+            I often put myself in situations where I am forced to learn new tools, and it is always hard but I always come out more skilled and capable of learning yet more new things.
+        </p>
+        <p class='p-thin p-note'>
+            For instance, while I was learning Linux I also taught myself dvorak, Emacs, git, and C++ all at the same time... because I am not one to miss an opportunity for growth.
+        </p>
 
-    <p class='p-wide p-text'>
-        Lastly, and this might seem incredible, but Linux is so customizable it gives me the opportunity to flex my UI design skills.
-        For instance on my Laptop I set up an array of touch gestures to make navigation between windows and desktops easier.
-        Over a year later, Windows introduced many of the exact same gestures, doing the exact same things as the ones I chose myself in Linux.
-    </p>
-</article>
+        <p class='p-wide p-text'>
+            I think the biggest asset toward learning to use Linux was getting better at using documentation, and being willing to make mistakes.
+            I still make mistakes when working with my computer, and I think everyone does regardless of what operating system they use, the difference being that I have learned to cope with mistakes and quickly recover from them.
+        </p>
+    </template>
+</project-template>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Carousel from '@/components/util/Carousel.vue';
+import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
+import Carousel from "@/components/util/Carousel.vue";
 
 export default Vue.extend({
-    name: 'ProjectEuler',
-    components: {
-        'v-carousel': Carousel
-    }
+  name: "ArchLinux",
+  components: {
+      'project-template': ProjectTemplate,
+      'v-carousel': Carousel
+  }
 });
 </script>
