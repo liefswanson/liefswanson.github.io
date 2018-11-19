@@ -79,7 +79,7 @@
 
         <p class='p-wide p-text'>
             One of my favourite games to point to as an excellent example of game design is
-            <a href="https://www.hellblade.com">Hellblade: Senua's Sacrifice</a>.
+            <a class='p-link' href="https://www.hellblade.com">Hellblade: Senua's Sacrifice</a>.
             The design is incredibly meticulous and makes use of a whole sense that other games just treat as filler... hearing.
             The game is quite literally not possible to complete without binural audio... and your ability to relate to the main character would not be anywhere near as good if you could not hear exactly what she hears in the way she hears it.
             The game's camera is pulled in very tightly to enhance the cohesion between audio and visual.
