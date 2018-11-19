@@ -2,6 +2,8 @@
 <section class='collapsible-root'>
     <div>
         <button class='section'
+                :title='show ? "Fold Section" : "Expand Section"'
+                :aria-label='show ? "Fold Section" : "Expand Section"'
                 :class='about ? "about" : "project"'
                 @click='toggle'>
             <component :is='about? "h1" : "h2"'

@@ -8,7 +8,9 @@
         </router-link>
 
         <router-link exact
-                     to='/projects'
+                     :to='"/projects/" + nextProject.path'
+                     :title='"goes to \"" + nextProject.title + "\""'
+                     :aria-label='"goes to \"" + nextProject.title + "\""'
                      class='btn next'>
             to related
             <i class='fas fa-angle-right'/>
@@ -26,17 +28,24 @@
 import Vue from 'vue'
 import NavEventBus from '@/scripts/nav/NavEventBus';
 import Events from '@/scripts/nav/Events';
+import { getProject, nullProject } from '@/scripts/main/ProjectItems';
 
 export default Vue.extend({
     name: 'ProjectControls',
     data() {
-        return {}
+        return {
+            nextProject: nullProject
+        }
     },
     props: {
-        next: {
+        current: {
             type: String,
             required: true
         }
+    },
+    mounted() {
+        let currentProject = getProject(this.current);
+        this.nextProject = getProject(currentProject.next);
     },
     methods: {
         expandAll() {

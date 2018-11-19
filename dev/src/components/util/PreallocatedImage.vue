@@ -1,5 +1,5 @@
 <template>
-<div class='container'>
+<div class='img-container'>
     <div :style='style'></div>
     <img class='img'
          :class='inCarousel ? "carousel-img": ""'
@@ -37,7 +37,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.container {
+.img-container {
     position: relative;
 }
 

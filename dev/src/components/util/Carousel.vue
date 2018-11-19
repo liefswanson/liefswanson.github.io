@@ -16,18 +16,23 @@
     </ul>
 
     <button class='left'
-         @click='goToRelativePanel(-1)'>
+            aria-label='Previous Image'
+            title='Previous Image'
+            @click='goToRelativePanel(-1)'>
         <i class='fas fa-angle-left'/>
     </button>
 
     <button class='right'
-         @click='goToRelativePanel(1)'>
+            aria-label='Next Image'
+            title='Next Image'
+            @click='goToRelativePanel(1)'>
         <i class='fas fa-angle-right'/>
     </button>
 
     <div class='dots'>
         <button v-for='index in sliceLength'
            :key="index"
+           :aria-label='"go to image " + index'
            class='fa fa-circle dot'
            :class="[active(index-1) ? 'active' : '']"
            @click='goToAbsolutePanel(index-1)'/>

@@ -1,7 +1,7 @@
 <template>
 <section class='container'>
     <figure class='left'>
-        <prealloc class='img'
+        <prealloc class='img-pane'
                   :img="img"/>
         <figcaption>
             <p class='p-note'
@@ -84,7 +84,7 @@ export default Vue.extend({
     max-width: 35rem;
 }
 
-.img {
+.img-pane {
     margin-top: 0.5rem;
     width: 100%;
     height: auto;

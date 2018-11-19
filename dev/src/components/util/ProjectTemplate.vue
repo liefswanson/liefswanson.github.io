@@ -2,7 +2,7 @@
 <article class='p-root'>
     <project-title :name='name'/>
 
-    <project-controls next='derp'/>
+    <project-controls :current='name'/>
 
     <collapse title='Introduction'
               initShow>
