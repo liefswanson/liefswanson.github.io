@@ -7,7 +7,7 @@
         <div ref='content'
              class='content'>
             <div class='card-header'>
-                <prealloc :img="properties.img"
+                <prealloc :img="img"
                           class="thumb"/>
                 <h2 class='title'>
                     <span>{{title}}</span>
@@ -53,6 +53,7 @@ import { pxInStd }         from '@/style/ts/StandardUnits';
 import { AnimationTimers } from '@/style/ts/Timers';
 import Swatch              from '@/style/ts/Swatch';
 import Measurement         from '@/style/ts/Measurement';
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
 
 
 export default Vue.extend({
@@ -87,8 +88,9 @@ export default Vue.extend({
         name():  string { return this.properties.name; },
 
         title(): string { return this.properties.title; },
-        thumb(): string { return this.properties.thumb; },
         blurb(): string { return this.properties.blurb; },
+
+        img(): PreallocatedImage { return this.properties.img; },
 
 
         style(): object {

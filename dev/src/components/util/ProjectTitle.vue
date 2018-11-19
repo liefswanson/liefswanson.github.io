@@ -11,10 +11,9 @@
         </p>
     </div>
 
-    <img v-if='!onPhone'
-         class='p-image p-thin image p-push-right'
-         :src="project.thumb"
-         :alt="project.thumb">
+    <prealloc v-if='!onPhone'
+              class='p-image p-thin image p-push-right'
+              :img="project.img"/>
 
 </section>
 </template>
@@ -22,11 +21,16 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Project from '@/scripts/main/Project';
-import { nullProject, getProject } from '@/scripts/main/ProjectItems';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
+
+import {
+    nullProject,
+    getProject
+}                  from '@/scripts/main/ProjectItems';
+import Project     from '@/scripts/main/Project';
 import Breakpoints from '@/style/ts/Breakpoints';
 import NavEventBus from '@/scripts/nav/NavEventBus';
-import Events from '@/scripts/nav/Events';
+import Events      from '@/scripts/nav/Events';
 
 export default Vue.extend({
     name: "ProjectTitle",
@@ -53,6 +57,9 @@ export default Vue.extend({
     },
     beforeDestroy() {
         window.addEventListener(Events.resize, this.updateDevice);
+    },
+    components: {
+        'prealloc': PreallocatedImageVue
     }
 })
 </script>

@@ -6,6 +6,11 @@
             <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>
             I built a ray tracer from scratch.
         </p>
+
+        <p class='p-text p-wide'>
+            You can find the code on
+            <a class='p-link' href='https://github.com/liefswanson/raycast'>My GitHub<i class='p-icon fab fa-github'/></a>
+        </p>
     </template>
 
     <template slot='what'>
@@ -31,15 +36,16 @@
             <li>any acceleration structures</li>
         </ul>
 
-        <p class='p-highlight p-wide'>
-            You can find the code on
-            <v-link to='https://github.com/liefswanson/raycast'>My GitHub<i class='p-icon fab fa-github'/></v-link>
-        </p>
 
-        <figure class='p-full'>
-            <img src="/static/ray-tracer/thumb.png"
-                 alt="render from my tracer"
-                 class='p-image'>
+
+        <figure class='p-wide'>
+            <prealloc class='p-image'
+                      :img="{
+                                path: '/static/ray-tracer/thumb.png',
+                                alt: 'a render from my ray tracer',
+                                width: 624,
+                                height: 351
+                            }"/>
             <figcaption class='p-note'>
                 ... but just look how pretty that render is!
             </figcaption>
@@ -94,12 +100,15 @@
 import Vue from 'vue';
 import ProjectTemplate from "@/components/util/ProjectTemplate.vue";
 import Carousel from "@/components/util/Carousel.vue";
+import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 
 export default Vue.extend({
   name: "RayTracer",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
+      'v-carousel': Carousel,
+      'prealloc': PreallocatedImageVue
   }
 });
 </script>
