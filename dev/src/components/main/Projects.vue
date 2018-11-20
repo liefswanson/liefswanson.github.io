@@ -70,7 +70,7 @@ export default Vue.extend({
     data() {
         return {
             projects: ProjectList,
-            autoRows: 0.5, //measurements assume use of std
+            autoRows: 1, //measurements assume use of std
             gap: 0,
             filters: [] as Tag[],
             tags: TagItems,
