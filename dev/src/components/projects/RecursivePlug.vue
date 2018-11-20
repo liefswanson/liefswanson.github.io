@@ -6,6 +6,10 @@
             If not, I recommend exploring some more after perusing my recursive self-advertising.
             I am at least mildly interesting, I swear.
         </p>
+        <p class='p-text p-wide'>
+            You can find the code on
+            <a class='p-link' href='https://github.com/liefswanson/liefswanson.github.io'>My GitHub<i class='p-icon fab fa-github'/></a>
+        </p>
     </template>
 
     <template slot='what'>
@@ -13,6 +17,27 @@
             Everything.
             My goal was to create a portfolio that speaks to my wide range of interests and abilities, without making me look full of myself... like I literally just did.
             The best way I could see to do that was to display my skills, instead of talk about them.
+        </p>
+
+        <p class='p-text p-wide'>
+            So how do I show you what I have done, instead of tell you, when the medium is text?...
+            How about, if you have the time you <strong>try some of the features I implemented</strong>?
+            <ul class='p-list'>
+                <li>If you are on mobile, try swiping to the right; you should see the navigation bar pop out. You can either swipe left, tap anywhere in the greyed out area, or tap the hide navigation button <i class='fa-bars fa sideways'/>, to close it again.</li>
+                <li>If you are on mobile, try opening the site on a desktop/laptop, and vice versa. The site is responsive, and was tested on phones as small as the iPhone 4.</li>
+                <li>Try closing all the sections of text on this page, and then press the expand all button just above the introduction section.</li>
+                <li>Copy the URL for this page, and paste it into another tab; despite this being a single page site each section does have a unique URL.</li>
+                <li>If you haven't followed any of the links in the navigation bar, in that other tab, follow one.</li>
+                <li>While you were on another page, you may have noticed that the primary colour of the whole site changed, even the favicon in the web browser tab!</li>
+                <li>I also made my own image carousel, you can find one in the "How I tackled it section" of this project.</li>
+                <li>Head back to the projects section, in the other tab, play with the buttons in the top right. They filter out projects unrelated to filter chosen.</li>
+                <li>In that other tab, head to the Résumé section. That is actually the pdf of my Résumé. Try out the buttons if you like.</li>
+                <li>Lastly, for the sake of this demo, If you are so inclined, check out the source code in the
+                    <a class='p-link' href='https://github.com/liefswanson/liefswanson.github.io'>GitHub</a>
+                    repository used to host this website.
+                    Literally, that is where the site is being hosted from, it is the source for the site you are currently using.
+                </li>
+            </ul>
         </p>
     </template>
 
@@ -73,16 +98,15 @@
         <p class='p-text p-wide'>
             I think the most interesting design constraint I imposed on myself was tying the primary colour to the navigation.
             There was a pleathora of things that had to be considered in order to implement it.
+            <ul class='p-list p-wide'>
+                <li>The favicon had to change colour, so that involved creating a dynamic favicon in the header controlled by JavaScript</li>
+                <li>The selection colour was implemented in a similar way, with a stylesheet dynamically generated in JavaScript</li>
+                <li>My Resume, which is a pdf, had to match whatever colour I chose for it</li>
+                <li>Most use of the primary colour could not be done directly in the static SCSS, because then the component would be the wrong colour if reused somewhere else</li>
+                <li>I had to find 5 colours that fit well enough together without being so similar that people would not notice that the colour had changed</li>
+                <li>Every colour chosen had to be readable both of dark and light backgrounds</li>
+            </ul>
         </p>
-
-        <ul class='p-list p-wide'>
-            <li>The favicon had to change colour, so that involved creating a dynamic favicon in the header controlled by JavaScript</li>
-            <li>The selection colour was implemented in a similar way, with a stylesheet dynamically generated in JavaScript</li>
-            <li>My Resume, which is a pdf, had to match whatever colour I chose for it</li>
-            <li>Most use of the primary colour could not be done directly in the static SCSS, because then the component would be the wrong colour if reused somewhere else</li>
-            <li>I had to find 5 colours that fit well enough together without being so similar that people would not notice that the colour had changed</li>
-            <li>Every colour chosen had to be readable both of dark and light backgrounds</li>
-        </ul>
 
         <p class='p-note p-thin'>
             The idea of tying primary colour to navigation really interested me, but I knew I wouldn't see unless I implemented it myself.
@@ -128,7 +152,8 @@
             However, that is not where the story ends.
             Remember how I said that I knew almost nothing about web design before this point?
             Well... there were definitely some silly mistakes that I made in this website that I didn't find out until later.
-            All of these have since been fixed, because of an audit I performed myself during a class in web design for my
+            <strong>All of these have since been fixed</strong>,
+            because of an audit I performed myself during a class in web design for my
             <router-link class='p-link' exact to='/projects/siat'>BSc in interactive technology</router-link>
             at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>.
@@ -148,7 +173,14 @@
                     <a class='p-link' href='https://css-tricks.com/content-jumping-avoid/'>jumpy content loading</a>.
                 </li>
                 <li>The ongoing section was a much less helpful featured section, which just lead users to the first project and confused them.</li>
+                <li>The navigation bar used scripting to do most of the styling inline, which caused problems for keyboard navigation, so that had to be changed.</li>
             </ul>
+        </p>
+
+        <p class='p-text p-wide'>
+            That sounds like a lot of things, because it was!
+            Moreover, that doesn't really cover everything, but after that trial by fire I think that I learned a fair bit.
+            This was definitely a project that required me to use both my Software Engineering skills and design skills in tandem, which I think is a good experience.
         </p>
     </template>
 </project-template>
@@ -212,3 +244,9 @@ components: {
 }
 });
 </script>
+
+<style lang="scss" scoped>
+.sideways {
+    transform: rotateZ(90deg);
+}
+</style>

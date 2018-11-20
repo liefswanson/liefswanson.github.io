@@ -27,7 +27,7 @@ const projects = {
     path: SectionMap.projects.path,
     name: SectionMap.projects.name,
     component: SectionMap.projects.component,
-    children: ProjectList // adds sub-routes
+    children: ProjectList, // adds sub-routes
 };
 
 export default new Router({
