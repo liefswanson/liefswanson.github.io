@@ -92,85 +92,85 @@ export default Vue.extend({
             imgs: [
                 {
                     path: 'witcher3.jpg',
-                    alt: 'art for The Witcher 3: Wild Hunt',
+                    alt: 'art from The Witcher 3: Wild Hunt',
                     width: 960,
                     height: 540
                 },
                 {
                     path: 'hellblade.jpg',
-                    alt: "art for Hellblad: Senua's Sacrifice",
+                    alt: "art from Hellblade: Senua's Sacrifice",
                     width: 640,
                     height: 360
                 },
                 {
                     path: 'grimdawn.jpg',
-                    alt: 'art for Grim Dawn',
+                    alt: 'art from Grim Dawn',
                     width: 840,
                     height: 389
                 },
                 {
                     path: 'shogun2.jpg',
-                    alt: 'art for Total War: Shogun 2',
+                    alt: 'art from Total War: Shogun 2',
                     width: 790,
                     height: 444
                 },
                 {
                     path: 'titans.jpg',
-                    alt: 'art for Planetary Annihilation: Titans',
+                    alt: 'art from Planetary Annihilation: Titans',
                     width: 864,
                     height: 486
                 },
                 {
                     path: 'kotor2.jpg',
-                    alt: 'art for Knights of the Old Republic 2: The Sith Lords',
+                    alt: 'art from Knights of the Old Republic 2: The Sith Lords',
                     width: 900,
                     height: 416
                 },
                 {
                     path: 'borderlands.jpg',
-                    alt: 'art for Borderlands 2',
+                    alt: 'art from Borderlands 2',
                     width: 720,
                     height: 405
                 },
                 {
                     path: 'generals.jpg',
-                    alt: 'art for Generals: Zero Hour',
+                    alt: 'art from Generals: Zero Hour',
                     width: 960,
                     height: 720
                 },
                 {
                     path: 'infamous.jpg',
-                    alt: 'art for Infamous 2',
+                    alt: 'art from Infamous 2',
                     width: 1080,
                     height: 608
                 },
                 {
                     path: 'guildwars.jpg',
-                    alt: 'art for Guild Wars',
+                    alt: 'art from Guild Wars',
                     width: 700,
                     height: 330
                 },
                 {
                     path: 'shadow.jpg',
-                    alt: 'art for Shadow of the Colossus',
+                    alt: 'art from Shadow of the Colossus',
                     width: 800,
                     height: 450
                 },
                 {
                     path: 'minecraft.jpg',
-                    alt: 'art for Minecraft',
+                    alt: 'art from Minecraft',
                     width: 925,
                     height: 521
                 },
                 {
                     path: 'burnout.jpg',
-                    alt: 'art for Burnout Revenge',
+                    alt: 'art from Burnout Revenge',
                     width: 960,
                     height: 540
                 },
                 {
                     path: 'gta.jpg',
-                    alt: 'art for Grand Theft Auto: San Andreas',
+                    alt: 'art from Grand Theft Auto: San Andreas',
                     width: 960,
                     height: 540
                 }
