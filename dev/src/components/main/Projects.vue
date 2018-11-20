@@ -73,12 +73,12 @@ export default Vue.extend({
             autoRows: 0.5, //measurements assume use of std
             gap: 0,
             filters: [] as Tag[],
-            tags: TagItems
+            tags: TagItems,
         }
     },
     computed: {
         leftActive(): boolean {
-            return this.$route.path == SectionMap.projects.path;
+            return this.$route.name == SectionMap.projects.name;
         },
         style(): object {
             return {
@@ -127,7 +127,6 @@ export default Vue.extend({
         'project-item': ProjectItem,
         'sticky-bar': StickyBar,
     },
-
 });
 </script>
 
@@ -203,6 +202,9 @@ export default Vue.extend({
     list-style-type: none;
 
     grid-column-gap: $grid-gap;
+
+    max-width: $large-size + $medium-size; // pretty close to where my desktop monitor sits
+    margin: auto;
 }
 
 .project-focused {

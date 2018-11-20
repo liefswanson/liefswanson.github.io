@@ -45,11 +45,6 @@ export default Vue.extend({
             color: Swatch.bright,
         }
     },
-    watch: {
-        $route() {
-            window.scrollTo(0, 0);
-        }
-    },
     computed: {
         shouldPush(): boolean {
             return this.showNav && Breakpoints.onLaptopOrUp();
