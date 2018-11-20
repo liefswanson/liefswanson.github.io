@@ -177,13 +177,16 @@ export default Vue.extend({
 
     @include not-selectable;
 
-    &:hover,
-    &:focus {
+
+
+    a:hover,
+    a:focus {
         border-color: $projects-swatch;
+        .mask {
+            opacity: 0.25;
+        }
     }
 }
-
-
 
 .mask {
     background: $projects-swatch;
@@ -196,13 +199,7 @@ export default Vue.extend({
     z-index: $item-highlight-z;
 
     transition: opacity $highlight-animation-time ease;
-
-    &:hover,
-    &:focus {
-        opacity: 0.25;
-    }
 }
-
 
 .thumb {
     width: 100%;
@@ -222,7 +219,6 @@ export default Vue.extend({
     bottom: 0;
     left: 0;
 }
-
 
 .title {
     $padding: 0.5rem;

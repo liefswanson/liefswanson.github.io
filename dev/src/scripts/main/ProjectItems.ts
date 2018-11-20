@@ -276,7 +276,7 @@ const Projects:Project[] = [
         next: "TeachersAssistant",
         component: BigTeamProject,
 
-        title: 'A Large Team Project for School',
+        title: 'Applying Scrum in a 13 Week Team Project',
         blurb: "I worked on a semester long team project where we took a client's specifications, and built a product for them.",
         img: {
             path:"static/big-team-project/thumb.jpg",

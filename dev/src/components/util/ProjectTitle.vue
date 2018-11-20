@@ -77,8 +77,5 @@ export default Vue.extend({
     font-size: 1.6rem;
     margin-bottom: 1rem;
 }
-
-.section {
-}
 </style>
 
