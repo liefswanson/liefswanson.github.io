@@ -2,9 +2,9 @@
 <li class='item'>
     <router-link :to='path'
                  exact
-                 :class='[colorClass, active ? "selected" : ""]'
+                 :class='classes'
                  ref='link'
-                 class='enclosed suppress-link-style'>
+                 class='nav-link suppress-link-style'>
         {{ name }}
     </router-link>
 </li>
@@ -24,14 +24,9 @@ import Swatch      from '@/style/ts/Swatch';
 
 export default Vue.extend({
     name: "NavItem",
-    data() {
-        return {
-            hover: false
-        }
-    },
     props: {
         properties: {
-            type: Object as () => Section, // typescrit hack for vue props
+            type: Object as () => Section,
             required: true
         }
     },
@@ -44,16 +39,24 @@ export default Vue.extend({
         }
     },
     computed: {
-        colorClass(): string { return this.path.slice(1) },
         path():  string  { return this.properties.path  },
         name():  string  { return this.properties.name  },
         color(): Swatch  { return this.properties.color },
 
-        active(): boolean {
-            let fullPath = this.$route.fullPath;
-            let location = fullPath.indexOf(this.path);
+        classes(): string[] {
+            let sectionClass = this.path.slice(1); // classes are based on route path
 
-            return location != -1;
+            if (this.active) {
+                return [sectionClass, 'active']
+            }
+
+            return [sectionClass]
+        },
+
+        active(): boolean {
+            // match name of current route's top parent to nav item's name
+            let name = this.$route.matched[0].name;
+            return name === this.name;
         },
     },
     methods: {
@@ -62,17 +65,12 @@ export default Vue.extend({
         },
         emitColorChange() {
             NavEventBus.$emit(Events.changeColor, this.color);
-        },
-        loseFocus() {
-            alert('trying to lose focus');
-            let link = this.$refs.link as HTMLElement;
-            link.blur();
         }
     },
     mounted() {
         // set the initial colour correctly
         // all NavItems will run this code,
-        // but only the current one will change the colour
+        // but only the active one will change the colour
         if(this.active) {
             this.emitColorChange();
         }
@@ -85,15 +83,13 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
 @mixin nav-color ($swatch) {
-    transition: all $nav-hover-animation-time ease;
-
-    &.selected{
+    &.active{
         color: $dark;
         background: $swatch;
     }
 
-    &.selected:hover,
-    &.selected:focus {
+    &.active:hover,
+    &.active:focus {
         color: $bright;
         background: $swatch;
     }
@@ -105,27 +101,11 @@ export default Vue.extend({
     }
 }
 
-.projects {
-    @include nav-color($projects-swatch)
-}
-
-
-.ongoing {
-    @include nav-color($ongoing-swatch)
-}
-
-.contact {
-    @include nav-color($contact-swatch)
-}
-
-.resume {
-    @include nav-color($resume-swatch)
-}
-
-.about {
-    @include nav-color($about-swatch)
-}
-
+.projects { @include nav-color($projects-swatch) }
+.ongoing  { @include nav-color($ongoing-swatch)  }
+.contact  { @include nav-color($contact-swatch)  }
+.resume   { @include nav-color($resume-swatch)   }
+.about    { @include nav-color($about-swatch)    }
 
 .item {
     padding: 0;
@@ -138,7 +118,9 @@ export default Vue.extend({
     @include not-selectable;
 }
 
-.enclosed {
+.nav-link {
+    transition: all $nav-hover-animation-time ease;
+
     box-sizing: border-box;
     padding: $nav-item-padding;
     padding-left: 0;

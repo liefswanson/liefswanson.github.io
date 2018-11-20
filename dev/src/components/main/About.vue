@@ -217,11 +217,6 @@ import Collapsible from '@/components/util/Collapsible.vue';
 
 export default Vue.extend({
     name: "About",
-    watch: {
-        $route(to, from) {
-            window.scrollTo(0, 0);
-        }
-    },
     components: {
         'collapse': Collapsible
     },
