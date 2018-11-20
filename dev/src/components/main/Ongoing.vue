@@ -28,8 +28,8 @@
               :img="{
                   path: '/static/updates/sudoku-book.jpg',
                   alt: 'picture of a book of unsolved sudokus',
-                  width: 768,
-                  height: 480
+                  width: 600,
+                  height: 450
               }"
               stamp='November 13<sup>th</sup> 2018'>
         I am working on integrating a camera and character recognition into an Android application along with
@@ -40,8 +40,8 @@
               :img="{
                   path: '/static/updates/poland.jpg',
                   alt: 'picture of a the Polish Flag',
-                  width: 600,
-                  height: 450
+                  width: 768,
+                  height: 480
               }"
               stamp='November 13<sup>th</sup> 2018'>
         As of the time of writing this, I have a 100+ day Polish streak on

@@ -2,8 +2,8 @@
 <section class='collapsible-root'>
     <div>
         <button class='section'
-                :title='show ? "Fold Section" : "Expand Section"'
-                :aria-label='show ? "Fold Section" : "Expand Section"'
+                :title='toggleMessage'
+                :aria-label='toggleMessage'
                 :class='about ? "about" : "project"'
                 @click='toggle'>
             <component :is='about? "h1" : "h2"'
@@ -15,11 +15,11 @@
             <div class='icon-container'>
                 <transition name='toggling'>
                     <i v-if='show'
-                        key='minus'
-                        class='fas toggle-icon fa-minus'/>
+                       key='minus'
+                       class='fas toggle-icon fa-minus'/>
                     <i v-else
-                        key='plus'
-                        class='fas toggle-icon fa-plus'/>
+                       key='plus'
+                       class='fas toggle-icon fa-plus'/>
                 </transition>
             </div>
         </button>
@@ -82,7 +82,10 @@ export default Vue.extend({
                 'transition': 'max-height ' + this.time() + 's ease'
             }
         },
-
+        toggleMessage():string {
+            let nextState = this.show ? "Hide" : "Show";
+            return nextState + ' "' + this.title + '" section';
+        },
     },
     methods: {
         toggle() {
