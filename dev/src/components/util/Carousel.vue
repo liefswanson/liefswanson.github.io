@@ -66,6 +66,7 @@ import {
     DelayTimers,
     toSeconds
 } from '@/style/ts/Timers';
+import Breakpoints from '@/style/ts/Breakpoints';
 
 export default Vue.extend({
     name: 'Carousel',
@@ -108,6 +109,9 @@ export default Vue.extend({
     methods: {
         active(index: number):boolean {
             return this.i % this.sliceLength == index;
+        },
+        onPhone() : boolean {
+            return Breakpoints.onPhone();
         },
         applyRelative(relative: string, img: PreallocatedImage): PreallocatedImage {
             return {
@@ -177,9 +181,7 @@ export default Vue.extend({
 @import '@/style/master.scss';
 $dot-size: 1.25rem;
 $dot-pad: 0.2rem;
-$tablet-dot-size: 1.5rem;
 $tablet-dot-pad: 0.35rem;
-$phone-dot-size: 1.75rem;
 $phone-dot-pad: 0.5rem;
 $icon-size: 4rem;
 $arrow-space: 1rem;
@@ -221,11 +223,8 @@ $arrow-space: 1rem;
     line-height: $icon-size;
     border-radius: $icon-size;
     @include topcalc($dot-size, $dot-pad);
-    @include on-tablet {
-        @include topcalc($tablet-dot-size, $tablet-dot-pad);
-    }
     @include on-phone {
-        @include topcalc($phone-dot-size, $phone-dot-pad);
+        display: none;
     }
     cursor: pointer;
     @include not-selectable;
@@ -276,14 +275,6 @@ $arrow-adjustment: 0.3rem;
     border: none;
     font-size: $dot-size;
     padding: $dot-pad;
-    @include on-tablet {
-        padding : $tablet-dot-pad;
-        font-size : $tablet-dot-size;
-    }
-    @include on-phone {
-        padding : $phone-dot-pad;
-        font-size : $phone-dot-size;
-    }
     transition: all $carousel-animation-time ease-in-out;
     cursor: pointer;
     @include not-selectable;

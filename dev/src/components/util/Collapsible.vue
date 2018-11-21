@@ -54,6 +54,8 @@ export default Vue.extend({
     data() {
         return {
             show: false,
+            // a delayed version of show that applies after the element is hidden
+            // causes the application of display: none;
             display: true,
             maxHeight: 0,
             loaded: false
