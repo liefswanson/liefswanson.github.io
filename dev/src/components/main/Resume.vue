@@ -3,14 +3,14 @@
     <sticky-bar :overlay="false">
         <div class='action-bar'>
             <div class='spacer'></div>
-            <a class='btn'
-                title='View with built-in PDF viewer'
-                aria-label='View with built-in PDF viewer'
-                href='static/resume-text.pdf'
-                target='_blank'>
+            <a class='btn supress-link-style'
+               title='View with built-in PDF viewer'
+               aria-label='View with built-in PDF viewer'
+               href='static/resume-text.pdf'
+               target='_blank'>
                 <i class='fa fa-external-link-alt'/>
             </a>
-            <a class='btn'
+            <a class='btn supress-link-style'
                title='Download'
                aria-label='Download'
                href="static/resume-text.pdf"

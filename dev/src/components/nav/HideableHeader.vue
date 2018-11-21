@@ -15,13 +15,8 @@
 
         <div class='spacer'></div>
 
-        <router-link exact
-                     to='/'
-                     title='to projects'
-                     aria-label='to projects'>
-            <name :color='color'
-                  class='extra-pad'/>
-        </router-link>
+        <name :color='color'
+                class='extra-pad'/>
 
     </header>
 </transition>
