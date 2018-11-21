@@ -9,8 +9,8 @@
     overflow-y: auto;
 }
 
-@mixin link($color) {
-    color: $color;
+@mixin link($swatch) {
+    color: $swatch;
 
     transition: all $link-animation-time ease;
 
@@ -21,8 +21,12 @@
 
     &:hover,
     &:focus {
-        color: darken($color, 20%);
+        color: darken($swatch, 20%);
         //font-size: 1.05em;
+    }
+
+    &:focus {
+        background: transparentize($swatch, 0.75);
     }
 }
 
