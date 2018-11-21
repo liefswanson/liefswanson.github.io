@@ -24,8 +24,9 @@
             </div>
         </button>
 
-        <div class='collapsible'
-            :style='style'>
+        <div ref='animator'
+             class='collapsible'
+             :style='style'>
             <div ref='wrapper'
                 class='padded'>
                 <slot/>
@@ -53,6 +54,7 @@ export default Vue.extend({
     data() {
         return {
             show: false,
+            display: true,
             maxHeight: 0,
             loaded: false
         }
@@ -78,7 +80,8 @@ export default Vue.extend({
     computed: {
         style():object {
             return {
-                'max-height': this.maxHeight + std,
+                'display': this.display ? undefined : 'none',
+                'max-height': this.show ? this.maxHeight + std : '0',
                 'transition': 'max-height ' + this.time() + 's ease'
             }
         },
@@ -89,8 +92,12 @@ export default Vue.extend({
     },
     methods: {
         toggle() {
-            this.show = !this.show;
-            this.calcHeight();
+            if (this.show){
+                this.collapse();
+            } else {
+                this.display = true;
+                Vue.nextTick(this.expand);
+            }
         },
         expand() {
             this.show = true;
@@ -131,12 +138,13 @@ export default Vue.extend({
             return  px / pxInStd();
         },
         calcHeight() {
-            if (!this.show) {
-                this.maxHeight = 0;
-                return;
+            let temp = this.expandedHeight();
+            if (temp != 0) {
+                this.maxHeight = temp;
             }
-
-            this.maxHeight = this.expandedHeight();
+        },
+        animOver(){
+            this.display = this.show;
         },
         load() {
             this.loaded = true;
@@ -148,8 +156,15 @@ export default Vue.extend({
         NavEventBus.$on(Events.expandAll, this.expand);
         window.addEventListener(Events.resize, this.calcHeight);
 
+        let animator = this.$refs.animator as HTMLElement;
+        animator.addEventListener("transitionend", this.animOver,false);
+
+
         if(this.initShow) {
-            this.toggle();
+            this.expand();
+        } else {
+            this.calcHeight();
+            this.display = false;
         }
 
         this.$forceUpdate();
@@ -164,6 +179,11 @@ export default Vue.extend({
         NavEventBus.$off(Events.collapseAll, this.collapse);
         NavEventBus.$off(Events.collapseAll, this.expand);
         window.removeEventListener(Events.resize, this.calcHeight);
+
+        let animator = this.$refs.animator as HTMLElement;
+
+        animator.removeEventListener("transitionend", this.animOver,false);
+
         this.loaded = false;
     }
 });
