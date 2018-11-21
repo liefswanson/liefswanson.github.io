@@ -95,11 +95,14 @@ export default Vue.extend({
             if (this.show){
                 this.collapse();
             } else {
-                this.display = true;
-                Vue.nextTick(this.expand);
+                this.expand();
             }
         },
         expand() {
+            this.display = true;
+            Vue.nextTick(this.expandHelper);
+        },
+        expandHelper() {
             this.show = true;
             this.calcHeight();
         },
