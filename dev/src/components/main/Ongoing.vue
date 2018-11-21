@@ -82,4 +82,8 @@ export default Vue.extend({
     padding-top: 1rem;
 }
 
+.o-link {
+    @include link($ongoing-swatch);
+}
+
 </style>

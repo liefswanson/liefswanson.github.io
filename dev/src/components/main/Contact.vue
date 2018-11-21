@@ -13,20 +13,26 @@
                 <button :title='contactMessage(contact)'
                         :aria-label='contactMessage(contact)'
                         @click='click(contact)'
+                        @focus="mouseEnter(contact)"
+                        @blur="mouseLeave(contact)"
                         :for='contact.name'
                         :class='[contact.fa,
                                  contact.icon,
                                  active == contact ? "active": ""]'
                         class='icon-wrapper'/>
-                <strong class='details'
-                        :class='active != contact ? "transparent" : ""'>
-                        {{contact.msg}}
-                    <a target='_blank'
-                        :href='contact.link'
-                        class='link'>
-                        {{contact.name}}
-                    </a>
-                </strong>
+                <transition name='fade'>
+                    <strong class='details'
+                            :class='active != contact ? "transparent" : ""'
+                            v-show='active'>
+                            {{contact.msg}}
+                        <a target='_blank'
+                            :href='contact.link'
+                            class='link'>
+                            {{contact.name}}
+                        </a>
+                    </strong>
+                </transition>
+
             </li>
         </ul>
     </div>
@@ -83,6 +89,7 @@ export default Vue.extend({
             }
         },
         click(clicked: Contact) {
+            this.mouseEnter(clicked);
             this.paused = !this.paused
         },
         increment() {

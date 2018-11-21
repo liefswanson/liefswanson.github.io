@@ -139,7 +139,7 @@ export default Vue.extend({
         },
         calcHeight() {
             let temp = this.expandedHeight();
-            if (temp != 0) {
+            if (temp != 0) { // avoid setting to 0 if display: none;
                 this.maxHeight = temp;
             }
         },
@@ -157,7 +157,7 @@ export default Vue.extend({
         window.addEventListener(Events.resize, this.calcHeight);
 
         let animator = this.$refs.animator as HTMLElement;
-        animator.addEventListener("transitionend", this.animOver,false);
+        animator.addEventListener(Events.transitionEnd, this.animOver,false);
 
 
         if(this.initShow) {
@@ -181,8 +181,7 @@ export default Vue.extend({
         window.removeEventListener(Events.resize, this.calcHeight);
 
         let animator = this.$refs.animator as HTMLElement;
-
-        animator.removeEventListener("transitionend", this.animOver,false);
+        animator.removeEventListener(Events.transitionEnd, this.animOver,false);
 
         this.loaded = false;
     }
