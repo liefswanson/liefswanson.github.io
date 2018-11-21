@@ -1,5 +1,6 @@
 enum Events {
     changeColor = "accent-color-change",
+    transitionEnd = 'transitionend',
 
     closeNav    = "nav-bar-close",
     openNav     = "nav-bar-open",

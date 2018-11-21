@@ -34,9 +34,7 @@ body {
     @include link($projects-swatch);
 }
 
-.o-link {
-    @include link($ongoing-swatch);
-}
+
 
 .suppress-link-style {
     color: inherit;
