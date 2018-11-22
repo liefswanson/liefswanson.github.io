@@ -3,8 +3,9 @@
     <template slot='intro'>
         <p class='p-wide p-text'>
             I don't read that much, mostly because I have dyslexia and as such find it a bit exhausting.
-            It takes me a while longer to read things than most people, and I can often get stuck reading words without actually processing what they mean.
-            Because I am not one for inefficiency, but want to know about things people took the time to write down, I listen to audio books!
+            It takes me a little longer to read things than most people, and I can often get stuck reading words without actually processing what they mean.
+            Now I am not one to wast time like that, but I still like books.
+            So, I decided I would start listening to audio books!
         </p>
 
         <p class='p-wide p-text'>
@@ -16,7 +17,7 @@
             <v-carousel class='p-image'
                         relative='/static/audio-books/'
                         :init="books"/>
-            <figcaption class='p-note'>
+            <figcaption class='p-note separate'>
                 They say you can't judge a book by its cover, but we can try can't we?
                 Take a look at the covers of a few books I have listened to.
                 I didn't enjoy all of them, but I do think every one of them is worth listening to.
@@ -27,8 +28,10 @@
 
     <template slot='what'>
         <p class='p-wide p-text'>
-            Listening as many interesting audiobooks as I can get my hands on, so that I can learn thing from many diverse perspectives.
+            Getting through over 70 audio-books, just in the 6 months where I was keeping track.
+            It involved listening often... and even at increased speed because I found that people's normal reading voice is too slow for me to stay engaged.
         </p>
+
     </template>
 
     <template slot='why'>
@@ -38,23 +41,24 @@
 
         <p class='p-wide p-text'>
             Everyone has curve balls that life throws at them.
-            One of the ones thrown at me is being dyslexic in a world and profession dominated by text information.
+            One of the ones thrown at me is being dyslexic in a world, and profession, dominated by text information.
         </p>
 
         <p class='p-wide p-text'>
-            Some people take set backs as a reason to avoid something, but I think the fact I still do my best to engage with books in a the best way I have found despite being a slow reader shows I am not adverse to challenges.
+            Some people take set backs as a reason to avoid something, but I don't do that.
+            Instead, I do my best to engage with books in the best way I know how, in order to maximize my comprehension and use of time.
         </p>
     </template>
 
     <template slot='how'>
         <p class='p-wide p-text'>
-            I commmuted to school for years, and my commute was roughly an hour long each way.
-            That created plenty of time to listen to things.
-
+            I listen every opportunity I get.
+            Though these opportunities are usually limited to when I am commuting or when I am eating.
+            Even with that in mind... my ability to buy new books is the limiting factor, as I don't tend to gain much out of listening to books multiple times.
         </p>
 
         <p class='p-wide p-text'>
-            <strong>I had a few options for things to do on my commute:</strong>
+            <strong>I had a few options for things to do on my commute or when I am eating:</strong>
         </p>
         <ul class='p-list p-wide'>
             <li>sit in silence</li>
@@ -71,8 +75,13 @@
             So for me, it made perfect sense to fill the time with either podcasts or audiobooks, and honestly it is easier to find good informative books than informative podcasts.
         </p>
 
+        <p class='p-note p-thin'>
+            Though, when I run out of books I often turn to podcasts until I can afford more books.
+        </p>
+
         <p class='p-wide p-text'>
-            I also got into the habit of listening for a little while before bed, as it doesn't need to involve a screen, just the audio, so I find it easier to unwind to.
+            I tried listening during other activities too, but I quickly found that my comprehension tanked.
+            So, the time where I listen to books is limited to mindless repeatative activities that keep my body busy while the book keeps my mind busy.
         </p>
     </template>
 </project-template>
