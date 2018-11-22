@@ -26,7 +26,7 @@
         <figure class='p-mid'>
             <prealloc class='p-image'
                       :img="{
-                                path:'/static/hdr/thumb.png',
+                                path:'/static/hdr/thumb.jpg',
                                 alt:'the final result from my HDR assignment',
                                 width:388,
                                 height:292
