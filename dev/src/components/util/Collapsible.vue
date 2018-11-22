@@ -43,6 +43,7 @@ import Vue from 'vue';
 
 import Events      from '@/scripts/nav/Events';
 import NavEventBus from '@/scripts/nav/NavEventBus';
+import { userIsBot } from '@/scripts/main/Utils';
 
 import { AnimationTimers,
          toSeconds }    from '@/style/ts/Timers';
@@ -121,13 +122,13 @@ export default Vue.extend({
         },
         time(): number {
             let base = AnimationTimers.collapsible * toSeconds;
-            let units = this.expandedHeight() / Measurement.collapsible;
+            let units = this.maxHeight / Measurement.collapsible;
             return base * Math.sqrt(units);
         },
         overscrollStyle(): object {
             if(!this.overscroll) return {};
 
-            let height = !this.show ? this.expandedHeight() : 0;
+            let height = !this.show ? this.maxHeight : 0;
             let time = this.loaded ? this.time() : 0;
             return {
                 'height': height + std,
@@ -165,9 +166,12 @@ export default Vue.extend({
         animator.addEventListener(Events.transitionEnd, this.animOver,false);
 
 
-        if(this.initShow) {
+        if(this.initShow || userIsBot()) {
             this.expand();
         } else {
+            // for prerendering only!
+            // this.expand();
+            // else if not prerendering...
             this.calcHeight();
             this.display = false;
         }
@@ -204,12 +208,12 @@ $line-height: $font-size * 1.5;
 $underline: 0.2rem;
 // FIXME unaccounted for 0.8rem
 // something wrong with my math?
-$height: $pad-bot + $pad-bot + $margin-top +
+$height: $pad-top + $pad-bot + $margin-top +
          $line-height + $underline + 0.8rem;
 
 
 .overscroll {
-    max-height: calc(100vh - #{$height});
+    max-height: calc(100vh - #{$height} - #{$header-height});
 }
 
 .collapsible-root {
