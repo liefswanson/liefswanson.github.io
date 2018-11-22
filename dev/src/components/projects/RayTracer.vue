@@ -41,7 +41,7 @@
         <figure class='p-wide'>
             <prealloc class='p-image'
                       :img="{
-                                path: '/static/ray-tracer/thumb.png',
+                                path: '/static/ray-tracer/thumb.jpg',
                                 alt: 'a render from my ray tracer',
                                 width: 624,
                                 height: 351
