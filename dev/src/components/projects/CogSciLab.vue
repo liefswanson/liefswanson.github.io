@@ -4,7 +4,8 @@
         <p class='p-wide p-text'>
             I volunteered, in my spare time, at the
             <a class='p-link' href='https://cslabsfu.wordpress.com/'>Cognitive Science Lab</a>
-            at SFU.
+            at
+            <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>.
             We focused our efforts on learning about human attention allocation, and how it relates to mastery of a task.
             How did we do that? By reviewing thousands of
             <a class='p-link' href="https://starcraft2.com">StarCraft 2</a>
@@ -15,13 +16,17 @@
     <template slot='what'>
         <p class='p-wide p-text'>
             My job in the lab mostly revolved around something I am quite good at... code review!
-            There were many people writing scripts to analyze data we had, but they didn't really know much about writing code that other people could read... or even that they could read for that matter.
-            I do know a fair bit about that! So I helped people write better code, and I helped them debug the bad code that they learned their lessons from.
+            There were many people writing scripts to analyze data we had, but they didn't really know much about writing code that other people could read... or even that they themselves could read for that matter.
+            So, I helped people write better code, and I helped them debug the bad code that they learned their lessons from.
         </p>
 
         <p class='p-wide p-text'>
             The data we used for analysis was StarCraft 2 replays!
             The replays were from players of all skill levels, from some of the worst in the world, to some of the best.
+        </p>
+
+        <p class='p-thin p-note'>
+            By "some of the best" I mean players that have literally won money in world class tournaments.
         </p>
 
         <p class='p-wide p-text'>
@@ -35,7 +40,13 @@
         <p class='p-wide p-text'>
             I also have a
             <router-link class='p-link' exact to='/projects/bcma'>background in IT</router-link>...
-            which came in handy when some of our computers, which had important newly collected data on them broke down.
+            which came in handy when some of our lab computers broke down with newly collected data on them.
+        </p>
+
+        <p class='p-thin p-note'>
+            Actually, my
+            <router-link class='p-link' exact to='/project/arch-linux'>knowledge of Linux</router-link>
+            ended up saving the day here!
         </p>
 
         <p class='p-wide p-text'>
@@ -45,7 +56,7 @@
 
     <template slot='why'>
         <p class='p-wide p-text'>
-            I learned a great deal about how scientific experiments are conducted.
+            I learned about how scientific experiments are conducted.
             Everyone in that lab was there to learn, and they wanted to find answers to really hard problems.
             It was just a good environment to be in, where I feel like I benefitted from the new experiences I had.
             The way problems are approached in these sorts of fields is different than computer science, and I think it was worth it to experience that.

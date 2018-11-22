@@ -6,7 +6,7 @@
             I personally use the spin of Linux called
             <a class='p-link' href='https://www.archlinux.org/'>Arch Linux</a>.
             There are a couple of reasons for this, primary among them is the extra flexibility &amp; freedom it affords me in day to day tasks.
-            Though, tt doesn't come without work though, as few things in Arch Linux come preconfigured.
+            It doesn't come without work though, as few things in Arch Linux come preconfigured.
             Using Arch Linux every day has become a pretty great learning experience about how software is packaged and deployed.
         </p>
     </template>
@@ -38,22 +38,37 @@
 
     <template slot='why'>
         <p class='p-wide p-text'>
-            I think my time spent in Linux has been really informative, teaching me all sorts of things about computers that I never knew... or even knew enough to ask about when I used Windows as my primary operating system.
+            I think my time spent in Linux has been really informative, teaching me all sorts of things about computers that I never knew.
+            Some of those things I didn't even knew enough to ask about when I used Windows as my primary operating system.
         </p>
 
         <p class='p-wide p-text'>
-            Overall, I think it has been another good learning experience that has empowered me with new knowledge and skills I would not have otherwise acquired.
+            Overall, I think it has been a good learning experience that has empowered me with new knowledge and skills I would not have otherwise acquired.
+            For instance, I don't think I would have become comfortable with the command line.
+        </p>
+
+        <p class='p-thin p-note'>
+            Sometimes I even use my Linux skills to save the day. Like, when I used it to recovered otherwise lost data for a
+            <router-link class='p-link' exact to='/projects/cog-sci-lab'>lab I volunteered in</router-link>.
         </p>
 
         <p class='p-wide p-text'>
             Using Linux has even been an experience in UX and UI design.
-            The desktop environment I use is called KDE, and it is extremely powerful but... poorly configured out of the box.
-            I spent a long time creating an environment for myself that optimized my own workflow, without creating something other people couldn't use if they had to... and people have had to use my computer before.
+            The
+            <a class='p-link' href='https://www.forbes.com/sites/jasonevangelho/2018/09/17/linux-for-beginners-whats-a-desktop-environment'>desktop environment</a>
+            I use is called
+            <a class='p-link' href='https://www.kde.org'>KDE</a>,
+            and it is extremely powerful but... poorly configured out of the box.
+            I spent a some time slowly building an environment for myself that optimized my own workflow, without creating something other people couldn't use if they had to.
+        </p>
+
+        <p class='p-note p-thin'>
+            Believe it or not, when people have had to use my Linux computer their reaction is typically "Oh, that's Linux?" in a pleasantly surprised tone... not "I hate this you do it."
         </p>
 
         <p class='p-wide p-text'>
             I even set up my own touch gestures on my laptop.
-            Which, turned out to be pretty funny.
+            Which, turned out to be a story in and of itself.
             When Windows 10 came around and I first used it... I realized Windows UI team had settled on the exact same gestures doing the exact same things in Windows as I had setup in KDE.
         </p>
 
@@ -70,12 +85,14 @@
             I often put myself in situations where I am forced to learn new tools, and it is always hard but I always come out more skilled and capable of learning yet more new things.
         </p>
         <p class='p-thin p-note'>
-            For instance, while I was learning Linux I also taught myself dvorak, Emacs, git, and C++ all at the same time... because I am not one to miss an opportunity for growth.
+            For instance, while I was learning Linux I also taught myself dvorak, Emacs, git, and C++ all at the same time.
+            Which certainly taught me a whole lot despite the masochistic nature of it.
         </p>
 
         <p class='p-wide p-text'>
             I think the biggest asset toward learning to use Linux was getting better at using documentation, and being willing to make mistakes.
-            I still make mistakes when working with my computer, and I think everyone does regardless of what operating system they use, the difference being that I have learned to cope with mistakes and quickly recover from them.
+            I still make mistakes when working with my computer, and I think everyone does regardless of what operating system they use and their skill level.
+            The difference being I have learned to cope with mistakes and quickly recover from them, partly through experience and partly through attitude.
         </p>
     </template>
 </project-template>
