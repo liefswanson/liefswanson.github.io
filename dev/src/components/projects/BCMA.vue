@@ -2,7 +2,11 @@
 <project-template name='BCMA'>
     <template slot='intro'>
         <p class='p-wide p-text'>
-            As one of my co-ops at SFU, I worked IT for the British Columbia Medical Association <span class='p-note'>(BCMA)</span>.
+            As one of my
+            <a class='p-link' title='Essentially an internship organized through the university' href='http://www.sfu.ca/coop.html'>co-ops</a>
+            at
+            <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>,
+            I worked IT for the British Columbia Medical Association <span class='p-note'>(BCMA)</span>.
             They have since changed their name to
             <a class='p-link' href='https://www.doctorsofbc.ca/'>Doctors of BC</a>.
             It is sort of like a doctor's union.
@@ -12,11 +16,11 @@
     <template slot='what'>
         <p class='p-wide p-text'>
             I worked under contract, covering both day-to-day and long-term IT tasks.
-            At the time of my employment, dozens of employees had been displaced by a renovation. They all either worked from home, or worked from inside other departments they were not familiar with.
-            It was my job to make sure everything went smoothly.
+            At the time of my employment, over 30 of approximately 100 employees had been displaced by a renovation. They all either worked from home, or worked from inside other departments they were not familiar with.
+            It was my job to make sure everything went smoothly, and I had some help from other people in the department, but primarily that is why I was hired was to deal with the new stuff that cropped up.
         </p>
-        <p class='p-thin p-note'>
-            There were all sorts of problems you might not expect, such as having printers break in a cascade... likely due to more people using fewer printers.
+        <p class='p-wide p-text'>
+            There were all sorts of problems you might not expect, such as having all our available printers break in a cascade because 50 employees were all printing from 3 printers instead of 6.
         </p>
     </template>
 
@@ -36,20 +40,28 @@
             Defusing stressful situations is part of the job, and probably the best part of the job.
             Helping someone destress by removing the source of their stress, and being kind about it in the process, is a pretty fulfilling job!
         </p>
+
+        <p class='p-thin p-note'>
+            Difficult and sometimes thankless, but I still find it fulfilling.
+        </p>
     </template>
 
     <template slot='how'>
         <p class='p-wide p-text'>
             I worked under the loose supervision of 3 seasoned IT professionals, so that made things pretty easy; making the ocassional mistake was not a huge problem.
             I think the hardest part was figuring out how to use the down-time to preempt future issues.
-            It tends to be that problems that need to be solved comes in waves, just by the nature of them taking a non-zero amount of time to solve, and following a
-            <a class='p-link' href="https://en.wikipedia.org/wiki/Poisson_distribution">poisson distribution</a>
-            ... and it is even worse when you push out an update with a mistake in it!
+            It tends to be that problems that need to be solved comes in waves.
+            I think that is mostly because problems take time to fix, and the odds of another problem occuring only increases the longer it takes to fix something.
+        </p>
+
+        <p class='p-thin p-note'>
+            It also doesn't help when something is overlooked before pushing out an update, or when something unexpected happened on the weekend which messes up everyone's monday.
         </p>
 
         <p class='p-wide p-text'>
             One of the things I did with my down time was making user documentation, available over the company intranet, to help users diagnose and solve their own simple problems.
-        a</p>
+            This was a good use of the down time I think.
+        </p>
 
     </template>
 </project-template>
