@@ -2,7 +2,7 @@
 <project-template name='MyFont'>
     <template slot='intro'>
         <p class='p-wide p-text'>
-            I designed my own geometric style font.
+            I designed my own geometric-style font.
             While I don't really consider myself a typographer, I do consider myself a typography snob and a designer, so I had to try my hand at it.
             I actually used the font I am talking about in this project for the logo of my name in the top right.
         </p>
@@ -20,7 +20,7 @@
 
     <template slot='what'>
         <p class='p-wide p-text'>
-            I came up with the design constraints and designed every currently available glyph in my font Phibonacci.
+            I came up with the design constraints and designed every currently available glyph in my font, Phibonacci.
             By design constraints, I mean that every measurement in the font strictly matches a measurement from the Fibonacci sequence.
             Why? Well I like math and design hence it was inevitable I would design something around the
             <a class='p-link' href='https://en.wikipedia.org/wiki/Golden_ratio#Golden_ratio_conjugate'>Golden Ratio</a>.
@@ -28,8 +28,8 @@
 
         <p class='p-thin p-note'>
             Many people that like the golden ratio don't know it isn't the only
-            <a class='p-link' href='https://www.youtube.com/watch?v=7lRgeTmxnlg'>metalic ratio</a>.
-            The link provided is to a video all about the metalic ratios, by a very mathy youtube channel.
+            <a class='p-link' href='https://www.youtube.com/watch?v=7lRgeTmxnlg'>metallic ratio</a>.
+            The link provided is to a video all about the metallic ratios, by a very mathy youtube channel.
         </p>
 
         <figure class='p-mid-grow'>
@@ -44,10 +44,11 @@
 
     <template slot='why'>
         <p class='p-wide p-text'>
-            I wanted a geometric style font that was open source, and had many weights.
+            I wanted a geometric-style font that was open source, and had many weights.
             I really like
             <a class='p-link' href="https://github.com/googlefonts/comfortaa">Comfortaa</a>,
             but last I checked it only has 3 weights.
+            It also is very bubbly, which is good, but not always appropriate for a specific design.
         </p>
 
         <p class='p-thin p-note'>
@@ -56,11 +57,11 @@
         </p>
 
         <p class='p-wide p-text'>
-            Comfortaa also lacks one thing that I wanted out of Phibonacci.
-            Comfortaa, like most fonts, makes very slight adjustments to compensate for optical illusions humans are prone to seeing in text.
-            These adjustments can become very apparent when the text is scaled up past a certain point.
-            This effect gets amplified if the font is very thin, so I designed Phibonacci to intentionally not adjust for the little quirks of human perception.
-            Phibonacci isn't really designed for swaths of text, but rather as a starting point to build logos around.
+            Phibonacci and Comfortaa are unlike most fonts.
+            Most fonts incorporate very slight adjustments to compensate for optical illusions humans are prone to seeing in text.
+            These adjustments can become very apparent when the text is scaled up past a certain point, especially if the font is very thin.
+            So, I designed Phibonacci to intentionally not adjust for the little quirks of human perception.
+            As a consequence, Phibonacci isn't really designed for swaths of text, but rather as a starting point to build logos around.
         </p>
 
         <p class='p-thin p-note'>
@@ -77,21 +78,27 @@
     <template slot='how'>
         <p class='p-wide p-text'>
             I don't have access to many of the tools professional font designers use on a daily basis, so I turned to the open-source world.
-            It turns out there is this really cool font design tool, that I mention in an earlier sidenote,
-            <a class='p-link' href='https://fontforge.github.io'>FontForge</a>
-            and it is surprisingly powerful.
+            It turns out there is this really cool font design tool,
+            <a class='p-link' href='https://fontforge.github.io'>FontForge</a>,
+            which I mention in an earlier sidenote.
+            It is surprisingly powerful.
         </p>
 
         <p class='p-wide p-text'>
-            The thing with designing a font is it requires time, patience, determination, and a consistent vision... even within the context of design where these virtues are staples.
+            In design work, time, patience, determination, and a consistent vision are staples of the craft.
+            Designing fonts requires these virtues in even greater measure.
             Fonts are a lot of work, and they often involve scrapping ideas.
-            Phibonacci went through 4 iterations that I completely scrapped before uploading the current version to github... and many had more glyphs completed than the current one, but there are thousands of fonts that I dislike and never intend to use.
-            There are far fewer fonts out there that I would consider using.
+            Phibonacci went through 4 iterations that I completely scrapped before uploading the current version to GitHub... and many older versions had more glyphs completed than the current one.
+            Scrapping older versions doesn't bother me, because I would rather have a font I want to use than another one of the thousands I don't want to use.
         </p>
 
         <p class='p-wide p-text'>
-            After the last scrapping of Phibonacci, I relaxed the design constraint of always following the Fibonnaci sequence with every measurement.
-            I still make every measurement contain a Fibonacci number, but as you might have noticed with the letter "n", I don't force the measurement to be between the same two lines every time.
+            After the last scrapping of Phibonacci, I relaxed the design constraint of always following the Fibonacci sequence with every measurement.
+            I still make every measurement contain a Fibonacci number, but the points being measured between can vary per glyph.
+        </p>
+
+        <p class='p-thin p-note'>
+            You can see this in the glyph 'n' used in my name in the top right. It is a little thinner than the 'a' or 'o' because I measured a different pair of points.
         </p>
     </template>
 </project-template>
