@@ -29,7 +29,7 @@
             I didn't even know that programming existed;
             I had no concept of what programming even was.
             However, in first year I was required to take a computing science course in Python as part of my other major
-            <router-link exact to='/projects/siat'>SIAT</router-link>.
+            <router-link class='p-link' exact to='/projects/siat'>SIAT</router-link>.
         </p>
 
         <p class='p-wide p-text'>
@@ -95,7 +95,7 @@
         </p>
         <p class='p-text p-wide'>
             I think that I found the job that I most enjoy in software engineering... I honestly can't stop nerding out about it.
-            I am also found of many other fields, but the nice thing about software engineering is it is a means to many ends.
+            I am also fond of many other fields, but the nice thing about software engineering is it is a means to many ends.
             The ability to manipulate a computer to do what you want is an extraordinarily valuable skill, and I am glad to have spent the time discovering it.
             As I said, before my first semester of university, I had no concept of what went into making software so to me this degree was important... without it I may have never discovered software engineering.
         </p>
@@ -108,7 +108,7 @@
         <p class='p-text p-wide'>
             Lots of perseverance.
             I think getting the hang of computer science was one of the hardest things I have ever done.
-            I have always liked solving problems, but computer science and software development are on a different level to what I was accustom to before that point.
+            I have always liked solving problems, but computer science and software development are on a different level to what I was accustomed to before that point.
             Everything I had ever tackled before that point was easy to visualize, and I am primarily a visual thinker.
             Computer logic is not easy to visualize, at least I don't think so.
             It took a lot of work to get to the point that I felt thinking about my code was second nature.
@@ -118,6 +118,9 @@
             I always found calculus and geometry to be easy to pick up, because I can <strong>see</strong> them.
             Discrete math, computer logic, and statistics are a different beast, in that they are inherently hard to visualize.
             I had to learn how to use my tools to aid my visual thinking processes, without that I would never have made it.
+        </p>
+        <p class='p-note p-thin'>
+            Well, I guess graph theory and set theory can be visualized... right up until you need to do actually difficult problems.
         </p>
     </template>
 </project-template>

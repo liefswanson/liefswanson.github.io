@@ -4,8 +4,8 @@
         <p class='p-text p-wide'>
             During my
             <router-link class='p-link' exact to='/projects/writing-a-compiler'>class in Compilers</router-link>
-            that I took as part of my
-            <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>,
+            that I took as part of my BSc in
+            <router-link class='p-link' exact to='/projects/sosy'>Software Systems</router-link>,
             I quickly realized I was going to spend a lot of time testing, so I built my own testing harness to meet my exact needs.
             Writing a compiler is a pretty cool experience, but compilers are actually kind of hard to test.
             Especially when the language is actively evolving month to month, as was the case with our iteratively-designed compiler.
@@ -32,7 +32,13 @@
                     <li>The compiler</li>
                     <li>My favourite text editor <span class='p-note'>for writing tests</span></li>
                     <li>The target VM</li>
-                    <li>Wine <span class='p-note'>because the VM was an .exe and I work on Linux</span></li>
+                    <li>
+                        Wine
+                        <span class='p-note'>
+                            because the VM was an .exe and
+                            <router-link class='p-link' exact to='/projects/arch-linux'>I work on Linux</router-link>
+                        </span>
+                    </li>
                 </ul>
             </li>
             <li>Split each test into multiple phases
@@ -45,8 +51,8 @@
             </li>
             <li>Scale across multiple threads by spinning up multiple instances of the compiler, optimizer, or VM</li>
             <li>Add and manage tests effortlessly at a macro level... <span class='p-note'>I had lots of tests</span></li>
-            <li>The compiled assembly couldn't be checked directly, only the resulting behaviour <span class='p-note'>the output code may change due to future features</span></li>
-            <li>When something failed, I wanted to see a diff not a pass/fail</li>
+            <li>The compiled assembly couldn't be checked directly, only the resulting behaviour <span class='p-note'>(the output code may change with the implementation of future features)</span></li>
+            <li>When something failed, I wanted to see a diff not just a pass/fail</li>
             <li>The tests had to be able to ignore time stamps in the compiler log output</li>
         </ul>
     </template>
@@ -59,10 +65,9 @@
 
         <p class='p-wide p-text'>
             In the end it worked out really, really well.
-            The test harness I built saved me tons of time.
             I remember talking to another person in the class, showing them how to use my test harness;
             they got pretty taken aback, because for 75% of the class, they had been testing everything by hand.
-            The test harness I wrote quickly became an indispensable part of their work flow for the final project.
+            The test harness I wrote quickly became an indispensable part of their work flow for the final iteration of their compiler.
         </p>
     </template>
 
@@ -70,7 +75,7 @@
         <p class='p-text p-wide'>
             The how might have been the easiest part of this.
             Certainly there were hiccups during development, but honestly I managed to hack it out in 2 nights.
-            There were hardly any issues, and things were pretty well organized
+            There were hardly any issues, and things were pretty well organized.
         </p>
         <p class='p-text p-wide'>
             The only hiccup I can remember coming across was the VM didn't like having its
@@ -79,8 +84,11 @@
             Luckily, it never output anything through stderr, so I just stopped watching the stderr.
         </p>
         <p class='p-text p-wide'>
-            Oh also if you wrote code with infinite loops, the test harness would never time out... but that was a small issue it only forced me to turn off my laptop once...
-            The solution to that problem was simple, just never write bad code!
+            Oh also if you wrote code with infinite loops, the test harness would never time out.
+            Meaning it would take up all available cpu time and force you to hardware shutoff your computer.
+            However, that was a small issue&mdash;it only forced me to turn off my laptop via the power button once!
+            The solution to that problem was simple: just never write bad code!
+            Because obviously the best testing harness isn't one that helps you find bugs, but instead punishes you mercilessly to the point that you are too afraid to write bad code.
         </p>
     </template>
 </project-template>

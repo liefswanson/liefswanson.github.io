@@ -64,6 +64,10 @@ import ProjectList    from '@/scripts/main/ProjectItems';
 import { SectionMap } from '@/scripts/nav/NavItems';
 
 import { std } from '@/style/ts/StandardUnits';
+import NavEventBus from '@/scripts/nav/NavEventBus';
+import Events from '@/scripts/nav/Events';
+import { setTimeout } from 'timers';
+import { AnimationTimers } from '@/style/ts/Timers';
 
 export default Vue.extend({
     name: "Projects",
@@ -87,6 +91,13 @@ export default Vue.extend({
         },
         filteredProjects(): Project[] {
             return this.projects.filter(this.visible);
+        }
+    },
+    watch: {
+        leftActive() {
+            setTimeout(function() {
+                NavEventBus.$emit(Events.projectGridActive)
+            }, AnimationTimers.project);
         }
     },
     methods: {
@@ -126,7 +137,7 @@ export default Vue.extend({
     components: {
         'project-item': ProjectItem,
         'sticky-bar': StickyBar,
-    },
+    }
 });
 </script>
 

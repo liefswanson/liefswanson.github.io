@@ -83,8 +83,8 @@
             Needleman-Wunsch was originally designed for comparing protein sequences, but it also works well as a component of spell check!
         </p>
         <p class='p-wide p-text'>
-            Those structures could be represented by a few simple geometric structures, requiring only line-line intersection, and point-point distance in
-            <a class='p-link' href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartian plane</a>.
+            Those structures could be represented by a few simple geometric structures, requiring only line-line intersection, and point-point distance in the
+            <a class='p-link' href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian plane</a>.
             Using these structures, it is possible to approximate how likely a typo is to occur given a particular keyboard and vocabulary.
         </p>
         <p class='p-wide p-text'>

@@ -50,13 +50,14 @@
 
     <template slot='how'>
         <p class='p-wide p-text'>
-            This assignment was pretty straight forward, we were given 3 images, and told to combine them to bring out a full range of exposures.
-            Because we were working in Java, and not a language like matlab or python were a few things that I needed to do before I could start combining images.
-            <ul>
-                <li>Build a window to render the image in</li>
-                <li>Add a file selector to pick source images</li>
-                <li>Read all images into objects that can be drawn in a Java Swing window</li>
-                <li>Add the ability to save the output</li>
+            This assignment was pretty straightforward.
+            We were given 3 images, and told to combine them to bring out a full range of exposures.
+            Because we were working in Java, and not a language like matlab or python, there were a few things that I needed to do before I could start combining images.
+            <ul class='p-list'>
+                <li>build a window to render the image in</li>
+                <li>add a file selector to pick source images</li>
+                <li>read all images into objects that can be drawn in a Java Swing window</li>
+                <li>add the ability to save the output</li>
             </ul>
         </p>
 
@@ -78,8 +79,8 @@
 
         <p class='p-wide p-text'>
             The interesting part of this assignment for me was coming up with an equation I could apply to the images that would work to combine them in general.
-            I tried a few ideas, such as averaging, knowing they wouldn't work... but I wanted to see what features they lacked.
-            Once I saw the boring washed out nature of the averaged image, I figured that there should be some form of dynamic weighting, based on the amount of information can be found from each pixel across the three images.
+            I tried a few ideas, such as averaging, knowing those wouldn't work... but I wanted to see what features they lacked.
+            Once I saw the boring washed out nature of the averaged image, I figured that there should be some form of dynamic weighting, based on the amount of information that could be found in each pixel across the 3 images.
             For instance, a pixel might be almost completely black in 2 images, but green in the 1 image. The green pixel is thought to have more information, based on it having exposure closer to the middle of the range.
         </p>
 

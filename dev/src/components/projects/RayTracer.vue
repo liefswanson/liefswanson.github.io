@@ -55,7 +55,7 @@
     <template slot='why'>
         <p class='p-text p-wide'>
             I think the biggest thing that I learned from this project was how not to write C++.
-            I don't find C++ to be a particularly hard language, but I definitely went the wrong way about writing this program.
+            I don't find C++ to be an incredibly hard language, but I definitely went the wrong way about writing this program.
             It was just small enough that I thought I could get away with bad software development practices, and I sort of did, but it was not a fun experience!
         </p>
 
@@ -69,7 +69,7 @@
         </p>
 
         <p class='p-text p-wide'>
-            Without projects like this, were I barely made it out by the skin of my teeth, I don't think I would spent so much time teaching myself how to write code that I could understand years later if I had to.
+            Without projects like this, where I barely made it out by the skin of my teeth, I don't think I would have spent so much time teaching myself how to write code that I could understand years later if I had to.
         </p>
 
         <p class='p-wide p-text'>
@@ -82,7 +82,7 @@
         <p class='p-text p-wide'>
             Honestly, this assignment was done mostly through brute force.
             In the time since completing this project, I have become a much lazier developer... in a good way, let me explain!
-            I do everything in a way that lets me be lazy about fixing things later, rather than working so hard to find where bugs are.
+            I like to spend time upfront refactoring and organizing my code so that it is easy to fix things later... and I don't need to work so hard when a bug really needs to be fixed.
         </p>
 
         <p class='p-text p-wide'>

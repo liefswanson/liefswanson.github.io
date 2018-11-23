@@ -357,7 +357,7 @@ const Projects:Project[] = [
         component: ProjectEuler,
 
         title: 'I Solve Online Math & Coding Problems',
-        blurb: 'Project Euler is a set of math problems online that I sometimes play around with while I teach myself new programming languages. Especially Project Euler, which is named after the mathematician in the painting here!',
+        blurb: 'Project Euler is a set of math problems online that I sometimes play around with while I teach myself new programming languages. Project Euler is named after the mathematician in the painting here!',
         img: {
             path:"static/project-euler/thumb.jpg",
             alt:"oil portrait of Leonhard Euler",
