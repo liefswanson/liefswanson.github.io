@@ -11,7 +11,7 @@
 
     <template slot='what'>
         <p class='p-wide p-text'>
-            Though, one shouldn't think that my tasks were limited to maintenance.
+            My tasks were not limited to maintenance.
             While it is true that I spent plenty of time talking to office assistants while I unplugged and plugged stuff back in again,
             I also spent time making websites and writing code to automate tasks.
             Whittington IT was one of those businesses where they didn't turn down a job if they could do it.
@@ -29,8 +29,8 @@
 
     <template slot='why'>
         <p class='p-wide p-text'>
-            Working for Whittington IT involved working with many customers who were only accustom to my boss.
-            There were definitely some growing pains, as I wasn't accustom to his clientele, nor the issues of theirs that he was in the position of repeatedly fixing.
+            Working for Whittington IT involved working with many customers who were only accustomed to my boss.
+            There were definitely some growing pains, as I wasn't familiar with his clientele, nor the issues of theirs that he was in the position of repeatedly fixing.
             It was one of those things where you are thrown straight in, and learn on the job.
         </p>
 
@@ -44,16 +44,16 @@
 
     <template slot='how'>
         <p class='p-wide p-text'>
-            The how of this was pretty straight forward actually.
+            The how of this was pretty straightforward actually.
             I think this sort of work comes down more to people skills than it does to technical ability.
             With time you get an intuition for how certain problems present themselves, and the fast ways to diagnose them.
-            The real difficulty comes from the people that are freaking out because their system is down.
+            The real difficulty comes from the people that are panicking because their system is down.
         </p>
 
         <p class='p-wide p-text'>
             It is very stressful to work a demanding job, such as being a doctor... and even worse when your tools don't work.
             I think my greatest asset in these sorts of situations is an ability to stay calm and talk people through difficult situations while I fix the problem.
-            Keeping people apprised of the current situation goes a long way to making them feel they have more adjency is an otherwise out of control situation.
+            Keeping people apprised of the current situation goes a long way to making them feel they have more agency in an otherwise out of control situation.
             Most of the time, that is all that is needed to give people peace of mind long enough to fix the problem.
         </p>
     </template>

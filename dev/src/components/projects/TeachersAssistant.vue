@@ -34,8 +34,8 @@
             <ul class='p-list'>
                 <li>Teaching students how to verify the correctness of their own code</li>
                 <li>Thoroughly explaining software design patterns</li>
-                <li>Pulling overtime office hours <span class='p-note'>otherwise most students wouldn't receive help</span></li>
-                <li>Manning an online help forum <span class='p-note'>email buckled under the volume of student inquiries</span></li>
+                <li>Pulling overtime office hours, otherwise most students wouldn't receive help</li>
+                <li>Manning an online help forum <span class='p-note'>(email buckled under the volume of student inquiries)</span></li>
                 <li>Giving advice I wish I had gotten early in my degrees</li>
                 <li>Helping students understand why and where they made mistakes</li>
             </ul>
@@ -70,7 +70,7 @@
     <template slot='how'>
         <p class='p-text p-wide'>
             As I already stated, probably the most important aspect of being able to handle this workload was creating as much automation as possible.
-            Just trying to download, unzip, configure, compile, and execute every indidivual's code took about 2 minutes.
+            Just trying to download, unzip, configure, compile, and execute every individual's code took about 2 minutes.
             There were 90 students, 90 students &times; 2 minutes/student = 180 minutes = 3 hours...
             At that point, I wouldn't have even observed the output of their program yet, meaning I wouldn't even be marking it yet.
             So, I automated not only standard tests to run against student's assignments, but also the 2 minutes of work to get a project running.
@@ -83,7 +83,7 @@
             Students were expected do simple monospaced
             <a class='p-link' href="https://www.techwalla.com/articles/what-is-text-reflow">text reflow</a>
             inside of the shapes they rendered, and the shapes they were supposed to render were static.
-            This meant every student should have a window that renders identically. I took advantage of this, automatically took a screenshot of the window they rendered and ran it through
+            This meant every student should have a window that renders identically. I took advantage of this by automatically taking a screenshot of the window they rendered and running it through
             <a class='p-link' href="https://github.com/yahoo/blink-diff">Yahoo's blink-diff</a>.
         </p>
         <p class='p-wide p-text'>

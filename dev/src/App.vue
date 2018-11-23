@@ -46,7 +46,7 @@ export default Vue.extend({
         }
     },
     watch: {
-        $route() {
+        $route(from, to) {
             window.scrollTo(0, 0);
         }
     },
