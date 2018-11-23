@@ -3,7 +3,8 @@
     :style='style'>
     <router-link :to='target'
                  exact
-                 class='suppress-link-style'>
+                 :tabindex="index"
+                 class='suppress-link-style project-link'>
         <div ref='content'
              class='content'>
             <div class='card-header'>
@@ -70,16 +71,16 @@ export default Vue.extend({
             type: Object as () => Project,
             required: true
         },
-        autoRows: {
-            type: Number,
-            required: true
-        },
         gap: {
             type: Number,
             required: true
         },
         filters: {
             type: Array as () => Tag[],
+            required: true
+        },
+        index: {
+            type: Number,
             required: true
         }
     },
@@ -120,30 +121,7 @@ export default Vue.extend({
         filterActive(tag: Tag) {
             return this.filters.length == 0 ||
                    this.filters.indexOf(tag) !== -1;
-        },
-        updateSpan() {
-            var content = this.$refs.content as Element;
-
-            var span = content.getBoundingClientRect().height / pxInStd();
-            span = span / (this.autoRows + this.gap);
-            span = Math.ceil(span);
-
-            let margin = Measurement.gridGap/this.autoRows;
-
-            this.rowSpan = span + margin;
-        },
-    },
-    mounted() {
-        window.addEventListener(Events.resize, this.updateSpan);
-        NavEventBus.$on(Events.navAnimDone, this.updateSpan);
-        NavEventBus.$on(Events.projectGridActive, this.updateSpan);
-
-        this.updateSpan();
-    },
-    beforeDestroy() {
-        window.removeEventListener(Events.resize, this.updateSpan);
-        NavEventBus.$off(Events.navAnimDone, this.updateSpan);
-        NavEventBus.$off(Events.projectGridActive, this.updateSpan);
+        }
     },
     components: {
         'prealloc': PreallocatedImageVue
@@ -168,26 +146,31 @@ export default Vue.extend({
 }
 
 .item {
+    display: inline-block;
     overflow: hidden;
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
     margin-bottom: $grid-gap;
-    border: 0.125rem solid $xlight;
     //box-shadow: 0.25rem 0.25rem 1rem $dark;
     background: darken($bright, 5%);
 
     @include not-selectable;
+}
 
-
-
-    a:hover,
-    a:focus {
+.project-link:hover,
+.project-link:focus {
+    .content{
         border-color: $projects-swatch;
-        .mask {
-            opacity: 0.25;
-        }
     }
+    .mask {
+        opacity: 0.25;
+    }
+}
+
+.content {
+    border: 0.125rem solid $xlight;
+
 }
 
 .mask {

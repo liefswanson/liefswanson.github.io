@@ -24,20 +24,24 @@
                 </div>
 
             </sticky-bar>
-            <transition-group class='project-grid main-content'
-                              :style='style'
-                              ref='container'
-                              name='project-group'
-                              tag='ul'>
-
-                <project-item v-for='project in filteredProjects'
-                              :key='project.path'
-                              :properties="project"
-                              :autoRows='autoRows'
-                              :gap='gap'
-                              :filters='filters'
-                              class='project-card'/>
-            </transition-group>
+            <ul class='project-grid main-content'
+                :style='style'
+                ref='container'>
+                <li v-for='(projectGroup, groupid) in orderedProjects'
+                    :key='groupid'
+                    class='dont-break'>
+                    <ul name='project-group'
+                        tag='ul'>
+                        <project-item v-for='(project, index) in projectGroup'
+                                      :key='project.path'
+                                      :properties="project"
+                                      :gap='gap'
+                                      :filters='filters'
+                                      :index="index"
+                                      class='project-card'/>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <div v-else
@@ -63,21 +67,24 @@ import Project        from '@/scripts/main/Project';
 import ProjectList    from '@/scripts/main/ProjectItems';
 import { SectionMap } from '@/scripts/nav/NavItems';
 
-import { std } from '@/style/ts/StandardUnits';
+import { std, pxInStd } from '@/style/ts/StandardUnits';
 import NavEventBus from '@/scripts/nav/NavEventBus';
 import Events from '@/scripts/nav/Events';
 import { setTimeout } from 'timers';
 import { AnimationTimers } from '@/style/ts/Timers';
+import Breakpoints from '@/style/ts/Breakpoints';
+import Measurement from '@/style/ts/Measurement';
 
 export default Vue.extend({
     name: "Projects",
     data() {
         return {
             projects: ProjectList,
-            autoRows: 1, //measurements assume use of std
             gap: 0,
             filters: [] as Tag[],
             tags: TagItems,
+            orderedProjects: [ProjectList],
+            columnCount: 1,
         }
     },
     computed: {
@@ -86,19 +93,22 @@ export default Vue.extend({
         },
         style(): object {
             return {
-                "grid-auto-rows": this.autoRows + std
+                'column-count': this.columnCount
             }
         },
         filteredProjects(): Project[] {
+            // Having no filters active is considered the same as having all filters active.
+            if (this.filters.length == 0) {
+                return this.projects;
+            }
+
             return this.projects.filter(this.visible);
-        }
+        },
     },
     watch: {
-        leftActive() {
-            setTimeout(function() {
-                NavEventBus.$emit(Events.projectGridActive)
-            }, AnimationTimers.project);
-        }
+        filteredProjects() {
+            this.forceGridUpdate();
+        },
     },
     methods: {
         filterMessage(filter: Tag):string {
@@ -119,10 +129,6 @@ export default Vue.extend({
         },
         visible(project: Project):boolean {
             let filters = this.filters;
-            // Having no filters active is considered the same as having all filters active.
-            if (filters.length == 0) {
-                return true;
-            }
 
             function intersection(filter: Tag): boolean {
                 return filters.indexOf(filter) !== -1;
@@ -132,18 +138,68 @@ export default Vue.extend({
         },
         selected(filter: Tag) {
             return this.filters.indexOf(filter) !== -1;
+        },
+        calcColumnCount(): number {
+            let container = this.$refs.container as Element;
+
+            let width = container.getBoundingClientRect().width / pxInStd();
+
+            return Math.floor(width/Measurement.gridColumnWidth);
+        },
+        reorderProjects(): Project[][] {
+            let columns = [] as Project[][];
+            let columnCount = this.columnCount;
+            for(let i = 0; i < columnCount; i++){
+                columns.push([]);
+            }
+
+            let filteredProjects = this.filteredProjects;
+            for (let i = 0; i < filteredProjects.length; i++) {
+                let current = filteredProjects[i];
+                columns[i%columnCount].push(current);
+            }
+
+            return columns
+        },
+        manualGridUpdate() {
+            let temp = this.calcColumnCount();
+            if (temp == this.columnCount) {
+                return;
+            }
+            this.forceGridUpdate();
+        },
+        forceGridUpdate() {
+            this.columnCount = this.calcColumnCount();
+            this.orderedProjects = this.reorderProjects();
         }
     },
     components: {
         'project-item': ProjectItem,
         'sticky-bar': StickyBar,
-    }
+    },
+    mounted() {
+        window.addEventListener(Events.resize, this.manualGridUpdate);
+        NavEventBus.$on(Events.navAnimDone, this.manualGridUpdate);
+
+        this.manualGridUpdate();
+    },
+    beforeDestroy() {
+        window.removeEventListener(Events.resize, this.manualGridUpdate);
+        NavEventBus.$off(Events.navAnimDone, this.manualGridUpdate);
+
+    },
 });
 </script>
 
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
+
+.dont-break {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
 
 .filter-bar {
     display: flex;
@@ -192,28 +248,9 @@ export default Vue.extend({
 }
 
 .project-grid {
-    @supports (display: grid) {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-    }
-
-    @include on-phone {
-        column-count: 1;
-    }
-    @include on-tablet {
-        column-count: 2;
-    }
-    @include on-laptop {
-        column-count: 3;
-    }
-    @include on-desktop {
-        column-count: 4;
-    }
-
     list-style-type: none;
-
-    grid-column-gap: $grid-gap;
-
+    column-fill: auto;
+    column-gap: $grid-gap;
     max-width: $large-size + $medium-size; // pretty close to where my desktop monitor sits
     margin: auto;
 }
@@ -225,26 +262,6 @@ export default Vue.extend({
         max-width: none;
         margin: none;
     }
-}
-
-.project-group-move {
-    transition: transform $grid-rearrange-animation-time ease;
-}
-
-.project-group-enter {
-    opacity: 0;
-    transform: translateY(-2rem);
-}
-
-.project-group-enter-active,
-.project-group-leave-active {
-    transition: opacity $grid-rearrange-animation-time ease,
-                transform $grid-rearrange-animation-time ease;
-}
-
-.project-group-leave-active {
-    position: absolute !important;
-    visibility: hidden;
 }
 
 .project-card {
