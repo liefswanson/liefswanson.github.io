@@ -4,6 +4,7 @@
                  exact
                  :class='classes'
                  ref='link'
+                 @click.native='followNav'
                  class='nav-link suppress-link-style'>
         {{ name }}
     </router-link>
@@ -65,6 +66,11 @@ export default Vue.extend({
         },
         emitColorChange() {
             NavEventBus.$emit(Events.changeColor, this.color);
+        },
+        followNav() {
+            if (Breakpoints.onTabletOrDown()) {
+                this.emitClose()
+            }
         }
     },
     mounted() {
