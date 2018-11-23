@@ -12,7 +12,7 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const env = require('../config/prod.env')
-//const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -29,7 +29,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
-    /*new PrerenderSpaPlugin(
+    new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
       ['/', '/about', '/contact', '/ongoing', '/resume', '/projects',
       '/projects/arch-linux',
@@ -54,7 +54,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       '/projects/whittington-it',
       '/projects/writing-a-compiler',
     ]
-    ),*/
+    ),$
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
