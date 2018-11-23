@@ -6,6 +6,7 @@ enum Events {
     openNav     = "nav-bar-open",
     toggleNav   = "nav-bar-toggle",
     navAnimDone = 'nav-done-animating',
+    projectGridActive = 'project-grid-active',
 
     openHeader   = 'header-open',
     closeHeader  = 'header-close',

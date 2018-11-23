@@ -26,8 +26,8 @@
 
     <template slot='why'>
         <p class='p-wide p-text'>
-            Every excuse to learn something is something I feel good about.
-            What's even better is it was a fun project to do in my spare time.
+            I feel good about any excuse to learn something.
+            What's even better is it was a fun project that only took a spare weekend.
         </p>
         <p class='p-wide p-text'>
             What's more is there are so many other little projects I can envision tying into this one, and all of them will be great opportunities to learn new things.

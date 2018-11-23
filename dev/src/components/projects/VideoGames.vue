@@ -31,7 +31,7 @@
     <template slot='what'>
         <p class='p-wide p-text'>
             All that is required from me is to pay attention to the design decisions and technical achievements inside games while I play them.
-            I think it is important for anyone interested in software or design to pay close attention to the media they consume, so that they can learn from the polish of the implementaion and way it is presented.
+            I think it is important for anyone interested in software or design to pay close attention to the media they consume, so that they can learn from the polish of the implementation and way it is presented.
         </p>
     </template>
 
@@ -41,14 +41,14 @@
         </p>
 
         <p class='p-wide p-text'>
-            I think that someone interesting in UI design not taking the time to study video games is like a dairy farmer that doesn't drink milk, or an electrician that lives in a cave.
+            I think that someone interested in UI design not taking the time to study video games is like a dairy farmer that doesn't drink milk, or an electrician that lives in a cave.
             There is a great deal to be learned about user engagement, user enjoyment, and effective UI from video games.
             Often things get tried out for the first time in earnest inside the domain of video games... because professional software is not willing to take the risks to try out new interaction models.
         </p>
 
         <p class='p-wide p-text'>
-            For instance, the drop down console was a UI element that was essentially pioneered by the game quake.
-            It has since become very common place as part of the game developer's UI that is intergrated by them for use in their own games.
+            For instance, the drop down console was a UI element that was essentially pioneered by the game Quake.
+            It has since become very commonplace as part of the game developer's UI that is integrated by them for use in their own games.
             Some companies even leave it in for users to be able to play around with it.
             That might seem like an odd example, but in reality I think it is a very good one, because I have a dropdown console integrated into my desktop that I use <strong>every</strong> day.
             The prospect of a tool that I use every day on Linux may never have existed were it not for the concept being pioneered inside a video game first.
@@ -66,10 +66,10 @@
             One of my favourite games to point to as an excellent example of game design is
             <a class='p-link' href="https://www.hellblade.com">Hellblade: Senua's Sacrifice</a>.
             The design is incredibly meticulous and makes use of a whole sense that other games just treat as filler... hearing.
-            The game is quite literally not possible to complete without binural audio... and your ability to relate to the main character would not be anywhere near as good if you could not hear exactly what she hears in the way she hears it.
-            The game's camera is pulled in very tightly to enhance the cohesion between audio and visual.
+            The game is quite literally not possible to complete without binaural audio... and your ability to relate to the main character would not be anywhere near as good if you could not hear exactly what she hears in the way she hears it.
+            The game's camera is pulled in very tightly to enhance the cohesion between the audio and visuals.
             My senses come close to merging with those of the main character, even though I wasn't playing in VR.
-            That combined with the detail put into portraying the subject matter makes senua's sacrifice something worth learning from.
+            That combined with the detail put into portraying the subject matter makes Senua's Sacrifice something worth learning from.
         </p>
 
         <p class='p-wide p-text'>

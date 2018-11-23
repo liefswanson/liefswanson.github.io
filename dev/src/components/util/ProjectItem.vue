@@ -136,12 +136,14 @@ export default Vue.extend({
     mounted() {
         window.addEventListener(Events.resize, this.updateSpan);
         NavEventBus.$on(Events.navAnimDone, this.updateSpan);
+        NavEventBus.$on(Events.projectGridActive, this.updateSpan);
 
         this.updateSpan();
     },
     beforeDestroy() {
         window.removeEventListener(Events.resize, this.updateSpan);
         NavEventBus.$off(Events.navAnimDone, this.updateSpan);
+        NavEventBus.$off(Events.projectGridActive, this.updateSpan);
     },
     components: {
         'prealloc': PreallocatedImageVue

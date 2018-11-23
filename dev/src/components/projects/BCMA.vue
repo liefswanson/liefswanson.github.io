@@ -48,7 +48,7 @@
 
     <template slot='how'>
         <p class='p-wide p-text'>
-            I worked under the loose supervision of 3 seasoned IT professionals, so that made things pretty easy; making the ocassional mistake was not a huge problem.
+            I worked under the loose supervision of 3 seasoned IT professionals, so that made things pretty easy; making the occasional mistake was not a huge problem.
             I think the hardest part was figuring out how to use the down-time to preempt future issues.
             It tends to be that problems that need to be solved comes in waves.
             I think that is mostly because problems take time to fix, and the odds of another problem occuring only increases the longer it takes to fix something.

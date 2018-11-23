@@ -84,10 +84,6 @@
 
     <template slot='how'>
         <p class='p-text p-wide'>
-            Most of the process of working with this assignment came down to liberal use of valgrind.
-        </p>
-
-        <p class='p-text p-wide'>
             I think the most interesting part of this project was actually the way I implemented row breaks, 4 of a kind breaks, and the moveable tetromino.
         </p>
 
