@@ -131,9 +131,10 @@
             <a class='p-link' href="https://sourcemaking.com/antipatterns/spaghetti-code">wall of spaghetti</a>.
         </p>
         <p class='p-note p-thin'>
-            Speaking of spaghetti code, there is actually a contest where people try to create the least understandable
-            <a class='p-link' href="https://en.wikipedia.org/wiki/International_Obfuscated_C_Code_Contest">code</a>
-            possible.
+            I think it was this class that helped me teach students about writing better code when
+            <router-link class='p-link' exact to='/projects/teachers-assistant'>I was a TA</router-link>.
+            On a partially related note... if you want to see some real spaghetti code, check out the
+            <a class='p-link' title='International Obfuscated C Code Contest' href="https://en.wikipedia.org/wiki/International_Obfuscated_C_Code_Contest">IOCCC</a>
         </p>
     </template>
 

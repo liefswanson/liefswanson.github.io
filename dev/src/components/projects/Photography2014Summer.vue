@@ -2,8 +2,8 @@
 <project-template name='Photography2014Summer'>
     <template slot='intro'>
         <p class='p-wide p-text'>
-            For a class in photography in my
-            <router-link class='p-link' exact to='/projects/siat'>Interactive Technology degree</router-link>
+            For a class in digital photography that I took as part of my BSc in
+            <router-link class='p-link' exact to='/projects/siat'>Interactive Technology</router-link>,
             I was given a project where I had to put together an album of my best work from the class, while improving on each piece.
         </p>
         <p class='p-text p-wide'>
@@ -14,8 +14,9 @@
 
     <template slot='what'>
         <p class='p-wide p-text'>
+            My goal was to produce a photo album that I would be happy to put in a portfolio.
             I was both the photographer and photo editor.
-            The goal was to produce an photo album that I was happy to put on a portfolio.
+            I had to come up with the subjects to photograph, plan the best ways to get good photos of those subjects, and then work on accentuating the qualities I wanted to focus on through digital editing.
         </p>
         <figure class='p-wide-grow'>
             <v-carousel class='p-image p-wide-grow'
