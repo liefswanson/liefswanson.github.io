@@ -54,7 +54,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       '/projects/whittington-it',
       '/projects/writing-a-compiler',
     ]
-    ),$
+    ),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
