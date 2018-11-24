@@ -191,8 +191,6 @@ export default Vue.extend({
 
         let animator = this.$refs.animator as HTMLElement;
         animator.removeEventListener(Events.transitionEnd, this.animOver,false);
-
-        this.loaded = false;
     }
 });
 </script>

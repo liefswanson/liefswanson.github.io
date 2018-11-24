@@ -74,7 +74,7 @@
         </p>
 
         <p class='p-wide p-text'>
-            In the end though, I think the most valuable thing about volunteering in the lab was the conversations I had with intelligent scientifically minded people.
+            I think the most valuable thing I personally gained by volunteering in the lab was the conversations I had with intelligent scientifically minded people.
             If a topic is even slightly related to cognitive science, be assured it is a topic of discussion in that lab.
             I learned a fair amount about a field I didn't know much about, in only a few weeks, by simply listening to what others were talking about and chiming in when I could.
         </p>

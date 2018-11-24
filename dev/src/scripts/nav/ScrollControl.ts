@@ -28,7 +28,7 @@ let restore = {
     onkeydown: document.onkeydown
 }
 function disableScroll() {
-    window.onwheel = preventDefault; // modern standard
+    window.onwheel = preventDefault;
     document.onkeydown  = preventDefaultForScrollKeys;
     enabled = false;
 }

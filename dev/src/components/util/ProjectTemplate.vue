@@ -1,5 +1,5 @@
 <template>
-<article class='p-root'>
+<article>
     <project-title :name='name'/>
 
     <project-controls :current='name'/>

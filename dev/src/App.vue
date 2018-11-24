@@ -149,7 +149,7 @@ export default Vue.extend({
 
 
 #main-root {
-    padding-top: $header-height;
+    margin-top: $header-height;
     //min-height: 100vh;
     max-width: 100vw;
 }
@@ -160,7 +160,7 @@ export default Vue.extend({
 
 .push {
     @include on-laptop-or-up {
-        padding-left: $nav-width;
+        margin-left: $nav-width;
     }
 }
 
