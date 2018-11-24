@@ -39,14 +39,12 @@
                                   "width": columnWidth + "%"
                                 }'
                               :filters='filters'
-                              class='project-card'
-                              :class='islastColumn(index) ? "last-column" : undefined'/>
-                <li v-for='(pad, index) in columnPads'
+                              class='project-card'/>
+                <li v-for='index in columnCount-1'
                     :key=index
                     class='masonry-padding'
                     :style='{
                         order: index,
-                        height: pad + "px"
                     }'
                 />
             </transition-group>
@@ -91,7 +89,6 @@ export default Vue.extend({
             tags: TagItems,
 
             projectIndexes: [] as number[],
-            columnPads: [] as number[],
             columnHeights: [] as number[],
             columnWidth: 18,
             columnCount: 1,
@@ -109,7 +106,7 @@ export default Vue.extend({
         },
         style(): object {
             return {
-                height: this.height + 'px',
+                height: this.height + 2*pxInStd() + 'px',
             }
         },
         filteredProjects(): Project[] {
@@ -118,6 +115,17 @@ export default Vue.extend({
                 return this.projects;
             }
             return this.projects.filter(this.visible);
+        },
+        columnPads() : number[] {
+            let heights = this.columnHeights;
+            let tallest = this.height;
+            let pads = [] as number[];
+
+            for(let i = 0; i < heights.length-1; i++) {
+                pads.push(Math.floor(tallest - heights[i]));
+            }
+
+            return pads;
         }
     },
     watch: {
@@ -164,27 +172,24 @@ export default Vue.extend({
                 return;
             }
 
-            this.columnPads = [];
-
-            this.columnWidth = temp.width;
+            this.columnWidth = temp.colWidth;
             this.columnCount = temp.count;
 
-            this.computeHeightsBreaksAndIndexes();
+            Vue.nextTick(this.computeHeightsBreaksAndIndexes);
         },
         computeWidthandCount() {
             let container = document.getElementById('project-grid-container') as Element;
             var width = parseFloat(getComputedStyle(container).width as string);
-            this.width = width;
 
             let maxed = Measurement.maxColumnCount;
             let calced = Math.floor(width/(Measurement.minColumnWidth*pxInStd()));
 
             let colCount = Math.min(maxed, Math.max(1, calced));
-            let colWidth = 100 / colCount
 
             return {
                 count: colCount,
-                width: colWidth
+                width: width,
+                colWidth: 100/colCount
             };
         },
         computeHeightsBreaksAndIndexes() {
@@ -192,7 +197,6 @@ export default Vue.extend({
             let children = container.children;
             let colCount = this.columnCount;
 
-            let pads = [] as number[];
             let heights = [] as number[];
             for(let i = 0; i < colCount; i++){
                 heights.push(0);
@@ -213,22 +217,17 @@ export default Vue.extend({
                 var childHeight = parseFloat(childStyle.height as string);
                 heights[column] += childHeight;
             }
-            for(let i = 0; i < heights.length; i++) {
-                heights[i] = Math.ceil(heights[i]);
-            }
 
             let tallest = this.tallestColumnHeight(heights);
 
-            for(let i = 0; i < heights.length; i++) {
-                pads.push(tallest - heights[i]);
-            }
-
-            this.columnPads = pads;
 
             this.columnHeights = heights;
             this.height = tallest;
 
             this.projectIndexes = indexes;
+        },
+        handleResize() {
+            this.recomputeColumns();
         },
         tallestColumnHeight(columns: number[]) : number {
             var max = 0;
@@ -246,15 +245,15 @@ export default Vue.extend({
         }
     },
     mounted() {
-        NavEventBus.$on(Events.navAnimDone, this.recomputeColumns);
-        window.addEventListener(Events.resize, this.recomputeColumns);
+        NavEventBus.$on(Events.navAnimDone, this.handleResize);
+        window.addEventListener(Events.resize, this.handleResize);
         Vue.nextTick(this.recomputeColumns);
 
         this.$forceUpdate();
     },
     beforeDestroy() {
-        NavEventBus.$off(Events.navAnimDone, this.recomputeColumns);
-        window.removeEventListener(Events.resize, this.recomputeColumns);
+        NavEventBus.$off(Events.navAnimDone, this.handleResize);
+        window.removeEventListener(Events.resize, this.handleResize);
     },
 
     components: {
@@ -314,6 +313,15 @@ export default Vue.extend({
     height: calc(100% - $header-height);
 }
 
+.left {
+    max-width: $large-size + $medium-size;
+    margin: auto;
+}
+
+.masonry-padding{
+    flex-basis: 100%;
+}
+
 .project-grid {
     display: flex;
     flex-flow: column wrap;
@@ -322,10 +330,9 @@ export default Vue.extend({
     overflow: hidden;
 
     list-style-type: none;
+    margin-right: -2rem;
 
     max-width: 100%;
-
-    margin: auto;
 }
 
 .project-focused {
@@ -357,13 +364,9 @@ export default Vue.extend({
 }
 
 .project-card {
-    //padding-right: $grid-gap;
-    //padding-bottom: $grid-gap;
+    padding-right: $grid-gap;
+    padding-bottom: $grid-gap;
     box-sizing: border-box;
-}
-
-.project-card.last-column {
-    padding-right: 0;
 }
 
 .focus-enter-active,
