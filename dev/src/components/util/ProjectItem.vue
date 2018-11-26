@@ -3,7 +3,7 @@
     :style='style'>
     <router-link :to='target'
                  exact
-                 class='suppress-link-style'>
+                 class='suppress-link-style project-link'>
         <div ref='content'
              class='content'>
             <div class='card-header'>
@@ -173,21 +173,32 @@ export default Vue.extend({
     cursor: pointer;
     box-sizing: border-box;
     margin-bottom: $grid-gap;
-    border: 0.125rem solid $xlight;
     //box-shadow: 0.25rem 0.25rem 1rem $dark;
     background: darken($bright, 5%);
 
     @include not-selectable;
+}
 
+.project-link {
+    border: 0.125rem solid $xlight;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-
-    a:hover,
-    a:focus {
+    &:hover,
+    &:focus {
         border-color: $projects-swatch;
         .mask {
             opacity: 0.25;
         }
     }
+}
+
+.content {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .mask {
@@ -212,14 +223,6 @@ export default Vue.extend({
 .card-header {
     position: relative;
     background: $medium;
-}
-
-// currently unused
-.overlayed {
-    background: transparentize($medium, 0.1); //projects-swatch;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .title {
