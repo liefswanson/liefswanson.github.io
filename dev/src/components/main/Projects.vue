@@ -188,7 +188,7 @@ export default Vue.extend({
 }
 
 .panel {
-    height: calc(100% - $header-height);
+    height: calc(100% - #{$header-height});
 }
 
 .project-grid {
