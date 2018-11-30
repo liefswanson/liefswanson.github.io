@@ -141,7 +141,7 @@ export default Vue.extend({
 @import '@/style/master.scss';
 
 #root {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     min-height: 100vh;
     user-select: auto !important;
     touch-action: pan-y pinch-zoom !important;

@@ -6,6 +6,9 @@ import Resume   from '@/components/main/Resume.vue';
 import Contact  from '@/components/main/Contact.vue';
 import About    from '@/components/main/About.vue';
 
+import Citations from '@/components/main/Citations.vue';
+import Guide from '@/components/main/Guide.vue';
+
 import Swatch from '@/style/ts/Swatch';
 
 const Sections = [
@@ -40,6 +43,18 @@ const Sections = [
         component: About
     },
 
+    {
+        path: '/citations',
+        name: 'Citations',
+        color: Swatch.citations,
+        component: Citations
+    },
+    {
+        path: '/guide',
+        name: 'Guide',
+        color: Swatch.guide,
+        component: Guide
+    }
 ]
 
 // NOTE: the method signature is true evil, this is better to infer it
@@ -54,6 +69,11 @@ const SectionMap = {
         (elem) => elem.component == Contact )[0],
     about:    Sections.filter(
         (elem) => elem.component == About   )[0],
+
+    citations: Sections.filter(
+        (elem) => elem.component == Citations)[0],
+    guide:    Sections.filter(
+        (elem) => elem.component == Guide    )[0],
 }
 
 export default Sections;

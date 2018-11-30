@@ -1,5 +1,5 @@
 <template>
-<article class='p-root'>
+<div class='p-root'>
     <project-title :name='name'/>
 
     <project-controls :current='name'/>
@@ -29,7 +29,7 @@
             <slot name='how'/>
         </div>
     </collapse>
-</article>
+</div>
 </template>
 
 <script lang="ts">

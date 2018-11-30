@@ -1,6 +1,6 @@
 <template>
-<div class='featured-root'>
-    <h1 class='title'>
+<section class='ongoing-root'>
+    <h1 class='title p-title'>
         Some Projects I Have in the Works
     </h1>
     <p class='p-note'>
@@ -28,10 +28,10 @@
               :img="{
                   path: '/static/updates/sudoku-book.jpg',
                   alt: 'picture of a book of unsolved sudokus',
-                  width: 600,
-                  height: 450
+                  width: 640,
+                  height: 480
               }"
-              stamp='November 13<sup>th</sup> 2018'>
+              stamp='November 29<sup>th</sup> 2018'>
         I am working on integrating a camera and character recognition into an Android application along with
         <router-link class='o-link' exact to='projects/sudoku'>my automatic sudoku solver</router-link>.
         Take a picture and it solves itself, so you never have to again.
@@ -43,8 +43,8 @@
                   width: 768,
                   height: 480
               }"
-              stamp='November 13<sup>th</sup> 2018'>
-        As of the time of writing this, I have a 100+ day Polish streak on
+              stamp='November 29<sup>th</sup> 2018'>
+        As of the time of writing this, I have a 110+ day Polish streak on
         <a class='o-link' href="https://www.duolingo.com">duolingo</a>
         doing 30+ minutes per day.
         Why Polish? One of my
@@ -52,8 +52,9 @@
         is made by a
         <a class='o-link' title='CDPR' href="https://en.cdprojektred.com">Polish development studio</a>,
         and I figured it is probably even more polished in Polish.
+        So I figured if it interested me, I might as well learn a new natural language.
     </upcoming>
-</div>
+</section>
 </template>
 
 <script lang='ts'>
@@ -75,11 +76,15 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '@/style/master.scss';
-.featured-root {
+.ongoing-root {
     max-width: $medium-size;
     margin: auto;
     padding: 2rem;
     padding-top: 1rem;
+}
+
+.title {
+    font-size: 1.75rem;
 }
 
 .o-link {

@@ -84,7 +84,7 @@ export default Vue.extend({
     margin-top: 1rem;
     font-size: 1.25rem;
     background: darken($bright, 7%);
-    border: 0.125rem solid darken($bright, 7%);
+    border: 0.125rem solid $xlight;
     border-radius: 1.25rem;
     display: inline-block;
     cursor: pointer;

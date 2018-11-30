@@ -1,5 +1,5 @@
 <template>
-<article class='main-content'>
+<div class='main-content'>
     <collapse title='About Me'
               initShow
               about>
@@ -142,30 +142,30 @@
             to be a valuable part of my own experience in software and user interaction.
             I think the amazing work they do is partly why I worked to obtain two bachelor's of science in interaction design and computer science.
             My top five games of all time are:
-
-            <ol class='list emphasized'>
-                <li>
-                    Hellblade : Senua's Sacrifice
-                    <em class='low'>by Ninja Theory</em>
-                </li>
-                <li>
-                    The Witcher 3 : Wild Hunt
-                    <em class='low'>by CD Projekt Red</em>
-                </li>
-                <li>
-                    Total War : Shogun 2
-                    <em class='low'>by Creative Assembly</em>
-                </li>
-                <li>
-                    Grim Dawn
-                    <em class='low'>by Crate Entertainment</em>
-                </li>
-                <li>
-                    Minecraft (modded beyond all recognition)
-                    <em class='low'>by Mojang and <strong>many</strong> modders</em>
-                </li>
-            </ol>
         </p>
+
+        <ol class='list emphasized'>
+            <li>
+                Hellblade : Senua's Sacrifice
+                <em class='low'>by Ninja Theory</em>
+            </li>
+            <li>
+                The Witcher 3 : Wild Hunt
+                <em class='low'>by CD Projekt Red</em>
+            </li>
+            <li>
+                Total War : Shogun 2
+                <em class='low'>by Creative Assembly</em>
+            </li>
+            <li>
+                Grim Dawn
+                <em class='low'>by Crate Entertainment</em>
+            </li>
+            <li>
+                Minecraft (modded beyond all recognition)
+                <em class='low'>by Mojang and <strong>many</strong> modders</em>
+            </li>
+        </ol>
 
         <p class='u-para'>
             I have
@@ -175,31 +175,30 @@
             I have listened to
             <router-link class='a-link' exact to='/projects/audio-books'>many audio books</router-link>.
             My top five are nearly impossible to pick... but here are five really good ones that I never heard of before I decided to read them:
-
-
-            <ol class='list emphasized'>
-                <li>
-                    The Etymologicon : A Circular Stroll Through the Hidden Connections of the English Language
-                    <em class='low'>by Mark Forsyth</em>
-                </li>
-                <li>
-                    A History of the World in 6 Glasses
-                    <em class='low'>by Tom Standage</em>
-                </li>
-                <li>
-                    Misbehaving : The Making of Behavioural Economics
-                    <em class='low'>by Richard Thaler</em>
-                </li>
-                <li>
-                    The Drunkard's Walk : How Randomness Rules Our Lives
-                    <em class='low'>by Leonard Mlodinow</em>
-                </li>
-                <li>
-                    The Half Has Never Been Told : Slavery and the Making of American Capitalism
-                    <em class='low'>by Edward E. Baptist</em>
-                </li>
-            </ol>
         </p>
+
+        <ol class='list emphasized'>
+            <li>
+                The Etymologicon : A Circular Stroll Through the Hidden Connections of the English Language
+                <em class='low'>by Mark Forsyth</em>
+            </li>
+            <li>
+                A History of the World in 6 Glasses
+                <em class='low'>by Tom Standage</em>
+            </li>
+            <li>
+                Misbehaving : The Making of Behavioural Economics
+                <em class='low'>by Richard Thaler</em>
+            </li>
+            <li>
+                The Drunkard's Walk : How Randomness Rules Our Lives
+                <em class='low'>by Leonard Mlodinow</em>
+            </li>
+            <li>
+                The Half Has Never Been Told : Slavery and the Making of American Capitalism
+                <em class='low'>by Edward E. Baptist</em>
+            </li>
+        </ol>
 
         <p class='u-para'>
             I also like movies, I won't give you a list of my top five...
@@ -208,7 +207,7 @@
             even if most people don't agree.
         </p>
     </collapse>
-</article>
+</div>
 </template>
 
 <script lang="ts">
@@ -258,6 +257,7 @@ export default Vue.extend({
     font-size: 1.25rem;
     color: $about-swatch;
     font-weight: bold;
+    margin-bottom: 2rem;
 }
 
 .item {

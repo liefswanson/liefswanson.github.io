@@ -1,5 +1,5 @@
 <template>
-<div class='projects-root'>
+<section class='projects-root'>
     <transition name='focus'
                 mode='out-in'>
 
@@ -49,7 +49,7 @@
         </div>
 
     </transition>
-</div>
+</section>
 </template>
 
 <script lang="ts">
@@ -156,7 +156,7 @@ export default Vue.extend({
     margin-left: $bar-spacing;
     padding: $bar-pad;
     border-radius: $icon-size;
-    border: 0.125rem solid $btn-back;
+    border: 0.125rem solid $xlight;
     font-size: $icon-size;
 
     cursor: pointer;
@@ -222,8 +222,8 @@ export default Vue.extend({
     max-width: $medium-size;
     margin: auto;
     @supports (display: grid){
-        max-width: none;
-        margin: none;
+        max-width: unset;
+        margin: unset;
     }
 }
 

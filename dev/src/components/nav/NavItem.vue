@@ -113,12 +113,15 @@ export default Vue.extend({
 .resume   { @include nav-color($resume-swatch)   }
 .about    { @include nav-color($about-swatch)    }
 
+.citations{ @include nav-color($citations-swatch) }
+.guide    { @include nav-color($guide-swatch) }
+
 .item {
     padding: 0;
     color: $bright;
     font-size: $nav-item-size;
     font-weight: bolder;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", sans-serif;
 
     cursor: pointer;
     @include not-selectable;
