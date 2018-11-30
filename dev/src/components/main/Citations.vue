@@ -9,6 +9,9 @@
             <a class='c-link' href='https://www.lief.info'>lief.info</a>.
         </p>
         <p class='u-para'>
+            You can find the source for my website in the <a class='c-link' href='https://github.com/liefswanson/liefswanson.github.io/tree/iat339'>github repository</a>.
+        </p>
+        <p class='u-para'>
             Many of the images on this site came from websites like
             <a class='c-link' href="www.pexels.com">pexels</a>,
             <a class='c-link' href="www.unsplash.com">unsplash</a>,
@@ -18,13 +21,16 @@
         </p>
         <p class='u-para'>
             You can also find links to prerendered pages of the site here, to give something to run through total validator.
-            There are 4 main classes of validation problems I have not been able to fix.
+            These prerendered pages are not meant to be used, just validated.
+            They don't work as none of the javascript is packaged with them, so they are completely non-functional.
+            There are 5 main classes of validation problems I have not been able to fix.
         </p>
         <ol class='p-list'>
-            <li>css link to google fonts contains an invalid url character by design</li>
-            <li>tags inserted by webpack (such as style and script tags) contain type attributes, which is no longer needed in the current html standard... but doesn't hurt anything at all.</li>
-            <li>h1 elements are not technically top level, because they can't be given the way vue treats templates.</li>
+            <li>The url for google fonts contains an invalid url character by design.</li>
+            <li>Tags inserted by webpack (such as style and script tags) contain type attributes, which is no longer needed in the current html standard... but doesn't hurt anything at all.</li>
+            <li>H1 elements are not technically top level, because they can't be given the way vue treats templates.</li>
             <li>Because my css is generated from scss, many vendor prefixes are injected that validators don't recognize.</li>
+            <li>Vue injects a span with id="warning-container" before the body element once it starts, allowing it to display warnings, this will actually cause the W3C validator to stop reading the HTML, so I manually removed these in my prerendered versions.</li>
         </ol>
 
     </collapse>
@@ -134,9 +140,9 @@
             </v-cite>
 
             <v-cite title='Ongoing - Polish Flag'
-                    link='www.lief.info'
-                    description="I made everything else. Some are from old projects, but some of it was made specifically for the site.">
-                Me
+                    link='https://en.wikipedia.org/wiki/Flag_of_Poland#/media/File:Flag_of_Poland_(with_coat_of_arms).svg'
+                    description="Wikipedia Commons, but the content depicted is a National Flag.">
+                many designers for the <a class='c-link' href='https://www.premier.gov.pl/en.html'>Government of Poland</a>
             </v-cite>
 
             <v-cite title='Everything Else'
@@ -232,9 +238,41 @@
     <collapse title='Validator Links'
               citation
               overscroll>
-        <ul class='cite-list'>
+        <ul class='p-list'>
             <li>
-                <a class='c-link' href=""></a>
+                <a class='c-link' href="/static/manual-renders/projects.html">projects</a>
+                <ul class='p-list'>
+                    <li>
+                        <a class='c-link' href="/static/manual-renders/projects/photography.html">photography</a>
+                    </li>
+                    <li>
+                        <a class='c-link' href="/static/manual-renders/projects/recursive-plug.html">making my webiste</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class='c-link' href="/static/manual-renders/ongoing.html">ongoing</a>
+            </li>
+            <li>
+                <a class='c-link' href="/static/manual-renders/contact.html">contact</a>
+            </li>
+            <li>
+                <a class='c-link' href="/static/manual-renders/resume.html">resume</a>
+            </li>
+            <li>
+                <a class='c-link' href="/static/manual-renders/about.html">about</a>
+            </li>
+            <li>
+                <a class='c-link' href="/static/manual-renders/citations.html">citations</a>
+            </li>
+            <li>
+                <a class='c-link' href="/static/manual-renders/guide.html">tone and voice guide</a>
+            </li>
+            <li>
+                You can find more in the
+                <a class='c-link' href='/static/manual-renders'>prerenders folder</a>
+                and
+                <a class='c-link' href='/static/css'>css folder</a>.
             </li>
         </ul>
     </collapse>
