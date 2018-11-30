@@ -240,39 +240,39 @@
               overscroll>
         <ul class='p-list'>
             <li>
-                <a class='c-link' href="/static/manual-renders/projects.html">projects</a>
+                <a class='c-link' href="static/manual-renders/projects.html">projects</a>
                 <ul class='p-list'>
                     <li>
-                        <a class='c-link' href="/static/manual-renders/projects/photography.html">photography</a>
+                        <a class='c-link' href="static/manual-renders/projects/photography.html">photography</a>
                     </li>
                     <li>
-                        <a class='c-link' href="/static/manual-renders/projects/recursive-plug.html">making my webiste</a>
+                        <a class='c-link' href="static/manual-renders/projects/recursive-plug.html">making my webiste</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a class='c-link' href="/static/manual-renders/ongoing.html">ongoing</a>
+                <a class='c-link' href="static/manual-renders/ongoing.html">ongoing</a>
             </li>
             <li>
-                <a class='c-link' href="/static/manual-renders/contact.html">contact</a>
+                <a class='c-link' href="static/manual-renders/contact.html">contact</a>
             </li>
             <li>
-                <a class='c-link' href="/static/manual-renders/resume.html">resume</a>
+                <a class='c-link' href="static/manual-renders/resume.html">resume</a>
             </li>
             <li>
-                <a class='c-link' href="/static/manual-renders/about.html">about</a>
+                <a class='c-link' href="static/manual-renders/about.html">about</a>
             </li>
             <li>
-                <a class='c-link' href="/static/manual-renders/citations.html">citations</a>
+                <a class='c-link' href="static/manual-renders/citations.html">citations</a>
             </li>
             <li>
-                <a class='c-link' href="/static/manual-renders/guide.html">tone and voice guide</a>
+                <a class='c-link' href="static/manual-renders/guide.html">tone and voice guide</a>
             </li>
             <li>
                 You can find more in the
-                <a class='c-link' href='/static/manual-renders'>prerenders folder</a>
+                <a class='c-link' href='static/manual-renders'>prerenders folder</a>
                 and
-                <a class='c-link' href='/static/css'>css folder</a>.
+                <a class='c-link' href='static/css'>css folder</a>.
             </li>
         </ul>
     </collapse>
