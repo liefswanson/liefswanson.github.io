@@ -191,10 +191,11 @@ export default Vue.extend({
     height: calc(100% - #{$header-height});
 }
 
+$min-column-width: 18rem;
 .project-grid {
     @supports (display: grid) {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(#{$min-column-width}, 1fr));
     }
 
     @include on-phone {
@@ -214,7 +215,7 @@ export default Vue.extend({
 
     grid-column-gap: $grid-gap;
 
-    max-width: $large-size + $medium-size; // pretty close to where my desktop monitor sits
+    max-width: 6*$min-column-width + 5*$grid-gap - 1rem; // nice max size for 5 columns
     margin: auto;
 }
 

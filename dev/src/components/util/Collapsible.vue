@@ -7,7 +7,7 @@
                 :aria-label='toggleMessage'
                 :class='dynamicClass'
                 @click='toggle'>
-                <strong>{{title}}</strong>
+                <strong class='collapse-title'>{{title}}</strong>
             <span class='spacer'></span>
 
             <span class='icon-container'>
@@ -232,6 +232,10 @@ $height: $pad-top + $pad-bot + $margin-top +
 
 .overscroll {
     max-height: calc(100vh - #{$height} - #{$header-height});
+}
+
+.collapse-title {
+    text-align: left;
 }
 
 .collapsible-root {
