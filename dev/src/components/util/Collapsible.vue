@@ -1,6 +1,6 @@
 <template>
 <article class='collapsible-root'>
-    <component :is='about || guide ? "h1" : "h2"'
+    <component :is='about || guide || citation ? "h1" : "h2"'
                 class='label'>
         <button class='section'
                 :title='toggleMessage'
