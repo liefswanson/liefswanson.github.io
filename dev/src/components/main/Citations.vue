@@ -116,7 +116,7 @@
             </v-cite>
 
             <v-cite title='Audio Book covers'
-                    link='www.audible.ca'
+                    link='https://www.audible.ca'
                     description='Taken from a selection of Audio Books that I bought on Audible.ca.'>
                 Various authors, references in images.
             </v-cite>
@@ -146,7 +146,7 @@
             </v-cite>
 
             <v-cite title='Everything Else'
-                    link='www.lief.info'
+                    link='https://www.lief.info'
                     description="I made everything else. Some are from old projects, but some of it was made specifically for the site.">
                 Me
             </v-cite>
