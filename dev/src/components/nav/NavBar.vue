@@ -20,7 +20,6 @@
             <ul class='nav-links'>
                 <nav-item v-for='(item, key) in sections'
                             :key='key'
-                            :style='{"margin-top": key == 5 ? "4.5rem" : undefined}'
                             :properties="item"/>
             </ul>
         </nav>
@@ -176,8 +175,8 @@ $blinder-opacity: 0.3;
 }
 
 .nav-bar {
+    box-sizing: border-box;
     position: fixed;
-    max-height: 100vh;
     top: 0;
     left: 0;
     width: $nav-width;

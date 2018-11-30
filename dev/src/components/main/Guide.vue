@@ -1,6 +1,6 @@
 <template>
 <div class='main-content'>
-    <collapse title='Tone and Voice Guide'
+    <collapse title='Guide Intro'
               guide
               initShow>
         <p class='u-para'>

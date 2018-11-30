@@ -1,6 +1,6 @@
 <template>
 <div class='main-content'>
-    <collapse title='Citations'
+    <collapse title='Citations Intro'
               citation
               initShow>
         <p class='u-para'>
