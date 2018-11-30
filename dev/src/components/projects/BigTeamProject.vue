@@ -109,28 +109,28 @@
 
         <p class='p-wide p-text'>
             <strong>By the end we had to learn how to use:</strong>
-            <ul class='p-wide p-list'>
-                <li>JavaScript</li>
-                <li>SCSS <span class='p-note'>and later stylus</span></li>
-                <li>
-                    <a href="https://vuejs.org">Vue.js</a>
-                    <ul class='p-list'>
-                        <li>Vue Router</li>
-                        <li>VueX</li>
-                        <li>Veutify</li>
-                    </ul>
-                </li>
-                <li>SFU's Auth system</li>
-                <li>
-                    <a href="https://www.playframework.com">Play Framework</a>
-                    <ul class='p-list'>
-                        <li>EBean</li>
-                        <li>Jackson</li>
-                        <li>Play Router</li>
-                    </ul>
-                </li>
-            </ul>
         </p>
+        <ul class='p-wide p-list'>
+            <li>JavaScript</li>
+            <li>SCSS <span class='p-note'>and later stylus</span></li>
+            <li>
+                <a class='p-link' href="https://vuejs.org">Vue.js</a>
+                <ul class='p-list'>
+                    <li>Vue Router</li>
+                    <li>VueX</li>
+                    <li>Veutify</li>
+                </ul>
+            </li>
+            <li>SFU's Auth system</li>
+            <li>
+                <a class='p-link' href="https://www.playframework.com">Play Framework</a>
+                <ul class='p-list'>
+                    <li>EBean</li>
+                    <li>Jackson</li>
+                    <li>Play Router</li>
+                </ul>
+            </li>
+        </ul>
 
         <p class='p-wide p-text'>
             Moreover, we learned all of those things in four months, while trying to figure out what our client actually wanted us to do... and each of us were taking other classes.

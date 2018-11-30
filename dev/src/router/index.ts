@@ -38,6 +38,10 @@ export default new Router({
         SectionMap.resume,
         SectionMap.contact,
         SectionMap.about,
+
+        SectionMap.citations,
+        SectionMap.guide,
+
         notFound
     ]
 })

@@ -53,14 +53,13 @@
             This assignment was pretty straightforward.
             We were given 3 images, and told to combine them to bring out a full range of exposures.
             Because we were working in Java, and not a language like matlab or python, there were a few things that I needed to do before I could start combining images.
-            <ul class='p-list'>
-                <li>build a window to render the image in</li>
-                <li>add a file selector to pick source images</li>
-                <li>read all images into objects that can be drawn in a Java Swing window</li>
-                <li>add the ability to save the output</li>
-            </ul>
         </p>
-
+        <ul class='p-list p-wide'>
+            <li>build a window to render the image in</li>
+            <li>add a file selector to pick source images</li>
+            <li>read all images into objects that can be drawn in a Java Swing window</li>
+            <li>add the ability to save the output</li>
+        </ul>
         <figure class='p-wide'>
             <v-carousel class='p-image'
                     relative='/static/hdr/'

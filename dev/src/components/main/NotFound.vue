@@ -1,5 +1,5 @@
 <template>
-<div class='main-content p-article-grid'>
+<article class='main-content p-article-grid'>
     <h1 class='p-full'>404: I couldn't find the page you were looking for</h1>
     <p class='p-text p-full'>
         You probably ended up here by mistake!
@@ -11,7 +11,7 @@
         You can find my email on the contact page.
     </p>
 
-</div>
+</article>
 </template>
 
 <script lang="ts">

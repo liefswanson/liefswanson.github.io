@@ -1,42 +1,37 @@
 <template>
-<div class='main-content'>
-    <h1 class='intro'>
-        If you want to contact or follow me, you can...
+<article class='main-content'>
+    <h1 class='p-title intro'>
+        How to get in contact with me
     </h1>
-    <div class='contacts'>
-        <ul class='icon-list'>
-            <li v-for='contact in contacts'
-                :key='contact.name'
-                class='icon'
-                @mouseenter='mouseEnter(contact)'
-                @mouseleave='mouseLeave(contact)'>
-                <button :title='contactMessage(contact)'
-                        :aria-label='contactMessage(contact)'
-                        @click='click(contact)'
-                        @focus="mouseEnter(contact)"
-                        @blur="mouseLeave(contact)"
-                        :for='contact.name'
-                        :class='[contact.fa,
-                                 contact.icon,
-                                 active == contact ? "active": ""]'
-                        class='icon-wrapper'/>
-                <transition name='fade'>
-                    <strong class='details'
-                            :class='active != contact ? "transparent" : ""'
-                            v-show='active'>
-                            {{contact.msg}}
-                        <a target='_blank'
-                            :href='contact.link'
-                            class='link'>
-                            {{contact.name}}
-                        </a>
-                    </strong>
-                </transition>
-
-            </li>
-        </ul>
-    </div>
-</div>
+    <ul class='icon-list'>
+        <li v-for='contact in contacts'
+            :key='contact.name'
+            class='icon'
+            @mouseenter='mouseEnter(contact)'
+            @mouseleave='mouseLeave(contact)'>
+            <button :title='contactMessage(contact)'
+                    :aria-label='contactMessage(contact)'
+                    @click='click(contact)'
+                    @focus="mouseEnter(contact)"
+                    @blur="mouseLeave(contact)"
+                    :class='[contact.fa,
+                                contact.icon,
+                                active == contact ? "active": ""]'
+                    class='icon-wrapper'/>
+            <transition name='fade'>
+                <strong class='details'
+                        v-if='active == contact'>
+                        {{contact.msg}}
+                    <a target='_blank'
+                        :href='contact.link'
+                        class='link'>
+                        {{contact.name}}
+                    </a>
+                </strong>
+            </transition>
+        </li>
+    </ul>
+</article>
 </template>
 
 <script lang="ts">
@@ -119,11 +114,12 @@ export default Vue.extend({
 
 .intro {
     font-size: 1.75rem;
+    margin-bottom: 2rem;
 }
 
 $contact-size: 2.75rem;
 .details {
-    $detail-size: 1.75rem;
+    $detail-size: 1.5rem;
     font-size: $detail-size;
     vertical-align: ($contact-size - $detail-size)/2;
     transition: opacity $highlight-animation-time ease;
@@ -134,11 +130,6 @@ $contact-size: 2.75rem;
     list-style-type: none;
 }
 
-.transparent {
-    opacity: 0;
-    @include not-selectable;
-}
-
 .icon-wrapper {
     background: none;
     border: none;
@@ -146,10 +137,9 @@ $contact-size: 2.75rem;
     padding-left: 0;
     @include not-selectable;
 
-    transition: color $highlight-animation-time ease !important;
+    transition: all $highlight-animation-time ease !important;
     color: $light;
     cursor: pointer;
-    transition: color 0.25s ease;
 
     &:hover,
     &:focus {
@@ -166,14 +156,6 @@ $contact-size: 2.75rem;
     &:focus {
         color: darken($contact-swatch, 15%);
     }
-}
-
-.radio {
-    position: absolute;
-    top: -1000px;
-    visibility: hidden;
-
-
 }
 
 .link {

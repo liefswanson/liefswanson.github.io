@@ -20,33 +20,34 @@
     <template slot='what'>
         <p class='p-text p-wide'>
             <strong>Marking students' projects</strong>
-            <ul class='p-list'>
-                <li>Commenting on code style</li>
-                <li>Providing refactoring suggestions &amp; examples</li>
-                <li>Giving detailed marking feedback</li>
-                <li>Building my own test suite &amp; harness to mark with</li>
-                <li>Implementing the inverse of project specifications as part of verifying outputs</li>
-                <li>Debugging broken code submissions <span class='p-note'>so partial marks could be given where appropriate</span></li>
-                <li>Catching cheaters</li>
-            </ul>
-            <br>
-            <strong>Helping Students online and in person</strong>
-            <ul class='p-list'>
-                <li>Teaching students how to verify the correctness of their own code</li>
-                <li>Thoroughly explaining software design patterns</li>
-                <li>Pulling overtime office hours, otherwise most students wouldn't receive help</li>
-                <li>Manning an online help forum <span class='p-note'>(email buckled under the volume of student inquiries)</span></li>
-                <li>Giving advice I wish I had gotten early in my degrees</li>
-                <li>Helping students understand why and where they made mistakes</li>
-            </ul>
-            <br>
-            <strong>Helping transition the course toward modern paradigms</strong>
-            <ul class='p-list'>
-                <li>Moved away from Java Swing applications</li>
-                <li>Moved toward Java Spring REST APIs</li>
-            </ul>
         </p>
-
+        <ul class='p-list p-wide'>
+            <li>Commenting on code style</li>
+            <li>Providing refactoring suggestions &amp; examples</li>
+            <li>Giving detailed marking feedback</li>
+            <li>Building my own test suite &amp; harness to mark with</li>
+            <li>Implementing the inverse of project specifications as part of verifying outputs</li>
+            <li>Debugging broken code submissions <span class='p-note'>so partial marks could be given where appropriate</span></li>
+            <li>Catching cheaters</li>
+        </ul>
+        <p class='p-text p-wide'>
+            <strong>Helping Students online and in person</strong>
+        </p>
+        <ul class='p-list p-wide'>
+            <li>Teaching students how to verify the correctness of their own code</li>
+            <li>Thoroughly explaining software design patterns</li>
+            <li>Pulling overtime office hours, otherwise most students wouldn't receive help</li>
+            <li>Manning an online help forum <span class='p-note'>(email buckled under the volume of student inquiries)</span></li>
+            <li>Giving advice I wish I had gotten early in my degrees</li>
+            <li>Helping students understand why and where they made mistakes</li>
+        </ul>
+        <p class='p-text p-wide'>
+            <strong>Helping transition the course toward modern paradigms</strong>
+        </p>
+        <ul class='p-list p-wide'>
+            <li>Moved away from Java Swing applications</li>
+            <li>Moved toward Java Spring REST APIs</li>
+        </ul>
         <p class='p-wide p-text'>
             I think by the end I did a pretty great job.
             I even received thank you cards and emails from many students saying they think I was the best TA they had ever met, not even just the best they had... the best they ever met.

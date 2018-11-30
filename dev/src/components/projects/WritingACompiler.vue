@@ -20,84 +20,85 @@
         </p>
         <p class='p-wide p-text'>
             <strong>Unlike most other students, I did implement every feature in Pika:</strong>
-            <ul class='p-wide p-list'>
-                <li>
-                    Supported first-class data-types:
-                    <ul class='p-list'>
-                        <li>Booleans</li>
-                        <li>8-bit Characters</li>
-                        <li>Strings</li>
-                        <li>32-bit Integers</li>
-                        <li>32-bit Floats</li>
-                        <li>64-bit Rationals <span class='p-note'>composed of two 32-bit Integers</span></li>
-                        <li>Higher Order Functions</li>
-                        <li>Arrays <span class='p-note'>composed of any type here including arrays</span></li>
-                    </ul>
-                </li>
-                <li>
-                    All data-types had type inference, and casting was allowed within a strict hierarchy
-                </li>
-                <li>
-                    Scopes
-                </li>
-                <li>
-                    Functions <span class='p-note'>able to use static variables in outer scopes and stack variables in the current scope</span>
-                </li>
-                <li>
-                    Manually managed dynamic memory
-                </li>
-                <li>
-                    Rationals were automatically reduced to
-                    <a class='p-link' href='https://en.wikipedia.org/wiki/Greatest_common_divisor'>gcd</a>
-                    form
-                </li>
-                <li>
-                    An Optimizer which could do all the following optimizations:
-                    <ul class='p-list'>
-                        <li>peephole</li>
-                        <li>string deduplication</li>
-                        <li>
-                            trimming of unreferenced code via
-                            <a class='p-link' href='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</a>
-                        </li>
-                        <li>basic block reordering and duplicating <span class='p-note'>to reduce jumps</span></li>
-                        <li>some <b>very</b> basic constant variable replacement</li>
-                    </ul>
-                </li>
-                <li>
-                    It was possible to do the following with every numeric data-type:
-                    <ul class='p-list'>
-                        <li>addition</li>
-                        <li>subtraction</li>
-                        <li>multiplication</li>
-                        <li>division</li>
-                        <li>value comparisons <span class='p-note'>&lt;, &gt;, &lt;=, &gt;=, ==, !=</span></li>
-                    </ul>
-                </li>
-                <li>
-                    Statements had binding by use of a
-                    <a class='p-link' href='https://en.wikipedia.org/wiki/Recursive_descent_parser'>recursive descent parser</a>
-                    just like
-                    <a class='p-link' href='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</a>
-                </li>
-                <li>
-                    It also contained some basic control structures:
-                    <ul class='p-list'>
-                        <li>if/else statements <span class='p-note'>did not have "else if"</span></li>
-                        <li>while loops</li>
-                        <li>for loops and foreach loops</li>
-                    </ul>
-                </li>
-                <li>
-                    Finally, it had some built in routines which could be performed on arrays:
-                    <ul class='p-list'>
-                        <li>map</li>
-                        <li>filter</li>
-                        <li>fold and reduce <span class='p-note'>left and right</span></li>
-                    </ul>
-                </li>
-            </ul>
         </p>
+
+        <ul class='p-wide p-list'>
+            <li>
+                Supported first-class data-types:
+                <ul class='p-list'>
+                    <li>Booleans</li>
+                    <li>8-bit Characters</li>
+                    <li>Strings</li>
+                    <li>32-bit Integers</li>
+                    <li>32-bit Floats</li>
+                    <li>64-bit Rationals <span class='p-note'>composed of two 32-bit Integers</span></li>
+                    <li>Higher Order Functions</li>
+                    <li>Arrays <span class='p-note'>composed of any type here including arrays</span></li>
+                </ul>
+            </li>
+            <li>
+                All data-types had type inference, and casting was allowed within a strict hierarchy
+            </li>
+            <li>
+                Scopes
+            </li>
+            <li>
+                Functions <span class='p-note'>able to use static variables in outer scopes and stack variables in the current scope</span>
+            </li>
+            <li>
+                Manually managed dynamic memory
+            </li>
+            <li>
+                Rationals were automatically reduced to
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Greatest_common_divisor'>gcd</a>
+                form
+            </li>
+            <li>
+                An Optimizer which could do all the following optimizations:
+                <ul class='p-list'>
+                    <li>peephole</li>
+                    <li>string deduplication</li>
+                    <li>
+                        trimming of unreferenced code via
+                        <a class='p-link' href='https://en.wikipedia.org/wiki/Basic_block'>basic blocks</a>
+                    </li>
+                    <li>basic block reordering and duplicating <span class='p-note'>to reduce jumps</span></li>
+                    <li>some <b>very</b> basic constant variable replacement</li>
+                </ul>
+            </li>
+            <li>
+                It was possible to do the following with every numeric data-type:
+                <ul class='p-list'>
+                    <li>addition</li>
+                    <li>subtraction</li>
+                    <li>multiplication</li>
+                    <li>division</li>
+                    <li>value comparisons <span class='p-note'>&lt;, &gt;, &lt;=, &gt;=, ==, !=</span></li>
+                </ul>
+            </li>
+            <li>
+                Statements had binding by use of a
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Recursive_descent_parser'>recursive descent parser</a>
+                just like
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Order_of_operations'>BEDMAS or PEMDAS</a>
+            </li>
+            <li>
+                It also contained some basic control structures:
+                <ul class='p-list'>
+                    <li>if/else statements <span class='p-note'>did not have "else if"</span></li>
+                    <li>while loops</li>
+                    <li>for loops and foreach loops</li>
+                </ul>
+            </li>
+            <li>
+                Finally, it had some built in routines which could be performed on arrays:
+                <ul class='p-list'>
+                    <li>map</li>
+                    <li>filter</li>
+                    <li>fold and reduce <span class='p-note'>left and right</span></li>
+                </ul>
+            </li>
+        </ul>
 
         <p class='p-note p-thin'>
             The language Pika is named after this adorable

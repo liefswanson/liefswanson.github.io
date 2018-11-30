@@ -1,41 +1,39 @@
 <template>
-<section class='collapsible-root'>
-    <div>
+<article class='collapsible-root'>
+    <component :is='about || guide ? "h1" : "h2"'
+                class='label'>
         <button class='section'
                 :title='toggleMessage'
                 :aria-label='toggleMessage'
-                :class='about ? "about" : "project"'
+                :class='dynamicClass'
                 @click='toggle'>
-            <component :is='about? "h1" : "h2"'
-                       class='label'>
-                {{title}}
-            </component>
-            <div class='spacer'></div>
+                <strong>{{title}}</strong>
+            <span class='spacer'></span>
 
-            <div class='icon-container'>
+            <span class='icon-container'>
                 <transition name='toggling'>
                     <i v-if='show'
-                       key='minus'
-                       class='fas toggle-icon fa-minus'/>
+                    key='minus'
+                    class='fas toggle-icon fa-minus'/>
                     <i v-else
-                       key='plus'
-                       class='fas toggle-icon fa-plus'/>
+                    key='plus'
+                    class='fas toggle-icon fa-plus'/>
                 </transition>
-            </div>
+            </span>
         </button>
+    </component>
 
-        <div ref='animator'
-             class='collapsible'
-             :style='style'>
-            <div ref='wrapper'
-                class='padded'>
-                <slot/>
-            </div>
+    <div ref='animator'
+         class='collapsible'
+         :style='style'>
+        <div ref='wrapper'
+            class='padded'>
+            <slot/>
         </div>
     </div>
     <div class='overscroll'
          :style='overscrollStyle()'/>
-</section>
+</article>
 </template>
 
 <script lang="ts">
@@ -78,6 +76,14 @@ export default Vue.extend({
         about: {
             type: Boolean,
             default: false
+        },
+        guide: {
+            type: Boolean,
+            default: false
+        },
+        citation: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
@@ -92,6 +98,18 @@ export default Vue.extend({
             let nextState = this.show ? "Hide" : "Show";
             return nextState + ' "' + this.title + '" section';
         },
+        dynamicClass():string {
+            if (this.guide) {
+                return 'guide';
+            }
+            if (this.about) {
+                return 'about';
+            }
+            if (this.citation) {
+                return 'citation';
+            }
+            return 'project';
+        }
     },
     methods: {
         toggle() {
@@ -222,7 +240,7 @@ $height: $pad-top + $pad-bot + $margin-top +
 
 .label {
     font-size: $font-size;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", sans-serif;
     margin: 0;
     text-align: left;
 }
@@ -250,19 +268,17 @@ $height: $pad-top + $pad-bot + $margin-top +
     }
 }
 
-.about {
+@mixin border($swatch) {
     &:hover,
     &:focus {
-        border-color: $about-swatch;
+        border-color: $swatch;
     }
 }
 
-.project {
-    &:hover,
-    &:focus {
-        border-color: $projects-swatch;
-    }
-}
+.about {@include border($about-swatch)}
+.project {@include border($projects-swatch)}
+.citation {@include border($citations-swatch)}
+.guide {@include border($guide-swatch)}
 
 .spacer {
     flex: 1;
