@@ -161,7 +161,7 @@ export default Vue.extend({
 
     &:hover,
     &:focus  {
-        color: $xlight;
+        color: $bright;
     }
 }
 

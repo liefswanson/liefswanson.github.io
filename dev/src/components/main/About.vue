@@ -29,7 +29,7 @@
             I went to <a class='a-link' title='Simon Fraser University' href='https://www.sfu.ca'>SFU</a> and did two degrees concurrently: a Bachelor's of Science in
             <router-link class='a-link' exact to='/projects/sosy'>Software Systems</router-link>
             and a second Bachelor's of Science in
-            <router-link class='a-link' exact to='/projects/siat'>Interactitive Technologies</router-link>.
+            <router-link class='a-link' exact to='/projects/siat'>Interactive Technologies</router-link>.
         </p>
 
         <p class='u-para'>
@@ -39,7 +39,7 @@
         </p>
 
         <p class='u-para'>
-            I am also currently working toward publish some
+            I am also currently working toward publishing some
             <router-link class='a-link' exact to='/projects/optimizing-keyboards'>self-directed research</router-link>
             and I have volunteered in a few labs helping complete
             <router-link class='a-link' exact to='/projects/cog-sci-lab'>other peoples' research</router-link>.
