@@ -3,7 +3,7 @@
     <template slot='intro'>
         <p class='p-text p-wide'>
             For a class in computer graphics that I took as part of my
-            <router-link class='p-link' exact to='/static/projects/sosy'>Software Systems degree</router-link>
+            <router-link class='p-link' exact to='/projects/sosy'>Software Systems degree</router-link>
             I built a game of tetris.
             Well sort of...
             It is more like a hybrid of Tetris and Candy Crush.
