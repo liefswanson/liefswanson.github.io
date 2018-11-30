@@ -8,7 +8,7 @@
             I am a <a class='a-link' title='Person with a wide range of knowledge or learning.' href='https://simple.wikipedia.org/wiki/Renaissance_man'>polymath</a>.
             I have knowledge of and aptitude for:
             <router-link class='a-link' exact to='/projects/writing-a-compiler'>software engineering</router-link>,
-            <router-link class='a-link' exact to='/projects/font'>design</router-link>,
+            <router-link class='a-link' exact to='/projects/my-font'>design</router-link>,
             <router-link class='a-link' exact to='/projects/cog-sci-lab'>science</router-link>,
             <router-link class='a-link' exact to='/projects/project-euler'>math</router-link>,
             <router-link class='a-link' exact to='/projects/recursive-plug'>user interaction</router-link>,

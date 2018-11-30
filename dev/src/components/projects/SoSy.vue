@@ -41,7 +41,7 @@
             <li>Computational geometry</li>
             <li>Compilers
                 <span class='p-note'>which you can see
-                    <router-link class='p-link' exact to='/static/projects/writing-a-compiler'>here</router-link>
+                    <router-link class='p-link' exact to='/projects/writing-a-compiler'>here</router-link>
                 </span>
             </li>
             <li>Graphics
