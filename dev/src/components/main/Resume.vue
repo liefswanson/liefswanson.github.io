@@ -1,5 +1,5 @@
 <template>
-<div class='resume-container'>
+<section class='resume-container'>
     <sticky-bar :overlay="false">
         <div class='action-bar'>
             <div class='spacer'></div>
@@ -30,7 +30,7 @@
     <pdf class='pdf'
          ref='pdf'
          src='static/resume.pdf'/>
-</div>
+</section>
 </template>
 
 <script lang="ts">
@@ -76,7 +76,7 @@ export default Vue.extend({
     padding: $bar-pad;
     line-height: 0;
     border-radius: $icon-size;
-    border: 0.125rem solid $btn-back;
+    border: 0.125rem solid $xlight;
     font-size: $icon-size;
 
     transition: all $action-bar-animation-time ease;

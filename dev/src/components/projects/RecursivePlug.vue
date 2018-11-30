@@ -22,35 +22,35 @@
         <p class='p-text p-wide'>
             So how do I show you what I have done, instead of tell you, when the medium is text?...
             How about, if you have the time, you <strong>try some of the features I implemented</strong>?
-            <ul class='p-list'>
-                <li>If you are on mobile, try swiping to the right; you should see the navigation bar pop out. You can either swipe left, tap anywhere in the greyed out area, or tap the hide navigation button, <i class='fa-bars fa sideways'/>, to close it again.</li>
-                <li>If you are on mobile, try opening the site on a desktop/laptop, and vice versa. The site is responsive, and was tested on phones as small as the iPhone 4.</li>
-                <li>Try closing all the sections of text on this page, and then press the expand all button just above the introduction section.</li>
-                <li>Copy the URL for this page, and paste it into another tab; despite this being a
-                    <a class='p-link' href='https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58'>single page app</a>,
-                    each section does have a unique URL.</li>
-                <li>
-                    If you haven't followed any of the links in the navigation bar, follow one.
-                    While you were on another page, you may have noticed that the primary colour of the whole site changed, even the favicon in the web browser tab!
-                </li>
-                <li>I also made my own image carousel; you can find one in the "How I tackled it section" of this project.</li>
-                <li>
-                    Head back to the projects section and play with the buttons in the top right.
-                    They filter out projects unrelated to filter chosen.
-                </li>
-                <li>
-                    Head to the Résumé section.
-                    That is actually the pdf of my résumé.
-                    Try out the buttons if you like.
-                </li>
-                <li>
-                    Lastly, for the sake of this demo, if you are so inclined, check out the source code in the
-                    <a class='p-link' href='https://github.com/liefswanson/liefswanson.github.io'>GitHub</a>
-                    repository used to host this website.
-                    I use that repository to both store the source I work on, and host the site.
-                </li>
-            </ul>
         </p>
+        <ul class='p-list p-wide'>
+            <li>If you are on mobile, try swiping to the right; you should see the navigation bar pop out. You can either swipe left, tap anywhere in the greyed out area, or tap the hide navigation button, <i class='fa-bars fa sideways'/>, to close it again.</li>
+            <li>If you are on mobile, try opening the site on a desktop/laptop, and vice versa. The site is responsive, and was tested on phones as small as the iPhone 4.</li>
+            <li>Try closing all the sections of text on this page, and then press the expand all button just above the introduction section.</li>
+            <li>Copy the URL for this page, and paste it into another tab; despite this being a
+                <a class='p-link' href='https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58'>single page app</a>,
+                each section does have a unique URL.</li>
+            <li>
+                If you haven't followed any of the links in the navigation bar, follow one.
+                While you were on another page, you may have noticed that the primary colour of the whole site changed, even the favicon in the web browser tab!
+            </li>
+            <li>I also made my own image carousel; you can find one in the "How I tackled it section" of this project.</li>
+            <li>
+                Head back to the projects section and play with the buttons in the top right.
+                They filter out projects unrelated to filter chosen.
+            </li>
+            <li>
+                Head to the Résumé section.
+                That is actually the pdf of my résumé.
+                Try out the buttons if you like.
+            </li>
+            <li>
+                Lastly, for the sake of this demo, if you are so inclined, check out the source code in the
+                <a class='p-link' href='https://github.com/liefswanson/liefswanson.github.io'>GitHub</a>
+                repository used to host this website.
+                I use that repository to both store the source I work on, and host the site.
+            </li>
+        </ul>
     </template>
 
     <template slot='why'>
@@ -78,31 +78,30 @@
 
         <p class='p-text p-wide'>
             <strong>From my previous forays into web development I have learned that:</strong>
-            <ol class='p-list p-wide'>
-                <li>I like the control over the user experience provided by single page applications.</li>
-                <li>While I can use JavaScript, I don't enjoy it. Most of the errors I would make were silly typos which just slowed me down. In addition, the lack of proper enums and interfaces is a real pain.</li>
-                <li>JQuery is a bit bloated for what it provides, given how easy it is to implement the most used features in pure JavaScript.</li>
-                <li>I really don't like style frameworks such as Bootstrap and Foundation. I find they get in my way more than they help... Mostly due to the JavaScript baggage they are bundled with.</li>
-                <li>HTML and CSS are a pain due to the amount of code duplication involved.</li>
-            </ol>
         </p>
+        <ol class='p-list p-wide'>
+            <li>I like the control over the user experience provided by single page applications.</li>
+            <li>While I can use JavaScript, I don't enjoy it. Most of the errors I would make were silly typos which just slowed me down. In addition, the lack of proper enums and interfaces is a real pain.</li>
+            <li>JQuery is a bit bloated for what it provides, given how easy it is to implement the most used features in pure JavaScript.</li>
+            <li>I really don't like style frameworks such as Bootstrap and Foundation. I find they get in my way more than they help... Mostly due to the JavaScript baggage they are bundled with.</li>
+            <li>HTML and CSS are a pain due to the amount of code duplication involved.</li>
+        </ol>
 
         <p class='p-text p-wide'>
             <strong>To solve all of these problems, I decided I would:</strong>
-            <ol class='p-list p-wide'>
-                <li>use Vue.JS to make the site a single page application</li>
-                <li>use TypeScript, to give me enums, interfaces, and type checking all of which help me with typos and organizing code</li>
-                <li>not use JQuery</li>
-                <li>not use any style frameworks, instead implementing everything from scratch</li>
-                <li>
-                    use SCSS and Vue.JS's
-                    <a class='p-link' href='https://vuejs.org/v2/guide/single-file-components.html'>SFC</a>
-                    format to help reduce code duplication...
-                </li>
-            </ol>
         </p>
 
-
+        <ol class='p-list p-wide'>
+            <li>use Vue.JS to make the site a single page application</li>
+            <li>use TypeScript, to give me enums, interfaces, and type checking all of which help me with typos and organizing code</li>
+            <li>not use JQuery</li>
+            <li>not use any style frameworks, instead implementing everything from scratch</li>
+            <li>
+                use SCSS and Vue.JS's
+                <a class='p-link' href='https://vuejs.org/v2/guide/single-file-components.html'>SFC</a>
+                format to help reduce code duplication...
+            </li>
+        </ol>
 
         <p class='p-text p-wide'>
             Once I set up my development environment I spent probably 2 weeks writing my website from scratch.
@@ -113,16 +112,15 @@
         <p class='p-text p-wide'>
             I think the most interesting design constraint I imposed on myself was tying the primary colour to the navigation.
             <strong>There was a plethora of things that had to be considered in order to implement the dynamic primary colour.</strong>
-            <ul class='p-list p-wide'>
-                <li>The favicon had to change colour, so that involved creating a dynamic favicon in the header controlled by JavaScript.</li>
-                <li>The selection colour was implemented in a similar way, with a stylesheet dynamically generated in JavaScript.</li>
-                <li>My résumé, which is a pdf, had to match whatever colour I chose for it.</li>
-                <li>Most use of the primary colour could not be done directly in the static SCSS, because then the component would be the wrong colour if reused somewhere else.</li>
-                <li>I had to find 5 colours that fit well enough together without being so similar that people would not notice that the colour had changed.</li>
-                <li>Every colour chosen had to be readable on both dark and light backgrounds.</li>
-            </ul>
         </p>
-
+        <ul class='p-list p-wide'>
+            <li>The favicon had to change colour, so that involved creating a dynamic favicon in the header controlled by JavaScript.</li>
+            <li>The selection colour was implemented in a similar way, with a stylesheet dynamically generated in JavaScript.</li>
+            <li>My résumé, which is a pdf, had to match whatever colour I chose for it.</li>
+            <li>Most use of the primary colour could not be done directly in the static SCSS, because then the component would be the wrong colour if reused somewhere else.</li>
+            <li>I had to find 5 colours that fit well enough together without being so similar that people would not notice that the colour had changed.</li>
+            <li>Every colour chosen had to be readable on both dark and light backgrounds.</li>
+        </ul>
         <p class='p-note p-thin'>
             The idea of tying primary colour to navigation really interested me, but I knew I wouldn't see unless I implemented it myself.
             It is simply too hard to work the idea into a consistent brand identity.
@@ -174,28 +172,29 @@
             <router-link class='p-link' exact to='/projects/siat'>BSc in interactive technology</router-link>
             at
             <a class='p-link' title='Simon Fraser University' href='https://www.sfu.ca/'>SFU</a>.
-            <ul class='p-list'>
-                <li>
-                    There was a complete Lack of
-                    <a class='p-link' href='https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute'>aria labels</a>.
-                </li>
-                <li>Clickable elements that were not either a &lt;button&gt; tag or &lt;a&gt; tag.</li>
-                <li>&lt;a&gt; tags that were inside of &lt;button&gt; tags.</li>
-                <li>The project filter buttons had a different functionality that was difficult for new users to understand.</li>
-                <li>The project filter buttons also didn't have labels.</li>
-                <li>The use of &lt;input&gt; tags in incorrect places, for convenience, hampering ability to navigate with a keyboard.</li>
-                <li>Projects not being broken down into their different components, making them harder to skim <span class='p-note'>intro, what, why, and how</span>.</li>
-                <li>&lt;img&gt; tags that were not contained inside properly captioned figures.</li>
-                <li>Cards in the project grid needed a redesign, to make them feel less floaty.</li>
-                <li>The contact section used a pretty lazy layout that didn't match the aesthetic of the rest of the site.</li>
-                <li>
-                    Images did not preallocate space to prevent
-                    <a class='p-link' href='https://css-tricks.com/content-jumping-avoid/'>jumpy content loading</a>.
-                </li>
-                <li>The ongoing section was a much less helpful featured section, which just lead users to the first project and confused them.</li>
-                <li>The navigation bar used scripting to do most of the styling inline, which caused problems for keyboard navigation, so that had to be changed.</li>
-            </ul>
         </p>
+
+        <ul class='p-list p-wide'>
+            <li>
+                There was a complete Lack of
+                <a class='p-link' href='https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute'>aria labels</a>.
+            </li>
+            <li>Clickable elements that were not either a &lt;button&gt; tag or &lt;a&gt; tag.</li>
+            <li>&lt;a&gt; tags that were inside of &lt;button&gt; tags.</li>
+            <li>The project filter buttons had a different functionality that was difficult for new users to understand.</li>
+            <li>The project filter buttons also didn't have labels.</li>
+            <li>The use of &lt;input&gt; tags in incorrect places, for convenience, hampering ability to navigate with a keyboard.</li>
+            <li>Projects not being broken down into their different components, making them harder to skim <span class='p-note'>intro, what, why, and how</span>.</li>
+            <li>&lt;img&gt; tags that were not contained inside properly captioned figures.</li>
+            <li>Cards in the project grid needed a redesign, to make them feel less floaty.</li>
+            <li>The contact section used a pretty lazy layout that didn't match the aesthetic of the rest of the site.</li>
+            <li>
+                Images did not preallocate space to prevent
+                <a class='p-link' href='https://css-tricks.com/content-jumping-avoid/'>jumpy content loading</a>.
+            </li>
+            <li>The ongoing section was a much less helpful featured section, which just lead users to the first project and confused them.</li>
+            <li>The navigation bar used scripting to do most of the styling inline, which caused problems for keyboard navigation, so that had to be changed.</li>
+        </ul>
 
         <p class='p-text p-wide'>
             That sounds like a lot of things, because it was!

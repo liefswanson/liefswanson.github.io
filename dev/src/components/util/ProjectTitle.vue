@@ -1,5 +1,5 @@
 <template>
-<section class='p-article-grid
+<div class='p-article-grid
                 p-title-section
                 section'>
     <div class='p-mid'>
@@ -15,7 +15,7 @@
               class='p-image p-thin image p-push-right'
               :img="project.img"/>
 
-</section>
+</div>
 </template>
 
 

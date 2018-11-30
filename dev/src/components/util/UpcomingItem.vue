@@ -1,5 +1,5 @@
 <template>
-<section class='container'>
+<div class='container'>
     <figure class='left'>
         <prealloc class='img-pane'
                   :img="img"/>
@@ -10,13 +10,13 @@
         </figcaption>
     </figure>
 
-    <div class='right'>
-        <h2 class='name'>{{ name }}</h2>
+    <article class='right'>
+        <h2 class='name p-title'>{{ name }}</h2>
         <p class='u-para blurb'>
             <slot/>
         </p>
-    </div>
-</section>
+    </article>
+</div>
 </template>
 
 <script lang="ts">
@@ -78,6 +78,7 @@ export default Vue.extend({
 
 .name {
     padding-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .left {

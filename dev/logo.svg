@@ -15,7 +15,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/lief/Projects/liefswanson.github.io/dev/static/logo-6AC8A3.png"
+   inkscape:export-xdpi="24.000002"
+   inkscape:export-ydpi="24.000002">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,10 +29,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.56"
-     inkscape:cx="52.029247"
+     inkscape:cx="52.419872"
      inkscape:cy="34.852967"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g1048"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
@@ -74,43 +77,15 @@
          style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.26041698;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          transform="scale(1,-1)" />
       <path
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         inkscape:export-filename="/home/lief/Projects/liefswanson.github.io/static/logo.png"
-         id="path1038"
-         d="m 91.545831,428.26058 14.664689,-8.46666 v -16.93334 l -14.664689,-8.46666 -14.66471,8.46666 v 16.93334 z"
-         inkscape:transform-center-y="1.6169847"
-         inkscape:transform-center-x="-2.6648425e-05"
-         style="fill:#242424;fill-opacity:1;stroke:none;stroke-width:4.84818172;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         inkscape:connector-curvature="0" />
+         style="fill:#242424;fill-opacity:1;stroke:none;stroke-width:18.32383728;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 64 0 L 64 75.425781 L 97.65625 75.425781 L 97.65625 98.734375 L 40.691406 98.734375 L 40.691406 13.457031 L 8.5742188 32 L 8.5742188 96 L 64 128 L 119.42578 96 L 119.42578 32 L 64 0 z "
+         transform="matrix(0.26458333,0,0,0.26458333,74.612495,394.39385)"
+         id="path1038" />
       <path
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         inkscape:export-filename="/home/lief/Projects/liefswanson.github.io/static/logo.png"
-         sodipodi:type="star"
-         style="fill:#4c5d68;fill-opacity:1;stroke:none;stroke-width:9.26041698;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="path1040"
-         sodipodi:sides="4"
-         sodipodi:cx="15.387654"
-         sodipodi:cy="272.81952"
-         sodipodi:r1="39.054745"
-         sodipodi:r2="31.595951"
-         sodipodi:arg1="1.0471976"
-         sodipodi:arg2="1.8325958"
-         inkscape:flatsided="true"
-         inkscape:rounded="0"
-         inkscape:randomized="0"
-         d="M 34.915025,306.64192 -18.434748,292.34689 -4.1397164,238.99712 49.210056,253.29215 Z"
-         inkscape:transform-center-y="1.6169818"
-         transform="matrix(0.37549079,0.21678971,-0.21678971,0.37549079,144.91237,305.55015)" />
-      <path
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:9.51469707;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 91.545832,394.39397 -6.167064,3.5605 v 22.56298 h 15.071942 v -6.16707 h -8.904878 z"
-         id="path1042"
-         inkscape:connector-curvature="0"
-         inkscape:export-filename="/home/lief/Projects/liefswanson.github.io/static/logo.png"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
+         style="fill:#6ac8a3;fill-opacity:1;stroke:none;stroke-width:15.17528057;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 64 0 L 64 75.425781 L 97.65625 75.425781 L 97.65625 94.34375 L 128 64 L 64 0 z M 40.691406 23.308594 L 0 64 L 64 128 L 93.265625 98.734375 L 40.691406 98.734375 L 40.691406 23.308594 z "
+         transform="matrix(0.26458333,0,0,0.26458333,74.612495,394.39385)"
+         id="path1040" />
     </g>
   </g>
 </svg>

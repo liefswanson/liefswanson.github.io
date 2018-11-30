@@ -16,18 +16,13 @@
              :style="{'touch-action': touchActions}"
              ref='navBar'
              v-show='show'>
-            <div class='menu-container'>
-                <!-- hack necessary due to hideable header -->
-                <div class='spacer'></div>
-                <ul class='nav-links'>
-                    <nav-item v-for='(item, key) in sections'
-                              :key='key'
-                              :properties="item"/>
-                </ul>
 
-                <!-- allows for scrolling past the last element-->
-                <div class='over-scroll'></div>
-            </div>
+            <ul class='nav-links'>
+                <nav-item v-for='(item, key) in sections'
+                            :key='key'
+                            :style='{"margin-top": key == 5 ? "4.5rem" : undefined}'
+                            :properties="item"/>
+            </ul>
         </nav>
     </transition>
 </div>
@@ -159,15 +154,8 @@ export default Vue.extend({
 @import '@/style/master.scss';
 $blinder-opacity: 0.3;
 
-.spacer {
-    height: $header-height;
-}
-
-.over-scroll {
-    height: 0; // amount to over-scroll
-}
-
 .nav-links {
+    margin-top: $header-height;
     list-style-type: none;
     text-align: right;
     //background: $purple; // debug only

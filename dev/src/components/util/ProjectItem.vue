@@ -11,8 +11,8 @@
                           class="thumb"/>
                 <h2 class='title'>
                     <span>{{title}}</span>
-                    <div class='category-bar'>
-                        <div class='spacer'></div>
+                    <span class='category-bar'>
+                        <span class='spacer'></span>
                         <i v-for="elem in tags"
                            :key="elem.name"
                            v-if='tagActive(elem.name)'
@@ -22,7 +22,7 @@
                                 elem.icon,
                                 filterActive(elem.name) ? '': 'inactive'
                            ]"/>
-                    </div>
+                    </span>
                 </h2>
             </div>
             <p class='desc'>
@@ -234,7 +234,7 @@ export default Vue.extend({
 
     font-weight: bold;
     width: calc(100% - #{$padding * 3});
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", sans-serif;
     //border-bottom: 0.25em solid $projects-swatch;
     //color: $projects-swatch; //medium;
 }
