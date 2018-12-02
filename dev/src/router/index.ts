@@ -39,9 +39,6 @@ export default new Router({
         SectionMap.contact,
         SectionMap.about,
 
-        SectionMap.citations,
-        SectionMap.guide,
-
         notFound
     ]
 })
