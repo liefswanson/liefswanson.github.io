@@ -19,8 +19,8 @@
 
             <ul class='nav-links'>
                 <nav-item v-for='(item, key) in sections'
-                            :key='key'
-                            :properties="item"/>
+                          :key='key'
+                          :properties="item"/>
             </ul>
         </nav>
     </transition>

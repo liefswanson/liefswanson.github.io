@@ -4,15 +4,19 @@
               guide
               initShow>
         <p class='u-para'>
+            This page contains a tone and voice guide for use in IAT339.
+            This page does not exist in the production site at
+            <a class='g-link' href="https://www.lief.info">lief.info</a>.
+        </p>
+        <p class='u-para'>
             This page contains my tone and voice guide, a set of rules that I used when writing the content for this site.
             While this assignment only has 2 projects as part of the criteria, I rewrote the entire site using this guide.
-            The main thing that is I have not yet gathered what I consider enough images for all the projects I worked on.
+            The most important way that I have broken the rules of this guide is that I have not yet gathered enough images for the myriad of projects I have been working on rewriting.
         </p>
     </collapse>
 
     <collapse title='Voice'
               guide>
-
         <p class='u-para'>
             Always write in first person; third person hinders readability unnecessarily.
             Refer to myself as I, not “you”.
@@ -32,9 +36,10 @@
         </p>
 
         <p class='u-para'>
-            Keep it relevant! When / where I did something isn’t all that important, nor is who I did it with.
+            Keep it relevant! When / where I did something isn’t all that important.
+            It also isn't important who I worked with, because these articles are about my contributions to the projects, not the whole history of a project.
             What matters is why and and what I learned.
-            Showing off that I know what I am talking about comes in the how section.
+            Showing off that I know what I am talking about comes in the "How" section.
         </p>
 
         <p class='u-para'>
@@ -52,6 +57,18 @@
             A strong vocabulary is encouraged, but words should be accessible.
             I write at a high reading level, not an obscure reading level.
         </p>
+
+        <p class='u-para'>
+            A project may have a link that I want to send people to.
+            It is important to talk about the project a little before sending people somewhere else.
+            As such, an external link about the project should not appear before the end of the "Introduction" section.
+            Moreover, the user should not be encouraged to click the link.
+            I want them to stay on my portfolio, not leave!
+            For instance, it is common for people to follow direct orders they get on the internet.
+            These might include calls to action such as "Like and Subscribe".
+            I should avoid these.
+        </p>
+
     </collapse>
 
     <collapse title='Tone'
@@ -62,8 +79,8 @@
         </p>
 
         <ul class='list'>
-            <li>The hobbies portion of the about page</li>
-            <li>The ongoing projects section</li>
+            <li>The hobbies portion of the "About" page</li>
+            <li>The "Ongoing" page</li>
             <li>Some author's notes</li>
         </ul>
 
@@ -72,12 +89,18 @@
             It is okay for a project to not be about the tools and the work, and more about the things that were done incorrectly.
             It is still important to illustrate growth as a person, not just technical prowess.
         </p>
+
+        <p class='u-para'>
+            It is okay to use calls to action, when you actually do need to.
+            For instance, when giving instructions to the user.
+            This could be done for the purpose of showing the user something they may not discover on their own.
+            For instance, telling the user how to check out features of the site.
+        </p>
     </collapse>
 
     <collapse title='Mechanics'
               guide
               overscroll>
-
         <p class='u-para'>
             Author’s notes are designed for anything that doesn’t fit into the flow of story a project write-up is trying to achieve.
             They might be important information for the curious mind, but they are not needed in order to walk through the whole story.
@@ -96,18 +119,19 @@
         <ol class='list'>
             <li>The content of the card from the projects grid, for consistency of navigation</li>
             <li>An introduction</li>
-            <li>what my role was</li>
-            <li>why the project is important to me</li>
-            <li>how I tackled the project</li>
+            <li>What my role was</li>
+            <li>Why the project is important to me</li>
+            <li>How I tackled the project</li>
         </ol>
 
         <p class='u-para'>
             Typically, these sections are ordered smallest to largest.
             An introduction should be able to be understood at a glance.
-            The what and why sections should be able to be read and understood in about 20-30 seconds by an average reader.
+            The "What" and "Why" sections should be able to be read and understood in about 20-30 seconds by an average reader.
             Likely, it would take me about the same amount of time, after having already read it a few times.
             It may be worth timing myself reading projects to make sure they can be taken in within a short enough amount of time.
-            The how section can be much longer if needed, just make sure it is easily skipped. Don’t leave any questions about what or why unanswered by the time the reader gets to how.
+            The "How" section can be much longer if needed, just make sure it is easily skipped.
+            Don’t leave any questions about "What" or "Why" unanswered by the time the reader gets to "How".
         </p>
 
         <p class='u-para'>
@@ -118,7 +142,7 @@
         </p>
 
         <p class='u-para'>
-            Numbers should be in numerals, because it is hard to imagine numbers when they are spelled out in english.
+            Numbers should be in numerals, because it is hard to imagine numbers when they are spelled out in English.
         </p>
 
     </collapse>

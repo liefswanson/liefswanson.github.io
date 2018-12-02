@@ -9,28 +9,36 @@
             <a class='c-link' href='https://www.lief.info'>lief.info</a>.
         </p>
         <p class='u-para'>
-            You can find the source for my website in the <a class='c-link' href='https://github.com/liefswanson/liefswanson.github.io/tree/iat339'>github repository</a>.
+            You can find the source for my website in the <a class='c-link' href='https://github.com/liefswanson/liefswanson.github.io/tree/iat339'>GitHub repository</a>.
         </p>
         <p class='u-para'>
             Many of the images on this site came from websites like
-            <a class='c-link' href="www.pexels.com">pexels</a>,
-            <a class='c-link' href="www.unsplash.com">unsplash</a>,
+            <a class='c-link' href="www.pexels.com">Pexels</a>,
+            <a class='c-link' href="www.unsplash.com">Unsplash</a>,
             and
-            <a class='c-link' href="www.pixabay.com">pixabay</a>.
-            Some of the images have since been removed... I am not sure if this meant they were uploaded in violation of copyright, or as some of these stock photo sites are supported by paid stock photo companies... maybe they were removed so that future people looking would be given a paid alternative suggestion.
+            <a class='c-link' href="www.pixabay.com">Pixabay</a>.
+            Some of the images have since been removed, and I can only speculate as to why. I have instead offered alternative sources for these images.
         </p>
         <p class='u-para'>
-            You can also find links to prerendered pages of the site here, to give something to run through total validator.
+            You can also find links to prerendered pages of the site here, to give something to run through
+            <a class='c-link' href="http://sand.siat.sfu.ca/tvtest.php">Total Validator</a>
+            and W3C
+            <a class='c-link' href="https://validator.w3.org">HTML validator</a>
+            &
+            <a class='c-link' href="https://jigsaw.w3.org/css-validator/">CSS validator</a>.
             These prerendered pages are not meant to be used, just validated.
-            They don't work as none of the javascript is packaged with them, so they are completely non-functional.
-            There are 5 main classes of validation problems I have not been able to fix.
+            They don't work as none of the JavaScript is packaged with them, so they are completely non-functional.
+            There are 5 main classes of validation problems I have not been able to fix:
         </p>
         <ol class='p-list'>
-            <li>The url for google fonts contains an invalid url character by design.</li>
-            <li>Tags inserted by webpack (such as style and script tags) contain type attributes, which is no longer needed in the current html standard... but doesn't hurt anything at all.</li>
-            <li>H1 elements are not technically top level, because they can't be given the way vue treats templates.</li>
-            <li>Because my css is generated from scss, many vendor prefixes are injected that validators don't recognize.</li>
-            <li>Vue injects a span with id="warning-container" before the body element once it starts, allowing it to display warnings, this will actually cause the W3C validator to stop reading the HTML, so I manually removed these in my prerendered versions.</li>
+            <li>The url for Google fonts contains an invalid url character by design.</li>
+            <li>Tags inserted by
+                <a class='c-link' href="https://webpack.js.org">webpack</a>
+                (such as style and script tags) contain type attributes, which is no longer needed in the current HTML standard... but doesn't hurt anything at all.
+            </li>
+            <li>H1 elements are not technically top level, because they can't be given the way Vue.js treats templates.</li>
+            <li>Because my CSS is generated from SCSS, many vendor prefixes are injected that validators don't recognize.</li>
+            <li>Vue.js injects a span with id="warning-container" before the body element once it starts, allowing it to display warnings; this will actually cause the W3C validator to stop reading the HTML. So, I manually removed these in my prerendered versions.</li>
         </ol>
 
     </collapse>
@@ -45,10 +53,10 @@
             </v-cite>
 
             <v-cite title='Teaching Assistant Thumbnail'
-                  link='https://digileaders.com/wp-content/uploads/2017/04/pexels-photo-40120.jpeg'
+                  link='https://www.pexels.com'
                   description='Free stock photo.'>
-                <a class='c-link' href="https://www.pexels.com">pexels.com</a>
-                No longer in library, but was item 40120.
+                Pexels, but since removed.
+                <a class='c-link' href="https://digileaders.com/wp-content/uploads/2017/04/pexels-photo-40120.jpeg">alt</a>
             </v-cite>
 
             <v-cite title='Doctors Of BC Thumbnail'
@@ -74,14 +82,14 @@
             <v-cite title='Cognitive Science Thumbnail'
                   link='https://www.pexels.com'
                   description='Free stock photo.'>
-                pexels, but since removed
+                Pexels, but since removed.
                 <a class='c-link' href="https://linguistics.utah.edu/_images/cognitive-science.jpg">alt</a>
             </v-cite>
 
             <v-cite title='Cognitive Science Thumbnail'
                   link='https://www.pexels.com'
                   description='Free stock photo.'>
-                pexels, but since removed
+                Pexels, but since removed.
                 <a class='c-link' href="https://i0.wp.com/www.techjunkie.com/wp-content/uploads/2016/10/pexels-photo-442150.jpeg?resize=400%2C250&ssl=1">alt</a>
             </v-cite>
 
@@ -115,7 +123,7 @@
                 <a class='c-link' href="https://en.cdprojektred.com">CDPR</a>
             </v-cite>
 
-            <v-cite title='Audio Book covers'
+            <v-cite title='Audio Book Covers'
                     link='https://www.audible.ca'
                     description='Taken from a selection of Audio Books that I bought on Audible.ca.'>
                 Various authors, references in images.
@@ -123,11 +131,11 @@
 
             <v-cite title='Video Game Promotional Art'
                     link='https://www.lief.info/static/video-games/thumb.jpg'
-                    description='Taken from The promotional Art of many games.'>
+                    description='Taken from the promotional art of many games.'>
                 Various authors, references in images.
             </v-cite>
 
-            <v-cite title='HDR source images'
+            <v-cite title='HDR Source Images'
                     link='https://en.wikipedia.org/wiki/High-dynamic-range_imaging#HDR_processing'
                     description='Wikipedia commons, often used for testing HDR algorithms.'>
                 Unknown
@@ -142,7 +150,7 @@
             <v-cite title='Ongoing - Polish Flag'
                     link='https://en.wikipedia.org/wiki/Flag_of_Poland#/media/File:Flag_of_Poland_(with_coat_of_arms).svg'
                     description="Wikipedia Commons, but the content depicted is a National Flag.">
-                many designers for the <a class='c-link' href='https://www.premier.gov.pl/en.html'>Government of Poland</a>
+                Many designers for the <a class='c-link' href='https://www.premier.gov.pl/en.html'>Government of Poland</a>
             </v-cite>
 
             <v-cite title='Everything Else'
@@ -195,7 +203,7 @@
 
             <v-cite title='Hammer.js'
                   link='https://hammerjs.github.io'
-                  description='A gesture detection library, that I use to allow swiping out the nav bar on mobile.'>
+                  description='A gesture detection library that I use to allow swiping out the nav bar on mobile.'>
                 <a class='c-link' href="https://github.com/jtangelder">Jorik Tangelder</a>
                 and
                 <a class='c-link' href='https://github.com/hammerjs/hammer.js/'>The Open Source HammerJS Community</a>
@@ -209,7 +217,7 @@
 
             <v-cite title='PDF.js'
                   link='https://mozilla.github.io/pdf.js/'
-                  description='A library for rendering PDFs as HTML and CSS'>
+                  description='A library for rendering PDFs as HTML and CSS.'>
                 <a class='c-link' href="https://www.mozilla.org">The Mozilla Organization</a>
                 and
                 <a class='c-link' href="https://github.com/mozilla/pdf.js">The Open Source PDF.js Community</a>
@@ -268,13 +276,14 @@
             <li>
                 <a class='c-link' href="static/manual-renders/guide.html">tone and voice guide</a>
             </li>
-            <li>
-                You can find more in the
-                <a class='c-link' href='static/manual-renders'>prerenders folder</a>
-                and
-                <a class='c-link' href='static/css'>css folder</a>.
-            </li>
         </ul>
+        <br>
+        <p class='u-para'>
+            You can find more in the
+            <a class='c-link' href='static/manual-renders'>prerenders folder</a>
+            and
+            <a class='c-link' href='static/css'>css folder</a>.
+        </p>
     </collapse>
 </div>
 </template>
