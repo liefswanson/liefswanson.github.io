@@ -225,6 +225,13 @@ body {
     padding-left: 2rem;
     font-size: 1.1rem;
     color: $dark;
+
+    > li {
+        margin-bottom: 0.6rem;
+        > ul,ol {
+            margin-top: 0.6rem;
+        }
+    }
 }
 
 .p-text {

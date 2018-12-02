@@ -14,43 +14,48 @@
 
     <template slot='what'>
         <p class='p-text p-wide'>
-            Everything.
+            Everything!
             My goal was to create a portfolio that speaks to my wide range of interests and abilities, without making me look full of myself... like I literally just did.
             The best way I could see to do that was to display my skills, instead of talk about them.
         </p>
 
         <p class='p-text p-wide'>
             So how do I show you what I have done, instead of tell you, when the medium is text?...
-            How about, if you have the time, you <strong>try some of the features I implemented</strong>?
+            How about, you <strong>try some of the features I implemented</strong>?
         </p>
-        <ul class='p-list p-wide'>
-            <li>If you are on mobile, try swiping to the right; you should see the navigation bar pop out. You can either swipe left, tap anywhere in the greyed out area, or tap the hide navigation button, <i class='fa-bars fa sideways'/>, to close it again.</li>
-            <li>If you are on mobile, try opening the site on a desktop/laptop, and vice versa. The site is responsive, and was tested on phones as small as the iPhone 4.</li>
-            <li>Try closing all the sections of text on this page, and then press the expand all button just above the introduction section.</li>
-            <li>Copy the URL for this page, and paste it into another tab; despite this being a
+        <ol class='p-list p-wide'>
+            <li>On mobile, swipe to the right; you should see the navigation bar pop out. To close it again: Swipe left, tap the greyed out area, or tap the hide navigation button, <i class='fa-bars fa sideways'/>.</li>
+            <li>Resize your browser window, or rotate your phone.</li>
+            <li>Click the title of this section, or click the "expand all button".</li>
+            <li>
+                Duplicate this tab.
+                Despite this site being a
                 <a class='p-link' href='https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58'>single page app</a>,
-                each section does have a unique URL.</li>
-            <li>
-                If you haven't followed any of the links in the navigation bar, follow one.
-                While you were on another page, you may have noticed that the primary colour of the whole site changed, even the favicon in the web browser tab!
-            </li>
-            <li>I also made my own image carousel; you can find one in the "How I tackled it section" of this project.</li>
-            <li>
-                Head back to the projects section and play with the buttons in the top right.
-                They filter out projects unrelated to filter chosen.
+                each "page" does have a unique URL.
             </li>
             <li>
-                Head to the Résumé section.
-                That is actually the pdf of my résumé.
-                Try out the buttons if you like.
+                Follow a link in the navigation bar and watch the
+                <strong class='project-color'>primary colour</strong>
+                of the site change... including the
+                <a class='p-link' href='https://en.wikipedia.org/wiki/Favicon'>favicon</a>
+                and selection colour.
+            </li>
+            <li>Play around with the image carousel in the "How I Tackled It" section of this project.</li>
+            <li>
+                Play with the filter buttons on the
+                <router-link class='p-link' exact to='/projects'>Projects page</router-link>.
             </li>
             <li>
-                Lastly, for the sake of this demo, if you are so inclined, check out the source code in the
-                <a class='p-link' href='https://github.com/liefswanson/liefswanson.github.io'>GitHub</a>
-                repository used to host this website.
-                I use that repository to both store the source I work on, and host the site.
+                Play with the buttons on the
+                <router-link class='p-link' exact to='/resume'>Résumé page</router-link>...
+                and note that the PDF is actually embedded into the page.
             </li>
-        </ul>
+            <li>
+                Check out the source code in the
+                <a class='p-link' href='https://github.com/liefswanson/liefswanson.github.io'>GitHub repository</a>
+                used to host this website.
+            </li>
+        </ol>
     </template>
 
     <template slot='why'>
@@ -265,7 +270,13 @@ components: {
 </script>
 
 <style lang="scss" scoped>
+@import '@/style/master.scss';
+
 .sideways {
     transform: rotateZ(90deg);
+}
+
+.project-color {
+    color: $projects-swatch
 }
 </style>
