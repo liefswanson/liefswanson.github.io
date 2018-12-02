@@ -1,6 +1,6 @@
 <template>
 <article class='collapsible-root'>
-    <component :is='about || guide || citation ? "h1" : "h2"'
+    <component :is='about ? "h1" : "h2"'
                 class='label'>
         <button class='section'
                 :title='toggleMessage'
@@ -77,14 +77,6 @@ export default Vue.extend({
             type: Boolean,
             default: false
         },
-        guide: {
-            type: Boolean,
-            default: false
-        },
-        citation: {
-            type: Boolean,
-            default: false
-        }
     },
     computed: {
         style():object {
@@ -99,14 +91,8 @@ export default Vue.extend({
             return nextState + ' "' + this.title + '" section';
         },
         dynamicClass():string {
-            if (this.guide) {
-                return 'guide';
-            }
             if (this.about) {
                 return 'about';
-            }
-            if (this.citation) {
-                return 'citation';
             }
             return 'project';
         }
@@ -281,8 +267,6 @@ $height: $pad-top + $pad-bot + $margin-top +
 
 .about {@include border($about-swatch)}
 .project {@include border($projects-swatch)}
-.citation {@include border($citations-swatch)}
-.guide {@include border($guide-swatch)}
 
 .spacer {
     flex: 1;
