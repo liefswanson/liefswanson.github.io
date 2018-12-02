@@ -113,9 +113,6 @@ export default Vue.extend({
 .resume   { @include nav-color($resume-swatch)   }
 .about    { @include nav-color($about-swatch)    }
 
-.citations{ @include nav-color($citations-swatch) }
-.guide    { @include nav-color($guide-swatch) }
-
 .item {
     padding: 0;
     color: $bright;
