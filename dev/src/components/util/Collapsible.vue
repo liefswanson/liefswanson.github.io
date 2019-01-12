@@ -170,7 +170,7 @@ export default Vue.extend({
         animator.addEventListener(Events.transitionEnd, this.animOver,false);
 
 
-        if(this.initShow || userIsBot()) {
+        if(this.initShow) {
             this.expand();
         } else {
             // for prerendering only!
