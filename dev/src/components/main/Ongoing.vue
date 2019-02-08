@@ -19,7 +19,7 @@
                   width: 346,
                   height: 196
               }"
-              stamp='November 13<sup>th</sup> 2018'>
+              stamp='February 6<sup>th</sup> 2019'>
         I am expanding on the work I did
         <router-link class='o-link' exact to='/projects/optimizing-keyboards'>finding customized gesture typing layouts</router-link>,
         by publishing my finding and by integrating them into my own mobile keyboard based on the AOSP keyboard.
@@ -43,8 +43,8 @@
                   width: 768,
                   height: 480
               }"
-              stamp='November 29<sup>th</sup> 2018'>
-        As of the time of writing this, I have a 110+ day Polish streak on
+              stamp='February 6<sup>th</sup> 2019'>
+        As of the time of writing this, I have a 170+ day Polish streak on
         <a class='o-link' href="https://www.duolingo.com">duolingo</a>
         doing 30+ minutes per day.
         Why Polish? One of my
