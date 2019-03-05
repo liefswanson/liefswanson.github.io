@@ -137,7 +137,7 @@
         </p>
         <p class='u-para'>
             I am pretty big on video games, I find game developers and the work they create inspiring.
-            There is actually a fair amount to be learned from video games, when viewed through the right; I consider many of the
+            There is actually a fair amount to be learned from video games, when viewed through the right lens; I consider many of the
             <router-link class='a-link' exact to='/projects/video-games'>games I have played</router-link>
             to be a valuable part of my own experience in software and user interaction.
             I think the amazing work they do is partly why I worked to obtain two bachelor's of science in interaction design and computer science.
