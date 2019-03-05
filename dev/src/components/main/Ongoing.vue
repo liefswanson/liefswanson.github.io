@@ -43,16 +43,16 @@
                   width: 768,
                   height: 480
               }"
-              stamp='February 6<sup>th</sup> 2019'>
-        As of the time of writing this, I have a 170+ day Polish streak on
+              stamp='March 5<sup>th</sup> 2019'>
+        As of the time of writing this, I have a 190+ day Polish streak on
         <a class='o-link' href="https://www.duolingo.com">duolingo</a>
         doing 30+ minutes per day.
         Why Polish? One of my
         <router-link title='The Witcher 3' class='o-link' exact to='projects/video-games'>favourite video games</router-link>
         is made by a
         <a class='o-link' title='CDPR' href="https://en.cdprojektred.com">Polish development studio</a>,
-        and I figured it is probably even more polished in Polish.
-        So I figured if it interested me, I might as well learn a new natural language.
+        and I figured it is probably be interesting to play in the dev team's native language.
+        So I reasoned if it interested me, I might as well learn a new natural language... rather than not learn a new one.
     </upcoming>
 </section>
 </template>

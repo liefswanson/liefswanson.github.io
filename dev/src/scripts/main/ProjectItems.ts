@@ -196,7 +196,7 @@ const Projects:Project[] = [
         next: "RayTracer",
         component: Tetris,
 
-        title: 'A Crazy Version of Tetris in OpenGL',
+        title: 'Writing A Crazy Version of Tetris in OpenGL',
         blurb: "For a class in computer graphics, I made a weird version of tetris using only OpenGL, C++, and glfw3.",
         img: {
             path:"static/tetris/thumb.jpg",
@@ -212,7 +212,7 @@ const Projects:Project[] = [
         next: "ProjectEuler",
         component: Sudoku,
 
-        title: 'Automatic Sudoku Solver',
+        title: 'Making An Automatic Sudoku Solver',
         blurb: 'I like sudokus but I am pretty slow at them. To solve this problem, I wrote a program that solves sudokus for me.',
         img: {
             path:"static/sudoku/thumb.jpg",
@@ -228,7 +228,7 @@ const Projects:Project[] = [
         next: "TeachersAssistant",
         component: GTR,
 
-        title: 'Automated Feature Testing',
+        title: 'Making My Own Feature Testing Harness',
         blurb: "It turns out that building a compiler from scratch is difficult, and it's difficult to test... So I built my own automated testing harness to save me lots of headaches.",
         img: {
             path:"static/gtr/thumb.svg",
@@ -292,7 +292,7 @@ const Projects:Project[] = [
         next: "OptimizingKeyboards",
         component: CogSciLab,
 
-        title: 'Cognitive Science Lab at SFU',
+        title: 'Volunteering At The SFU Cognitive Science Lab',
         blurb: 'I have spent some of my time volunteering in a research lab at SFU that looks at how people allocate attention during a task, as a function of their mastery of that task.',
         img: {
             path:"static/cog-sci-lab/thumb.jpg",
@@ -340,7 +340,7 @@ const Projects:Project[] = [
         next: "OptimizingKeyboards",
         component: ArchLinux,
 
-        title: 'I Use Arch Linux as My Primary OS',
+        title: 'Using Arch Linux As My Primary OS',
         blurb: 'I have been using Linux as my primary OS since 2011. As such I have picked up a few things about Linux, and I am quite comfortable in it. More specifically, I use Arch Linux which I have found to be a great experience.',
         img: {
             path:"static/arch-linux/thumb.jpg",
