@@ -63,7 +63,14 @@
         </p>
 
         <p class='p-text p-wide'>
-            I am also very very proud of the work I did for this job.
+            I think one of the most important aspects was the job was giving thorough feedback on the code students wrote.
+            Unfortunately, this is also the part that is often overlooked, because it doesn't provide any easy to quantify metrics.
+            In all my time at University, I never had a TA leave feedback about the way I wrote code for an assignment.
+            It was really important to me that I would do better than the TAs I had.
+        </p>
+
+        <p class='p-text p-wide'>
+            I am very proud of the work I did for this job.
             Students still tell me to this day they really appreciated the time and effort I put into making sure they learn.
         </p>
     </template>
@@ -77,7 +84,9 @@
             So, I automated not only standard tests to run against student's assignments, but also the 2 minutes of work to get a project running.
         </p>
         <p class='p-thin p-note'>
-            After automation, I managed to get the time I spent running a student's project down to a minute average. That included everything except choosing which project to mark and reading the output of the tests.
+            After automation, I managed to get the time I spent running a student's project down to a minute average.
+            That includes everything from selecting the project to mark right down to having assigned the mark.
+            It did not, however, include the time taken to read the students code and provide critique on it.
         </p>
         <p class='p-wide p-text'>
             My pursuit of automation was so zealous I even automated testing of one particular assignment where the student's program was supposed to paint specific geometry into a window.
