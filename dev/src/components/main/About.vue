@@ -4,25 +4,41 @@
               initShow
               about>
         <p class='u-para'>
+            Hi!
             My name is Lief Swanson.
-            I am a <a class='a-link' title='Person with a wide range of knowledge or learning.' href='https://simple.wikipedia.org/wiki/Renaissance_man'>polymath</a>.
-            I have knowledge of and aptitude for:
-            <router-link class='a-link' exact to='/projects/writing-a-compiler'>software engineering</router-link>,
-            <router-link class='a-link' exact to='/projects/my-font'>design</router-link>,
+        </p>
+        <p class='u-para'>
+            I am a
+            <router-link class='a-link' exact to='/projects/sosy'>software engineer</router-link>
+            and
+            <router-link class='a-link' exact to='/projects/siat'>designer</router-link>
+            but my interests don't end there.
+
+            I also have knowledge of and aptitude for
             <router-link class='a-link' exact to='/projects/cog-sci-lab'>science</router-link>,
             <router-link class='a-link' exact to='/projects/project-euler'>math</router-link>,
             <router-link class='a-link' exact to='/projects/recursive-plug'>user interaction</router-link>,
             <router-link class='a-link' exact to='/projects/photography-2014-summer'>photography</router-link>,
             <router-link class='a-link' exact to='/projects/teachers-assistant'>teaching</router-link>,
-            history, politics, philosophy (mostly ethics), and even a little creative writing.
-            If I don't know much about a subject, it is because I am busy learning other subjects first.
+            history, philosophy (mostly ethics), and a few other disparate subjects.
+            I like learning and problem solving for their own sakes, but I also see them as a means to improving the lives of individuals.
         </p>
 
         <p class='u-para'>
-            I live to solve problems, because every unsolved problem is an opportunity to learn something.
-            I think in our modern information-dense world there is no valid excuse to avoid learning a wide variety of new things all the time.
+            My variety of interests is part of a life-long journey to emulate one of my heroes
+            <a class='a-link' href='https://en.wikipedia.org/wiki/Leonardo_da_Vinci'>Leonardo da Vinci</a>.
+            With any luck, I will end up even a fraction as learned, well-rounded, inquisitive, and tenacious as he was.
+            His ability to pull knowledge from separate fields into cohesive solutions was astounding, and something I think is under utilized in the modern world's emphasis on specialization.
+        </p>
+
+        <p class='u-para'>
+            Not everything in my life is problem solving and learning; I am an understanding and friendly person who really values good conversations with passionate people.
+            I like to work closely alongside others who can help me grow, and are also looking to become better versions of themselves.
+            I find my best work comes from collaboration; even going so far as to be a big fan of
+            <a class='a-link' title='A software development technique where two people work from the same computer at the same time in order to come up with better solutions and implementations than either would alone given twice the time.' href='https://en.wikipedia.org/wiki/Pair_programming'>pair programming</a>.
         </p>
     </collapse>
+
     <collapse title='My Education'
               about>
         <p class='u-para'>
@@ -35,7 +51,8 @@
         <p class='u-para'>
             I studied both, because it made perfect sense to me.
             They are closely related fields, but seldom do the two meet within one person.
-            I think that software implementation and interaction design are two sides of the same coin, and it doesn't pay for one to be ignorant of the other.
+            I think that software implementation and interaction design are two sides of the same coin, and it doesn't make sense for one to be ignorant of the other.
+            They both work toward the same goal of solving difficult problems to make people's lives easier.
         </p>
 
         <p class='u-para'>
@@ -169,7 +186,7 @@
 
         <p class='u-para'>
             I have
-            <a class='a-link' href="dyslexia">dyslexia</a>,
+            <a class='a-link' href="https://en.wikipedia.org/wiki/Dyslexia">dyslexia</a>,
             so I can find reading for very long periods exhausting.
             However, that doesn't stop me from enjoying a good book!
             I have listened to

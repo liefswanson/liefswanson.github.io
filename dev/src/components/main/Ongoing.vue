@@ -19,10 +19,14 @@
                   width: 346,
                   height: 196
               }"
-              stamp='February 6<sup>th</sup> 2019'>
+              stamp='June 22<sup>nd</sup> 2019'>
         I am expanding on the work I did
         <router-link class='o-link' exact to='/projects/optimizing-keyboards'>finding customized gesture typing layouts</router-link>,
-        by publishing my finding and by integrating them into my own mobile keyboard based on the AOSP keyboard.
+        by publishing my finding, making an easily accessible video about it, and by integrating them into my own mobile keyboard based on the
+        <a class='o-link' href='https://source.android.com/'>AOSP keyboard</a>.
+        Unfortunately, my paper on the subject was recently rejected for
+        <a class='o-link' href='http://uist.acm.org/uist2019/'>UIST 2019</a>,
+        but I am hopeful with some improvements I will get it published at a different conference in the near future.
     </upcoming>
     <upcoming name='Turning my Automatic Sudoku Solver into an Android Application'
               :img="{
@@ -43,16 +47,17 @@
                   width: 768,
                   height: 480
               }"
-              stamp='March 5<sup>th</sup> 2019'>
-        As of the time of writing this, I have a 190+ day Polish streak on
+              stamp='June 22<sup>nd</sup> 2019'>
+        As of the time of writing this, I have been learning Polish for a total of 300 days on
         <a class='o-link' href="https://www.duolingo.com">duolingo</a>
-        doing 30+ minutes per day.
+        doing 30+ minutes each day.
+        The longest streak I had was 220 days, but I needed a break and lost my streak.
         Why Polish? One of my
         <router-link title='The Witcher 3' class='o-link' exact to='projects/video-games'>favourite video games</router-link>
         is made by a
         <a class='o-link' title='CDPR' href="https://en.cdprojektred.com">Polish development studio</a>,
-        and I figured it is probably be interesting to play in the dev team's native language.
-        So I reasoned if it interested me, I might as well learn a new natural language... rather than not learn a new one.
+        and I figured it would probably be interesting to play in the dev team's native language.
+        I find natural languages quite difficult, so I figured if this convinced me to learn one then why not.
     </upcoming>
 </section>
 </template>

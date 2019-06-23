@@ -14,12 +14,21 @@
     </template>
 
     <template slot='what'>
+        <p class='p-text p-wide'>
+            On the first day of class, our professor let us know that compilers courses are often considered the hardest courses in a computer science curriculum, regardless of what university the course is being taught at.
+            He then let us know that his class was even harder than most compilers courses.
+            He expected us to write every feature from scratch; no libraries were allowed, and every project was going to build on the previous project.
+        </p>
+        <p class='p-thin p-note'>
+            Moreover, the iteration of the class I took was the only time the professor had students write an optimizer along with the compiler.
+        </p>
+
         <p class='p-wide p-text'>
-            In addition to the work of my other classes, and studying for the tests in this class, every student was expected to implement a wide range of functionality into our Pika compilers.
-            Most students did not complete a large portion of their Pika compiler, as is common in that class; it is a demanding course.
+            Every student was expected to implement a wide range of functionality into our Pika compilers.
+            I did finish every feature but most students did not complete a large portion of their compiler, as is common in that class; it is a demanding course.
         </p>
         <p class='p-wide p-text'>
-            <strong>Unlike most other students, I did implement every feature in Pika:</strong>
+            <strong>Features of Pika:</strong>
         </p>
 
         <ul class='p-wide p-list'>
@@ -113,7 +122,7 @@
 
     <template slot='why'>
         <p class='p-text p-wide'>
-            Unlike other courses at university, this course gave us the opportunity to follow real development practices.
+            This course stood out from others at university. It gave us the opportunity to follow real development practices.
             Code style really mattered, as poorly written code is harder to debug, and this compiler had to be supported through the entirety of the course.
             It was not a project that was done in a few days and then never touched again.
             In the process of writing this compiler, I got lots of practice maintaining, organizing, and testing my own code.
@@ -140,15 +149,6 @@
     </template>
 
     <template slot='how'>
-        <p class='p-text p-wide'>
-            On the first day of class, our professor let us know that compilers courses are often considered the hardest courses in a computer science curriculum, regardless of what university the course is being taught at.
-            He then let us know that his class was even harder than most compilers courses.
-            He expected us to write every feature from scratch; no libraries were allowed, and every project was going to build on the previous project.
-        </p>
-        <p class='p-thin p-note'>
-            Moreover, the iteration of the class I took was the only time the professor had students write an optimizer along with the compiler.
-        </p>
-
         <p class='p-text p-wide'>
             The prospect of writing so many features from scratch immediately told me that I needed a better way of testing.
             <a class='p-link' href="https://junit.org/junit5/">JUnit</a>
