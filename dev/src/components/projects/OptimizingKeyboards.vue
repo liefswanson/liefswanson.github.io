@@ -72,7 +72,7 @@
             Using similarities in the structures of words I figured out which keys should be physically separate from one another on in any given keyboard layout.
         </p>
         <p class='p-wide p-text'>
-            I did this by comparing every pair of words using the famous
+            I did this by comparing every pair of words using the
             <a class='p-link' href='https://en.wikipedia.org/wiki/Needleman–Wunsch_algorithm'>Needleman-Wunsch algorithm</a>.
             This allowed me to isolate particular similar structures found in pairs of words.
             I did not use Needleman-Wunsch to calculate
