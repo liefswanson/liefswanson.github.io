@@ -1,15 +1,26 @@
 import Swatch from '@/style/ts/Swatch';
 
+function swapHeadElementById(id: string, elem: HTMLElement) {
+    const oldElem = document.getElementById(id) as HTMLElement;
+    const head = document.head as HTMLElement;
+
+    if (oldElem) {
+        head.removeChild(oldElem);
+    }
+
+    elem.id = id;
+    head.appendChild(elem);
+}
 
 function makeNewFavicon(color: Swatch) {
     const id  = 'dynamic-favicon';
     const tag = 'link';
     const rel = 'icon';
 
-    let pathId = color.slice(1); // remove the # infront of the color
-    let path   = 'static/logo-' + pathId + '.png?v=2';
+    const pathId = color.slice(1); // remove the # infront of the color
+    const path   = 'static/logo-' + pathId + '.png?v=2';
 
-    let link  = document.createElement(tag);
+    const link  = document.createElement(tag);
     link.rel  = rel;
     link.href = path;
 
@@ -21,7 +32,7 @@ function makeNewSelectionColor(color: Swatch) {
     const tag  = 'style';
     const type = 'text/css';
 
-    let style  = document.createElement(tag);
+    const style  = document.createElement(tag);
     style.type = type;
     style.innerHTML =
     '::selection {' +
@@ -35,18 +46,6 @@ function makeNewSelectionColor(color: Swatch) {
     '}';
 
     swapHeadElementById(id, style);
-}
-
-function swapHeadElementById(id: string, elem: HTMLElement) {
-    let oldElem = document.getElementById(id) as HTMLElement;
-    let head = document.head as HTMLElement;
-
-    if (oldElem) {
-        head.removeChild(oldElem);
-    }
-
-    elem.id = id;
-    head.appendChild(elem);
 }
 
 export {

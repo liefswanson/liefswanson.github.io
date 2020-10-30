@@ -76,7 +76,6 @@ export default Vue.extend({
   name: "BigTeamProject",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

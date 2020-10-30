@@ -68,7 +68,7 @@ export default Vue.extend({
     },
     computed: {
         touchActions(): string {
-            var result = ''
+            let result = ''
             if(this.panUp && this.panDown) {
                 result = 'pan-y ';
             } else if(this.panUp) {
@@ -114,9 +114,8 @@ export default Vue.extend({
             }
         },
         setScrollBehaviour(showing: boolean) {
-            let body = document.querySelector('body') as HTMLElement;
-            let top = document.documentElement.scrollTop;
-            let disabling = showing && Breakpoints.onTabletOrDown();
+            const body = document.querySelector('body') as HTMLElement;
+            const disabling = showing && Breakpoints.onTabletOrDown();
 
             if(disabling) {
                 body.style.touchAction = 'pinch-zoom';
@@ -127,7 +126,7 @@ export default Vue.extend({
             }
         },
         handleScroll() {
-            let navBar = this.$refs.navBar as HTMLElement;
+            const navBar = this.$refs.navBar as HTMLElement;
             if(!navBar) { return; }
 
             this.scrollPercent = scrollProgress(navBar);

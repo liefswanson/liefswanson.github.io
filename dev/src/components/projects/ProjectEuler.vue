@@ -86,7 +86,6 @@ export default Vue.extend({
   name: "ProjectEuler",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

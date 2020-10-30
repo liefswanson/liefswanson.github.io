@@ -110,7 +110,6 @@ export default Vue.extend({
   name: "Photography2014Summer",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

@@ -116,10 +116,8 @@ export default Vue.extend({
         window.addEventListener(Events.resize, this.enableNavIfBigger);
 
         this.defaultNavState();
-        //@ts-ignore
-        this.$refs.root.disableAll();
-        //@ts-ignore
-        this.$refs.root.enable('swipe');
+        (this.$refs.root as any).disableAll();
+        (this.$refs.root as any).enable('swipe');
     },
     beforeDestroy() {
         NavEventBus.$off(Events.changeColor, this.changeColor);

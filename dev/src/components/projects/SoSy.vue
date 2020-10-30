@@ -136,7 +136,6 @@ export default Vue.extend({
   name: "SoSy",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

@@ -41,7 +41,7 @@ import Contacts from '@/scripts/main/Contacts';
 import Contact from '@/scripts/main/Contact';
 import { DelayTimers } from '@/style/ts/Timers';
 
-let defaultInterval = setInterval(function(){}, -1)
+const defaultInterval = setInterval(function(){const x = 1}, -1)
 
 export default Vue.extend({
     name: "Contact",

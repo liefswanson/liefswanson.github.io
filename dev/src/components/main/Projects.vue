@@ -66,7 +66,6 @@ import { SectionMap } from '@/scripts/nav/NavItems';
 import { std } from '@/style/ts/StandardUnits';
 import NavEventBus from '@/scripts/nav/NavEventBus';
 import Events from '@/scripts/nav/Events';
-import { setTimeout } from 'timers';
 import { AnimationTimers } from '@/style/ts/Timers';
 
 export default Vue.extend({
@@ -101,8 +100,8 @@ export default Vue.extend({
         }
     },
     methods: {
-        filterMessage(filter: Tag):string {
-            let active = this.selected(filter);
+        filterMessage(filter: Tag): string {
+            const active = this.selected(filter);
             if (active) {
                 return "disable all filters";
             } else {
@@ -110,17 +109,17 @@ export default Vue.extend({
             }
         },
         click(filter: Tag) {
-            let wasSelected = this.selected(filter);
+            const wasSelected = this.selected(filter);
             this.filters = []
 
             if (!wasSelected){
                 this.filters.push(filter);
             }
         },
-        visible(project: Project):boolean {
-            let filters = this.filters;
+        visible(project: Project): boolean {
+            const filters = this.filters;
             // Having no filters active is considered the same as having all filters active.
-            if (filters.length == 0) {
+            if (this.filters.length == 0) {
                 return true;
             }
 

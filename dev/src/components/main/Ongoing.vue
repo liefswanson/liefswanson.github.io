@@ -19,7 +19,7 @@
                   width: 346,
                   height: 196
               }"
-              stamp='June 22<sup>nd</sup> 2019'>
+              stamp=''>
         I am expanding on the work I did
         <router-link class='o-link' exact to='/projects/optimizing-keyboards'>finding customized gesture typing layouts</router-link>,
         by publishing my finding, making an easily accessible video about it, and by integrating them into my own mobile keyboard based on the
@@ -35,7 +35,7 @@
                   width: 640,
                   height: 480
               }"
-              stamp='November 29<sup>th</sup> 2018'>
+              stamp=''>
         I am working on integrating a camera and character recognition into an Android application along with
         <router-link class='o-link' exact to='projects/sudoku'>my automatic sudoku solver</router-link>.
         Take a picture and it solves itself, so you never have to again.
@@ -47,7 +47,7 @@
                   width: 768,
                   height: 480
               }"
-              stamp='June 22<sup>nd</sup> 2019'>
+              stamp=''>
         As of the time of writing this, I have been learning Polish for a total of 300 days on
         <a class='o-link' href="https://www.duolingo.com">duolingo</a>
         doing 30+ minutes each day.

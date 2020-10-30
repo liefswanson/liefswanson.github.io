@@ -15,8 +15,8 @@ import PreallocatedImage from '@/scripts/main/PreallocatedImage';
 export default Vue.extend({
     name: "PreallocatedImage",
     computed: {
-        style() : object {
-            let height = this.img.height / this.img.width;
+        style(): object {
+            const height = this.img.height / this.img.width;
 
             return {
                 'padding-top': (height * 100) + '%'

@@ -50,12 +50,7 @@ import Vue from 'vue';
 import PreallocatedImageVue from '@/components/util/PreallocatedImage.vue';
 import PreallocatedImage    from '@/scripts/main/PreallocatedImage';
 
-import {
-    setTimeout,
-    clearTimeout,
-    setInterval,
-    clearInterval
-} from 'timers';
+
 
 import {
     positiveMod
@@ -75,8 +70,8 @@ export default Vue.extend({
             images: [] as PreallocatedImage[],
             i: 0,
             offset: 0,
-            previousTimeout: setTimeout(function(){}, -1),
-            interval: setInterval(function(){}, -1)
+            previousTimeout: setTimeout(function(){const x = 1}, -1),
+            interval: setInterval(function(){const x = 1}, -1)
         }
     },
     props: {
@@ -107,10 +102,10 @@ export default Vue.extend({
         }
     },
     methods: {
-        active(index: number):boolean {
+        active(index: number): boolean {
             return this.i % this.sliceLength == index;
         },
-        onPhone() : boolean {
+        onPhone(): boolean {
             return Breakpoints.onPhone();
         },
         applyRelative(relative: string, img: PreallocatedImage): PreallocatedImage {
@@ -154,8 +149,8 @@ export default Vue.extend({
         initImages() {
             this.images = this.init.slice();
 
-            let first = this.images[0];
-            let last = this.images[this.images.length-1];
+            const first = this.images[0];
+            const last = this.images[this.images.length-1];
             this.images.push(first);
             this.images.unshift(last);
         }

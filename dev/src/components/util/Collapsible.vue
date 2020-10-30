@@ -79,18 +79,18 @@ export default Vue.extend({
         },
     },
     computed: {
-        style():object {
+        style(): object {
             return {
                 'display': this.display ? undefined : 'none',
                 'max-height': this.show ? this.maxHeight + std : '0',
                 'transition': 'max-height ' + this.time() + 's ease'
             }
         },
-        toggleMessage():string {
-            let nextState = this.show ? "Hide" : "Show";
+        toggleMessage(): string {
+            const nextState = this.show ? "Hide" : "Show";
             return nextState + ' "' + this.title + '" section';
         },
-        dynamicClass():string {
+        dynamicClass(): string {
             if (this.about) {
                 return 'about';
             }
@@ -117,7 +117,7 @@ export default Vue.extend({
             this.show = false;
             this.calcHeight();
         },
-        icon():string {
+        icon(): string {
             if (this.show){
                 return 'fa-minus';
             }
@@ -125,30 +125,30 @@ export default Vue.extend({
             return 'fa-plus';
         },
         time(): number {
-            let base = AnimationTimers.collapsible * toSeconds;
-            let units = this.maxHeight / Measurement.collapsible;
+            const base = AnimationTimers.collapsible * toSeconds;
+            const units = this.maxHeight / Measurement.collapsible;
             return base * Math.sqrt(units);
         },
         overscrollStyle(): object {
             if(!this.overscroll) return {};
 
-            let height = !this.show ? this.maxHeight : 0;
-            let time = this.loaded ? this.time() : 0;
+            const height = !this.show ? this.maxHeight : 0;
+            const time = this.loaded ? this.time() : 0;
             return {
                 'height': height + std,
                 'transition': 'height ' + time + 's ease'
             }
         },
         expandedHeight(): number {
-            let wrapper = this.$refs.wrapper as Element;
+            const wrapper = this.$refs.wrapper as Element;
 
             if (wrapper == undefined) { return 0; }
-            let px = wrapper.getBoundingClientRect().height;
+            const px = wrapper.getBoundingClientRect().height;
 
             return  px / pxInStd();
         },
         calcHeight() {
-            let temp = this.expandedHeight();
+            const temp = this.expandedHeight();
             if (temp != 0) { // avoid setting to 0 if display: none;
                 this.maxHeight = temp;
             }
@@ -166,7 +166,7 @@ export default Vue.extend({
         NavEventBus.$on(Events.expandAll, this.expand);
         window.addEventListener(Events.resize, this.calcHeight);
 
-        let animator = this.$refs.animator as HTMLElement;
+        const animator = this.$refs.animator as HTMLElement;
         animator.addEventListener(Events.transitionEnd, this.animOver,false);
 
 
@@ -193,7 +193,7 @@ export default Vue.extend({
         NavEventBus.$off(Events.collapseAll, this.expand);
         window.removeEventListener(Events.resize, this.calcHeight);
 
-        let animator = this.$refs.animator as HTMLElement;
+        const animator = this.$refs.animator as HTMLElement;
         animator.removeEventListener(Events.transitionEnd, this.animOver,false);
 
         this.loaded = false;
