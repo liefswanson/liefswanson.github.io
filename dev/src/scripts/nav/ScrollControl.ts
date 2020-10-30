@@ -22,8 +22,8 @@ function preventDefaultForScrollKeys(e: KeyboardEvent) {
     }
 }
 
-var enabled = true;
-let restore = {
+let enabled = true;
+const restore = {
     onwheel: window.onwheel,
     onkeydown: document.onkeydown
 }
@@ -44,14 +44,14 @@ function scrollEnabled(): boolean {
 }
 
 function scrollProgress(elem: HTMLElement): number {
-    let top = elem.scrollTop;
-    let bottom = elem.scrollHeight -
+    const top = elem.scrollTop;
+    const bottom = elem.scrollHeight -
                  elem.getBoundingClientRect().height;
 
     return top / bottom;
 }
 
-function scrollable(elem: HTMLElement):boolean {
+function scrollable(elem: HTMLElement): boolean {
     return elem.scrollHeight !==
            elem.getBoundingClientRect().height;
 }

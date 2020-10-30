@@ -47,30 +47,30 @@ export default Vue.extend({
     props: {
         showNav: {
             type: Boolean,
-            require: true
+            default: true
         }
     },
     computed: {
-        hamburgerMessage():string {
+        hamburgerMessage(): string {
             return this.showNav ? "Hide Navigation Bar" : "Show Navigation Bar"
         }
     },
     methods: {
         handleScroll() {
-            let current = window.scrollY;
+            const current = window.scrollY;
 
-            let scrollingDown = current > this.previous;
-            let scrollingUp = current < this.previous;
+            const scrollingDown = current > this.previous;
+            const scrollingUp = current < this.previous;
 
-            let belowMinScroll = current < Measurement.minScroll * pxInStd();
+            const belowMinScroll = current < Measurement.minScroll * pxInStd();
 
-            let headerShouldClose =
+            const headerShouldClose =
                 this.show &&
                 scrollingDown &&
                 !belowMinScroll &&
                 scrollEnabled();
 
-            let headerShouldOpen =
+            const headerShouldOpen =
                 !this.show &&
                 scrollingUp;
 

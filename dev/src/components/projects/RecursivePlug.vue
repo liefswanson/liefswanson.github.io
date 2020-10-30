@@ -264,7 +264,6 @@ data(){
 components: {
     'project-template': ProjectTemplate,
     'v-carousel': Carousel,
-    'prealloc': PreallocatedImageVue
 }
 });
 </script>

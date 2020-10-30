@@ -44,7 +44,7 @@ export default Vue.extend({
         }
     },
     mounted() {
-        let currentProject = getProject(this.current);
+        const currentProject = getProject(this.current);
         this.nextProject = getProject(currentProject.next);
     },
     methods: {

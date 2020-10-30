@@ -26,10 +26,13 @@
         </div>
     </sticky-bar>
     <!-- The in page render uses a different pdf,
-         to avoid font render errors in pdfjs -->
+         to avoid font render errors in pdfjs
+
+         -->
     <pdf class='pdf'
          ref='pdf'
          src='static/resume.pdf'/>
+
 </section>
 </template>
 

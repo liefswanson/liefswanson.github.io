@@ -176,7 +176,6 @@ export default Vue.extend({
   components: {
       'project-template': ProjectTemplate,
       'v-carousel': Carousel,
-      'prealloc': PreallocatedImageVue
   }
 });
 </script>

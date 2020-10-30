@@ -13,9 +13,8 @@
                     <span>{{title}}</span>
                     <span class='category-bar'>
                         <span class='spacer'></span>
-                        <i v-for="elem in tags"
+                        <i v-for="elem in activeTags"
                            :key="elem.name"
-                           v-if='tagActive(elem.name)'
                            class='icon'
                            :class="[
                                 elem.fa,
@@ -46,7 +45,6 @@ import Project        from '@/scripts/main/Project';
 import { SectionMap } from '@/scripts/nav/NavItems';
 import NavEventBus    from '@/scripts/nav/NavEventBus';
 import Events         from '@/scripts/nav/Events';
-import { setTimeout } from 'timers';
 
 
 import { pxInStd }         from '@/style/ts/StandardUnits';
@@ -54,6 +52,7 @@ import { AnimationTimers } from '@/style/ts/Timers';
 import Swatch              from '@/style/ts/Swatch';
 import Measurement         from '@/style/ts/Measurement';
 import PreallocatedImage from '@/scripts/main/PreallocatedImage';
+import TagItem from '@/scripts/main/TagItem';
 
 
 export default Vue.extend({
@@ -92,9 +91,8 @@ export default Vue.extend({
 
         img(): PreallocatedImage { return this.properties.img; },
 
-
         style(): object {
-            var back = 'none';
+            let back = 'none';
 
             if (this.inFocus) {
                 back = Swatch.projects;
@@ -103,6 +101,15 @@ export default Vue.extend({
                 "grid-row-end": "span " + this.rowSpan,
             }
         },
+
+        activeTags(): TagItem[] {
+            const active = this.tagActive;
+            const fun = function(ti: TagItem): boolean {
+                return active(ti.name);
+            }
+            return this.tags.filter(fun);
+        },
+
         target(): string {
             return SectionMap.projects.path + '/' + this.path;
         }
@@ -122,13 +129,13 @@ export default Vue.extend({
                    this.filters.indexOf(tag) !== -1;
         },
         updateSpan() {
-            var content = this.$refs.content as Element;
+            const content = this.$refs.content as Element;
 
-            var span = content.getBoundingClientRect().height / pxInStd();
+            let span = content.getBoundingClientRect().height / pxInStd();
             span = span / (this.autoRows + this.gap);
             span = Math.ceil(span);
 
-            let margin = Measurement.gridGap/this.autoRows;
+            const margin = Measurement.gridGap/this.autoRows;
 
             this.rowSpan = span + margin;
         },
