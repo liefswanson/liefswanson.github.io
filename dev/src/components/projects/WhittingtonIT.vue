@@ -69,7 +69,6 @@ export default Vue.extend({
   name: "WhittingtonIT",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

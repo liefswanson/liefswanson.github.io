@@ -107,7 +107,6 @@ export default Vue.extend({
   name: "ArchLinux",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

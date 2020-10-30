@@ -48,7 +48,7 @@ export default Vue.extend({
         adjustmentInUnits(): string {
             return this.adjustment + std;
         },
-        height() : string {
+        height(): string {
             if (this.overlay || isIE() || !this.supportsSticky()){
                 return '0';
             }

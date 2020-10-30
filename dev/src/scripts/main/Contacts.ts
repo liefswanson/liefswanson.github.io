@@ -2,11 +2,11 @@ import Contact from '@/scripts/main/Contact';
 
 const Contacts: Contact[] = [
     {
-        name: 'liefs@sfu.ca',
+        name: 'theeclecticdyslexic@gmail.com',
         fa: 'fa',
         icon: 'fa-envelope-square',
         msg: 'email',
-        link: 'mailto:liefs@sfu.ca'
+        link: 'theeclecticdyslexic@gmail.com'
     },
     {
         name: 'github',

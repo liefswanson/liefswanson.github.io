@@ -45,7 +45,7 @@ export default Vue.extend({
         color(): Swatch  { return this.properties.color },
 
         classes(): string[] {
-            let sectionClass = this.path.slice(1); // classes are based on route path
+            const sectionClass = this.path.slice(1); // classes are based on route path
 
             if (this.active) {
                 return [sectionClass, 'active']
@@ -56,7 +56,7 @@ export default Vue.extend({
 
         active(): boolean {
             // match name of current route's top parent to nav item's name
-            let name = this.$route.matched[0].name;
+            const name = this.$route.matched[0].name;
             return name === this.name;
         },
     },

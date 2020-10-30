@@ -91,7 +91,6 @@ export default Vue.extend({
   name: "SIAT",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel
   }
 });
 </script>

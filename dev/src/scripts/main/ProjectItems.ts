@@ -33,7 +33,7 @@ import code   = Tag.code;
 import design = Tag.design;
 import misc   = Tag.miscellaneous;
 
-const nullProject:Project =
+const nullProject: Project =
 {
     path: "",
     name: "",
@@ -51,17 +51,8 @@ const nullProject:Project =
     tags: []
 };
 
-function getProject(name: string) {
-    for (let project of Projects) {
-        if(project.name == name) {
-            return project
-        }
-    }
-    console.error("Incorrect name \"" + name + "\" given to getProject");
-    return nullProject
-}
 
-const Projects:Project[] = [
+const Projects: Project[] = [
     {
         path: "optimizing-keyboards",
         name: "OptimizingKeyboards",
@@ -400,6 +391,16 @@ const Projects:Project[] = [
     }
 
 ];
+
+function getProject(name: string) {
+    for (const project of Projects) {
+        if(project.name == name) {
+            return project
+        }
+    }
+    console.error("Incorrect name \"" + name + "\" given to getProject");
+    return nullProject
+}
 
 export {
     Projects,

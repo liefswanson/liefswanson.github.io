@@ -107,8 +107,6 @@ export default Vue.extend({
   name: "RayTracer",
   components: {
       'project-template': ProjectTemplate,
-      'v-carousel': Carousel,
-      'prealloc': PreallocatedImageVue
   }
 });
 </script>
