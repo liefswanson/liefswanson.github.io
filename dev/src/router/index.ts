@@ -34,7 +34,7 @@ export default new Router({
     routes:     [
         landing,
         projects,
-        SectionMap.ongoing,
+        //SectionMap.ongoing,
         SectionMap.resume,
         SectionMap.contact,
         SectionMap.about,
